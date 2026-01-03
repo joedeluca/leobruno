@@ -53,6 +53,7 @@ export default function Home() {
   const [posts, setPosts] = useState<Post[]>([])
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([])
   const [searchQuery, setSearchQuery] = useState("")
+  const [debouncedQuery, setDebouncedQuery] = useState("")
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -76,14 +77,23 @@ export default function Home() {
       })
   }, [])
 
-  // Listen for search events from header
+  // Listen for search events from header with debounce
   useEffect(() => {
+    let debounceTimer: NodeJS.Timeout
+
     const handleSearch = (event: Event) => {
       const customEvent = event as CustomEvent<{ query: string }>
       const query = customEvent.detail.query
+      
+      // Store the raw query for highlighting, but don't filter yet
       setSearchQuery(query)
 
+      // Clear existing timer
+      clearTimeout(debounceTimer)
+
+      // If query is empty, show all posts immediately
       if (!query.trim()) {
+        setDebouncedQuery("")
         setFilteredPosts(posts)
         // Update count
         const countEvent = new CustomEvent("updatePostCount", {
@@ -93,42 +103,49 @@ export default function Home() {
         return
       }
 
-      const fuse = new Fuse(posts, {
-        keys: ["title", "excerpt", "category", "content"],
-        threshold: 0.15,
-        ignoreLocation: true,
-        minMatchCharLength: 4,
-        includeMatches: true,
-      })
+      // Keep showing all posts while user is typing
+      // Only filter after they stop typing for 500ms
+      debounceTimer = setTimeout(() => {
+        setDebouncedQuery(query)
+        
+        const fuse = new Fuse(posts, {
+          keys: ["title", "excerpt", "category", "content"],
+          threshold: 0.15,
+          ignoreLocation: true,
+          minMatchCharLength: 1,
+          includeMatches: true,
+        })
 
-      const results = fuse.search(query)
-      const filtered = results.map((result) => {
-        const post = { ...result.item }
+        const results = fuse.search(query)
+        const filtered = results.map((result) => {
+          const post = { ...result.item }
 
-        // If content was matched, extract context snippet
-        if (result.matches) {
-          const contentMatch = result.matches.find((m) => m.key === "content")
-          if (contentMatch && post.content) {
-            post.matchSnippet = extractMatchContext(post.content, query)
+          // If content was matched, extract context snippet
+          if (result.matches) {
+            const contentMatch = result.matches.find((m) => m.key === "content")
+            if (contentMatch && post.content) {
+              post.matchSnippet = extractMatchContext(post.content, query)
+            }
           }
-        }
 
-        return post
-      })
+          return post
+        })
 
-      setFilteredPosts(filtered)
+        setFilteredPosts(filtered)
 
-      // Update count
-      const countEvent = new CustomEvent("updatePostCount", {
-        detail: { count: filtered.length },
-      })
-      window.dispatchEvent(countEvent)
+        // Update count
+        const countEvent = new CustomEvent("updatePostCount", {
+          detail: { count: filtered.length },
+        })
+        window.dispatchEvent(countEvent)
+      }, 500)
     }
 
     window.addEventListener("searchQuery", handleSearch)
 
     return () => {
       window.removeEventListener("searchQuery", handleSearch)
+      clearTimeout(debounceTimer)
     }
   }, [posts])
 
