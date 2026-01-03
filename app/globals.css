@@ -1,26 +1,293 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Schnyder Fonts for Headlines cio */
+@font-face {
+  font-family: "Schnyder S";
+  src: url("/fonts/schnyder-s-normal-600.9c12687a0244f74a50ae23a2dfe25626.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "Schnyder S";
+  src: url("/fonts/schnyder-s-normal-700.bc2cfae168f0438ed4f677e1d95aa615.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
+@font-face {
+  font-family: "Schnyder S Cond";
+  src: url("/fonts/schnyder-scond-normal-300.ee2843eac9f368c56a0efe5fe4121bdf.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Graphik Fonts for Body */
+@font-face {
+  font-family: "Graphik";
+  src: url("/fonts/Graphik-Light-Web.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url("/fonts/Graphik-LightItalic-Web.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url("/fonts/graphik-normal-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url("/fonts/graphik-normal-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url("/fonts/Graphik-Medium-Web.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url("/fonts/Graphik-MediumItalic-Web.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url("/fonts/Graphik-Semibold-Web.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url("/fonts/Graphik-SemiboldItalic-Web.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url("/fonts/Graphik-Bold-Web.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url("/fonts/Graphik-BoldItalic-Web.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url("/fonts/Graphik-Black-Web.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  /* Tiepolo / Rococo color variables with 4 shades each */
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Pink - Fleshy pink */
+    --tiepolo-pink-500: #f9d8da;
+    --tiepolo-pink-600: #f5c7c9;
+    --tiepolo-pink-700: #e8a8ab;
+    --tiepolo-pink-800: #d9898d;
+
+    /* Sky - Ethereal sky blue */
+    --tiepolo-sky-500: #d4e5f3;
+    --tiepolo-sky-600: #b8d4e8;
+    --tiepolo-sky-700: #8fbdd9;
+    --tiepolo-sky-800: #6fa6ca;
+
+    /* Gold - Gilded frame gold */
+    --tiepolo-gold-500: #f3e7bd;
+    --tiepolo-gold-600: #e8d4a0;
+    --tiepolo-gold-700: #d9be7a;
+    --tiepolo-gold-800: #c9a855;
+
+    /* Rose - Dusty rose */
+    --tiepolo-rose-500: #f0d0d6;
+    --tiepolo-rose-600: #e6b5bc;
+    --tiepolo-rose-700: #d9969f;
+    --tiepolo-rose-800: #cc7882;
+
+    /* Cream - Aged fresco cream */
+    --tiepolo-cream-500: #f9f4e8;
+    --tiepolo-cream-600: #f4ead5;
+    --tiepolo-cream-700: #e8d9b8;
+    --tiepolo-cream-800: #dcc89b;
+
+    /* Azure - Venetian azure */
+    --tiepolo-azure-500: #c7dde9;
+    --tiepolo-azure-600: #a3c7d6;
+    --tiepolo-azure-700: #7daec4;
+    --tiepolo-azure-800: #5896b2;
+  }
+
+  body {
+    @apply bg-zinc-950 text-zinc-500;
+    font-family: "Graphik", system-ui, sans-serif;
+  }
+
+  /* Global paragraph styling */
+  p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #71717a; /* zinc-500 */
+  }
+
+  /* Remove top margin from first paragraph but keep same color */
+  p:first-child,
+  section > p:first-of-type,
+  article > p:first-of-type,
+  div > p:first-of-type {
+    margin-top: 0;
+    color: #71717a; /* zinc-500 */
+  }
+
+  /* Global heading styling */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Schnyder S", Georgia, serif;
+    font-weight: 700;
+    color: #71717a; /* zinc-500 */
+  }
+
+  h1 {
+    font-size: 3.5rem; /* text-6xl */
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0px;
+    line-height: 1.1;
+  }
+
+  h2 {
+    color: #d4d4d8; /* zinc-300 */
+    font-size: 3.25rem; /* text-5xl */
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-size: 2.25rem; /* text-4xl */
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    color: #71717a; /* zinc-500 */
+  }
+
+  h4 {
+    font-size: 1.875rem; /* text-3xl */
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h5 {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  h6 {
+    font-size: 1.25rem; /* text-xl */
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Global list styling */
+  ul,
+  ol {
+    font-size: 1.5rem;
+    color: #71717a; /* zinc-500 */
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 2rem;
+  }
+
+  li {
+    font-size: 1.5rem;
+    color: #71717a; /* zinc-500 */
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  /* Global text styling */
+  strong {
+    color: #71717a; /* zinc-500 */
+    font-weight: 600;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  a {
+    color: #71717a; /* zinc-500 */
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #a1a1aa; /* zinc-400 for hover */
+  }
+
+  blockquote {
+    font-size: 1.5rem;
+    color: #71717a; /* zinc-500 */
+    border-left: 4px solid rgb(113 113 122);
+    padding-left: 1.5rem;
+    font-style: italic;
+    margin: 1.5em 0;
+  }
+
+  /* Override h2 in blog post content to look like h3 */
+  article h2 {
+    font-size: 3rem; /* text-4xl - same as h3 */
+    margin-top: 0rem;
+    margin-bottom: 0rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .highlight {
+    @apply bg-tiepolo-sky-600/30 text-tiepolo-sky-500 rounded px-0.5;
+  }
 }

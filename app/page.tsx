@@ -1,65 +1,162 @@
-import Image from "next/image";
+"use client"
+
+import { useState, useEffect } from "react"
+import Fuse from "fuse.js"
+import PostList from "@/components/PostList"
+import Sidebar from "@/components/Sidebar"
+import type { Post } from "@/lib/posts"
+
+// Extract context around the matched text
+function extractMatchContext(text: string, query: string): string {
+  if (!text || !query) return ""
+
+  // Find the position of the match (case-insensitive)
+  const lowerText = text.toLowerCase()
+  const lowerQuery = query.toLowerCase()
+  const matchIndex = lowerText.indexOf(lowerQuery)
+
+  if (matchIndex === -1) return ""
+
+  // Find sentence boundaries around the match
+  // Look for periods, exclamation marks, or question marks
+  let start = matchIndex
+  let end = matchIndex + query.length
+
+  // Expand backwards to find start of sentence (or beginning of text)
+  while (start > 0) {
+    const char = text[start - 1]
+    if (char === "." || char === "!" || char === "?") {
+      break
+    }
+    start--
+    // Safety limit: don't go back more than 200 characters
+    if (matchIndex - start > 200) break
+  }
+
+  // Expand forwards to find end of sentence (or end of text)
+  while (end < text.length) {
+    const char = text[end]
+    if (char === "." || char === "!" || char === "?") {
+      end++
+      break
+    }
+    end++
+    // Safety limit: don't go forward more than 200 characters
+    if (end - matchIndex > 200) break
+  }
+
+  // Trim whitespace and return
+  return text.slice(start, end).trim()
+}
 
 export default function Home() {
+  const [posts, setPosts] = useState<Post[]>([])
+  const [filteredPosts, setFilteredPosts] = useState<Post[]>([])
+  const [searchQuery, setSearchQuery] = useState("")
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Fetch posts from API
+    fetch("/api/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        setPosts(data.posts)
+        setFilteredPosts(data.posts)
+        setIsLoading(false)
+
+        // Update header with initial post count
+        const event = new CustomEvent("updatePostCount", {
+          detail: { count: data.posts.length },
+        })
+        window.dispatchEvent(event)
+      })
+      .catch((error) => {
+        console.error("Error fetching posts:", error)
+        setIsLoading(false)
+      })
+  }, [])
+
+  // Listen for search events from header
+  useEffect(() => {
+    const handleSearch = (event: Event) => {
+      const customEvent = event as CustomEvent<{ query: string }>
+      const query = customEvent.detail.query
+      setSearchQuery(query)
+
+      if (!query.trim()) {
+        setFilteredPosts(posts)
+        // Update count
+        const countEvent = new CustomEvent("updatePostCount", {
+          detail: { count: posts.length },
+        })
+        window.dispatchEvent(countEvent)
+        return
+      }
+
+      const fuse = new Fuse(posts, {
+        keys: ["title", "excerpt", "category", "content"],
+        threshold: 0.15,
+        ignoreLocation: true,
+        minMatchCharLength: 4,
+        includeMatches: true,
+      })
+
+      const results = fuse.search(query)
+      const filtered = results.map((result) => {
+        const post = { ...result.item }
+
+        // If content was matched, extract context snippet
+        if (result.matches) {
+          const contentMatch = result.matches.find((m) => m.key === "content")
+          if (contentMatch && post.content) {
+            post.matchSnippet = extractMatchContext(post.content, query)
+          }
+        }
+
+        return post
+      })
+
+      setFilteredPosts(filtered)
+
+      // Update count
+      const countEvent = new CustomEvent("updatePostCount", {
+        detail: { count: filtered.length },
+      })
+      window.dispatchEvent(countEvent)
+    }
+
+    window.addEventListener("searchQuery", handleSearch)
+
+    return () => {
+      window.removeEventListener("searchQuery", handleSearch)
+    }
+  }, [posts])
+
+  if (isLoading) {
+    return (
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-center min-h-[50vh]">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-tiepolo-pink-800"></div>
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="w-full h-full">
+      <div className="flex flex-col lg:flex-row h-full">
+        {/* Main Content - 75% on desktop */}
+        <div className="lg:w-3/4 w-full px-8 py-12">
+          <PostList posts={filteredPosts} searchQuery={searchQuery} />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Sidebar - 25% on desktop (reduced by 30%) */}
+        <div className="lg:w-1/4 w-full lg:border-l lg:border-zinc-800 px-8 py-12">
+          <div className="lg:sticky lg:top-24">
+            <Sidebar />
+          </div>
         </div>
-      </main>
+      </div>
     </div>
-  );
+  )
 }
