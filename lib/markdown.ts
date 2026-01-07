@@ -7,11 +7,13 @@ const postsDirectory = path.join(process.cwd(), "posts")
 export interface MarkdownContent {
   slug: string
   title: string
+  titleShort?: string
   date: string
   category: string
   tags: string[]
   excerpt: string
   teaser?: string
+  teaserShort?: string
   content: string
   path: string
 }
@@ -49,11 +51,13 @@ export function getMarkdownContent(filePath: string): MarkdownContent {
   return {
     slug,
     title: data.title || "",
+    titleShort: data.titleShort || data.title || "",
     date: data.date || "",
     category: data.category || "writing",
     tags: data.tags || [],
     excerpt: data.excerpt || "",
     teaser: data.teaser || "",
+    teaserShort: data.teaserShort || data.teaser || "",
     content,
     path: relativePath,
   }

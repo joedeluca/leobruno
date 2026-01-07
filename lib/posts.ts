@@ -7,6 +7,7 @@ import html from "remark-html"
 export interface Post {
   slug: string
   title: string
+  titleShort?: string
   date: string
   excerpt: string
   category: string
@@ -14,6 +15,7 @@ export interface Post {
   readTime?: string
   matchSnippet?: string
   teaser?: string
+  teaserShort?: string
 }
 
 const postsDirectory = path.join(process.cwd(), "posts")
@@ -39,11 +41,14 @@ export function getSortedPostsData(): Post[] {
         return {
           slug,
           title: matterResult.data.title,
+          titleShort: matterResult.data.titleShort || matterResult.data.title,
           date: matterResult.data.date,
           excerpt: matterResult.data.excerpt || "",
           category: matterResult.data.category || "Essays",
           readTime: `${readTime} min read`,
           teaser: matterResult.data.teaser || "",
+          teaserShort:
+            matterResult.data.teaserShort || matterResult.data.teaser || "",
         }
       })
     allPosts.push(...blogPosts)
@@ -79,12 +84,15 @@ export function getSortedPostsDataWithContent(): Post[] {
         return {
           slug,
           title: matterResult.data.title,
+          titleShort: matterResult.data.titleShort || matterResult.data.title,
           date: matterResult.data.date,
           excerpt: matterResult.data.excerpt || "",
           category: matterResult.data.category || "Essays",
           content: matterResult.content, // Include raw markdown content
           readTime: `${readTime} min read`,
           teaser: matterResult.data.teaser || "",
+          teaserShort:
+            matterResult.data.teaserShort || matterResult.data.teaser || "",
         }
       })
     allPosts.push(...blogPosts)

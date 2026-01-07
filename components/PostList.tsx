@@ -58,7 +58,11 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
                   className="uppercase tracking-wide mb-0"
                   style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
                 >
-                  {post.teaser && <>{post.teaser}</>}
+                  {/* Show short teaser on mobile, full teaser on desktop */}
+                  <span className="lg:hidden">
+                    {post.teaserShort || post.teaser}
+                  </span>
+                  <span className="hidden lg:inline">{post.teaser}</span>
                 </h5>
               </div>
 
@@ -68,7 +72,13 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
                   fontFamily: '"Schnyder S", Georgia, serif',
                 }}
               >
-                {highlightText(post.title, searchQuery)}
+                {/* Show short title on mobile, full title on desktop */}
+                <span className="lg:hidden">
+                  {highlightText(post.titleShort || post.title, searchQuery)}
+                </span>
+                <span className="hidden lg:inline">
+                  {highlightText(post.title, searchQuery)}
+                </span>
               </h1>
 
               {/* Show match snippet if searching and content was matched */}
