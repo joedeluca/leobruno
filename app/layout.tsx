@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen flex flex-col">
         {/* Fixed Header with search bar on right */}
-        <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950 border-b border-zinc-800 h-20">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 h-20">
           <div className="h-full flex items-center">
             <div className="px-8 flex-shrink-0">
               <Link href="/">

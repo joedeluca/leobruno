@@ -193,11 +193,18 @@
   }
 
   h1 {
-    font-size: 3.5rem; /* text-6xl */
+    font-size: 2rem; /* text-3xl for mobile */
     margin-top: 0;
     margin-bottom: 0;
     padding: 0px;
     line-height: 1.1;
+    color: #d4d4d8; /* zinc-300 - same as h2 */
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 3.5rem; /* text-6xl for desktop */
+    }
   }
 
   h2 {
@@ -221,10 +228,17 @@
   }
 
   h5 {
-    font-size: 1.5rem; /* text-2xl */
+    font-size: 1rem; /* text-sm for mobile */
     font-weight: 600;
     margin-top: 0;
     margin-bottom: 0;
+    color: #d4d4d8; /* zinc-300 - much lighter */
+  }
+
+  @media (min-width: 1024px) {
+    h5 {
+      font-size: 1.5rem; /* text-2xl for desktop */
+    }
   }
 
   h6 {

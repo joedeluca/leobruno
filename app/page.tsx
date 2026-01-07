@@ -163,7 +163,7 @@ export default function Home() {
     <div className="w-full h-full">
       <div className="flex flex-col lg:flex-row h-full">
         {/* Main Content - 75% on desktop */}
-        <div className="lg:w-3/4 w-full px-8 py-12">
+        <div className="lg:w-3/4 w-full px-8 pb-12 pt-[.8rem]">
           <PostList posts={filteredPosts} searchQuery={searchQuery} />
         </div>
 

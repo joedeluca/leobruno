@@ -55,21 +55,21 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
               {/* Category | Teaser */}
               <div className="mb-0">
                 <h5
-                  className="text-zinc-500 uppercase tracking-wide mb-0"
+                  className="uppercase tracking-wide mb-0"
                   style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
                 >
                   {post.teaser && <>{post.teaser}</>}
                 </h5>
               </div>
 
-              <h2
-                className="text-5xl leading-tight mb-2 group-hover:text-white transition-colors font-bold"
+              <h1
+                className="leading-tight mb-2 group-hover:text-white transition-colors font-bold"
                 style={{
                   fontFamily: '"Schnyder S", Georgia, serif',
                 }}
               >
                 {highlightText(post.title, searchQuery)}
-              </h2>
+              </h1>
 
               {/* Show match snippet if searching and content was matched */}
               {post.matchSnippet && searchQuery ? (
