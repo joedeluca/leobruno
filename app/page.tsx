@@ -84,7 +84,7 @@ export default function Home() {
     const handleSearch = (event: Event) => {
       const customEvent = event as CustomEvent<{ query: string }>
       const query = customEvent.detail.query
-      
+
       // Store the raw query for highlighting, but don't filter yet
       setSearchQuery(query)
 
@@ -107,7 +107,7 @@ export default function Home() {
       // Only filter after they stop typing for 500ms
       debounceTimer = setTimeout(() => {
         setDebouncedQuery(query)
-        
+
         const fuse = new Fuse(posts, {
           keys: ["title", "excerpt", "category", "content"],
           threshold: 0.15,
@@ -168,8 +168,8 @@ export default function Home() {
         </div>
 
         {/* Sidebar - 25% on desktop (reduced by 30%) */}
-        <div className="lg:w-1/4 w-full lg:border-l lg:border-zinc-800 px-8 py-12">
-          <div className="lg:sticky lg:top-24">
+        <div className="lg:w-1/4 w-full lg:border-l lg:border-zinc-800 px-8 pb-12">
+          <div className="lg:sticky lg:top-[7rem]">
             <Sidebar />
           </div>
         </div>
