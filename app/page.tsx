@@ -1,10 +1,12 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Fuse from "fuse.js"
 import PostList from "@/components/PostList"
 import Sidebar from "@/components/Sidebar"
+import GlobalSearch from "@/components/GlobalSearch"
 import type { Post } from "@/lib/posts"
+import { gsap } from "gsap"
 
 // Extract context around the matched text
 function extractMatchContext(text: string, query: string): string {
@@ -55,6 +57,9 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("")
   const [debouncedQuery, setDebouncedQuery] = useState("")
   const [isLoading, setIsLoading] = useState(true)
+  const [isSearchActive, setIsSearchActive] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const hasAnimated = useRef(false)
 
   useEffect(() => {
     // Fetch posts from API
@@ -75,7 +80,33 @@ export default function Home() {
         console.error("Error fetching posts:", error)
         setIsLoading(false)
       })
+
+    // Clear search when home page mounts (after a small delay to ensure page is rendering)
+    const timer = setTimeout(() => {
+      window.dispatchEvent(new CustomEvent("clearSearch"))
+    }, 50)
+
+    return () => clearTimeout(timer)
   }, [])
+
+  // Fade in animation after content loads (only once)
+  useEffect(() => {
+    if (!isLoading && !hasAnimated.current && containerRef.current) {
+      hasAnimated.current = true
+      gsap.fromTo(
+        containerRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.4, ease: "power2.out" }
+      )
+    }
+  }, [isLoading])
+
+  // Ensure container is visible if already animated
+  useEffect(() => {
+    if (hasAnimated.current && containerRef.current) {
+      gsap.set(containerRef.current, { opacity: 1 })
+    }
+  }, [isSearchActive])
 
   // Listen for search events from header with debounce
   useEffect(() => {
@@ -95,6 +126,7 @@ export default function Home() {
       if (!query.trim()) {
         setDebouncedQuery("")
         setFilteredPosts(posts)
+        setIsSearchActive(false)
         // Update count
         const countEvent = new CustomEvent("updatePostCount", {
           detail: { count: posts.length },
@@ -102,6 +134,9 @@ export default function Home() {
         window.dispatchEvent(countEvent)
         return
       }
+
+      // Mark search as active
+      setIsSearchActive(true)
 
       // Keep showing all posts while user is typing
       // Only filter after they stop typing for 500ms
@@ -160,20 +195,26 @@ export default function Home() {
   }
 
   return (
-    <div className="w-full h-full">
-      <div className="flex flex-col lg:flex-row h-full">
-        {/* Main Content - 75% on desktop */}
-        <div className="lg:w-3/4 w-full px-8 pb-12 pt-[.8rem]">
-          <PostList posts={filteredPosts} searchQuery={searchQuery} />
+    <div ref={containerRef} className="w-full h-full opacity-0">
+      {isSearchActive ? (
+        <div className="px-8 pb-12 pt-[.8rem]">
+          <GlobalSearch />
         </div>
+      ) : (
+        <div className="flex flex-col lg:flex-row h-full">
+          {/* Main Content - 75% on desktop */}
+          <div className="lg:w-3/4 w-full px-8 pb-12 pt-[.8rem]">
+            <PostList posts={filteredPosts} searchQuery={searchQuery} />
+          </div>
 
-        {/* Sidebar - 25% on desktop (reduced by 30%) */}
-        <div className="lg:w-1/4 w-full lg:border-l lg:border-zinc-800 px-8 pb-12">
-          <div className="lg:sticky lg:top-[7rem]">
-            <Sidebar />
+          {/* Sidebar - 25% on desktop (reduced by 30%) */}
+          <div className="lg:w-1/4 w-full lg:border-l lg:border-zinc-800 px-8 pb-12">
+            <div className="lg:sticky lg:top-[7rem]">
+              <Sidebar />
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }

@@ -298,6 +298,80 @@
     margin-top: 0rem;
     margin-bottom: 0rem;
   }
+
+  /* Poem link styling */
+  .poem-link {
+    color: #f5c7c9; /* tiepolo-pink-600 */
+    text-decoration: underline;
+    text-decoration-color: rgba(245, 199, 201, 0.7);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .poem-link:hover {
+    color: #e8a8ab; /* tiepolo-pink-700 */
+    text-decoration-color: rgba(232, 168, 171, 1);
+    text-decoration-thickness: 2px;
+  }
+
+  /* Poem display formatting - inspired by Poetry Foundation */
+  .poem-display {
+    font-family: "Graphik", system-ui, sans-serif;
+    color: #18181b; /* zinc-900 - dark text */
+    line-height: 1.8;
+    max-width: 100%;
+  }
+
+  .poem-epigraph {
+    font-size: 0.9375rem; /* 15px - slightly smaller */
+    font-style: italic;
+    color: #a1a1aa; /* zinc-400 - lighter for dark bg */
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .poem-text {
+    margin-bottom: 2rem;
+  }
+
+  .poem-line-wrapper {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0;
+  }
+
+  .poem-line-number {
+    color: #71717a; /* zinc-500 */
+    font-size: 0.875rem; /* 14px */
+    min-width: 2rem;
+    text-align: right;
+    user-select: none;
+    flex-shrink: 0;
+    padding-right: 1rem; /* Space between number and text */
+    line-height: 1.8; /* Match poem line height */
+  }
+
+  .poem-line {
+    white-space: pre-wrap;
+    margin-bottom: 0;
+    font-size: 1.5rem; /* 24px - matches body text */
+    line-height: 1.8;
+    flex: 1;
+    color: #e4e4e7; /* zinc-200 - lighter text */
+  }
+
+  .poem-line:empty::before {
+    content: "\00A0";
+  }
+
+  .poem-author {
+    font-style: italic;
+    color: #52525b; /* zinc-600 */
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
 }
 
 @layer utilities {

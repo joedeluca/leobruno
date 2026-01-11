@@ -1,0 +1,13 @@
+// Format date from YYYY-MM-DD to "Saturday, Aug 24, 2024"
+export function formatDate(dateString: string): string {
+  const date = new Date(dateString + "T00:00:00") // Add time to avoid timezone issues
+
+  const options: Intl.DateTimeFormatOptions = {
+    weekday: "long",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  }
+
+  return date.toLocaleDateString("en-US", options)
+}

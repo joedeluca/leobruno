@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import HeaderSearchWrapper from "@/components/HeaderSearchWrapper"
+import PoemLinkHandler from "@/components/PoemLinkHandler"
+import Footer from "@/components/Footer"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -35,14 +37,11 @@ export default function RootLayout({
         {/* Main Content */}
         <main className="flex-1 pt-20">{children}</main>
 
+        {/* Poem Slide-out Handler */}
+        <PoemLinkHandler />
+
         {/* Footer */}
-        <footer className="py-8 bg-zinc-950 border-t border-zinc-800">
-          <div className="flex justify-center px-8">
-            <p className="text-sm text-zinc-500">
-              © {new Date().getFullYear()} Leo Bruno. All rights reserved.
-            </p>
-          </div>
-        </footer>
+        <Footer />
       </body>
     </html>
   )
