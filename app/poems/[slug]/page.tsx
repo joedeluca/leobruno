@@ -43,8 +43,10 @@ export default function PoemPage() {
   useEffect(() => {
     if (params.slug) {
       // Only animate if this is a route change, not the initial load
-      const shouldAnimate = currentSlugRef.current !== null && currentSlugRef.current !== params.slug
-      
+      const shouldAnimate =
+        currentSlugRef.current !== null &&
+        currentSlugRef.current !== params.slug
+
       if (shouldAnimate) {
         // Fade out before fetching new poem
         gsap.to(".poem-content", {
@@ -54,7 +56,7 @@ export default function PoemPage() {
           onComplete: () => {
             // Fetch after fade out completes
             fetchPoem()
-          }
+          },
         })
       } else {
         // Initial load or same poem - fetch immediately without animation
@@ -174,7 +176,7 @@ export default function PoemPage() {
                   { label: poem.title, href: "" },
                 ]}
               />
-              
+
               <h1
                 className="text-4xl font-bold text-zinc-50 mb-2"
                 style={{ fontFamily: '"Schnyder S", Georgia, serif' }}

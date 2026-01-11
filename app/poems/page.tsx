@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { gsap } from "gsap"
-import CollectionAccordion from "@/components/CollectionAccordion"
 import InlineAudioPlayer from "@/components/InlineAudioPlayer"
 import GlobalSearch from "@/components/GlobalSearch"
 
@@ -39,6 +38,7 @@ export default function PoemsIndex() {
     Record<string, { standalone: Poem[]; collections: CollectionGroup[] }>
   >({})
   const [isSearchActive, setIsSearchActive] = useState(false)
+  const [hasAnimated, setHasAnimated] = useState(false)
 
   useEffect(() => {
     fetch("/api/poems")
@@ -110,14 +110,19 @@ export default function PoemsIndex() {
   }, [])
 
   useEffect(() => {
-    if (Object.keys(groupedPoems).length > 0) {
-      gsap.fromTo(
-        ".poem-group",
-        { opacity: 0 },
-        { opacity: 1, duration: 0.6, stagger: 0.1, ease: "power2.out" }
-      )
+    if (Object.keys(groupedPoems).length > 0 && !hasAnimated) {
+      setHasAnimated(true)
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          gsap.fromTo(
+            ".poem-group",
+            { opacity: 0 },
+            { opacity: 1, duration: 0.6, stagger: 0.1, ease: "power2.out" }
+          )
+        })
+      })
     }
-  }, [groupedPoems])
+  }, [groupedPoems, hasAnimated])
 
   return (
     <div className="w-full h-full">
@@ -128,84 +133,82 @@ export default function PoemsIndex() {
       ) : (
         <div className="flex flex-col lg:flex-row h-full">
           {/* Main Content - 75% on desktop */}
-          <div className="lg:w-3/4 w-full px-8 pb-12 pt-[.8rem]">
+          <div className="lg:w-3/4 w-full px-8 pb-12 pt-[2rem]">
             <h1
-              className="text-5xl font-bold text-zinc-100 mb-4"
-              style={{ fontFamily: '"Schnyder S", Georgia, serif' }}
+              className="text-zinc-50 font-bold mb-4"
+              style={{
+                fontFamily: '"Schnyder S", Georgia, serif',
+                fontSize: "30px",
+                lineHeight: 1,
+              }}
             >
               Poems
             </h1>
             <p className="text-lg text-zinc-400 mb-12">
-              A collection of poems referenced on the site and in the public
-              domain
+              Poems and poetry collections referenced in the articles. All are
+              public domain.
             </p>
 
             <div className="space-y-12">
               {Object.entries(groupedPoems).map(
                 ([author, { standalone, collections }]) => (
-                  <div key={author} className="poem-group">
+                  <div
+                    key={author}
+                    className="poem-group"
+                    style={{ opacity: 0 }}
+                  >
                     <h2
-                      className="text-2xl font-bold text-zinc-300 mb-4 border-b border-zinc-800 pb-2"
+                      className="normal-text font-bold !text-zinc-100 mb-4 border-b border-zinc-800 pb-2"
                       style={{ fontFamily: '"Schnyder S", Georgia, serif' }}
                     >
                       {author}
                     </h2>
 
-                    <div className="space-y-4">
-                      {/* Collections with multiple poems */}
-                      {collections.map((collection) => {
-                        if (collection.poems.length > 1) {
-                          return (
-                            <CollectionAccordion
-                              key={collection.name}
-                              collectionName={collection.name}
-                              collectionYear={collection.year}
-                              poems={collection.poems}
-                            />
-                          )
-                        }
-                        return null
-                      })}
-
-                      {/* Standalone poems and single-poem collections */}
-                      <ul className="space-y-3 list-none pl-0">
-                        {/* Single poems from collections */}
-                        {collections.map((collection) => {
-                          if (collection.poems.length === 1) {
-                            const poem = collection.poems[0]
-                            return (
+                    <div className="space-y-6">
+                      {/* Collections */}
+                      {collections.map((collection) => (
+                        <div key={collection.name} className="space-y-3">
+                          <h3
+                            className="normal-text font-semibold !text-zinc-300"
+                            style={{
+                              fontFamily: '"Schnyder S", Georgia, serif',
+                            }}
+                          >
+                            {collection.name}{" "}
+                            <span className="text-base text-zinc-600">
+                              ({collection.year})
+                            </span>
+                          </h3>
+                          <ul className="space-y-2 list-none pl-4">
+                            {collection.poems.map((poem) => (
                               <li key={poem.slug} className="pl-0">
                                 <Link
                                   href={`/poems/${poem.slug}`}
-                                  className="group flex items-baseline justify-between hover:text-zinc-100 transition-colors normal-text"
+                                  className="text-zinc-400 hover:text-zinc-100 transition-colors normal-text"
                                 >
-                                  <span className="text-zinc-400 group-hover:text-zinc-100 transition-colors">
-                                    {poem.title}
-                                  </span>
-                                  {poem.collection && (
-                                    <span className="text-sm text-zinc-600 italic ml-4">
-                                      {poem.collection}
-                                    </span>
-                                  )}
+                                  {poem.title}
                                 </Link>
                               </li>
-                            )
-                          }
-                          return null
-                        })}
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
 
-                        {/* Standalone poems without collection */}
-                        {standalone.map((poem) => (
-                          <li key={poem.slug} className="pl-0">
-                            <Link
-                              href={`/poems/${poem.slug}`}
-                              className="text-zinc-400 hover:text-zinc-100 transition-colors normal-text"
-                            >
-                              {poem.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                      {/* Standalone poems */}
+                      {standalone.length > 0 && (
+                        <ul className="space-y-2 list-none pl-0">
+                          {standalone.map((poem) => (
+                            <li key={poem.slug} className="pl-0">
+                              <Link
+                                href={`/poems/${poem.slug}`}
+                                className="text-zinc-400 hover:text-zinc-100 transition-colors normal-text"
+                              >
+                                {poem.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
                 )

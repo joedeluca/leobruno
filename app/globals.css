@@ -168,7 +168,7 @@
   p {
     font-size: 1.5rem;
     line-height: 1.6;
-    color: #71717a; /* zinc-500 */
+    color: #a1a1aa; /* zinc-400 */
   }
 
   /* Remove top margin from first paragraph but keep same color */
@@ -177,7 +177,7 @@
   article > p:first-of-type,
   div > p:first-of-type {
     margin-top: 0;
-    color: #71717a; /* zinc-500 */
+    color: #a1a1aa; /* zinc-500 */
   }
 
   /* Global heading styling */
@@ -189,7 +189,7 @@
   h6 {
     font-family: "Schnyder S", Georgia, serif;
     font-weight: 700;
-    color: #71717a; /* zinc-500 */
+    color: #a1a1aa; /* zinc-500 */
   }
 
   h1 {
@@ -218,7 +218,7 @@
     font-size: 2.25rem; /* text-4xl pus */
     margin-top: 0rem;
     margin-bottom: 1rem;
-    color: #71717a; /* zinc-500 */
+    color: #a1a1aa; /* zinc-500 */
   }
 
   h4 {
@@ -251,7 +251,7 @@
   ul,
   ol {
     font-size: 1.5rem;
-    color: #71717a; /* zinc-500 */
+    color: #a1a1aa; /* zinc-500 */
     margin-top: 1.25em;
     margin-bottom: 1.25em;
     padding-left: 2rem;
@@ -259,14 +259,14 @@
 
   li {
     font-size: 1.5rem;
-    color: #71717a; /* zinc-500 */
+    color: #a1a1aa; /* zinc-500 */
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
 
   /* Global text styling */
   strong {
-    color: #71717a; /* zinc-500 */
+    color: #a1a1aa; /* zinc-500 */
     font-weight: 600;
   }
 
@@ -275,7 +275,7 @@
   }
 
   a {
-    color: #71717a; /* zinc-500 */
+    color: #a1a1aa; /* zinc-500 */
     text-decoration: none;
   }
 
@@ -285,7 +285,7 @@
 
   blockquote {
     font-size: 1.5rem;
-    color: #71717a; /* zinc-500 */
+    color: #a1a1aa; /* zinc-500 */
     border-left: 4px solid rgb(113 113 122);
     padding-left: 1.5rem;
     font-style: italic;
@@ -343,7 +343,7 @@
   }
 
   .poem-line-number {
-    color: #71717a; /* zinc-500 */
+    color: #a1a1aa; /* zinc-500 */
     font-size: 0.875rem; /* 14px */
     min-width: 2rem;
     text-align: right;

@@ -14,9 +14,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
     <nav className="flex items-center space-x-2 text-sm mb-6">
       {items.map((item, index) => (
         <div key={item.href} className="flex items-center">
-          {index > 0 && (
-            <span className="text-zinc-600 mx-2">/</span>
-          )}
+          {index > 0 && <span className="text-zinc-600 mx-2">/</span>}
           {index === items.length - 1 ? (
             <span
               className="text-zinc-400"
