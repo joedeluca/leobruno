@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react"
 import { useParams } from "next/navigation"
-import Link from "next/link"
 import { gsap } from "gsap"
 import PoemDisplay from "@/components/PoemDisplay"
 import PoemAudioPlayer from "@/components/PoemAudioPlayer"
+import GlobalSearch from "@/components/GlobalSearch"
 
 interface Poem {
   slug: string
@@ -33,6 +33,7 @@ export default function PoemPage() {
   const params = useParams()
   const [poem, setPoem] = useState<Poem | null>(null)
   const [showLineNumbers, setShowLineNumbers] = useState(false)
+  const [isSearchActive, setIsSearchActive] = useState(false)
 
   useEffect(() => {
     if (params.slug) {
@@ -40,14 +41,38 @@ export default function PoemPage() {
         .then((res) => res.json())
         .then((data) => setPoem(data.poem))
     }
+
+    // Clear search when individual poem page mounts
+    const timer = setTimeout(() => {
+      window.dispatchEvent(new CustomEvent("clearSearch"))
+    }, 50)
+
+    return () => clearTimeout(timer)
   }, [params.slug])
+
+  // Listen for search queries from header
+  useEffect(() => {
+    const handleSearchQuery = (event: Event) => {
+      const customEvent = event as CustomEvent<{ query: string }>
+      const searchQuery = customEvent.detail.query
+
+      if (searchQuery.trim()) {
+        setIsSearchActive(true)
+      } else {
+        setIsSearchActive(false)
+      }
+    }
+
+    window.addEventListener("searchQuery", handleSearchQuery)
+    return () => window.removeEventListener("searchQuery", handleSearchQuery)
+  }, [])
 
   useEffect(() => {
     if (poem) {
       gsap.fromTo(
         ".poem-content",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+        { opacity: 0 },
+        { opacity: 1, duration: 0.8, ease: "power2.out" }
       )
     }
   }, [poem])
@@ -55,7 +80,7 @@ export default function PoemPage() {
   if (!poem) {
     return (
       <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
-        <div className="text-zinc-400">Loading...</div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-tiepolo-pink-800"></div>
       </div>
     )
   }
@@ -67,53 +92,52 @@ export default function PoemPage() {
 
   return (
     <div className="min-h-screen bg-zinc-950">
-      <div className="max-w-3xl mx-auto px-6 py-16">
-        <Link
-          href="/poems"
-          className="inline-flex items-center text-zinc-400 hover:text-zinc-200 transition-colors mb-8"
-        >
-          ← Back to Poems
-        </Link>
-
-        <div className="poem-content">
-          <h1
-            className="text-4xl font-bold text-zinc-50 mb-2"
-            style={{ fontFamily: '"Schnyder S", Georgia, serif' }}
-          >
-            {poem.title}
-          </h1>
-
-          <div className="flex items-center gap-3 mb-2">
-            <div
-              className="text-sm text-zinc-300 uppercase tracking-wide"
-              style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+      {isSearchActive ? (
+        <div className="px-8 pb-12 pt-16">
+          <GlobalSearch />
+        </div>
+      ) : (
+        <div className="max-w-full px-8 py-16">
+          <div className="poem-content">
+            <h1
+              className="text-4xl font-bold text-zinc-50 mb-2"
+              style={{ fontFamily: '"Schnyder S", Georgia, serif' }}
             >
-              BY {poem.author.toUpperCase()}
-            </div>
-            <button
-              onClick={() => setShowLineNumbers(!showLineNumbers)}
-              className="text-xs text-zinc-400 hover:text-tiepolo-pink-500 transition-colors uppercase tracking-wide"
-              style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
-            >
-              {showLineNumbers ? "Hide" : "Show"} Line Numbers
-            </button>
-          </div>
+              {poem.title}
+            </h1>
 
-          {poem.collection && (
-            <div className="text-sm text-zinc-400 italic mb-8">
-              from {poem.collection} ({poem.date})
+            <div className="flex items-center gap-3 mb-2">
+              <div
+                className="text-sm text-zinc-300 uppercase tracking-wide"
+                style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+              >
+                BY {poem.author.toUpperCase()}
+              </div>
+              <button
+                onClick={() => setShowLineNumbers(!showLineNumbers)}
+                className="text-xs text-zinc-400 hover:text-tiepolo-pink-500 transition-colors uppercase tracking-wide"
+                style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+              >
+                {showLineNumbers ? "Hide" : "Show"} Line Numbers
+              </button>
             </div>
-          )}
 
-          <div className="mt-8">
-            <PoemAudioPlayer audioUrl={audioUrl} />
-            <PoemDisplay
-              content={contentWithEpigraph}
-              showLineNumbers={showLineNumbers}
-            />
+            {poem.collection && (
+              <div className="text-sm text-zinc-400 italic mb-8">
+                from {poem.collection} ({poem.date})
+              </div>
+            )}
+
+            <div className="mt-8">
+              <PoemAudioPlayer audioUrl={audioUrl} />
+              <PoemDisplay
+                content={contentWithEpigraph}
+                showLineNumbers={showLineNumbers}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }

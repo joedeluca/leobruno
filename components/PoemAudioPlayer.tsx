@@ -38,10 +38,42 @@ export default function PoemAudioPlayer({ audioUrl }: PoemAudioPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
+  const [audioExists, setAudioExists] = useState(false)
+  const [isChecking, setIsChecking] = useState(true)
   const audioRef = useRef<HTMLAudioElement>(null)
 
   // Extract title and author from filename
   const poemInfo = audioUrl ? parseAudioFilename(audioUrl) : null
+
+  // Check if audio file exists
+  useEffect(() => {
+    if (!audioUrl) {
+      setIsChecking(false)
+      return
+    }
+
+    const audio = new Audio()
+    audio.src = audioUrl
+
+    const handleCanPlay = () => {
+      setAudioExists(true)
+      setIsChecking(false)
+    }
+
+    const handleError = () => {
+      setAudioExists(false)
+      setIsChecking(false)
+    }
+
+    audio.addEventListener("canplay", handleCanPlay)
+    audio.addEventListener("error", handleError)
+    audio.load()
+
+    return () => {
+      audio.removeEventListener("canplay", handleCanPlay)
+      audio.removeEventListener("error", handleError)
+    }
+  }, [audioUrl])
 
   useEffect(() => {
     const audio = audioRef.current
@@ -100,8 +132,8 @@ export default function PoemAudioPlayer({ audioUrl }: PoemAudioPlayerProps) {
     }
   }
 
-  // If no audio URL provided, don't render anything
-  if (!audioUrl) return null
+  // If no audio URL provided or file doesn't exist, don't render anything
+  if (!audioUrl || isChecking || !audioExists) return null
 
   return (
     <div className="mb-6 p-4 bg-zinc-900/50 rounded-lg border border-zinc-800">

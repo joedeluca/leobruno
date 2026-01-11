@@ -31,7 +31,7 @@ export function getAllPoems(): Poem[] {
         date: data.date,
         collection: data.collection,
         epigraph: data.epigraph,
-        content,
+        content: content.trim(),
       }
     })
 
@@ -56,7 +56,7 @@ export function getPoemBySlug(slug: string): Poem | null {
       date: data.date,
       collection: data.collection,
       epigraph: data.epigraph,
-      content,
+      content: content.trim(),
     }
   } catch (error) {
     return null

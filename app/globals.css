@@ -378,4 +378,8 @@
   .highlight {
     @apply bg-tiepolo-sky-600/30 text-tiepolo-sky-500 rounded px-0.5;
   }
+
+  .normal-text {
+    @apply text-2xl leading-relaxed text-zinc-500;
+  }
 }

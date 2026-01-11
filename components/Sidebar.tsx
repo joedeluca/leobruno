@@ -14,6 +14,7 @@ const getRandomPhoto = () => {
 export default function Sidebar() {
   // Use lazy initialization to pick photo once on mount
   const [currentPhoto] = useState(getRandomPhoto)
+  const [showAbout, setShowAbout] = useState(false)
 
   return (
     <aside className="space-y-8">
@@ -29,7 +30,7 @@ export default function Sidebar() {
           />
         </div>
 
-        <p className="text-zinc-400 text-base leading-relaxed mb-8">
+        <p className="text-zinc-400 text-base leading-relaxed mb-4">
           <h3
             className="text-xs uppercase tracking-wider text-zinc-500 mb-3"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
@@ -40,6 +41,22 @@ export default function Sidebar() {
           stuck in the tops of skulls. You can also imagine a lot of ink wells,
           ravens feathers, and about a million dark and stormy nights.
         </p>
+
+        {/* <div className="mb-8">
+          <button
+            onClick={() => setShowAbout(!showAbout)}
+            className="text-zinc-500 hover:text-zinc-300 transition-colors text-sm underline underline-offset-2"
+          >
+            {showAbout ? "Close" : "More"}
+          </button>
+
+          {showAbout && (
+            <p className="text-zinc-400 text-base leading-relaxed mt-4">
+              I like to create characters and tell their story. All you want to
+              know about me is in them. I suggest my novel Reliquary.
+            </p>
+          )}
+        </div> */}
 
         <div className="border-t border-zinc-800 pt-6">
           <h3

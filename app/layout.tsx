@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import HeaderSearchWrapper from "@/components/HeaderSearchWrapper"
+import HeaderLogo from "@/components/HeaderLogo"
 import PoemLinkHandler from "@/components/PoemLinkHandler"
 import Footer from "@/components/Footer"
-import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Leo Bruno - Writer & Painter",
@@ -22,11 +22,7 @@ export default function RootLayout({
         <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 h-20">
           <div className="h-full flex items-center">
             <div className="px-8 flex-shrink-0">
-              <Link href="/">
-                <h1 className="!text-[30px] text-tiepolo-pink-600 hover:text-tiepolo-pink-700 transition-colors cursor-pointer">
-                  Leo Bruno
-                </h1>
-              </Link>
+              <HeaderLogo />
             </div>
             <div className="flex-1 h-full border-l border-zinc-800">
               <HeaderSearchWrapper />
