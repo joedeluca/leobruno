@@ -320,7 +320,7 @@
   .poem-display {
     font-family: "Graphik", system-ui, sans-serif;
     color: #18181b; /* zinc-900 - dark text */
-    line-height: 1.8;
+    line-height: 1.4;
     max-width: 100%;
   }
 
@@ -329,7 +329,7 @@
     font-style: italic;
     color: #a1a1aa; /* zinc-400 - lighter for dark bg */
     margin-bottom: 2rem;
-    line-height: 1.6;
+    line-height: 1.4;
   }
 
   .poem-text {
@@ -350,16 +350,22 @@
     user-select: none;
     flex-shrink: 0;
     padding-right: 1rem; /* Space between number and text */
-    line-height: 1.8; /* Match poem line height */
+    line-height: 1.4; /* Match poem line height */
   }
 
   .poem-line {
     white-space: pre-wrap;
     margin-bottom: 0;
     font-size: 1.5rem; /* 24px - matches body text */
-    line-height: 1.8;
+    line-height: 1.4;
     flex: 1;
     color: #e4e4e7; /* zinc-200 - lighter text */
+  }
+
+  /* Reduce spacing for blank lines (stanza breaks) */
+  .poem-line-wrapper:has(.poem-line:empty) {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .poem-line:empty::before {

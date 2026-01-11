@@ -8,6 +8,7 @@ import PoemDisplay from "@/components/PoemDisplay"
 import PoemAudioPlayer from "@/components/PoemAudioPlayer"
 import GlobalSearch from "@/components/GlobalSearch"
 import Breadcrumb from "@/components/Breadcrumb"
+import ToolsDropdown from "@/components/ToolsDropdown"
 
 interface Poem {
   slug: string
@@ -36,6 +37,7 @@ export default function PoemPage() {
   const [poem, setPoem] = useState<Poem | null>(null)
   const [collectionPoems, setCollectionPoems] = useState<Poem[]>([])
   const [showLineNumbers, setShowLineNumbers] = useState(false)
+  const [showAudioPlayer, setShowAudioPlayer] = useState(false)
   const [isSearchActive, setIsSearchActive] = useState(false)
   const currentSlugRef = useRef<string | null>(null)
   const isInitialLoadRef = useRef(true)
@@ -169,13 +171,26 @@ export default function PoemPage() {
             } w-full px-8 pb-12 pt-[.8rem]`}
           >
             <div className="poem-content" style={{ opacity: 0 }}>
-              <Breadcrumb
-                items={[
-                  { label: "Home", href: "/" },
-                  { label: "Poems", href: "/poems" },
-                  { label: poem.title, href: "" },
-                ]}
-              />
+              <div className="flex items-start justify-between mb-6">
+                <Breadcrumb
+                  items={[
+                    { label: "Home", href: "/" },
+                    { label: "Poems", href: "/poems" },
+                    { label: poem.title, href: "" },
+                  ]}
+                />
+                <ToolsDropdown
+                  showLineNumbers={showLineNumbers}
+                  showAudioPlayer={showAudioPlayer}
+                  onToggleLineNumbers={() =>
+                    setShowLineNumbers(!showLineNumbers)
+                  }
+                  onToggleAudioPlayer={() =>
+                    setShowAudioPlayer(!showAudioPlayer)
+                  }
+                  align="right"
+                />
+              </div>
 
               <h1
                 className="text-4xl font-bold text-zinc-50 mb-2"
@@ -191,13 +206,6 @@ export default function PoemPage() {
                 >
                   BY {poem.author.toUpperCase()}
                 </div>
-                <button
-                  onClick={() => setShowLineNumbers(!showLineNumbers)}
-                  className="text-xs text-zinc-400 hover:text-tiepolo-pink-500 transition-colors uppercase tracking-wide"
-                  style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
-                >
-                  {showLineNumbers ? "Hide" : "Show"} Line Numbers
-                </button>
               </div>
 
               {poem.collection && (
@@ -207,7 +215,7 @@ export default function PoemPage() {
               )}
 
               <div className="mt-8">
-                <PoemAudioPlayer audioUrl={audioUrl} />
+                {showAudioPlayer && <PoemAudioPlayer audioUrl={audioUrl} />}
                 <PoemDisplay
                   content={contentWithEpigraph}
                   showLineNumbers={showLineNumbers}
