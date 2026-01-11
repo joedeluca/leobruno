@@ -36,9 +36,9 @@ export default function Sidebar() {
           >
             Welcome
           </h3>
-          I do a lot of reading writing in dark rooms illuminated by candles
+          I do a lot of reading and writing in dark rooms illuminated by candles
           stuck in the tops of skulls. You can also imagine a lot of ink wells,
-          and ravens feathers.
+          ravens feathers, and about a million dark and stormy nights.
         </p>
 
         <div className="border-t border-zinc-800 pt-6">
