@@ -76,18 +76,19 @@ export default function Sidebar() {
       })
 
       if (!response.ok) {
-        const error = await response.json()
-        console.error("Failed to send message:", error)
-        setErrorMessage(error.error || "Failed to send message")
+        try {
+          const error = await response.json()
+          setErrorMessage(error.error || "Failed to send message")
+        } catch {
+          setErrorMessage("Failed to send message")
+        }
         setSendStatus("error")
         return
       }
 
       setSendStatus("success")
       setMessage("")
-      // Don't reset sendStatus - keep it as "success" until they type again
     } catch (error) {
-      console.error("Error sending message:", error)
       setErrorMessage("Network error - please try again")
       setSendStatus("error")
     } finally {
@@ -160,14 +161,23 @@ export default function Sidebar() {
                 {wordCount} {wordCount === 1 ? "word" : "words"} · {charCount}/
                 {MAX_CHARS} characters
               </span>
-              <textarea
-                value={message}
-                onChange={handleMessageChange}
-                placeholder="Message here.... Can be very long. Write elsewhere and paste if you like."
-                className="w-full h-32 px-4 py-3 bg-zinc-900 border border-zinc-800 text-zinc-300 placeholder-zinc-600 resize-none focus:outline-none focus:border-zinc-700 transition-colors"
-                style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
-                maxLength={MAX_CHARS}
-              />
+              <div className="relative">
+                <textarea
+                  value={message}
+                  onChange={handleMessageChange}
+                  placeholder="Message here.... If you have a lot to say, write elsewhere and paste."
+                  className="w-full h-32 px-4 py-3 bg-zinc-900 border border-zinc-800 text-zinc-300 placeholder-zinc-600 resize-none focus:outline-none focus:border-zinc-700 transition-colors"
+                  style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+                  maxLength={MAX_CHARS}
+                  spellCheck={false}
+                  disabled={isSending}
+                />
+                {isSending && (
+                  <div className="absolute inset-0 bg-zinc-900/80 flex items-center justify-center">
+                    <div className="w-8 h-8 border-2 border-tiepolo-pink-700 border-t-transparent rounded-full animate-spin"></div>
+                  </div>
+                )}
+              </div>
 
               {sendStatus === "error" && errorMessage && (
                 <p
