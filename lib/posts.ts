@@ -16,6 +16,11 @@ export interface Post {
   matchSnippet?: string
   teaser?: string
   teaserShort?: string
+  heroImage?: string
+  heroImageSize?: "cover" | "contain" | "auto"
+  heroImagePosition?: string
+  heroImageHeight?: string
+  heroContentStart?: string
 }
 
 const postsDirectory = path.join(process.cwd(), "posts")
@@ -49,6 +54,11 @@ export function getSortedPostsData(): Post[] {
           teaser: matterResult.data.teaser || "",
           teaserShort:
             matterResult.data.teaserShort || matterResult.data.teaser || "",
+          heroImage: matterResult.data.heroImage || "",
+          heroImageSize: matterResult.data.heroImageSize || "cover",
+          heroImagePosition: matterResult.data.heroImagePosition || "center",
+          heroImageHeight: matterResult.data.heroImageHeight || "60vh",
+          heroContentStart: matterResult.data.heroContentStart || "",
         }
       })
     allPosts.push(...blogPosts)
@@ -93,6 +103,11 @@ export function getSortedPostsDataWithContent(): Post[] {
           teaser: matterResult.data.teaser || "",
           teaserShort:
             matterResult.data.teaserShort || matterResult.data.teaser || "",
+          heroImage: matterResult.data.heroImage || "",
+          heroImageSize: matterResult.data.heroImageSize || "cover",
+          heroImagePosition: matterResult.data.heroImagePosition || "center",
+          heroImageHeight: matterResult.data.heroImageHeight || "60vh",
+          heroContentStart: matterResult.data.heroContentStart || "",
         }
       })
     allPosts.push(...blogPosts)
@@ -136,6 +151,11 @@ export async function getPostData(slug: string): Promise<Post> {
     content: contentHtml,
     readTime: `${readTime} min read`,
     teaser: matterResult.data.teaser || "",
+    heroImage: matterResult.data.heroImage || "",
+    heroImageSize: matterResult.data.heroImageSize || "cover",
+    heroImagePosition: matterResult.data.heroImagePosition || "center",
+    heroImageHeight: matterResult.data.heroImageHeight || "60vh",
+    heroContentStart: matterResult.data.heroContentStart || "",
   }
 }
 

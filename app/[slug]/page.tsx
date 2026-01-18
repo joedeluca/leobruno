@@ -14,6 +14,11 @@ interface Post {
   content?: string
   readTime?: string
   teaser?: string
+  heroImage?: string
+  heroImageSize?: "cover" | "contain" | "auto"
+  heroImagePosition?: string
+  heroImageHeight?: string
+  heroContentStart?: string
 }
 
 export default function Post() {
@@ -103,14 +108,54 @@ export default function Post() {
     return null
   }
 
+  const showHeroImage = !!post.heroImage
+
+  // Calculate content start position
+  const getContentPaddingTop = () => {
+    if (!showHeroImage) return undefined
+
+    // Use explicit heroContentStart if provided
+    if (post.heroContentStart) {
+      return post.heroContentStart
+    }
+
+    // Otherwise calculate: imageHeight - 20vh for overlap with gradient
+    const height = post.heroImageHeight || "60vh"
+    return `calc(${height} - 20vh)`
+  }
+
   return (
-    <div ref={containerRef} className="w-full min-h-screen">
+    <div ref={containerRef} className="w-full min-h-screen relative">
+      {/* Hero Image - Shows when heroImage is set in markdown frontmatter */}
+      {showHeroImage && post.heroImage && (
+        <div
+          className="absolute top-0 left-0 w-full"
+          style={{
+            height: post.heroImageHeight || "60vh",
+            backgroundImage: `url(${post.heroImage})`,
+            backgroundSize: post.heroImageSize || "cover",
+            backgroundPosition: post.heroImagePosition || "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          {/* Gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/50 to-zinc-950" />
+        </div>
+      )}
+
       {isSearchActive ? (
-        <div className="px-8 pb-12 pt-[.8rem]">
+        <div className="px-8 pb-12 pt-[.8rem] relative z-10">
           <GlobalSearch />
         </div>
       ) : (
-        <div className="max-w-4xl mx-auto px-8 py-12">
+        <div
+          className={`max-w-4xl px-8 lg:px-0 lg:ml-[calc(theme(spacing.8)*2+12ch+theme(spacing.6))] lg:mr-8 ${
+            showHeroImage ? "pb-12" : "py-12"
+          } relative z-10`}
+          style={{
+            paddingTop: getContentPaddingTop(),
+          }}
+        >
           {/* Article header */}
           <header className="mb-12">
             <h5

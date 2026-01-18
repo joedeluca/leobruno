@@ -5,11 +5,12 @@ date: "2026-01-11"
 excerpt: "Literary modernism was never singular. Eliot and Williams despised each other's work. One built elaborate structures from fragments of dead civilizations. The other insisted on the plain thing itself—wheelbarrows, rain, chickens. The Red Wheelbarrow wasn't just a poem. It was a manifesto against everything Eliot stood for."
 teaser: "Eliot versus Williams"
 teaserShort: "Two modernisms"
+heroImage: "/pound-venezia.webp"
+heroImageSize: "cover"
+heroImagePosition: "50% 25%"
+heroImageHeight: "40vh"
+heroContentStart: "35vh"
 ---
-
-sweeny shifting -- origen a theologen. subtle schools of philosopher
-
-## The Plurality of Modernism
 
 There really was never any such thing as "literary modernism". It was always modernisms. A plural.
 
@@ -17,7 +18,7 @@ Frank Kermode understood this. Paleo-modernism. Neo-modernism. Different project
 
 Eliot and Williams hated each other and their work. This wasn't professional rivalry. This was fundamental disagreement about what poetry could be, should be, must be.
 
-## Williams and The Red Wheelbarrow
+### Williams and The Red Wheelbarrow
 
 Williams wrote <span class="poem-link" data-poem-id="the-red-wheelbarrow">The Red Wheelbarrow</span> as an assault on Eliot's poetics.
 
@@ -31,15 +32,13 @@ But read it as exclamation. Read it with the emphasis italicized: _So much depen
 
 A more complex syntax emerges. An urgency. A stakes-raising that Eliot's elaborate constructions never quite achieve.
 
-## The Polemics
+### The Polemics
 
 Williams said: "Better to deprive birds of their song than to call them all nightingales."
 
 Translation: Better to have no poetry at all than to pretend every chirp is a reference to Keats.
 
 Do not say, Tom Eliot, that my poems are not poetry.
-
-## The Self-Justifying Poem
 
 So much depends on the poem of the red wheelbarrow. It depends on itself. A defense of itself.
 
