@@ -2,7 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
+import gsap from "gsap"
 
 const photos = ["/joedeluca0.jpg", "/joedeluca1.jpg"]
 
@@ -14,7 +15,85 @@ const getRandomPhoto = () => {
 export default function Sidebar() {
   // Use lazy initialization to pick photo once on mount
   const [currentPhoto] = useState(getRandomPhoto)
-  const [showAbout, setShowAbout] = useState(false)
+  const [showContact, setShowContact] = useState(false)
+  const [message, setMessage] = useState("")
+  const [isSending, setIsSending] = useState(false)
+  const [sendStatus, setSendStatus] = useState<"idle" | "success" | "error">(
+    "idle"
+  )
+  const [errorMessage, setErrorMessage] = useState("")
+  const contactSectionRef = useRef<HTMLDivElement>(null)
+
+  const MAX_CHARS = 10000 // Ridiculously high but safe
+  const wordCount = message
+    .trim()
+    .split(/\s+/)
+    .filter((word) => word.length > 0).length
+  const charCount = message.length
+
+  // GSAP animation for contact section
+  useEffect(() => {
+    if (!contactSectionRef.current) return
+
+    if (showContact) {
+      gsap.to(contactSectionRef.current, {
+        opacity: 1,
+        duration: 0.4,
+        ease: "power2.out",
+      })
+    } else {
+      gsap.to(contactSectionRef.current, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in",
+      })
+    }
+  }, [showContact])
+
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value.slice(0, MAX_CHARS))
+    // Reset status when user starts typing a new message
+    if (sendStatus === "success" || sendStatus === "error") {
+      setSendStatus("idle")
+      setErrorMessage("")
+    }
+  }
+
+  const handleSend = async () => {
+    if (!message.trim() || isSending) return
+
+    setIsSending(true)
+    setSendStatus("idle")
+    setErrorMessage("")
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message }),
+      })
+
+      if (!response.ok) {
+        const error = await response.json()
+        console.error("Failed to send message:", error)
+        setErrorMessage(error.error || "Failed to send message")
+        setSendStatus("error")
+        return
+      }
+
+      setSendStatus("success")
+      setMessage("")
+      // Don't reset sendStatus - keep it as "success" until they type again
+    } catch (error) {
+      console.error("Error sending message:", error)
+      setErrorMessage("Network error - please try again")
+      setSendStatus("error")
+    } finally {
+      setIsSending(false)
+    }
+  }
 
   return (
     <aside className="space-y-8">
@@ -40,34 +119,96 @@ export default function Sidebar() {
           I do a lot of reading and writing in dark rooms illuminated by candles
           stuck in the tops of skulls. Add to that a lot of ink wells, ravens
           feathers, and about a million dark and stormy nights and you've got me
-          pretty well mapped. I'm Leo. All of the content here is 100% me. No AI
-          stuff. No personal assistant ghost writers. And certainly no ideas
-          generated from Internet slop.
-        </p>
-        <p>
-          As a matter of personal preference, you can't comment here. But you
-          can contact me semi-directly. Note that I do not welcome thoughtful
-          discussions about anything, particularly <i>themes</i> or <i>craft</i>
-          or especially <i>me</i>. I do welcome unadulterated fan mail and
-          pictures of wild animals and domesticated herd animals (especially
-          donkeys).
+          pretty well mapped. I'm Leo.
         </p>
 
-        {/* <div className="mb-8">
-          <button
-            onClick={() => setShowAbout(!showAbout)}
-            className="text-zinc-500 hover:text-zinc-300 transition-colors text-sm underline underline-offset-2"
+        <button
+          onClick={() => setShowContact(!showContact)}
+          className="text-zinc-500 hover:text-zinc-300 transition-colors text-sm mb-4 flex items-center gap-2"
+          style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+        >
+          {showContact ? "Hide" : "Read More & Contact"}
+          <svg
+            className={`w-3 h-3 transition-transform ${
+              showContact ? "rotate-180" : ""
+            }`}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
           >
-            {showAbout ? "Close" : "More"}
-          </button>
+            <path d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
 
-          {showAbout && (
-            <p className="text-zinc-400 text-base leading-relaxed mt-4">
-              I like to create characters and tell their story. All you want to
-              know about me is in them. I suggest my novel Reliquary.
+        {showContact && (
+          <div ref={contactSectionRef} style={{ opacity: 0 }}>
+            <p className="text-zinc-400 text-base leading-relaxed mb-4">
+              All of the content here is 100% me. No AI stuff. No personal
+              assistant ghost writers.
             </p>
-          )}
-        </div> */}
+            <p className="text-zinc-400 text-base leading-relaxed mb-4">
+              As a matter of personal preference, you can't comment here. But
+              you can contact me semi-directly. Note that I do not welcome
+              thoughtful discussions about anything, particularly <i>themes</i>
+              or craft or especially me. I do welcome fan mail.
+            </p>
+
+            <div className="mt-6 space-y-3">
+              <span
+                className="text-xs text-zinc-600"
+                style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+              >
+                {wordCount} {wordCount === 1 ? "word" : "words"} · {charCount}/
+                {MAX_CHARS} characters
+              </span>
+              <textarea
+                value={message}
+                onChange={handleMessageChange}
+                placeholder="Your fan mail here..."
+                className="w-full h-32 px-4 py-3 bg-zinc-900 border border-zinc-800 text-zinc-300 placeholder-zinc-600 resize-none focus:outline-none focus:border-zinc-700 transition-colors"
+                style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+                maxLength={MAX_CHARS}
+              />
+
+              {sendStatus === "error" && errorMessage && (
+                <p
+                  className="text-xs text-red-400"
+                  style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+                >
+                  {errorMessage}
+                </p>
+              )}
+
+              <div className="flex">
+                <button
+                  onClick={handleSend}
+                  disabled={wordCount < 3 || isSending}
+                  className={`px-4 py-3 w-full text-sm font-medium transition-all ${
+                    wordCount < 3 || isSending
+                      ? "bg-zinc-800 text-zinc-600 cursor-not-allowed"
+                      : sendStatus === "success"
+                      ? "bg-green-900 text-green-300"
+                      : sendStatus === "error"
+                      ? "bg-red-900 text-red-300"
+                      : "bg-tiepolo-pink-700 text-zinc-950 hover:bg-tiepolo-pink-600"
+                  }`}
+                  style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+                >
+                  {isSending
+                    ? "Sending..."
+                    : sendStatus === "success"
+                    ? "Sent!"
+                    : sendStatus === "error"
+                    ? "Failed - Try again"
+                    : wordCount < 3
+                    ? "3 Word Minimum"
+                    : "Send"}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="border-t border-zinc-800 pt-6">
           <h3
