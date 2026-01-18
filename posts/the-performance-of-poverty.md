@@ -1,6 +1,7 @@
 ---
 title: "The Performance of Poverty: Francis and the Double Standard"
 date: "2024-11-15"
+category: "Field Notes"
 excerpt: "There's something that bothers me about St. Francis of Assisi, and it took me years to articulate what it was. Francis stripped naked in the public square, returning his father's clothes and money. He kissed lepers. He refused to touch coins. He preached to birds. The whole theatrical production of holy poverty—highly visible, carefully staged, obsessively documented. But here's the thing: Francis chose poverty. He could walk away from it any time. The actual poor couldn't."
 teaser: "When poverty becomes performance art."
 ---

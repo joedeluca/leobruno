@@ -12,6 +12,8 @@ heroImageSize: "contain" # Optional: cover (default), contain, auto
 heroImagePosition: "center top" # Optional: any CSS position value
 heroImageHeight: "50vh" # Optional: any CSS height value (default 60vh)
 heroContentStart: "25vh" # Optional: where content starts (default: auto-calculated)
+teaserFontSize: "clamp(0.875rem, 2vw, 1.5rem)" # Optional: teaser font size
+titleFontSize: "clamp(2rem, 5vw, 4rem)" # Optional: title font size
 ---
 ```
 
@@ -133,6 +135,102 @@ heroContentStart: "25vh" # Content starts at 25vh (not auto-calculated 20vh)
 ```
 
 This gives you pixel-perfect control over the text placement relative to your image composition.
+
+## teaserFontSize & titleFontSize
+
+Controls the font sizes for the teaser (h5) and title (h1) headlines. Uses fluid typography for responsive scaling.
+
+### Default Values:
+
+```yaml
+teaserFontSize: "clamp(0.875rem, 2vw, 1.5rem)" # h5/teaser
+titleFontSize: "clamp(2rem, 5vw, 4rem)" # h1/title
+```
+
+### How It Works:
+
+Each uses CSS `clamp()` with three values:
+
+1. **Minimum size** - Smallest the text will be on tiny screens
+2. **Preferred size** - Scales with viewport width (vw)
+3. **Maximum size** - Largest the text will be on huge screens
+
+### Examples:
+
+**Smaller Headlines:**
+
+```yaml
+teaserFontSize: "clamp(0.75rem, 1.5vw, 1rem)"
+titleFontSize: "clamp(1.5rem, 3.5vw, 2.5rem)"
+```
+
+**Larger Headlines:**
+
+```yaml
+teaserFontSize: "clamp(1rem, 2.5vw, 2rem)"
+titleFontSize: "clamp(2.5rem, 6vw, 5rem)"
+```
+
+**Fixed Sizes (no scaling):**
+
+```yaml
+teaserFontSize: "1.25rem" # 20px fixed
+titleFontSize: "3rem" # 48px fixed
+```
+
+### Understanding the Numbers:
+
+For `clamp(0.875rem, 2vw, 1.5rem)`:
+
+- `0.875rem` = 14px minimum
+- `2vw` = 2% of viewport width (fluid scaling)
+- `1.5rem` = 24px maximum
+
+The middle value (`2vw`) creates smooth responsive sizing—the text scales continuously with the browser width between min and max bounds.
+
+### Use Cases:
+
+**Short punchy titles:**
+
+```yaml
+titleFontSize: "clamp(2.5rem, 6vw, 5rem)" # Make them big and bold
+```
+
+**Long titles:**
+
+```yaml
+titleFontSize: "clamp(1.5rem, 4vw, 3rem)" # Keep them manageable
+```
+
+**Subtle teasers:**
+
+```yaml
+teaserFontSize: "clamp(0.75rem, 1.5vw, 1rem)" # Small and understated
+```
+
+**Prominent teasers:**
+
+```yaml
+teaserFontSize: "clamp(1rem, 2.5vw, 2rem)" # Larger, more visible
+```
+
+### Complete Example:
+
+```yaml
+---
+title: "Battle over Literary Modernism"
+teaser: "Eliot versus Williams"
+heroImage: "/pound-venezia.webp"
+heroImageSize: "cover"
+heroImagePosition: "50% 25%"
+heroImageHeight: "40vh"
+heroContentStart: "35vh"
+teaserFontSize: "clamp(1rem, 2vw, 1.5rem)"
+titleFontSize: "clamp(2.5rem, 5.5vw, 4.5rem)"
+---
+```
+
+This gives you precise control over headline sizing while maintaining responsive behavior across all screen sizes.
 
 ## Complete Examples
 

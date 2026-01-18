@@ -1,6 +1,7 @@
 ---
 title: "The Lawnmower Man and the Flamingos"
 date: "2024-12-05"
+category: "Field Notes"
 excerpt: "The lawnmower man was on the bus this morning. Just one stop, as usual. He boards wearing his orange reflective vest, smelling like campfire, deeply tanned, all his clothes too large on his small frame. He doesn't have fingers on his right hand—covers it with a kind of sock. And he's agitated this morning, pressing close to the window, moving from front to back as we cross the canal, jabbering like a caged animal, tracking something, somewhere. Maybe he just remembered where he buried the gold."
 teaser: "Scenes from the daily commute"
 ---

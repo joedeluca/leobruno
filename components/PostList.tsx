@@ -58,6 +58,14 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
                   className="uppercase tracking-wide mb-0"
                   style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
                 >
+                  <a
+                    href="/"
+                    className="hover:text-zinc-100 transition-colors"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {post.category}
+                  </a>
+                  {" | "}
                   {/* Show short teaser on mobile, full teaser on desktop */}
                   <span className="lg:hidden">
                     {post.teaserShort || post.teaser}

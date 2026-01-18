@@ -2,6 +2,7 @@
 title: "Battle over Literary Modernism"
 titleShort: "Modernisms"
 date: "2026-01-11"
+category: "Essays"
 excerpt: "Literary modernism was never singular. Eliot and Williams despised each other's work. One built elaborate structures from fragments of dead civilizations. The other insisted on the plain thing itself—wheelbarrows, rain, chickens. The Red Wheelbarrow wasn't just a poem. It was a manifesto against everything Eliot stood for."
 teaser: "Eliot versus Williams"
 teaserShort: "Two modernisms"

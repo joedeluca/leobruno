@@ -1,6 +1,7 @@
 ---
 title: "Easy. Tommy Lee."
 date: "2024-11-22"
+category: "Field Notes"
 excerpt: "We're at Bar Trovelessi with Eli and a group of expats. They're discussing a book about some saint a British man is writing. He's at the table. It isn't clear if he's an academic or just a rich guy with a fetish. He says he spends his time looking at old church documents, trying to understand the mindset. This causes the American doofus (guitar on his back, plays 1950s hits at open mics) to say he'd like to go back in time and be—insert some ridiculous personage."
 teaser: "Raw desire"
 ---

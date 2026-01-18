@@ -21,6 +21,8 @@ export interface Post {
   heroImagePosition?: string
   heroImageHeight?: string
   heroContentStart?: string
+  teaserFontSize?: string
+  titleFontSize?: string
 }
 
 const postsDirectory = path.join(process.cwd(), "posts")
@@ -59,6 +61,10 @@ export function getSortedPostsData(): Post[] {
           heroImagePosition: matterResult.data.heroImagePosition || "center",
           heroImageHeight: matterResult.data.heroImageHeight || "60vh",
           heroContentStart: matterResult.data.heroContentStart || "",
+          teaserFontSize:
+            matterResult.data.teaserFontSize || "clamp(0.875rem, 2vw, 1.5rem)",
+          titleFontSize:
+            matterResult.data.titleFontSize || "clamp(2rem, 5vw, 4rem)",
         }
       })
     allPosts.push(...blogPosts)
@@ -108,6 +114,10 @@ export function getSortedPostsDataWithContent(): Post[] {
           heroImagePosition: matterResult.data.heroImagePosition || "center",
           heroImageHeight: matterResult.data.heroImageHeight || "60vh",
           heroContentStart: matterResult.data.heroContentStart || "",
+          teaserFontSize:
+            matterResult.data.teaserFontSize || "clamp(0.875rem, 2vw, 1.5rem)",
+          titleFontSize:
+            matterResult.data.titleFontSize || "clamp(2rem, 5vw, 4rem)",
         }
       })
     allPosts.push(...blogPosts)
@@ -156,6 +166,9 @@ export async function getPostData(slug: string): Promise<Post> {
     heroImagePosition: matterResult.data.heroImagePosition || "center",
     heroImageHeight: matterResult.data.heroImageHeight || "60vh",
     heroContentStart: matterResult.data.heroContentStart || "",
+    teaserFontSize:
+      matterResult.data.teaserFontSize || "clamp(0.875rem, 2vw, 1.5rem)",
+    titleFontSize: matterResult.data.titleFontSize || "clamp(2rem, 5vw, 4rem)",
   }
 }
 

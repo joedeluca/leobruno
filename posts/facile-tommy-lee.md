@@ -1,6 +1,7 @@
 ---
 title: "Facile. Tommy Lee."
 date: "2024-11-22"
+category: "Field Notes"
 excerpt: "Siamo al Bar Trovelessi con Eli e un gruppo di expat. Stanno discutendo di un libro su qualche santo che un inglese sta scrivendo. È al tavolo. Non è chiaro se sia un accademico o solo un tipo ricco con un feticcio. Dice che passa il tempo a guardare vecchi documenti di chiesa, cercando di capire la mentalità. Questo fa sì che l'idiota americano (chitarra sulla schiena, suona successi degli anni '50 nei microfoni aperti) dica che gli piacerebbe tornare indietro nel tempo ed essere—inserisci qualche personaggio ridicolo."
 teaser: "Desiderio crudo"
 ---

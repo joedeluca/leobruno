@@ -2,6 +2,7 @@
 title: "Pubic Hair and Ideology: The French Garden, The English Garden"
 titleShort: "Pubic Hair & Ideology"
 date: "2024-10-28"
+category: "Field Notes"
 excerpt: "Slavoj Žižek has this observation: the ways in which fantasy animates enjoyment. How fantasy is sustained by complicity. How fantasy helps create the thing it supposedly represses. The French garden. The English garden. Pubic hair. How one attends to it is an ideological statement, whether one is conscious of it or not. Nobody discusses pubic hair grooming as ideology. That's precisely why it is."
 teaser: "The body reveals what theory tries to hide"
 teaserShort: "Body & ideology"

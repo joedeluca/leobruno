@@ -6,7 +6,7 @@ import PoemLinkHandler from "@/components/PoemLinkHandler"
 import Footer from "@/components/Footer"
 
 export const metadata: Metadata = {
-  title: "Leo Bruno - Writer & Painter",
+  title: "Leo Bruno",
   description: "Writing and art by Leo Bruno",
 }
 

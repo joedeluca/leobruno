@@ -1,6 +1,7 @@
 ---
 title: "The Dream of the Empty Palace"
 date: "2024-10-15"
+category: "Field Notes"
 excerpt: "In the famous story, St. Francis dreams of a palace filled with armor. Weapons everywhere. Shields, swords, breastplates. The interpretation has been fixed for 800 years: this was Christ calling him to spiritual knighthood, to fight for the church, to build an army of friars. But what if the palace was just empty? All weapons, no warriors. All structure, no substance. He woke up terrified."
 teaser: "What if the dream was a warning, not a promise?"
 ---

@@ -145,8 +145,7 @@ export default function Sidebar() {
         {showContact && (
           <div ref={contactSectionRef} style={{ opacity: 0 }}>
             <p className="text-zinc-400 text-base leading-relaxed mb-4">
-              All of the content here is 100% me. No AI stuff. No personal
-              assistant ghost writers.
+              All of the content here is 100% me. No AI stuff. No ghost writers.
             </p>
             <p className="text-zinc-400 text-base leading-relaxed mb-4">
               You can contact me below. If you want a response, be sure to

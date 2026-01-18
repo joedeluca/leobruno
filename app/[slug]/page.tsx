@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { gsap } from "gsap"
 import GlobalSearch from "@/components/GlobalSearch"
+import { formatArticleDate } from "@/lib/formatDate"
 
 interface Post {
   slug: string
@@ -19,6 +20,8 @@ interface Post {
   heroImagePosition?: string
   heroImageHeight?: string
   heroContentStart?: string
+  teaserFontSize?: string
+  titleFontSize?: string
 }
 
 export default function Post() {
@@ -149,7 +152,7 @@ export default function Post() {
         </div>
       ) : (
         <div
-          className={`max-w-4xl px-8 lg:px-0 lg:ml-[calc(theme(spacing.8)*2+12ch+theme(spacing.6))] lg:mr-8 ${
+          className={`max-w-5xl mx-auto px-8 ${
             showHeroImage ? "pb-12" : "py-12"
           } relative z-10`}
           style={{
@@ -159,24 +162,54 @@ export default function Post() {
           {/* Article header */}
           <header className="mb-12">
             <h5
-              className="text-zinc-300 uppercase tracking-wide mb-4 text-xl"
-              style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+              className="text-zinc-300 uppercase tracking-wide"
+              style={{
+                fontFamily: '"Graphik", system-ui, sans-serif',
+                fontSize: post.teaserFontSize || "clamp(0.875rem, 2vw, 1.5rem)",
+                textShadow:
+                  "1px 1px 2px rgba(0,0,0,.24), 0 0 5px rgba(0,0,0,.24)",
+              }}
             >
+              <a href="/" className="hover:text-zinc-100 transition-colors">
+                {post.category}
+              </a>
+              {" | "}
               {post.teaser}
             </h5>
             <h1
-              className="text-zinc-300 mb-6"
+              className="text-zinc-300 mb-4"
               style={{
                 fontFamily: '"Schnyder S", Georgia, serif',
+                fontSize: post.titleFontSize || "clamp(2rem, 5vw, 4rem)",
+                lineHeight: "1.2",
+                textShadow:
+                  "1px 1px 2px rgba(0,0,0,.24), 0 0 5px rgba(0,0,0,.24)",
               }}
             >
               {post.title}
             </h1>
+            <div
+              className="text-zinc-400"
+              style={{
+                fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
+              }}
+            >
+              <span style={{ fontFamily: '"Schnyder S", Georgia, serif' }}>
+                by
+              </span>{" "}
+              <span style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}>
+                Leo Bruno
+              </span>{" "}
+              | {formatArticleDate(post.date)}
+            </div>
           </header>
 
           {/* Article content */}
           <article
             className="prose prose-zinc prose-lg max-w-none"
+            style={{
+              fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
+            }}
             dangerouslySetInnerHTML={{ __html: post.content || "" }}
           />
         </div>
