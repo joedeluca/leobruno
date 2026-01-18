@@ -148,13 +148,11 @@ export default function Sidebar() {
               assistant ghost writers.
             </p>
             <p className="text-zinc-400 text-base leading-relaxed mb-4">
-              As a matter of personal preference, you can't comment here. But
-              you can contact me semi-directly. Note that I do not welcome
-              thoughtful discussions about anything, particularly <i>themes</i>
-              or craft or especially me. I do welcome fan mail.
+              You can contact me below. If you want a response, be sure to
+              include your name and email.
             </p>
 
-            <div className="mt-6 space-y-3">
+            <div className="space-y-3">
               <span
                 className="text-xs text-zinc-600"
                 style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
@@ -165,7 +163,7 @@ export default function Sidebar() {
               <textarea
                 value={message}
                 onChange={handleMessageChange}
-                placeholder="Your fan mail here..."
+                placeholder="Message here.... Can be very long. Write elsewhere and paste if you like."
                 className="w-full h-32 px-4 py-3 bg-zinc-900 border border-zinc-800 text-zinc-300 placeholder-zinc-600 resize-none focus:outline-none focus:border-zinc-700 transition-colors"
                 style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
                 maxLength={MAX_CHARS}
