@@ -41,7 +41,16 @@ export default function Sidebar() {
           stuck in the tops of skulls. Add to that a lot of ink wells, ravens
           feathers, and about a million dark and stormy nights and you've got me
           pretty well mapped. I'm Leo. All of the content here is 100% me. No AI
-          stuff. No personal assistant ghost writers.
+          stuff. No personal assistant ghost writers. And certainly no ideas
+          generated from Internet slop.
+        </p>
+        <p>
+          As a matter of personal preference, you can't comment here. But you
+          can contact me semi-directly. Note that I do not welcome thoughtful
+          discussions about anything, particularly <i>themes</i> or <i>craft</i>
+          or especially <i>me</i>. I do welcome unadulterated fan mail and
+          pictures of wild animals and domesticated herd animals (especially
+          donkeys).
         </p>
 
         {/* <div className="mb-8">
