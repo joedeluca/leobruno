@@ -38,8 +38,10 @@ export default function Sidebar() {
             Welcome
           </h3>
           I do a lot of reading and writing in dark rooms illuminated by candles
-          stuck in the tops of skulls. You can also imagine a lot of ink wells,
-          ravens feathers, and about a million dark and stormy nights.
+          stuck in the tops of skulls. Add to that a lot of ink wells, ravens
+          feathers, and about a million dark and stormy nights. Add all that up
+          and you've got one thing -- the dramaturgical musings of me -- Leo
+          Bruno.
         </p>
 
         {/* <div className="mb-8">
