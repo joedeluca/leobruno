@@ -4,6 +4,7 @@ import HeaderSearchWrapper from "@/components/HeaderSearchWrapper"
 import HeaderLogo from "@/components/HeaderLogo"
 import PoemLinkHandler from "@/components/PoemLinkHandler"
 import Footer from "@/components/Footer"
+import AudioPlayer from "@/components/AudioPlayer"
 
 export const metadata: Metadata = {
   title: "Leo Bruno",
@@ -35,6 +36,9 @@ export default function RootLayout({
 
         {/* Poem Slide-out Handler */}
         <PoemLinkHandler />
+
+        {/* Audio Player */}
+        <AudioPlayer />
 
         {/* Footer */}
         <Footer />
