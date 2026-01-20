@@ -40,6 +40,19 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
 
   return (
     <div className="space-y-8">
+      {/* Pinned Message */}
+      <div className="border border-zinc-800 rounded-lg p-6 bg-zinc-900/30">
+        <p
+          className="text-zinc-400 leading-relaxed"
+          style={{ fontSize: "clamp(1rem, 1.5vw, 1.125rem)" }}
+        >
+          This is a counterweight to the slop currently being sold as
+          intelligence. Nothing here is AI generated. It's all the work of one
+          human writer. One mind working in isolation on an island in the middle
+          of the Mediterranean sea.
+        </p>
+      </div>
+
       {posts.map((post) => {
         // Determine the correct URL based on slug
         const postUrl = post.slug.startsWith("fragments/")
