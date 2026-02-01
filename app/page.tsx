@@ -203,15 +203,13 @@ export default function Home() {
       ) : (
         <div className="flex flex-col lg:flex-row h-full">
           {/* Main Content - 75% on desktop */}
-          <div className="lg:w-3/4 w-full px-8 pb-12 pt-[.8rem]">
+          <div className="lg:w-3/4 w-full px-8 pb-12 pt-[.8rem] lg:pr-8 lg:border-r lg:border-zinc-800">
             <PostList posts={filteredPosts} searchQuery={searchQuery} />
           </div>
 
-          {/* Sidebar - 25% on desktop (reduced by 30%) */}
-          <div className="lg:w-1/4 w-full lg:border-l lg:border-zinc-800 px-8 pb-12">
-            <div className="lg:sticky lg:top-[7rem]">
-              <Sidebar />
-            </div>
+          {/* Sidebar - 25% on desktop */}
+          <div className="lg:w-1/4 w-full px-8 pb-12 pt-[.8rem] lg:pl-8 mt-8 lg:mt-0">
+            <Sidebar />
           </div>
         </div>
       )}
