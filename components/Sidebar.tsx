@@ -95,17 +95,17 @@ export default function Sidebar() {
           >
             Welcome
           </h3>
-          I do a lot of reading and writing in dark rooms illuminated by candles
-          stuck in the tops of skulls. Add to that a lot of ink wells, ravens
-          feathers, and about a million dark and stormy nights and you've got me
-          pretty well mapped. I'm Leo.
+          Leo Bruno is a writer living in Sardinia. Former art director, current
+          novelist. Published in Gradiva and I-70 Review. Working on a book
+          about his mother's paintings and medieval saints.
         </p>
 
         <p className="text-zinc-400 text-base leading-relaxed mb-4">
-          All of the content here is 100% me. No AI stuff. No ghost writers.
+          All of the content here is 100% original. No AI stuff. No ghost
+          writers.
         </p>
         <p className="text-zinc-400 text-base leading-relaxed mb-4">
-          You can contact me below. If you want a response, be sure to include
+          You can contact Leo below. If you want a response, be sure to include
           your name and email.
         </p>
 
