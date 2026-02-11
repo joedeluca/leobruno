@@ -3,7 +3,7 @@ title: "Rimbaud in Iowa"
 date: "2026-02-11"
 category: "Poetics"
 excerpt: "What happens when a seventeen-year-old French poet walks into an MFA workshop? The students talk about craft, earned imagery, and problematic language. Rimbaud stands and reads The Drunken Boat."
-teaser: "French madness collides with workshop anesthesia"
+teaser: "French poetry collides with MFA anesthesia"
 ---
 
 # RIMBAUD IN IOWA
