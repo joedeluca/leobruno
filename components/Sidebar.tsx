@@ -95,15 +95,13 @@ export default function Sidebar() {
           >
             Welcome
           </h3>
-          Leo Bruno is a writer living in Sardinia. Former art director, current
-          novelist. Published in Gradiva and I-70 Review. Working on a book
-          about his mother's paintings and medieval saints.
+          Leo Bruno is a writer living in Sardegna. Former ad agency art slag —
+          art director, tech guy, occasional copywriter — at places like TM,
+          VMLY&R, and Bernstein-Rein. Published in Gradiva and I-70 Review.
+          Currently working on a book about his mother's paintings and medieval
+          saints.
         </p>
 
-        <p className="text-zinc-400 text-base leading-relaxed mb-4">
-          All of the content here is 100% original. No AI stuff. No ghost
-          writers.
-        </p>
         <p className="text-zinc-400 text-base leading-relaxed mb-4">
           You can contact Leo below. If you want a response, be sure to include
           your name and email.
