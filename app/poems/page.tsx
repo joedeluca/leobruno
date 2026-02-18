@@ -146,7 +146,7 @@ export default function PoemsIndex() {
             </h1>
             <p className="text-lg text-zinc-400 mb-12">
               Poems and poetry collections referenced in the articles. All are
-              public domain.
+              public domain, except Leo Bruno's original poems which are copyrighted. Click on a poem to read and listen.
             </p>
 
             <div className="space-y-12">
