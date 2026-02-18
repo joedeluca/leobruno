@@ -127,7 +127,7 @@ Good. What about the ending? "She tells herself this is enough."
 **STUDENT 1**
 I think it's earned.
 
-More nodding. RIMBAUD shifts in his chair. Something is happening to him physically.
+More nodding. RIMBAUD shifts in his chair, and is blinking rapidly, rubbing his eyes. Then knocking the side of his head as if to clear something stuck in his ear.
 
 **STUDENT 3**
 I do wonder if the poem could sit with the image a little longer before the turn. Like—the lemon tree. There's more there. But the restraint is really lovely.
@@ -147,10 +147,10 @@ Arthur, welcome. We're so glad you're here. Now, I've read your poem "The Drunke
 Le Bateau Ivre.
 
 **WORKSHOP LEADER**
-Yes. And I think there's real... energy here. But I'm wondering if we might workshop some of the imagery? The rivers, the sun, the—there's a lot of sensory material. It's very rich. Maybe _too_ rich?
+Yes. And I think there's real... energy here. But I'm wondering if we might discuss some of the more _challenging_ imagery? The rivers, the sun, the—there's a lot of sensory material. It's very rich.
 
 **STUDENT 1**
-I want to name something. I'm troubled by the colonial implications of the boat metaphor. The language of discovery, the "red-skinned" line—I think the poem needs to interrogate its own positionality.
+I want to name something. I'm troubled by the implications of the boat metaphor. The language of discovery, the "red-skinned" line—I think the poem needs to interrogate its own positionality.
 
 **RIMBAUD**
 It's not a metaphor.
