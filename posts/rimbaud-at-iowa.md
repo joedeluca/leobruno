@@ -8,7 +8,7 @@ teaser: "French poetry collides with MFA anesthesia"
 
 <p style="color: #a1a1aa;">FADE IN:</p>
 
-<p style="color: #a1a1aa;">INT. IOWA WRITERS' WORKSHOP — SEMINAR ROOM — DAY</p>
+<p style="color: #a1a1aa;">INT. IOWA WRITERS' WORKSHOP — POETRY SEMINAR ROOM — DAY</p>
 
 A circle of earnest MFA students. Coffee cups. Moleskines. One person has a therapy dog. A whiteboard reads: "WORKSHOP GUIDELINES — RESPECT THE WORK."
 
@@ -36,7 +36,7 @@ She lets this land. Looks around the circle.
 **WORKSHOP LEADER (CONT'D)**
 You don't defend. You don't explain. You sit. And you listen. This can be uncomfortable. That's okay.
 
-RIMBAUD snorts. The therapy dog looks at him.
+RIMBAUD snorts. Everyone, including the therapy dog, looks at him.
 
 **WORKSHOP LEADER (CONT'D)**
 Rule three. We refer to "the speaker," not "you." The poem is its own object. We say "the speaker feels" not "you feel." This protects the author. It also protects the poem.
