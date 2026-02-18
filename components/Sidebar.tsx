@@ -184,6 +184,21 @@ export default function Sidebar() {
             The Red Wheelbarrow
           </Link>
         </div>
+
+        <div className="border-t border-zinc-800 pt-6 mt-6">
+          <h3
+            className="text-xs uppercase tracking-wider text-zinc-500 mb-3"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+          >
+            Leo's Work
+          </h3>
+          <Link
+            href="/poems/ode-to-the-girl-on-the-bus"
+            className="text-zinc-300 hover:text-zinc-100 transition-colors text-base"
+          >
+            Ode to the Girl on the Bus
+          </Link>
+        </div>
       </div>
     </aside>
   )
