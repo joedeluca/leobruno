@@ -73,8 +73,6 @@ Je ne parl... _Fuck_! I don't speak—
 _(cutting him off, louder, French)_
 Tu portes mes vêtements mais tu ne parles pas ma langue? Quelle sorte de fantôme es-tu?
 
-Beat. The room is uncomfortable but doesn't understand why.
-
 **BOHEMIAN STUDENT**
 _(panicking, words tumbling out)_
 Sono uno studente, io non—
@@ -191,6 +189,30 @@ Yes. And I think there's real... energy here. But I'm wondering if we might disc
 I want to name something. I'm troubled by the implications of the boat metaphor. The language of discovery, the "red-skinned" line—I think the poem needs to interrogate its own positionality.
 
 **RIMBAUD**
+Interrogate its positionality.
+
+**STUDENT 1**
+Yes. Exactly—
+
+**RIMBAUD**
+Then let us interrogate this room's positionality. You are not Iowa people. Where are they?
+
+Silence.
+
+**STUDENT 1**
+_(carefully)_
+I mean... Iowa is right out there. You can—look out the window.
+
+RIMBAUD turns and looks out the window for a long moment. The flat land. The winter sky. The parking lot.
+
+He turns back.
+
+**RIMBAUD**
+I see only colonists.
+
+No one speaks. The therapy dog makes a small sound.
+
+**RIMBAUD (CONT'D)**
 It's not a metaphor.
 
 **STUDENT 1**
