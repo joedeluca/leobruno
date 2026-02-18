@@ -336,53 +336,35 @@ CUT TO:
 
 INT. SEMINAR ROOM — LATER
 
-The room is empty. Chairs pushed back. Coffee cups abandoned.
+Empty chairs. Cold coffee.
 
-On Rimbaud's desk: his pages, wine-stained, half-illegible. And beneath them, on the back of Marcus's poem about the terra cotta and the restraint and the lemon tree, in Rimbaud's handwriting — fast, slashed, the pen having torn through the paper in two places:
+On Rimbaud's desk is Marcus’s careful poem about terra cotta and restraint, he has written:
 
 CLOSE ON THE PAGE:
 
-_Terra cotta in the blood-warm kitchen_
-_where she let me fuck her standing,_
-_the cat watching like a monk,_
-_the lemon tree outside rotting sweetly into the ground._
+_Terra cotta in the blood-warm kitchen_  
+_where she let me take her standing,_  
+_the cat watching like a monk,_  
+_the lemon tree outside splitting in the heat._
 
-_He planted it in 1969 and never touched her again._
-_The nectary breaks under simple gravity._
-_Everything falls._
-_The piccione cucciolo hits the tile like a saint._
+_He planted it and never touched her again._  
+_The nectary breaks under simple gravity._  
+_Everything falls._  
+_The fledgling strikes tile like a saint._
 
-_The thing that writhes and hisses in the dark_
-_is just the night trying to get the taste out of its mouth._
+_The thing that writhes and hisses in the dark_  
+_is just the night trying to spit out its own name._
 
-And below that, in larger letters, underlined twice:
+And below it, underlined twice:
 
 **EARNED.**
 
----
+The WORKSHOP LEADER stands over the desk. She reads the page. Reads it again.
 
-The WORKSHOP LEADER stands over the desk. She picks up the page.
-
-She reads it.
-
-She reads it again.
-
-She sits down in the empty chair next to his. She holds the page with both hands.
-
-Twenty years of craft language. Twenty years of "what is the poem reaching for" and "the speaker" and "let's lead with generosity." Twenty years of protecting poems from the people who wrote them. And here is this filthy kid who smells like a distillery and hasn't showered since Charleville, and he took Marcus's careful little poem and broke it open like a body and something alive crawled out.
+Twenty years of craft language. Twenty years of protection. And here is this filthy child who split the poem open like fruit and let it rot properly.
 
 She folds the page. Puts it in her pocket.
 
-She will carry it for years. She will never show it to anyone.
-
-She will never workshop it.
-
----
-
-But Arthur never comes back.
-
-Twenty years later, the workshop leader is still there. Still kind. Still dead inside. Still writing "THE SPEAKER ≠ THE AUTHOR" on the whiteboard every September.
-
-The poem is still in her pocket.
+She will carry it for years.
 
 FADE TO BLACK.
