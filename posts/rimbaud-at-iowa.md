@@ -97,7 +97,7 @@ He's... studying. Languages. It's part of the program.
 RIMBAUD stares at the bohemian student. Something dangerous in his eyes.
 
 **RIMBAUD**
-What's your name?
+Come ti chiami?
 
 The bohemian student looks to the WORKSHOP LEADER for help. She hesitates. Closes her eyes briefly.
 
@@ -107,7 +107,7 @@ His name is Dante.
 Long pause. RIMBAUD starts to laugh, as if now it all makes sense.
 
 **RIMBAUD**
-Ahh, so you are him. The moralistic, old fashioned fool. I believe I am hell. Therefore I am.
+So we are in hell. 
 
 **DANTE**
 _(defensively)_
@@ -117,19 +117,19 @@ It's a family name—
 _(quietly, in perfect French)_
 Arthur. Nous sommes en Iowa. C'est 2025. Vous êtes... invité.
 
-RIMBAUD stares at her. Something like recognition. Then disgust.
+RIMBAUD stares at her. Something like recognition. Then disgust. 
 
 **RIMBAUD**
 _(back to English, to no one)_
-Iowa. This is not a real place. You are not real.
+Iowa. Where are the natives and the buffalo? 
 
-He drinks from his flask.
+He drinks from his flask.... and seems transported deep into imagination as he looks out the window.
 
 **WORKSHOP LEADER**
 Arthur?
 
 **RIMBAUD**
-_(still looking at the window)_
+_(still looking out the window)_
 Nothing. Go on. Tell us what the poem wants.
 
 **WORKSHOP LEADER**
