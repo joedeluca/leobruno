@@ -371,8 +371,6 @@ But Arthur never comes back.
 
 Twenty years later, the workshop leader is still there. Still kind. Still dead inside. Still writing "THE SPEAKER ≠ THE AUTHOR" on the whiteboard every September.
 
-Arthur is dead too. But he died in Marseille with one leg, having lived more in thirty-seven years than all of them will live in eighty.
-
 The poem is still in her pocket.
 
 FADE TO BLACK.
