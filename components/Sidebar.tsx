@@ -98,7 +98,7 @@ export default function Sidebar() {
           Leo Bruno is a writer living in Sardegna. Former ad agency art slag —
           art director, tech guy, occasional copywriter — at places like TM,
           VMLY&R, and Bernstein-Rein. Published in Gradiva and I-70 Review.
-          Currently working on a book about his mother's paintings and medieval
+          Currently working on a book about Dirty Tiepolos and medieval
           saints.
         </p>
 
