@@ -83,7 +83,7 @@ RIMBAUD stares at her. Something like recognition. Then disgust.
 
 **RIMBAUD**
 _(back to English, to no one)_
-Iowa.
+Iowa. This is not a real place. You are not real.
 
 He drinks from his flask.
 
