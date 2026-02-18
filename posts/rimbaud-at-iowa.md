@@ -98,7 +98,7 @@ Nothing. Go on. Tell us what the poem wants.
 _(beat, then recovering)_
 Rule five. We don't offer solutions. If something isn't working, we name it. We don't rewrite each other's poems. We say "this moment felt unearned" not "you should change this line to —"
 
-RIMBAUD shifts in his chair. He is now visibly restless, like something chemical is happening.
+RIMBAUD shifts in his chair. Something chemical is happening inside him.
 
 **WORKSHOP LEADER (CONT'D)**
 And finally—we lead with generosity. What's working? What has energy? Then we move to concerns. It's a conversation. Not a trial.
