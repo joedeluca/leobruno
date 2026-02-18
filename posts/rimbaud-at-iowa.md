@@ -67,13 +67,51 @@ The WORKSHOP LEADER's pen stops mid-air. Her face goes pale. She understands eve
 The bohemian student stammers, looking for help from the others.
 
 **BOHEMIAN STUDENT**
-Je ne parlo... _Fuck_! I don't speak—
+Je ne parl... _Fuck_! I don't speak—
 
 **RIMBAUD**
 _(cutting him off, louder, French)_
 Tu portes mes vêtements mais tu ne parles pas ma langue? Quelle sorte de fantôme es-tu?
 
-Beat. The room is uncomfortable but doesn't understand why. The WORKSHOP LEADER clears her throat.
+Beat. The room is uncomfortable but doesn't understand why.
+
+**BOHEMIAN STUDENT**
+_(panicking, words tumbling out)_
+Sono uno studente, io non—
+
+**RIMBAUD**
+_(sharp, victorious, in English)_
+Aha! You're a filthy Italian! I knew it.
+
+The WORKSHOP LEADER clears her throat.
+
+**WORKSHOP LEADER**
+He's not Italian, Arthur.
+
+**RIMBAUD**
+Then why does he speak like one?
+
+**WORKSHOP LEADER**
+He's... studying. Languages. It's part of the program.
+
+RIMBAUD stares at the bohemian student. Something dangerous in his eyes.
+
+**RIMBAUD**
+What's your name?
+
+The bohemian student looks to the WORKSHOP LEADER for help. She hesitates. Closes her eyes briefly.
+
+**WORKSHOP LEADER**
+His name is Dante.
+
+Long pause. RIMBAUD starts to laugh, as if now it all makes sense.
+
+**RIMBAUD**
+Ahh, so you are him. The moralistic, old fashioned fool. I believe I am hell. Therefore I am.
+
+**DANTE**
+_(defensively)_
+It's a family name—
 
 **WORKSHOP LEADER**
 _(quietly, in perfect French)_
