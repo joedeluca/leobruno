@@ -6,15 +6,13 @@ excerpt: "What happens when a seventeen-year-old French poet walks into an MFA w
 teaser: "French poetry collides with MFA anesthesia"
 ---
 
-# RIMBAUD AT IOWA
+<p style="color: #a1a1aa;">FADE IN:</p>
 
-FADE IN:
-
-INT. IOWA WRITERS' WORKSHOP — SEMINAR ROOM — DAY
+<p style="color: #a1a1aa;">INT. IOWA WRITERS' WORKSHOP — SEMINAR ROOM — DAY</p>
 
 A circle of earnest MFA students. Coffee cups. Moleskines. One person has a therapy dog. A whiteboard reads: "WORKSHOP GUIDELINES — RESPECT THE WORK."
 
-RIMBAUD (17, unwashed, drunk at 2pm, smells like absinthe and fuck you) slouches in his chair. His manuscript pages are covered in wine stains and what might be blood. He is the only person not making eye contact.
+RIMBAUD (17, unwashed, still drunk at 9am, smells like absinthe and fuck you) slouches in his chair. His manuscript pages are covered in wine stains and what might be blood. He is staring across the circle at a male student who has clearly read too much Rimbaud—rumpled linen shirt, artfully unkempt hair, a black coat that wants to be from another century.
 
 WORKSHOP LEADER (50s, tweed skirt, kind smile, dead inside) stands at the whiteboard with a dry-erase marker.
 
@@ -26,7 +24,7 @@ Welcome, everyone. Before we begin, I want to go over some ground rules. These a
 She writes "THE WORK" on the whiteboard and underlines it twice.
 
 **WORKSHOP LEADER (CONT'D)**
-Rule one. When we discuss a poem, we use craft language. We don't say "I like this" or "I don't like this." We talk about what the poem is *doing*. What the poem is *reaching for*.
+Rule one. When we discuss a poem, we use craft language. We don't say "I like this" or "I don't like this." We talk about what the poem is _doing_. What the poem is _reaching for_.
 
 RIMBAUD pulls a flask from his coat. Drinks. No one acknowledges this.
 
@@ -46,21 +44,58 @@ Rule three. We refer to "the speaker," not "you." The poem is its own object. We
 She writes "THE SPEAKER ≠ THE AUTHOR" on the whiteboard.
 
 **WORKSHOP LEADER (CONT'D)**
-Rule four — and this is important — imagery must be earned. If the poem makes a big emotional move, we ask: has the poem done the work to get us there? Has it *earned* that moment?
+Rule four — and this is important — imagery must be earned. If the poem makes a big emotional move, we ask: has the poem done the work to get us there? Has it _earned_ that moment?
 
 **RIMBAUD**
-*(to no one, quietly)*
+_(to no one, quietly)_
 Earned.
+
+RIMBAUD suddenly turns to look directly at the student dressed in 19th century clothing. His eyes narrow. He leans forward.
+
+**RIMBAUD (CONT'D)**
+_(in French, directly to the bohemian student)_
+Toi. D'où viens-tu?
+
+The bohemian student freezes. Looks around. No one else reacts.
+
+**RIMBAUD (CONT'D)**
+_(more insistent, still French)_
+Comment sommes-nous arrivés ici? Pourquoi tout le monde est mort? C'est le purgatoire ou l'enfer?
+
+The WORKSHOP LEADER's pen stops mid-air. Her face goes pale. She understands every word.
+
+The bohemian student stammers, looking for help from the others.
+
+**BOHEMIAN STUDENT**
+Je ne parlo... _Fuck_! I don't speak—
+
+**RIMBAUD**
+_(cutting him off, louder, French)_
+Tu portes mes vêtements mais tu ne parles pas ma langue? Quelle sorte de fantôme es-tu?
+
+Beat. The room is uncomfortable but doesn't understand why. The WORKSHOP LEADER clears her throat.
+
+**WORKSHOP LEADER**
+_(quietly, in perfect French)_
+Arthur. Nous sommes en Iowa. C'est 2025. Vous êtes... invité.
+
+RIMBAUD stares at her. Something like recognition. Then disgust.
+
+**RIMBAUD**
+_(back to English, to no one)_
+Iowa.
+
+He drinks from his flask.
 
 **WORKSHOP LEADER**
 Arthur?
 
 **RIMBAUD**
-*(still looking at the window)*
+_(still looking at the window)_
 Nothing. Go on. Tell us what the poem wants.
 
 **WORKSHOP LEADER**
-*(beat, then recovering)*
+_(beat, then recovering)_
 Rule five. We don't offer solutions. If something isn't working, we name it. We don't rewrite each other's poems. We say "this moment felt unearned" not "you should change this line to —"
 
 RIMBAUD shifts in his chair. He is now visibly restless, like something chemical is happening.
@@ -83,7 +118,7 @@ I just want to say — I really felt the restraint here. The terra cotta image r
 
 General nodding.
 
-**STUDENT 3** (Amherst, has read *Bluets* four times, once aloud to an ex)
+**STUDENT 3** (Amherst, has read _Bluets_ four times, once aloud to an ex)
 I agree. And "sweetness seeping into root and stone"—that line is doing so much work. It's grounding the whole emotional register of the piece.
 
 **WORKSHOP LEADER**
@@ -105,14 +140,14 @@ MARCUS looks like he just received communion.
 ---
 
 **WORKSHOP LEADER (CONT'D)**
-*(looks at her folder)*
+_(looks at her folder)_
 Arthur, welcome. We're so glad you're here. Now, I've read your poem "The Drunken Boat"—
 
 **RIMBAUD**
 Le Bateau Ivre.
 
 **WORKSHOP LEADER**
-Yes. And I think there's real... energy here. But I'm wondering if we might workshop some of the imagery? The rivers, the sun, the—there's a lot of sensory material. It's very rich. Maybe *too* rich?
+Yes. And I think there's real... energy here. But I'm wondering if we might workshop some of the imagery? The rivers, the sun, the—there's a lot of sensory material. It's very rich. Maybe _too_ rich?
 
 **STUDENT 1**
 I want to name something. I'm troubled by the colonial implications of the boat metaphor. The language of discovery, the "red-skinned" line—I think the poem needs to interrogate its own positionality.
@@ -130,7 +165,7 @@ It's not a metaphor.
 I think what Taylor's saying is that intent doesn't erase impact, and if we're being generous to the poem, we might ask whether the imagery could do the same work without—
 
 **RIMBAUD**
-*(quietly)*
+_(quietly)_
 Do you want to hear it?
 
 Pause. The room doesn't know what to do with this.
@@ -139,7 +174,7 @@ Pause. The room doesn't know what to do with this.
 Arthur, in workshop the author listens—
 
 **RIMBAUD**
-*(standing)*
+_(standing)_
 Do you want to hear it. The poem. Out loud. In the room. As it was meant to exist.
 
 He is already holding the pages. He is not asking. He is barely even talking to them. He is talking to the poem, or to himself, or to whatever lives inside the poem that isn't him and isn't separate from him.
@@ -152,44 +187,44 @@ He begins.
 Not reading. Not performing. Something else. Something between a hymn and a hemorrhage. His voice is low at first, rough, as if the words are being pulled from somewhere physical. He reads standing, the flask still in his left hand, the pages shaking slightly in his right.
 
 **RIMBAUD**
-*As I drifted on a river I could not control*
-*I felt the haulers' ropes release their hold.*
-*Yelping redskins had taken them as targets*
-*and nailed them naked to their painted poles.*
+_As I drifted on a river I could not control_
+_I felt the haulers' ropes release their hold._
+_Yelping redskins had taken them as targets_
+_and nailed them naked to their painted poles._
 
-The room is still. Not polite-still. *Still*-still. Something is happening that wasn't in the syllabus.
+The room is still. Not polite-still. _Still_-still. Something is happening that wasn't in the syllabus.
 
 **RIMBAUD (CONT'D)**
-*I cared nothing for any kind of crew,*
-*carrying Flemish wheat or English cotton.*
-*When my haulers let their uproar die,*
-*the rivers let me drift wherever I wanted.*
+_I cared nothing for any kind of crew,_
+_carrying Flemish wheat or English cotton._
+_When my haulers let their uproar die,_
+_the rivers let me drift wherever I wanted._
 
 His voice is getting louder. Not shouting. Filling. The way a room fills with water.
 
 **RIMBAUD (CONT'D)**
-*Into the furious lashing of the tides—*
-*emptier than children's minds—I ran*
-*last winter! And loosened peninsulas*
-*have never known a more triumphant din.*
+_Into the furious lashing of the tides—_
+_emptier than children's minds—I ran_
+_last winter! And loosened peninsulas_
+_have never known a more triumphant din._
 
 STUDENT 1 has stopped writing. STUDENT 3's pen is on the table. The therapy dog is lying flat, chin on paws, ears down. MARCUS is looking at his own hands.
 
 **RIMBAUD (CONT'D)**
-*The storm blessed my sea-borne vigils.*
-*Lighter than a cork I danced on the waves*
-*that men call eternal rollers of victims,*
-*ten nights, not missing the lanterns' idiot eyes.*
+_The storm blessed my sea-borne vigils._
+_Lighter than a cork I danced on the waves_
+_that men call eternal rollers of victims,_
+_ten nights, not missing the lanterns' idiot eyes._
 
 The WORKSHOP LEADER is sitting very still. Her dry-erase marker has rolled off the table. She has not picked it up.
 
 Something is crossing her face. Not approval. Not the workshop smile. Something older than that. Something she went to graduate school to feel and then spent twenty years teaching herself not to.
 
 **RIMBAUD (CONT'D)**
-*I have bathed in the Poem of the Sea,*
-*infused with stars and turned to milk,*
-*devouring the green azures, where—pale*
-*and ravished—a pensive drowned figure sometimes sinks.*
+_I have bathed in the Poem of the Sea,_
+_infused with stars and turned to milk,_
+_devouring the green azures, where—pale_
+_and ravished—a pensive drowned figure sometimes sinks._
 
 He stops. The room is silent. The specific silence of people who have just been inside something and are now back outside it and don't know what to do with their hands.
 
@@ -198,11 +233,11 @@ RIMBAUD stands there. Breathing. Sweat on his forehead. He looks, for a moment, 
 Then:
 
 **STUDENT 1**
-*(gently, carefully)*
+_(gently, carefully)_
 I—that was—I think we can all acknowledge the energy there. But I still want to hold space for the problematic—
 
 **RIMBAUD**
-*(not angry—worse: clear)*
+_(not angry—worse: clear)_
 You people are already dead and don't know it.
 
 He walks to the door, leaving his pages on the desk. Stops. Turns.
@@ -218,7 +253,7 @@ Long pause.
 Should we... should we still workshop his sestina on Thursday?
 
 **WORKSHOP LEADER**
-*(still looking at the door)*
+_(still looking at the door)_
 Yes. We'll workshop Arthur's sestina on Thursday.
 
 She hasn't moved. No one has noticed that she hasn't moved.
@@ -235,18 +270,18 @@ On Rimbaud's desk: his pages, wine-stained, half-illegible. And beneath them, on
 
 CLOSE ON THE PAGE:
 
-*Terra cotta in the blood-warm kitchen*
-*where she let me fuck her standing,*
-*the cat watching like a monk,*
-*the lemon tree outside rotting sweetly into the ground.*
+_Terra cotta in the blood-warm kitchen_
+_where she let me fuck her standing,_
+_the cat watching like a monk,_
+_the lemon tree outside rotting sweetly into the ground._
 
-*He planted it in 1969 and never touched her again.*
-*The nectary breaks under simple gravity.*
-*Everything falls.*
-*The piccione cucciolo hits the tile like a saint.*
+_He planted it in 1969 and never touched her again._
+_The nectary breaks under simple gravity._
+_Everything falls._
+_The piccione cucciolo hits the tile like a saint._
 
-*The thing that writhes and hisses in the dark*
-*is just the night trying to get the taste out of its mouth.*
+_The thing that writhes and hisses in the dark_
+_is just the night trying to get the taste out of its mouth._
 
 And below that, in larger letters, underlined twice:
 

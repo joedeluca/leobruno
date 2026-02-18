@@ -3,6 +3,7 @@ import path from "path"
 import matter from "gray-matter"
 import { remark } from "remark"
 import html from "remark-html"
+import { remarkScreenplay } from "./remarkScreenplay"
 
 export interface Post {
   slug: string
@@ -144,6 +145,7 @@ export async function getPostData(slug: string): Promise<Post> {
   const matterResult = matter(fileContents)
 
   const processedContent = await remark()
+    .use(remarkScreenplay)
     .use(html, { sanitize: false })
     .process(matterResult.content)
   const contentHtml = processedContent.toString()
