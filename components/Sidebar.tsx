@@ -198,6 +198,12 @@ export default function Sidebar() {
           >
             Ode to the Girl on the Bus
           </Link>
+          <Link
+            href="/poems/sokushinbutsu"
+            className="block text-zinc-300 hover:text-zinc-100 transition-colors text-base mt-2"
+          >
+            Sokushinbutsu
+          </Link>
         </div>
       </div>
     </aside>
