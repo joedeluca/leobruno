@@ -175,7 +175,7 @@ export default function Sidebar() {
             className="text-xs uppercase tracking-wider text-zinc-500 mb-3"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
           >
-            Leo Reads
+            Leo Reads Poems He Hates
           </h3>
           <Link
             href="/poems/the-red-wheelbarrow"
@@ -190,7 +190,7 @@ export default function Sidebar() {
             className="text-xs uppercase tracking-wider text-zinc-500 mb-3"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
           >
-            Leo's Work
+            Work
           </h3>
           <Link
             href="/poems/ode-to-the-girl-on-the-bus"
