@@ -3,7 +3,7 @@ title: "Rimbaud at Iowa"
 date: "2026-02-11"
 category: "Poetics"
 excerpt: "What happens when a seventeen-year-old French poet walks into an MFA workshop? The students talk about craft, earned imagery, and problematic language. Rimbaud stands and reads The Drunken Boat."
-teaser: "Poems like little animals get fat and dumb"
+teaser: "poems get fat and dumb"
 ---
 
 <p style="color: #a1a1aa;">FADE IN:</p>
