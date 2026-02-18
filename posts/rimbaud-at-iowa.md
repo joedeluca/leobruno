@@ -3,7 +3,7 @@ title: "Rimbaud at Iowa"
 date: "2026-02-11"
 category: "Poetics"
 excerpt: "What happens when a seventeen-year-old French poet walks into an MFA workshop? The students talk about craft, earned imagery, and problematic language. Rimbaud stands and reads The Drunken Boat."
-teaser: "French poetry collides with MFA anesthesia"
+teaser: "Poems like little animals get fat and dumb"
 ---
 
 <p style="color: #a1a1aa;">FADE IN:</p>
@@ -225,6 +225,18 @@ It's not a metaphor.
 I think what Taylor's saying is that intent doesn't erase impact, and if we're being generous to the poem, we might ask whether the imagery could do the same work without—
 
 **RIMBAUD**
+You overfeed your poem and he gets fat and falls asleep.
+
+**STUDENT 2** (earnest, from Connecticut, working on a novel about his grandmother's curio cabinet)
+I just want to flag "fat" as — that's a loaded term for some people in this room—
+
+**STUDENT 3**
+And "he." The poem doesn't have a—we don't assign gender to—
+
+**RIMBAUD**
+He. The poem is a he. He drinks. He fights. He goes to sea.
+
+**STUDENT 1**
 _(quietly)_
 Do you want to hear it?
 
