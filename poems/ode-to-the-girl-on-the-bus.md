@@ -16,7 +16,7 @@ the brand they all wear
 like bread wears its crust —
 the ordinary uniform of becoming.
 
-And oh, the others,
+And _oh_, the others,
 in black coats,
 their hair pulled tight,
 their identical armor
@@ -45,5 +45,5 @@ nothing requires more intelligence
 than a girl of thirteen
 standing in the aisle of a bus
 trying to be seen
-without being seen
+without being seen,
 trying.

@@ -6,35 +6,35 @@ excerpt: "What happens when a seventeen-year-old French poet walks into an MFA w
 teaser: "poems get fat and dumb"
 ---
 
-<p style="color: #a1a1aa;">FADE IN:</p>
+FADE IN:
 
-<p style="color: #a1a1aa;">INT. IOWA WRITERS' WORKSHOP — POETRY SEMINAR ROOM — DAY</p>
+INT. IOWA WRITERS' WORKSHOP — POETRY SEMINAR ROOM — DAY
 
 A circle of earnest MFA students. Coffee cups. Moleskines. One person has a therapy dog. A whiteboard reads: "WORKSHOP GUIDELINES — RESPECT THE WORK."
 
-RIMBAUD (17, unwashed, still drunk at 9am, smells like absinthe and fuck you) slouches in his chair. His manuscript pages are covered in wine stains and what might be blood. He is staring across the circle at a male student who has clearly read too much Rimbaud—rumpled linen shirt, artfully unkempt hair, a black coat that wants to be from another century.
+RIMBAUD (17, unwashed, still drunk at 9am, smells like absinthe and fuck you) slouches in his chair. His manuscript pages are crumpled and stained. He is staring across the circle at a male student who has clearly read too much Rimbaud—rumpled linen shirt, artfully unkempt hair, a grey four button wool jacket.
 
 WORKSHOP LEADER (50s, tweed skirt, kind smile, dead inside) stands at the whiteboard with a dry-erase marker.
 
 ---
 
 **WORKSHOP LEADER**
-Welcome, everyone. Before we begin, I want to go over some ground rules. These aren't meant to constrain you—they're meant to protect you. And the work.
+Welcome, everyone. Before we begin, I want to go over some workshop guidelines. They're the same ones you've used elsewhere I'm sure, they're meant to protect you. And the work.
 
 She writes "THE WORK" on the whiteboard and underlines it twice.
 
 **WORKSHOP LEADER (CONT'D)**
-Rule one. When we discuss a poem, we use craft language. We don't say "I like this" or "I don't like this." We talk about what the poem is _doing_. What the poem is _reaching for_.
+Rule one. When we discuss a poem, we use craft language. We express likes or dislikes. We talk about what the poem is _doing_. What the poem is _reaching for_.
 
 RIMBAUD pulls a flask from his coat. Drinks. No one acknowledges this.
 
 **WORKSHOP LEADER (CONT'D)**
-Rule two. When a poem is being workshopped, the author is silent.
+Rule two. When a poem is being discussed, the author is silent.
 
 She lets this land. Looks around the circle.
 
 **WORKSHOP LEADER (CONT'D)**
-You don't defend. You don't explain. You sit. And you listen. This can be uncomfortable. That's okay.
+You don't defend or explain. You sit. And you listen. This can be uncomfortable and that's okay. Think of it is liberation, not restriction.
 
 RIMBAUD snorts. Everyone, including the therapy dog, looks at him.
 
@@ -50,7 +50,7 @@ Rule four — and this is important — imagery must be earned. If the poem make
 _(to no one, quietly)_
 Earned.
 
-RIMBAUD suddenly turns to look directly at the student dressed in 19th century clothing. His eyes narrow. He leans forward.
+RIMBAUD suddenly turns to look directly at the student dressed like a bohemian. His eyes narrow. He leans forward.
 
 **RIMBAUD (CONT'D)**
 _(in French, directly to the bohemian student)_
@@ -67,7 +67,7 @@ The WORKSHOP LEADER's pen stops mid-air. Her face goes pale. She understands eve
 The bohemian student stammers, looking for help from the others.
 
 **BOHEMIAN STUDENT**
-Je ne parl... _Fuck_! I don't speak—
+Je ne parl... _Ahhh_! I don't speak—
 
 **RIMBAUD**
 _(cutting him off, louder, French)_
@@ -105,29 +105,25 @@ His name is Dante.
 Long pause. RIMBAUD starts to laugh, as if now it all makes sense.
 
 **RIMBAUD**
-So we are in hell. 
-
-**DANTE**
-_(defensively)_
-It's a family name—
+So we are in hell.
 
 **WORKSHOP LEADER**
 _(quietly, in perfect French)_
 Arthur. Nous sommes en Iowa. C'est 2025. Vous êtes... invité.
 
-RIMBAUD stares at her. Something like recognition. Then disgust. 
+RIMBAUD stares at her. Something like recognition. Then disgust.
 
 **RIMBAUD**
 _(back to English, to no one)_
-Iowa. Where are the natives and the buffalo? 
+Iowa. Where are the natives and the buffalo?
 
-He drinks from his flask.... and seems transported deep into imagination as he looks out the window.
+He drinks from his flask.... and is suddenly lost in thought.
 
 **WORKSHOP LEADER**
 Arthur?
 
 **RIMBAUD**
-_(still looking out the window)_
+_(still looking out the window. But then snaps back.)_
 Nothing. Go on. Tell us what the poem wants.
 
 **WORKSHOP LEADER**
@@ -195,7 +191,7 @@ Interrogate its positionality.
 Yes. Exactly—
 
 **RIMBAUD**
-Then let us interrogate this room's positionality. You are not Iowa people. Where are they?
+Where are the red-skins? The Iowans?
 
 Silence.
 
@@ -207,10 +203,8 @@ RIMBAUD turns and looks out the window for a long moment. The flat land. The win
 
 He turns back.
 
-**RIMBAUD**
-I see only colonists.
-
-No one speaks. The therapy dog makes a small sound.
+**Student 3**
+My mom is from Des Moines.
 
 **RIMBAUD (CONT'D)**
 It's not a metaphor.
@@ -234,11 +228,7 @@ I just want to flag "fat" as — that's a loaded term for some people in this ro
 And "he." The poem doesn't have a—we don't assign gender to—
 
 **RIMBAUD**
-He. The poem is a he. He drinks. He fights. He goes to sea.
-
-**STUDENT 1**
-_(quietly)_
-Do you want to hear it?
+He. The poem is a he. He drinks. He fights. He goes to sea. Do you want to hear it?
 
 Pause. The room doesn't know what to do with this.
 
@@ -247,7 +237,7 @@ Arthur, in workshop the author listens—
 
 **RIMBAUD**
 _(standing)_
-Do you want to hear it. The poem. Out loud. In the room. As it was meant to exist.
+Do you want to hear it? The poem. Out loud. In the room. As it was meant to exist.
 
 He is already holding the pages. He is not asking. He is barely even talking to them. He is talking to the poem, or to himself, or to whatever lives inside the poem that isn't him and isn't separate from him.
 
@@ -255,8 +245,6 @@ He is already holding the pages. He is not asking. He is barely even talking to 
 Arthur, we don't typically—
 
 He begins.
-
-Not reading. Not performing. Something else. Something between a hymn and a hemorrhage. His voice is low at first, rough, as if the words are being pulled from somewhere physical. He reads standing, the flask still in his left hand, the pages shaking slightly in his right.
 
 **RIMBAUD**
 _As I drifted on a river I could not control_
