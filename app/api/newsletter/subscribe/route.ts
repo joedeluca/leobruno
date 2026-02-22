@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { supabaseAdmin, supabase } from "@/lib/supabase"
+import nodemailer from "nodemailer"
 
 const SITE_URL =
   process.env.SITE_URL ||
@@ -8,6 +9,54 @@ const SITE_URL =
 
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+async function notifyNewSubscriber(email: string, firstName?: string) {
+  if (
+    !process.env.ICLOUD_APPLE_ID ||
+    !process.env.ICLOUD_APP_PASSWORD ||
+    !process.env.ICLOUD_EMAIL
+  )
+    return
+
+  try {
+    const transporter = nodemailer.createTransport({
+      host: "smtp.mail.me.com",
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.ICLOUD_APPLE_ID,
+        pass: process.env.ICLOUD_APP_PASSWORD,
+      },
+      tls: { rejectUnauthorized: false },
+    })
+
+    const name = firstName?.trim() ? ` (${firstName.trim()})` : ""
+
+    await transporter.sendMail({
+      from: `"Leo Bruno" <${process.env.ICLOUD_EMAIL}>`,
+      to: process.env.ICLOUD_EMAIL,
+      subject: `New subscriber: ${email}`,
+      html: `
+        <div style="font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 500px; margin: 0 auto;">
+          <p style="font-size: 16px; color: #1f2937;">
+            <strong>${email}</strong>${name} just subscribed on leobruno.it.
+          </p>
+          <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 20px 0;">
+          <p style="font-size: 12px; color: #6b7280;">
+            ${new Date().toLocaleString("en-US", {
+              dateStyle: "full",
+              timeStyle: "short",
+            })}
+          </p>
+        </div>
+      `,
+      text: `New subscriber: ${email}${name}\n${new Date().toISOString()}`,
+    })
+  } catch (err) {
+    // Non-fatal — don't let this break the subscription flow
+    console.error("Subscriber notification email failed:", err)
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -72,6 +121,9 @@ export async function POST(request: NextRequest) {
           { status: 500 }
         )
       }
+
+      // Notify — fire and forget, non-blocking
+      notifyNewSubscriber(normalizedEmail, first_name)
     }
 
     // Use anon client — service role client generates tokens that can't be verified by users
