@@ -1,14 +1,13 @@
 import { redirect } from "next/navigation"
 import Link from "next/link"
 import type { Metadata } from "next"
-import { createSupabaseServerClient } from "@/lib/supabase"
-import { supabaseAdmin } from "@/lib/supabase"
+import { createSupabaseServerClient, supabaseAdmin } from "@/lib/supabase"
 
 export const metadata: Metadata = {
   title: "Your Account — Leo Bruno",
 }
 
-function formatJoinDate(dateStr: string): string {
+function formatDate(dateStr: string): string {
   const date = new Date(dateStr)
   return date.toLocaleDateString("en-US", {
     month: "long",
@@ -25,12 +24,8 @@ export default async function AccountPage() {
 
   if (!user) redirect("/")
 
-  // Pull subscriber record
-  const { data: subscriber } = await supabaseAdmin
-    .from("subscribers")
-    .select("first_name, created_at, status")
-    .eq("email", user.email!)
-    .single()
+  const firstName = (user.user_metadata?.first_name as string) || null
+  const joinDate = user.created_at ? formatDate(user.created_at) : null
 
   // Pull newsletter reads
   const { data: reads } = await supabaseAdmin
@@ -39,11 +34,6 @@ export default async function AccountPage() {
     .eq("user_id", user.id)
     .order("read_at", { ascending: false })
     .limit(20)
-
-  const firstName = subscriber?.first_name || null
-  const joinDate = subscriber?.created_at
-    ? formatJoinDate(subscriber.created_at)
-    : null
 
   return (
     <div className="flex flex-col lg:flex-row h-full">
@@ -99,7 +89,7 @@ export default async function AccountPage() {
                       className="block text-xs text-zinc-600 mt-0.5"
                       style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
                     >
-                      {formatJoinDate(read.newsletters.sent_at)}
+                      {formatDate(read.newsletters.sent_at)}
                     </span>
                   </li>
                 ))}
@@ -130,9 +120,7 @@ export default async function AccountPage() {
               className="text-zinc-400 text-sm"
               style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
             >
-              {subscriber?.status === "active"
-                ? "Active subscriber"
-                : "Inactive"}
+              Active subscriber
             </p>
           </div>
 

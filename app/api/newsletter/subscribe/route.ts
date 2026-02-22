@@ -40,18 +40,10 @@ export async function POST(request: NextRequest) {
       .single()
 
     if (existing) {
-      if (existing.status === "active") {
-        return NextResponse.json(
-          { error: "You're already subscribed." },
-          { status: 409 }
-        )
-      }
-
-      // Re-activate if previously unsubscribed
-      await supabaseAdmin
-        .from("subscribers")
-        .update({ status: "active" })
-        .eq("id", existing.id)
+      return NextResponse.json(
+        { error: "You're already subscribed." },
+        { status: 409 }
+      )
     } else {
       // Insert new subscriber into Supabase
       const { error: insertError } = await supabaseAdmin
@@ -72,28 +64,31 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Create (or silently skip if already exists) the Supabase auth user.
-    // email_confirm: false → Supabase sends a magic link email immediately.
-    // The link points to /auth/callback, which verifies the token and
-    // redirects to /account. Kit is not involved in this flow.
+    // Ensure the auth user exists (createUser is idempotent-ish — we ignore
+    // "already exists" errors and always send a fresh magic link below).
     const { error: createError } = await supabaseAdmin.auth.admin.createUser({
       email: normalizedEmail,
       email_confirm: false,
-      app_metadata: { redirect_to: `${SITE_URL}/auth/callback` },
+      user_metadata: { first_name: first_name?.trim() || null },
     })
 
     if (createError) {
       const msg = createError.message.toLowerCase()
-      if (msg.includes("already") || msg.includes("already registered")) {
-        // User exists — send a fresh magic link so they can access /account
-        await supabaseAdmin.auth.admin.generateLink({
-          type: "magiclink",
-          email: normalizedEmail,
-          options: { redirectTo: `${SITE_URL}/auth/callback` },
-        })
-      } else {
+      // "already registered" / "already exists" is fine — we'll send the link anyway
+      if (!msg.includes("already")) {
         console.error("createUser error:", createError.message)
       }
+    }
+
+    // Always explicitly send the magic link — createUser alone does NOT email anything.
+    const { error: linkError } = await supabaseAdmin.auth.admin.generateLink({
+      type: "magiclink",
+      email: normalizedEmail,
+      options: { redirectTo: `${SITE_URL}/auth/callback` },
+    })
+
+    if (linkError) {
+      console.error("generateLink error:", linkError.message)
     }
 
     return NextResponse.json({
