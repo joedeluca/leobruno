@@ -2,6 +2,7 @@ import { redirect } from "next/navigation"
 import Link from "next/link"
 import type { Metadata } from "next"
 import { createSupabaseServerClient, supabaseAdmin } from "@/lib/supabase"
+import SignOutButton from "@/components/SignOutButton"
 
 export const metadata: Metadata = {
   title: "Your Account — Leo Bruno",
@@ -132,6 +133,10 @@ export default async function AccountPage() {
             >
               ← All writing
             </Link>
+          </div>
+
+          <div className="border-t border-zinc-800 pt-6">
+            <SignOutButton />
           </div>
         </div>
       </div>

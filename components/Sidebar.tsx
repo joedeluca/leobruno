@@ -2,7 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { createBrowserClient } from "@supabase/ssr"
 
 function NewsletterSignup() {
   const [email, setEmail] = useState("")
@@ -10,6 +11,28 @@ function NewsletterSignup() {
     "idle" | "loading" | "success" | "error"
   >("idle")
   const [errorMessage, setErrorMessage] = useState("")
+  // null = unknown (hydrating), false = logged out, string = email of logged-in user
+  const [loggedInEmail, setLoggedInEmail] = useState<string | null | false>(
+    null
+  )
+
+  useEffect(() => {
+    const supabase = createBrowserClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    )
+    // Get current session immediately
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setLoggedInEmail(session?.user?.email ?? false)
+    })
+    // Keep in sync if they sign out elsewhere
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setLoggedInEmail(session?.user?.email ?? false)
+    })
+    return () => subscription.unsubscribe()
+  }, [])
 
   const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
 
@@ -63,56 +86,81 @@ function NewsletterSignup() {
       >
         Newsletter
       </h3>
-      <p
-        className="text-zinc-500 text-sm leading-relaxed mb-3"
-        style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
-      >
-        Free. No catch.
-      </p>
-      <div className="space-y-3">
-        <input
-          type="email"
-          value={email}
-          onChange={handleChange}
-          placeholder="your@email.com"
-          disabled={status === "loading" || status === "success"}
-          className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 text-zinc-300 placeholder-zinc-600 focus:outline-none focus:border-zinc-700 transition-colors text-sm"
-          style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
-          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-        />
-        {status === "error" && errorMessage && (
+
+      {/* Logged-in state */}
+      {loggedInEmail ? (
+        <div className="space-y-2">
           <p
-            className="text-xs text-red-400"
+            className="text-zinc-400 text-sm"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
           >
-            {errorMessage}
+            {loggedInEmail}
           </p>
-        )}
-        <button
-          onClick={handleSubmit}
-          disabled={
-            !isValidEmail(email) || status === "loading" || status === "success"
-          }
-          className={`px-4 py-3 w-full text-sm font-medium transition-all ${
-            status === "success"
-              ? "bg-green-900 text-green-300 cursor-default"
-              : status === "error"
-              ? "bg-red-900 text-red-300"
-              : !isValidEmail(email) || status === "loading"
-              ? "bg-zinc-800 text-zinc-600 cursor-not-allowed"
-              : "bg-tiepolo-pink-700 text-zinc-950 hover:bg-tiepolo-pink-600"
-          }`}
-          style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
-        >
-          {status === "loading"
-            ? "Subscribing..."
-            : status === "success"
-            ? "You're in."
-            : status === "error"
-            ? "Try again"
-            : "Subscribe"}
-        </button>
-      </div>
+          <Link
+            href="/account"
+            className="block text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+          >
+            Your account →
+          </Link>
+        </div>
+      ) : (
+        /* Logged-out / unknown state — show form */
+        <>
+          <p
+            className="text-zinc-500 text-sm leading-relaxed mb-3"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+          >
+            Free. No catch.
+          </p>
+          <div className="space-y-3">
+            <input
+              type="email"
+              value={email}
+              onChange={handleChange}
+              placeholder="your@email.com"
+              disabled={status === "loading" || status === "success"}
+              className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 text-zinc-300 placeholder-zinc-600 focus:outline-none focus:border-zinc-700 transition-colors text-sm"
+              style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+              onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+            />
+            {status === "error" && errorMessage && (
+              <p
+                className="text-xs text-red-400"
+                style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+              >
+                {errorMessage}
+              </p>
+            )}
+            <button
+              onClick={handleSubmit}
+              disabled={
+                !isValidEmail(email) ||
+                status === "loading" ||
+                status === "success"
+              }
+              className={`px-4 py-3 w-full text-sm font-medium transition-all ${
+                status === "success"
+                  ? "bg-green-900 text-green-300 cursor-default"
+                  : status === "error"
+                  ? "bg-red-900 text-red-300"
+                  : !isValidEmail(email) || status === "loading"
+                  ? "bg-zinc-800 text-zinc-600 cursor-not-allowed"
+                  : "bg-tiepolo-pink-700 text-zinc-950 hover:bg-tiepolo-pink-600"
+              }`}
+              style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            >
+              {status === "loading"
+                ? "Signing in…"
+                : status === "success"
+                ? "You're in."
+                : status === "error"
+                ? "Try again"
+                : "Subscribe / Sign in"}
+            </button>
+          </div>
+        </>
+      )}
     </div>
   )
 }
