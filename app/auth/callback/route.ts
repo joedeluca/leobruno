@@ -10,7 +10,11 @@ export async function GET(request: NextRequest) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leobruno.it"
 
   console.log("[auth/callback] full URL:", request.url)
-  console.log("[auth/callback] params:", { code: !!code, tokenHash: !!tokenHash, type })
+  console.log("[auth/callback] params:", {
+    code: !!code,
+    tokenHash: !!tokenHash,
+    type,
+  })
 
   // Build the redirect response first so the Supabase client can write
   // session cookies directly onto it before we return

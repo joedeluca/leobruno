@@ -64,18 +64,18 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // signInWithOtp sends the magic link email via Supabase SMTP (Resend).
-    const { error: otpError } = await supabaseAdmin.auth.signInWithOtp({
+    // generateLink produces a token_hash URL → hits /auth/callback server-side → /account
+    const { error: linkError } = await supabaseAdmin.auth.admin.generateLink({
+      type: "magiclink",
       email: normalizedEmail,
       options: {
-        emailRedirectTo: `${SITE_URL}/auth/callback`,
+        redirectTo: `${SITE_URL}/auth/callback`,
         data: { first_name: first_name?.trim() || null },
-        shouldCreateUser: true,
       },
     })
 
-    if (otpError) {
-      console.error("signInWithOtp error:", otpError.message)
+    if (linkError) {
+      console.error("generateLink error:", linkError.message)
     }
 
     return NextResponse.json({
