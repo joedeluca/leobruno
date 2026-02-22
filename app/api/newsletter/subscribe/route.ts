@@ -111,7 +111,9 @@ export async function POST(request: NextRequest) {
         headers: {
           // Store email in a short-lived cookie so /subscribed can read it
           // after Kit's confirmation redirect (Kit doesn't pass email in redirect URL)
-          "Set-Cookie": `pending_subscriber=${encodeURIComponent(normalizedEmail)}; Path=/; Max-Age=3600; SameSite=Lax; Secure`,
+          "Set-Cookie": `pending_subscriber=${encodeURIComponent(
+            normalizedEmail
+          )}; Path=/; Max-Age=3600; SameSite=Lax; Secure`,
         },
       }
     )

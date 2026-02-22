@@ -13,10 +13,16 @@ export async function GET(request: NextRequest) {
   // Try query param first (future-proofing), then fall back to cookie
   const emailParam = searchParams.get("email")
   const emailCookie = request.cookies.get("pending_subscriber")?.value
-  const rawEmail = emailParam || (emailCookie ? decodeURIComponent(emailCookie) : null)
+  const rawEmail =
+    emailParam || (emailCookie ? decodeURIComponent(emailCookie) : null)
 
   console.log("[/subscribed] incoming URL:", href)
-  console.log("[/subscribed] email param:", emailParam, "| cookie:", emailCookie)
+  console.log(
+    "[/subscribed] email param:",
+    emailParam,
+    "| cookie:",
+    emailCookie
+  )
 
   if (!rawEmail) {
     console.log("[/subscribed] no email found — redirecting home")
