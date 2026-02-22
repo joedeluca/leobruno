@@ -104,21 +104,39 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const isProd = process.env.NODE_ENV === "production"
-    // SameSite=None;Secure required for cross-site redirect from Kit's confirmation email.
-    // In dev (HTTP) fall back to Lax so the cookie still works on localhost.
-    const cookieFlags = isProd
-      ? "SameSite=None; Secure"
-      : "SameSite=Lax"
-    return NextResponse.json(
-      { success: true, message: "Subscribed successfully." },
-      {
-        status: 200,
-        headers: {
-          "Set-Cookie": `pending_subscriber=${encodeURIComponent(normalizedEmail)}; Path=/; Max-Age=3600; ${cookieFlags}`,
-        },
-      }
-    )
+    // Create auth user (email pre-confirmed) and generate a magic link token.
+    // We return the link to the client so the browser can redirect directly —
+    // no cookies, no cross-site redirects, no Kit redirect chain needed.
+    // SITE_URL is server-only so it can be set correctly per-environment on Vercel.
+    const siteUrl = process.env.SITE_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? "https://leobruno.it"
+
+    await supabaseAdmin.auth.admin.createUser({
+      email: normalizedEmail,
+      email_confirm: true,
+    })
+
+    const { data: linkData, error: linkError } =
+      await supabaseAdmin.auth.admin.generateLink({
+        type: "magiclink",
+        email: normalizedEmail,
+        options: { redirectTo: `${siteUrl}/account` },
+      })
+
+    if (linkError || !linkData?.properties?.hashed_token) {
+      console.error("generateLink error:", linkError)
+      // Non-fatal — they're subscribed, just won't get auto-login
+      return NextResponse.json({ success: true, message: "Subscribed successfully." })
+    }
+
+    const callbackUrl = new URL(`${siteUrl}/auth/callback`)
+    callbackUrl.searchParams.set("token_hash", linkData.properties.hashed_token)
+    callbackUrl.searchParams.set("type", "magiclink")
+
+    return NextResponse.json({
+      success: true,
+      message: "Subscribed successfully.",
+      redirect: callbackUrl.toString(),
+    })
   } catch (err) {
     console.error("Subscribe route error:", err)
     return NextResponse.json(
