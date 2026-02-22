@@ -40,10 +40,19 @@ export async function POST(request: NextRequest) {
       .single()
 
     if (existing) {
-      return NextResponse.json(
-        { error: "You're already subscribed." },
-        { status: 409 }
-      )
+      // Already subscribed — send a login link so they can access /account
+      const { error: otpError } = await supabaseAdmin.auth.signInWithOtp({
+        email: normalizedEmail,
+        options: {
+          emailRedirectTo: `${SITE_URL}/auth/callback`,
+          shouldCreateUser: false,
+        },
+      })
+      if (otpError) console.error("signInWithOtp (existing) error:", otpError.message)
+      return NextResponse.json({
+        success: true,
+        message: "Check your email for a sign-in link.",
+      })
     } else {
       // Insert new subscriber into Supabase
       const { error: insertError } = await supabaseAdmin
@@ -64,13 +73,13 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // signInWithOtp sends the email via Supabase SMTP (Resend)
+    // signInWithOtp sends the magic link regardless of whether the user exists
     const { error: otpError } = await supabaseAdmin.auth.signInWithOtp({
       email: normalizedEmail,
       options: {
         emailRedirectTo: `${SITE_URL}/auth/callback`,
         data: { first_name: first_name?.trim() || null },
-        shouldCreateUser: false,
+        shouldCreateUser: true,
       },
     })
 
