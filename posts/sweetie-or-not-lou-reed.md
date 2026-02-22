@@ -21,7 +21,7 @@ And that's how the game started.
 
 ---
 
-The rules, such as they are: you consider the work. You consider the person. You decide. The only disqualifying sin is one that is truly hurtful — not difficult, not annoying, not insufferable at press junkets. Truly damaging. Everything else is just being human, which artists are, catastrophically, always. And I will add that even in some cases where true damagge is inflicted, a person can still be deemed a sweetie, if there are extenuating circumstances.
+The rules, such as they are: you consider the work. You consider the person. You decide. The only disqualifying sin is one that is truly hurtful — not difficult, not annoying, not insufferable at press junkets. Truly damaging. Everything else is just being human, which artists are, catastrophically, always. And I will add that even in some cases where true damage is inflicted, a person can still be deemed a sweetie, if there are extenuating circumstances.
 
 ---
 
@@ -31,7 +31,19 @@ The thing is, Lou Reed wrote Dirty Boulevard because he gave a shit. I remember 
 
 Elliott is deep into Lou's history now.
 
-He tells me the childhood is where it starts, and it's dark. He grew up in Freeport, Long Island — solidly middle-class Jewish family, not poverty. But his parents were alarmed by him from early on: overly sensitive, mood swings, the emerging sexuality (he was bisexual, which in 1950s Long Island was essentially a medical emergency as far as his parents were concerned). So they had him electroconvulsive therapy. He was seventeen. The stated goal was to cure the homosexuality. What it actually did — what ECT at that dosage, administered to an adolescent brain, actually does — is hard to fully know, but Reed talked about it for the rest of his life with barely contained fury. He wrote about it. It became part of the architecture of everything and when Pedro says he dreams about killing the old man... well, you don't have to wonder where that line comes from. And one thing about Dirty Boulevard in particular, it's clear Lou is writing about the experience of profound humiliation and rejection.
+He tells me it's dark. He grew up in Freeport, Long Island — solidly middle-class Jewish family, not poverty, but a house with its own weather system. His parents were alarmed by him from early on: the sensitivity, the mood swings, the emerging sexuality (bisexual, which in 1950s Long Island was a medical emergency as far as his parents were concerned). So they had him electroconvulsive therapy. He was seventeen. The stated goal was to cure the homosexuality. What it actually did — what ECT at that dosage, administered to an adolescent brain, actually does — is hard to fully know, but Reed talked about it for the rest of his life with a specific kind of fury. It became part of the architecture of everything.
+
+Think about that when you hear the clothes hangers. He knew something about being a body that other people felt licensed to correct.
+
+And there's a moment in Dirty Boulevard I keep coming back to. The landlord — pathetic, incontinent, small — pissing his pants. And then, in the very next beat, pissing on Pedro. That's the whole sociology in two lines. The landlord didn't invent his cruelty. He inherited it from wherever his own degradation came from, and Pedro inherits it from him, and the kid with the clothes hanger inherits it from parents who are themselves ground down by the boulevard. Humiliation isn't static. It moves. It travels downward through power structures looking for somewhere to land. Like the Wire. Like Hamsterdam. Chomsky could lecture on it for an hour.
+
+Reed felt this — knew this — because he'd been a Pedro. Not economically. But in the specific way of being someone that a more powerful person decided to correct and diminish. His parents. The doctors. The institution.
+
+So: not a sweetie. The damage he carried, he also discharged. Some of it landed on people who didn't deserve it. But the ECT kid grew up to see the clothes hangers on other people's Tuesdays. Both of those things are true and they come from the same source.
+
+You bring an abused dog in off the street. You can't say she's not a sweetie just because she growls at men.
+
+I still listen to Lou.
 
 Elliott remains unconvinced.
 
