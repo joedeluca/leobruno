@@ -64,18 +64,28 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // signInWithOtp creates the auth user if needed and sends the magic link
-    // email via whatever SMTP is configured in the Supabase dashboard (Resend).
-    const { error: otpError } = await supabaseAdmin.auth.signInWithOtp({
+    // Ensure auth user exists first (generateLink won't create one)
+    await supabaseAdmin.auth.admin.createUser({
+      email: normalizedEmail,
+      email_confirm: false,
+      user_metadata: { first_name: first_name?.trim() || null },
+    })
+    // Ignore errors — user likely already exists, which is fine.
+
+    // admin.generateLink sends the email via Supabase SMTP (Resend) and produces
+    // a token_hash link — never an implicit grant fragment. The callback route
+    // handles token_hash + type=magiclink → verifyOtp → session → /account.
+    const { error: linkError } = await supabaseAdmin.auth.admin.generateLink({
+      type: "magiclink",
       email: normalizedEmail,
       options: {
-        emailRedirectTo: `${SITE_URL}/auth/callback`,
+        redirectTo: `${SITE_URL}/auth/callback`,
         data: { first_name: first_name?.trim() || null },
       },
     })
 
-    if (otpError) {
-      console.error("signInWithOtp error:", otpError.message)
+    if (linkError) {
+      console.error("generateLink error:", linkError.message)
     }
 
     return NextResponse.json({
