@@ -67,12 +67,12 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
               {/* Category | Teaser */}
               <div className="mb-0">
                 <h5
-                  className="uppercase tracking-wide mb-0"
+                  className="text-zinc-300 uppercase tracking-wide mb-0"
                   style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
                 >
                   <a
                     href="/"
-                    className="hover:text-zinc-100 transition-colors"
+                    className="text-zinc-300 hover:text-tiepolo-pink-700 transition-colors"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {post.category}

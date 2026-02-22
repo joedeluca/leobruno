@@ -2,6 +2,7 @@
 title: "Rimbaud at Iowa"
 date: "2026-02-11"
 category: "Poetics"
+tags: ["Poetics", "Creative Writing", "Poetry", "Satire"]
 excerpt: "What happens when a seventeen-year-old French poet walks into an MFA workshop? The students talk about craft, earned imagery, and problematic language. Rimbaud stands and reads The Drunken Boat."
 teaser: "poems get fat and dumb"
 ---
@@ -356,3 +357,15 @@ She folds the page. Puts it in her pocket.
 She will carry it for years.
 
 FADE TO BLACK.
+
+## notes
+
+I is an other. JE est un autre. and we are both somebody else.
+
+Parnassian?
+
+Derangement of senses
+
+Poetry is a mask concealing a void.
+
+Rimbaud feels reckless. Big risks. Big emotions. Big metaphors.

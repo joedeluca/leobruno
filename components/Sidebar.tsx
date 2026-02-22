@@ -98,8 +98,7 @@ export default function Sidebar() {
           Leo Bruno is a writer living in Sardegna. Former ad agency art slag —
           art director, tech guy, occasional copywriter — at places like TM,
           VMLY&R, and Bernstein-Rein. Published in Gradiva and I-70 Review.
-          Currently working on a book about Dirty Tiepolos and medieval
-          saints.
+          Currently working on a book about Dirty Tiepolos and medieval saints.
         </p>
 
         <p className="text-zinc-400 text-base leading-relaxed mb-4">
@@ -190,11 +189,16 @@ export default function Sidebar() {
             className="text-xs uppercase tracking-wider text-zinc-500 mb-3"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
           >
-            Work
+            <Link
+              href="/work"
+              className="hover:text-zinc-300 transition-colors"
+            >
+              Poems
+            </Link>
           </h3>
           <Link
             href="/poems/ode-to-the-girl-on-the-bus"
-            className="text-zinc-300 hover:text-zinc-100 transition-colors text-base"
+            className="block text-zinc-300 hover:text-zinc-100 transition-colors text-base"
           >
             Ode to the Girl on the Bus
           </Link>
@@ -203,6 +207,26 @@ export default function Sidebar() {
             className="block text-zinc-300 hover:text-zinc-100 transition-colors text-base mt-2"
           >
             Sokushinbutsu
+          </Link>
+        </div>
+
+        <div className="border-t border-zinc-800 pt-6 mt-6">
+          <h3
+            className="text-xs uppercase tracking-wider text-zinc-500 mb-3"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+          >
+            <Link
+              href="/work"
+              className="hover:text-zinc-300 transition-colors"
+            >
+              Short Fiction
+            </Link>
+          </h3>
+          <Link
+            href="/little-black-submarine"
+            className="block text-zinc-300 hover:text-zinc-100 transition-colors text-base"
+          >
+            Little Black Submarine
           </Link>
         </div>
       </div>

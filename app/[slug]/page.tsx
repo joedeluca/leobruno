@@ -12,6 +12,7 @@ interface Post {
   date: string
   excerpt: string
   category: string
+  tags?: string[]
   content?: string
   readTime?: string
   teaser?: string
@@ -170,7 +171,10 @@ export default function Post() {
                   "1px 1px 2px rgba(0,0,0,.24), 0 0 5px rgba(0,0,0,.24)",
               }}
             >
-              <a href="/" className="hover:text-zinc-100 transition-colors">
+              <a
+                href="/"
+                className="text-zinc-300 hover:text-tiepolo-pink-700 transition-colors"
+              >
                 {post.category}
               </a>
               {" | "}

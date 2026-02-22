@@ -57,6 +57,14 @@
 
 @font-face {
   font-family: "Graphik";
+  src: url("/fonts/Graphik-LightItalic-Web.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik";
   src: url("/fonts/graphik-normal-500.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
@@ -274,6 +282,7 @@
 
   em {
     font-style: italic;
+    font-weight: 400;
   }
 
   a {
@@ -283,6 +292,10 @@
 
   a:hover {
     color: #a1a1aa; /* zinc-400 for hover */
+  }
+
+  hr {
+    display: none;
   }
 
   blockquote {
@@ -380,6 +393,55 @@
     margin-top: 2rem;
     font-size: 1rem;
   }
+}
+
+/* Ornament divider — outside @layer so prose cannot override */
+.ornament-divider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 75%;
+  margin: 3rem auto;
+  position: relative;
+}
+
+.ornament-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #3f3f46 20%,
+    #3f3f46 80%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+}
+
+.ornament-glyph {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  background-color: #09090b;
+  padding: 0 0.2rem;
+  color: #52525b;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.ornament-glyph-mid {
+  font-size: 0.75rem;
+}
+
+.ornament-glyph-flip {
+  display: inline-block;
+  transform: scaleX(-1);
 }
 
 @layer utilities {

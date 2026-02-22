@@ -12,6 +12,7 @@ export interface Post {
   date: string
   excerpt: string
   category: string
+  tags?: string[] // New: array of tags
   content?: string
   readTime?: string
   matchSnippet?: string
@@ -53,6 +54,7 @@ export function getSortedPostsData(): Post[] {
           date: matterResult.data.date,
           excerpt: matterResult.data.excerpt || "",
           category: matterResult.data.category || "Essays",
+          tags: matterResult.data.tags || [],
           readTime: `${readTime} min read`,
           teaser: matterResult.data.teaser || "",
           teaserShort:
@@ -105,6 +107,7 @@ export function getSortedPostsDataWithContent(): Post[] {
           date: matterResult.data.date,
           excerpt: matterResult.data.excerpt || "",
           category: matterResult.data.category || "Essays",
+          tags: matterResult.data.tags || [],
           content: matterResult.content, // Include raw markdown content
           readTime: `${readTime} min read`,
           teaser: matterResult.data.teaser || "",
@@ -148,7 +151,12 @@ export async function getPostData(slug: string): Promise<Post> {
     .use(remarkScreenplay)
     .use(html, { sanitize: false })
     .process(matterResult.content)
-  const contentHtml = processedContent.toString()
+  const contentHtml = processedContent
+    .toString()
+    .replace(
+      /<hr\s*\/?>/gi,
+      `<div class="ornament-divider"><span class="ornament-glyph">❧</span><span class="ornament-glyph ornament-glyph-mid">✦</span><span class="ornament-glyph ornament-glyph-flip">❧</span></div>`
+    )
 
   // Calculate read time
   const words = matterResult.content.split(/\s+/).length
@@ -160,6 +168,7 @@ export async function getPostData(slug: string): Promise<Post> {
     date: matterResult.data.date,
     excerpt: matterResult.data.excerpt || "",
     category: matterResult.data.category || "Essays",
+    tags: matterResult.data.tags || [],
     content: contentHtml,
     readTime: `${readTime} min read`,
     teaser: matterResult.data.teaser || "",
