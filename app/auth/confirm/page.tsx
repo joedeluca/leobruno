@@ -1,11 +1,15 @@
 "use client"
 
 import { useEffect } from "react"
-import { createClient } from "@supabase/supabase-js"
+import { useRouter } from "next/navigation"
+import { createBrowserClient } from "@supabase/ssr"
 
-// Supabase always redirects with the session in the URL fragment (#access_token=...).
-// This client-side page reads it and sets the session, then redirects to /account.
+// Supabase redirects with the session in the URL fragment (#access_token=...).
+// createBrowserClient writes the session as cookies so the SSR middleware can
+// see it immediately when we navigate to /account.
 export default function ConfirmPage() {
+  const router = useRouter()
+
   useEffect(() => {
     const hash = window.location.hash.slice(1)
     const params = new URLSearchParams(hash)
@@ -13,11 +17,11 @@ export default function ConfirmPage() {
     const refreshToken = params.get("refresh_token")
 
     if (!accessToken || !refreshToken) {
-      window.location.href = "/?auth_error=Missing+token"
+      router.replace("/?auth_error=Missing+token")
       return
     }
 
-    const supabase = createClient(
+    const supabase = createBrowserClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
     )
@@ -26,14 +30,12 @@ export default function ConfirmPage() {
       .setSession({ access_token: accessToken, refresh_token: refreshToken })
       .then(({ error }) => {
         if (error) {
-          window.location.href = `/?auth_error=${encodeURIComponent(
-            error.message
-          )}`
+          router.replace(`/?auth_error=${encodeURIComponent(error.message)}`)
         } else {
-          window.location.href = "/account"
+          router.push("/account")
         }
       })
-  }, [])
+  }, [router])
 
   return (
     <div
