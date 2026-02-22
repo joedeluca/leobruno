@@ -2,11 +2,15 @@ import { NextRequest, NextResponse } from "next/server"
 import { createSupabaseMiddlewareClient } from "@/lib/supabase"
 
 export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url)
+  const url = new URL(request.url)
+  const { searchParams } = url
   const code = searchParams.get("code")
   const tokenHash = searchParams.get("token_hash")
   const type = searchParams.get("type")
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leobruno.it"
+
+  console.log("[auth/callback] full URL:", request.url)
+  console.log("[auth/callback] params:", { code: !!code, tokenHash: !!tokenHash, type })
 
   // Build the redirect response first so the Supabase client can write
   // session cookies directly onto it before we return
