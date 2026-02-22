@@ -1,28 +1,40 @@
 import { NextRequest, NextResponse } from "next/server"
-import { createSupabaseMiddlewareClient } from "@/lib/supabase"
+import { createServerClient } from "@supabase/ssr"
 
 export async function GET(request: NextRequest) {
-  const url = new URL(request.url)
-  const { searchParams } = url
+  const { searchParams } = new URL(request.url)
   const code = searchParams.get("code")
   const tokenHash = searchParams.get("token_hash")
   const type = searchParams.get("type")
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leobruno.it"
 
-  console.log("[auth/callback] full URL:", request.url)
   console.log("[auth/callback] params:", {
     code: !!code,
     tokenHash: !!tokenHash,
     type,
   })
 
-  // Build the redirect response first so the Supabase client can write
-  // session cookies directly onto it before we return
   const response = NextResponse.redirect(`${siteUrl}/account`)
-  const supabase = createSupabaseMiddlewareClient(request, response)
+
+  // Build the Supabase client so it writes session cookies onto the redirect response
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll()
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value, options }) => {
+            response.cookies.set(name, value, options)
+          })
+        },
+      },
+    }
+  )
 
   if (tokenHash && type) {
-    // Magic link token from generateLink() — verify OTP, cookies land on response
     const { error } = await supabase.auth.verifyOtp({
       token_hash: tokenHash,
       type: type as "magiclink" | "email",
@@ -35,7 +47,6 @@ export async function GET(request: NextRequest) {
   }
 
   if (code) {
-    // Standard OAuth/PKCE code exchange
     const { error } = await supabase.auth.exchangeCodeForSession(code)
     if (error) {
       console.error("exchangeCodeForSession error:", error)
@@ -44,6 +55,5 @@ export async function GET(request: NextRequest) {
     return response
   }
 
-  // Nothing useful — send them home
   return NextResponse.redirect(`${siteUrl}/`)
 }
