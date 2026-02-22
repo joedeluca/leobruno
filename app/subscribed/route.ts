@@ -9,19 +9,21 @@ import { supabaseAdmin } from "@/lib/supabase"
 export async function GET(request: NextRequest) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leobruno.it"
   const { searchParams, href } = new URL(request.url)
-  const email = searchParams.get("email")
 
-  // Log the full incoming URL so we can see exactly what Kit sent
+  // Try query param first (future-proofing), then fall back to cookie
+  const emailParam = searchParams.get("email")
+  const emailCookie = request.cookies.get("pending_subscriber")?.value
+  const rawEmail = emailParam || (emailCookie ? decodeURIComponent(emailCookie) : null)
+
   console.log("[/subscribed] incoming URL:", href)
-  console.log("[/subscribed] email param:", email)
+  console.log("[/subscribed] email param:", emailParam, "| cookie:", emailCookie)
 
-  // No email — Kit didn't pass the merge tag. Send home, /welcome is dead.
-  if (!email) {
-    console.log("[/subscribed] no email param — redirecting home")
+  if (!rawEmail) {
+    console.log("[/subscribed] no email found — redirecting home")
     return NextResponse.redirect(`${siteUrl}/`)
   }
 
-  const normalizedEmail = email.trim().toLowerCase()
+  const normalizedEmail = rawEmail.trim().toLowerCase()
 
   try {
     // 1. Upsert auth user with email pre-confirmed — no Supabase verification email
@@ -34,7 +36,7 @@ export async function GET(request: NextRequest) {
       console.error("[/subscribed] createUser error:", createError.message)
     }
 
-    // 2. Generate magic link token server-side (no email sent by admin API)
+    // 2. Generate magic link token server-side (admin API does not send an email)
     const { data: linkData, error: linkError } =
       await supabaseAdmin.auth.admin.generateLink({
         type: "magiclink",
@@ -47,13 +49,16 @@ export async function GET(request: NextRequest) {
       return NextResponse.redirect(`${siteUrl}/`)
     }
 
-    // 3. Hand the token to the callback route — it verifies and sets the session
+    // 3. Hand token to callback — clear the pending cookie on the way out
     const callbackUrl = new URL(`${siteUrl}/auth/callback`)
     callbackUrl.searchParams.set("token_hash", linkData.properties.hashed_token)
     callbackUrl.searchParams.set("type", "magiclink")
 
     console.log("[/subscribed] redirecting to callback for:", normalizedEmail)
-    return NextResponse.redirect(callbackUrl.toString())
+
+    const response = NextResponse.redirect(callbackUrl.toString())
+    response.cookies.set("pending_subscriber", "", { path: "/", maxAge: 0 })
+    return response
   } catch (err) {
     console.error("[/subscribed] unexpected error:", err)
     return NextResponse.redirect(`${siteUrl}/`)
