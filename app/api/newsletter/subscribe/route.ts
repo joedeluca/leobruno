@@ -104,39 +104,19 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Create auth user (email pre-confirmed) and generate a magic link token.
-    // We return the link to the client so the browser can redirect directly —
-    // no cookies, no cross-site redirects, no Kit redirect chain needed.
-    // SITE_URL is server-only so it can be set correctly per-environment on Vercel.
-    const siteUrl = process.env.SITE_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? "https://leobruno.it"
-
-    await supabaseAdmin.auth.admin.createUser({
+    // Create the Supabase auth user immediately — email pre-confirmed since Kit
+    // handles verification via double opt-in. This is fire-and-forget; we log
+    // errors but don't fail the subscription if auth user creation has an issue.
+    const { error: createError } = await supabaseAdmin.auth.admin.createUser({
       email: normalizedEmail,
       email_confirm: true,
     })
 
-    const { data: linkData, error: linkError } =
-      await supabaseAdmin.auth.admin.generateLink({
-        type: "magiclink",
-        email: normalizedEmail,
-        options: { redirectTo: `${siteUrl}/account` },
-      })
-
-    if (linkError || !linkData?.properties?.hashed_token) {
-      console.error("generateLink error:", linkError)
-      // Non-fatal — they're subscribed, just won't get auto-login
-      return NextResponse.json({ success: true, message: "Subscribed successfully." })
+    if (createError && !createError.message.toLowerCase().includes("already")) {
+      console.error("createUser error:", createError.message)
     }
 
-    const callbackUrl = new URL(`${siteUrl}/auth/callback`)
-    callbackUrl.searchParams.set("token_hash", linkData.properties.hashed_token)
-    callbackUrl.searchParams.set("type", "magiclink")
-
-    return NextResponse.json({
-      success: true,
-      message: "Subscribed successfully.",
-      redirect: callbackUrl.toString(),
-    })
+    return NextResponse.json({ success: true, message: "Subscribed successfully." })
   } catch (err) {
     console.error("Subscribe route error:", err)
     return NextResponse.json(

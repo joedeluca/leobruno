@@ -37,11 +37,6 @@ function NewsletterSignup() {
       setStatus("success")
       setEmail("")
 
-      // API returns a magic link — follow it to land on /account authenticated
-      if (data.redirect) {
-        window.location.href = data.redirect
-      }
-
       // Redirect to /account — server already created the session token
       if (data.redirect) {
         window.location.href = data.redirect
