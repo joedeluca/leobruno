@@ -28,13 +28,13 @@ export default async function AccountPage() {
   const firstName = (user.user_metadata?.first_name as string) || null
   const joinDate = user.created_at ? formatDate(user.created_at) : null
 
-  // Pull newsletter reads
+  // Pull reading history
   const { data: reads } = await supabaseAdmin
-    .from("newsletter_reads")
-    .select("read_at, newsletters(title, slug, sent_at)")
+    .from("reads")
+    .select("slug, title, type, url, read_at")
     .eq("user_id", user.id)
     .order("read_at", { ascending: false })
-    .limit(20)
+    .limit(50)
 
   return (
     <div className="flex flex-col lg:flex-row h-full">
@@ -80,17 +80,17 @@ export default async function AccountPage() {
                 {reads.map((read: any, i: number) => (
                   <li key={i}>
                     <Link
-                      href={`/newsletter/${read.newsletters.slug}`}
+                      href={read.url}
                       className="text-zinc-300 hover:text-zinc-100 transition-colors text-base"
                       style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
                     >
-                      {read.newsletters.title}
+                      {read.title}
                     </Link>
                     <span
                       className="block text-xs text-zinc-600 mt-0.5"
                       style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
                     >
-                      {formatDate(read.newsletters.sent_at)}
+                      {formatDate(read.read_at)}
                     </span>
                   </li>
                 ))}

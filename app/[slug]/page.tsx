@@ -6,6 +6,7 @@ import { gsap } from "gsap"
 import GlobalSearch from "@/components/GlobalSearch"
 import SpotifyEmbed from "@/components/SpotifyEmbed"
 import { formatArticleDate } from "@/lib/formatDate"
+import { createBrowserClient } from "@supabase/ssr"
 
 interface Post {
   slug: string
@@ -71,6 +72,31 @@ export default function Post() {
 
     return () => clearTimeout(timer)
   }, [params.slug, router])
+
+  // Track read for logged-in users once post is loaded
+  useEffect(() => {
+    if (!post) return
+    const supabase = createBrowserClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    )
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (!session) return
+      fetch("/api/reads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          slug: post.slug,
+          title: post.title,
+          type:
+            post.category?.toLowerCase() === "newsletter"
+              ? "newsletter"
+              : "post",
+          url: `/${post.slug}`,
+        }),
+      })
+    })
+  }, [post])
 
   // Listen for search queries
   useEffect(() => {

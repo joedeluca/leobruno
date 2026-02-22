@@ -2,14 +2,24 @@
 
 import { useEffect } from "react"
 
-export default function ReadTracker({ slug }: { slug: string }) {
+export default function ReadTracker({
+  slug,
+  title,
+  type,
+  url,
+}: {
+  slug: string
+  title: string
+  type: string
+  url: string
+}) {
   useEffect(() => {
-    fetch("/api/newsletter/read", {
+    fetch("/api/reads", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ slug }),
+      body: JSON.stringify({ slug, title, type, url }),
     })
-  }, [slug])
+  }, [slug, title, type, url])
 
   return null
 }

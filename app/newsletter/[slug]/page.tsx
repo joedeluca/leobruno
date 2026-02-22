@@ -67,7 +67,14 @@ export default async function NewsletterIssuePage({
       />
 
       {/* Record this as read for logged-in users */}
-      {user && <ReadTracker slug={slug} />}
+      {user && (
+        <ReadTracker
+          slug={slug}
+          title={issue.title}
+          type="newsletter"
+          url={`/newsletter/${slug}`}
+        />
+      )}
     </div>
   )
 }
