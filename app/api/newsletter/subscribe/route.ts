@@ -48,7 +48,8 @@ export async function POST(request: NextRequest) {
           shouldCreateUser: false,
         },
       })
-      if (otpError) console.error("signInWithOtp (existing) error:", otpError.message)
+      if (otpError)
+        console.error("signInWithOtp (existing) error:", otpError.message)
       return NextResponse.json({
         success: true,
         message: "Check your email for a sign-in link.",

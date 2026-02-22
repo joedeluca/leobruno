@@ -26,7 +26,9 @@ export default function ConfirmPage() {
       .setSession({ access_token: accessToken, refresh_token: refreshToken })
       .then(({ error }) => {
         if (error) {
-          window.location.href = `/?auth_error=${encodeURIComponent(error.message)}`
+          window.location.href = `/?auth_error=${encodeURIComponent(
+            error.message
+          )}`
         } else {
           window.location.href = "/account"
         }
