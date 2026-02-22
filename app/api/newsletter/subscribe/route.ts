@@ -104,16 +104,18 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    const isProd = process.env.NODE_ENV === "production"
+    // SameSite=None;Secure required for cross-site redirect from Kit's confirmation email.
+    // In dev (HTTP) fall back to Lax so the cookie still works on localhost.
+    const cookieFlags = isProd
+      ? "SameSite=None; Secure"
+      : "SameSite=Lax"
     return NextResponse.json(
       { success: true, message: "Subscribed successfully." },
       {
         status: 200,
         headers: {
-          // Store email in a short-lived cookie so /subscribed can read it
-          // after Kit's confirmation redirect (Kit doesn't pass email in redirect URL)
-          "Set-Cookie": `pending_subscriber=${encodeURIComponent(
-            normalizedEmail
-          )}; Path=/; Max-Age=3600; SameSite=Lax; Secure`,
+          "Set-Cookie": `pending_subscriber=${encodeURIComponent(normalizedEmail)}; Path=/; Max-Age=3600; ${cookieFlags}`,
         },
       }
     )
