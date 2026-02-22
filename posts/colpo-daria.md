@@ -23,4 +23,10 @@ Elliott said I should go see Francesca, his therapist. She'd explained to him th
 
 "You're not listening to me."
 
-And he was right. I still hadn't felt it in my bones. My new New World hymen was still intact.
+And he was right. I still hadn't felt it in my bones. My new New World hymen was still intact. I couldn't imagine wearing a scarf in a snow storm, let alone on a sunny spring afternoon. I'm just not a scarf guy.
+
+"I'm just not a scarf guy," I said.
+
+"Right. You'd rather be dead than wear a scarf?"
+
+"Exactly."
