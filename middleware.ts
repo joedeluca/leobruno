@@ -6,7 +6,9 @@ export async function middleware(request: NextRequest) {
   const supabase = createSupabaseMiddlewareClient(request, response)
 
   // Refresh session if expired
-  const { data: { user } } = await supabase.auth.getUser()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
 
   // Protect /account — redirect unauthenticated users home
   if (request.nextUrl.pathname.startsWith("/account") && !user) {

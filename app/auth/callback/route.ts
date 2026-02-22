@@ -19,7 +19,10 @@ export async function GET(request: NextRequest) {
 
   if (tokenHash && type) {
     // Magic link token from generateLink() — exchange for session
-    await supabase.auth.verifyOtp({ token_hash: tokenHash, type: type as "magiclink" | "email" })
+    await supabase.auth.verifyOtp({
+      token_hash: tokenHash,
+      type: type as "magiclink" | "email",
+    })
     return response
   }
 

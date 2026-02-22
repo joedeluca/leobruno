@@ -130,7 +130,9 @@ export default async function AccountPage() {
               className="text-zinc-400 text-sm"
               style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
             >
-              {subscriber?.status === "active" ? "Active subscriber" : "Inactive"}
+              {subscriber?.status === "active"
+                ? "Active subscriber"
+                : "Inactive"}
             </p>
           </div>
 
