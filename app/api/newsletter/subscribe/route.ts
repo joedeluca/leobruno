@@ -40,6 +40,14 @@ export async function POST(request: NextRequest) {
 
     if (existing) {
       if (existing.status === "active") {
+        // Already subscribed — send a fresh magic link so they can access /account
+        await supabaseAdmin.auth.admin.generateLink({
+          type: "magiclink",
+          email: normalizedEmail,
+          options: {
+            redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
+          },
+        })
         return NextResponse.json(
           { error: "You're already subscribed." },
           { status: 409 }
@@ -69,6 +77,23 @@ export async function POST(request: NextRequest) {
           { status: 500 }
         )
       }
+    }
+
+    // Create Supabase auth user (or get existing) and send magic link
+    // This gives them a real account + lands them at /account after confirmation
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leobruno.it"
+    const { error: authError } = await supabaseAdmin.auth.admin.generateLink({
+      type: "magiclink",
+      email: normalizedEmail,
+      options: {
+        redirectTo: `${siteUrl}/auth/callback`,
+        data: { first_name: first_name?.trim() || null },
+      },
+    })
+
+    if (authError) {
+      // Non-fatal — they're subscribed, just won't have auto-login
+      console.error("Magic link error:", authError)
     }
 
     // Sync to Kit

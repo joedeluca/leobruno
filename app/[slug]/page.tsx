@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { gsap } from "gsap"
 import GlobalSearch from "@/components/GlobalSearch"
+import SpotifyEmbed from "@/components/SpotifyEmbed"
 import { formatArticleDate } from "@/lib/formatDate"
 
 interface Post {
@@ -114,6 +115,40 @@ export default function Post() {
 
   const showHeroImage = !!post.heroImage
 
+  // Split HTML on spotify-embed divs and render them as React components
+  const spotifyPattern =
+    /<div class="spotify-embed">[\s\S]*?<iframe[^>]+src="([^"]+)"[^>]*>[\s\S]*?<\/iframe>[\s\S]*?<\/div>/gi
+  const renderContent = (html: string) => {
+    const parts: React.ReactNode[] = []
+    let lastIndex = 0
+    let match: RegExpExecArray | null
+    let i = 0
+    spotifyPattern.lastIndex = 0
+    while ((match = spotifyPattern.exec(html)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(
+          <span
+            key={i++}
+            dangerouslySetInnerHTML={{
+              __html: html.slice(lastIndex, match.index),
+            }}
+          />
+        )
+      }
+      parts.push(<SpotifyEmbed key={i++} src={match[1]} height={152} />)
+      lastIndex = match.index + match[0].length
+    }
+    if (lastIndex < html.length) {
+      parts.push(
+        <span
+          key={i++}
+          dangerouslySetInnerHTML={{ __html: html.slice(lastIndex) }}
+        />
+      )
+    }
+    return parts
+  }
+
   // Calculate content start position
   const getContentPaddingTop = () => {
     if (!showHeroImage) return undefined
@@ -181,7 +216,7 @@ export default function Post() {
               {post.teaser}
             </h5>
             <h1
-              className="text-zinc-300 mb-4"
+              className="text-zinc-300 mb-4 leading-tight mb-2 group-hover:text-white transition-colors font-bold"
               style={{
                 fontFamily: '"Schnyder S", Georgia, serif',
                 fontSize: post.titleFontSize || "clamp(2rem, 5vw, 4rem)",
@@ -211,11 +246,10 @@ export default function Post() {
           {/* Article content */}
           <article
             className="prose prose-zinc prose-lg max-w-none"
-            style={{
-              fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
-            }}
-            dangerouslySetInnerHTML={{ __html: post.content || "" }}
-          />
+            style={{ fontSize: "clamp(1rem, 1.5vw, 1.25rem)" }}
+          >
+            {renderContent(post.content || "")}
+          </article>
         </div>
       )}
     </div>

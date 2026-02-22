@@ -1,11 +1,15 @@
 ---
-title: "A field guide to loving difficult people"
+title: "A Field Guide to Loving Difficult People"
 date: "2026-02-25"
 category: "Sweetie or Not"
 tags: ["Sweetie or Not", "Music", "Lou Reed"]
 excerpt: "I was listening to Dirty Boulevard by Lou Reed and I noticed, as I always do, Lou's tender invocation of children and their being savaged with clothes hangers. And I thought: that's sweet."
 teaser: "Episode 1: Lou Reed"
 ---
+
+<div class="spotify-embed">
+<iframe src="https://open.spotify.com/embed/track/4TDLfAmx45EpSiQYG6hCzT?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
 
 I was listening to Dirty Boulevard by Lou Reed and I noticed, as I always do, Lou's tender invocation of children and their being savaged with clothes hangers. And I thought: that's sweet. A guy like Lou Reed, all the money and the fame and black denim, taking the time to call out ordinary domestic atrocities. The tenderness of it. The specificity. Clothes hangers. Not fists. Clothes hangers.
 

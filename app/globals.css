@@ -395,6 +395,26 @@
   }
 }
 
+/* Spotify / media embeds — float right inside prose */
+.prose .spotify-embed {
+  float: right;
+  width: 300px;
+  margin: 0 0 1.5rem 2rem;
+  max-width: 100%;
+  background-color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.prose .spotify-embed iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  mix-blend-mode: luminosity;
+  opacity: 0.92;
+}
+
 /* Ornament divider — outside @layer so prose cannot override */
 .ornament-divider {
   display: flex;
