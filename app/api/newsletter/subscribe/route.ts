@@ -64,31 +64,18 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Ensure the auth user exists (createUser is idempotent-ish — we ignore
-    // "already exists" errors and always send a fresh magic link below).
-    const { error: createError } = await supabaseAdmin.auth.admin.createUser({
+    // signInWithOtp creates the auth user if needed and sends the magic link
+    // email via whatever SMTP is configured in the Supabase dashboard (Resend).
+    const { error: otpError } = await supabaseAdmin.auth.signInWithOtp({
       email: normalizedEmail,
-      email_confirm: false,
-      user_metadata: { first_name: first_name?.trim() || null },
+      options: {
+        emailRedirectTo: `${SITE_URL}/auth/callback`,
+        data: { first_name: first_name?.trim() || null },
+      },
     })
 
-    if (createError) {
-      const msg = createError.message.toLowerCase()
-      // "already registered" / "already exists" is fine — we'll send the link anyway
-      if (!msg.includes("already")) {
-        console.error("createUser error:", createError.message)
-      }
-    }
-
-    // Always explicitly send the magic link — createUser alone does NOT email anything.
-    const { error: linkError } = await supabaseAdmin.auth.admin.generateLink({
-      type: "magiclink",
-      email: normalizedEmail,
-      options: { redirectTo: `${SITE_URL}/auth/callback` },
-    })
-
-    if (linkError) {
-      console.error("generateLink error:", linkError.message)
+    if (otpError) {
+      console.error("signInWithOtp error:", otpError.message)
     }
 
     return NextResponse.json({
