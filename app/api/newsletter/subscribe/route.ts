@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from "next/server"
 import { supabaseAdmin } from "@/lib/supabase"
 
-const KIT_API_KEY = process.env.KIT_API_KEY!
-const KIT_FORM_ID = process.env.KIT_FORM_ID!
-const KIT_API_BASE = "https://api.convertkit.com/v3"
+const SITE_URL =
+  process.env.SITE_URL ||
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  "https://leobruno.it"
 
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
@@ -71,52 +72,34 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Sync to Kit
-    const kitResponse = await fetch(
-      `${KIT_API_BASE}/forms/${KIT_FORM_ID}/subscribe`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          api_key: KIT_API_KEY,
-          email: normalizedEmail,
-          first_name: first_name?.trim() || undefined,
-        }),
-      }
-    )
-
-    if (!kitResponse.ok) {
-      const kitError = await kitResponse.text()
-      console.error("Kit API error:", kitError)
-      // Subscriber is in Supabase — don't fail the whole request.
-      // Log and continue; a background sync can catch Kit failures later.
-    } else {
-      const kitData = (await kitResponse.json()) as {
-        subscription?: { subscriber?: { id?: number } }
-      }
-      const kitSubscriberId = kitData?.subscription?.subscriber?.id
-
-      if (kitSubscriberId) {
-        await supabaseAdmin
-          .from("subscribers")
-          .update({ kit_subscriber_id: String(kitSubscriberId) })
-          .eq("email", normalizedEmail)
-      }
-    }
-
-    // Create the Supabase auth user immediately — email pre-confirmed since Kit
-    // handles verification via double opt-in. This is fire-and-forget; we log
-    // errors but don't fail the subscription if auth user creation has an issue.
+    // Create (or silently skip if already exists) the Supabase auth user.
+    // email_confirm: false → Supabase sends a magic link email immediately.
+    // The link points to /auth/callback, which verifies the token and
+    // redirects to /account. Kit is not involved in this flow.
     const { error: createError } = await supabaseAdmin.auth.admin.createUser({
       email: normalizedEmail,
-      email_confirm: true,
+      email_confirm: false,
+      app_metadata: { redirect_to: `${SITE_URL}/auth/callback` },
     })
 
-    if (createError && !createError.message.toLowerCase().includes("already")) {
-      console.error("createUser error:", createError.message)
+    if (createError) {
+      const msg = createError.message.toLowerCase()
+      if (msg.includes("already") || msg.includes("already registered")) {
+        // User exists — send a fresh magic link so they can access /account
+        await supabaseAdmin.auth.admin.generateLink({
+          type: "magiclink",
+          email: normalizedEmail,
+          options: { redirectTo: `${SITE_URL}/auth/callback` },
+        })
+      } else {
+        console.error("createUser error:", createError.message)
+      }
     }
 
-    return NextResponse.json({ success: true, message: "Subscribed successfully." })
+    return NextResponse.json({
+      success: true,
+      message: "Check your email for a confirmation link.",
+    })
   } catch (err) {
     console.error("Subscribe route error:", err)
     return NextResponse.json(
