@@ -10,6 +10,7 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.97.0",
     "autoprefixer": "^10.4.23",
     "fuse.js": "^7.1.0",
     "gray-matter": "^4.0.3",

@@ -4,6 +4,114 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 
+function NewsletterSignup() {
+  const [email, setEmail] = useState("")
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle")
+  const [errorMessage, setErrorMessage] = useState("")
+
+  const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
+
+  const handleSubmit = async () => {
+    if (!isValidEmail(email) || status === "loading") return
+
+    setStatus("loading")
+    setErrorMessage("")
+
+    try {
+      const res = await fetch("/api/newsletter/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        setErrorMessage(data.error || "Something went wrong.")
+        setStatus("error")
+        return
+      }
+
+      setStatus("success")
+      setEmail("")
+    } catch {
+      setErrorMessage("Network error — please try again.")
+      setStatus("error")
+    }
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value)
+    if (status === "success" || status === "error") {
+      setStatus("idle")
+      setErrorMessage("")
+    }
+  }
+
+  return (
+    <div className="border-t border-zinc-800 pt-6 mt-6">
+      <h3
+        className="text-xs uppercase tracking-wider text-zinc-500 mb-3"
+        style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+      >
+        Newsletter
+      </h3>
+      <p
+        className="text-zinc-500 text-sm leading-relaxed mb-3"
+        style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+      >
+        Free. No catch.
+      </p>
+      <div className="space-y-3">
+        <input
+          type="email"
+          value={email}
+          onChange={handleChange}
+          placeholder="your@email.com"
+          disabled={status === "loading" || status === "success"}
+          className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 text-zinc-300 placeholder-zinc-600 focus:outline-none focus:border-zinc-700 transition-colors text-sm"
+          style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+        />
+        {status === "error" && errorMessage && (
+          <p
+            className="text-xs text-red-400"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+          >
+            {errorMessage}
+          </p>
+        )}
+        <button
+          onClick={handleSubmit}
+          disabled={
+            !isValidEmail(email) || status === "loading" || status === "success"
+          }
+          className={`px-4 py-3 w-full text-sm font-medium transition-all ${
+            status === "success"
+              ? "bg-green-900 text-green-300 cursor-default"
+              : status === "error"
+              ? "bg-red-900 text-red-300"
+              : !isValidEmail(email) || status === "loading"
+              ? "bg-zinc-800 text-zinc-600 cursor-not-allowed"
+              : "bg-tiepolo-pink-700 text-zinc-950 hover:bg-tiepolo-pink-600"
+          }`}
+          style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+        >
+          {status === "loading"
+            ? "Subscribing..."
+            : status === "success"
+            ? "You're in."
+            : status === "error"
+            ? "Try again"
+            : "Subscribe"}
+        </button>
+      </div>
+    </div>
+  )
+}
+
 const photos = ["/joedeluca0.jpg", "/joedeluca1.jpg"]
 
 // Function to get a random photo
@@ -229,6 +337,8 @@ export default function Sidebar() {
             Little Black Submarine
           </Link>
         </div>
+
+        <NewsletterSignup />
       </div>
     </aside>
   )
