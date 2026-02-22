@@ -122,8 +122,8 @@ export async function POST(request: NextRequest) {
         )
       }
 
-      // Notify — fire and forget, non-blocking
-      notifyNewSubscriber(normalizedEmail, first_name)
+      // Notify — await so Vercel doesn't kill the connection before it sends
+      await notifyNewSubscriber(normalizedEmail, first_name)
     }
 
     // Use anon client — service role client generates tokens that can't be verified by users
