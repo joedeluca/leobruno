@@ -8,60 +8,54 @@ import { supabaseAdmin } from "@/lib/supabase"
 
 export async function GET(request: NextRequest) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leobruno.it"
-  const { searchParams } = new URL(request.url)
+  const { searchParams, href } = new URL(request.url)
   const email = searchParams.get("email")
 
-  // No email param — Kit didn't pass it, just show the static landing
+  // Log the full incoming URL so we can see exactly what Kit sent
+  console.log("[/subscribed] incoming URL:", href)
+  console.log("[/subscribed] email param:", email)
+
+  // No email — Kit didn't pass the merge tag. Send home, /welcome is dead.
   if (!email) {
-    return NextResponse.redirect(`${siteUrl}/welcome`)
+    console.log("[/subscribed] no email param — redirecting home")
+    return NextResponse.redirect(`${siteUrl}/`)
   }
 
   const normalizedEmail = email.trim().toLowerCase()
 
   try {
-    // 1. Ensure auth user exists, email pre-confirmed (no verification email sent)
-    const { data: existingUsers } = await supabaseAdmin.auth.admin.listUsers()
-    const existingUser = existingUsers?.users?.find(
-      (u) => u.email === normalizedEmail
-    )
+    // 1. Upsert auth user with email pre-confirmed — no Supabase verification email
+    const { error: createError } = await supabaseAdmin.auth.admin.createUser({
+      email: normalizedEmail,
+      email_confirm: true,
+    })
 
-    if (!existingUser) {
-      const { error: createError } = await supabaseAdmin.auth.admin.createUser({
-        email: normalizedEmail,
-        email_confirm: true, // Kit already verified — skip Supabase email entirely
-      })
-
-      if (createError && createError.message !== "User already registered") {
-        console.error("Create user error:", createError)
-        return NextResponse.redirect(`${siteUrl}/welcome`)
-      }
+    if (createError && !createError.message.includes("already")) {
+      console.error("[/subscribed] createUser error:", createError.message)
     }
 
-    // 2. Generate a magic link token server-side — no email is sent via generateLink
-    //    when called from admin, we just use the hashed_token it returns
+    // 2. Generate magic link token server-side (no email sent by admin API)
     const { data: linkData, error: linkError } =
       await supabaseAdmin.auth.admin.generateLink({
         type: "magiclink",
         email: normalizedEmail,
-        options: {
-          redirectTo: `${siteUrl}/account`,
-        },
+        options: { redirectTo: `${siteUrl}/account` },
       })
 
     if (linkError || !linkData?.properties?.hashed_token) {
-      console.error("Generate link error:", linkError)
-      return NextResponse.redirect(`${siteUrl}/welcome`)
+      console.error("[/subscribed] generateLink error:", linkError)
+      return NextResponse.redirect(`${siteUrl}/`)
     }
 
-    // 3. Redirect to auth callback with the token — client exchanges it for a session
-    const token = linkData.properties.hashed_token
+    // 3. Hand the token to the callback route — it verifies and sets the session
     const callbackUrl = new URL(`${siteUrl}/auth/callback`)
-    callbackUrl.searchParams.set("token_hash", token)
+    callbackUrl.searchParams.set("token_hash", linkData.properties.hashed_token)
     callbackUrl.searchParams.set("type", "magiclink")
 
+    console.log("[/subscribed] redirecting to callback for:", normalizedEmail)
     return NextResponse.redirect(callbackUrl.toString())
   } catch (err) {
-    console.error("Subscribed route error:", err)
-    return NextResponse.redirect(`${siteUrl}/welcome`)
+    console.error("[/subscribed] unexpected error:", err)
+    return NextResponse.redirect(`${siteUrl}/`)
   }
 }
