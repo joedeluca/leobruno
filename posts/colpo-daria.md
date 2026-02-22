@@ -1,10 +1,10 @@
 ---
-title: "Colpo d'Aria: Folk Illness as Fact"
+title: "Italian Folk Epidemiology"
 date: "2026-02-21"
 category: "Field Notes"
 tags: ["Field Notes", "Italy", "Sardinia", "Culture"]
 excerpt: "On invisible winds that can kill you, and why Italians are correct about this. The neck is particularly vulnerable. Hence: scarves in June, no fans, sealed windows, damp hair = death. To Americans it's baffling because we have no equivalent folk illness — we'd just say 'you slept weird.'"
-teaser: "Hypochondria of the heroic"
+teaser: "The Permeable body"
 ---
 
 My friend Elliott is from New York. Late 50s, very attractive with thick salt and pepper hair and a tall frame. He has a Kevin Kline at his peak thing that all the expats find very alluring. He's the life of all the social events. Anyway, he has really taken to the scarf regimen. He doesn't go out without one now. I'll see him during his morning walks from the top of Assisi to the bottom and back, walking very fast. I mean as fast as some joggers jog, so his ass is kind of wagging very dramatically, and he's always, _always_ got a scarf on, and dark shades, and a panama hat and his bright orange Brooks running shoes. I see him from a window overlooking the main thoroughfare to the basilica and it looks like a great one-man Woody Allen film about a beautiful American man in a full fit of hypochondriacal terror.
