@@ -19,5 +19,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/account/:path*", "/auth/callback"],
+  matcher: ["/account/:path*", "/auth/callback", "/auth/confirm"],
 }
