@@ -40,8 +40,10 @@ export async function GET(request: NextRequest) {
       type: type as "magiclink" | "email",
     })
     if (error) {
-      console.error("verifyOtp error:", error)
-      return NextResponse.redirect(`${siteUrl}/`)
+      console.error("verifyOtp error:", error.message, error.status)
+      return NextResponse.redirect(
+        `${siteUrl}/?auth_error=${encodeURIComponent(error.message)}`
+      )
     }
     return response
   }
