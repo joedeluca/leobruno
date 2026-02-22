@@ -34,7 +34,7 @@ Last Tuesday she found two of my pocket notebooks stuck together in her refriger
 
 So they sat abandoned in her clinically organized refrigerator.
 
-The notebooks are filled with simple observations. The pair of donkeys I see on my runs outside town, who circle when they spot me. The barista at Trovellesi who braids her hair differently every day, bites her fingernails, can't stay off her phone. Yuki trimming roses in the alley, her underwear tangled in the waistband of her stretch pants.
+The notebooks are filled with simple observations. The pair of donkeys I see on my runs outside town, who circle when they spot me. The barista at Trovellesi who braids her hair differently every day, bites her fingernails, can't stay off her phone. My landlord Yuki trimming roses in the alley, her underwear tangled in the waistband of her stretch pants.
 
 Roxy found these notes and didn't say anything. Just removed them and disappeared them. I was too afraid to ask where they went.
 
@@ -170,7 +170,7 @@ He doesn't move. Which is what you'd expect when a man's world order is collapsi
 
 "Va bene. Facile. Fai tutti i caffè insieme e versali dentro." I point to his ten spout machine. I make a pouring motion. Just make the coffees all at once and dump them in.
 
-He takes the mug. Looking at me like he thinks I don't understand. I walk to the window and look out at the interstate in the distance. Where is Roxy? I miss her already, but I think I missed her from the start. I feel nothing new. I call Elliott and send him my GPS position. He calls Yuki because she has a car. Rescue party on the way. Yuki drives the opposite of Roxy. She drives with her nose over the top the wheel, squinting, always like she's driving in an ice storm.
+He takes the mug. Looking at me like he thinks I don't understand. I walk to the window and look out at the interstate in the distance. Where is Roxy? I miss her already, but I think I missed her from the start. I feel nothing new. I call my best friend Elliott and send him my GPS position. He calls Yuki because she has a car. Rescue party on the way. Yuki drives the opposite of Roxy. She drives with her nose over the top the wheel, squinting, always like she's driving in an ice storm.
 
 I return to the bar to find a steaming mug. I pay for it. Suspiciously low price. I take a drink. The motherfucker made me an Americano. Which is not American coffee. It's espresso with hot water—a dilution, a compromise. Real American coffee is something else entirely. A vast country in a cup. The burnt Folgers in a metal pot at a Nevada diner. Bottomless cups. Homemade pie. Or dark roast from one of those airpots in an Oakland cafe—four dollars, but you can sit there for an hour and nobody tries to rush you out. For an American, coffee is meant to be lingered over. A companion to the morning as it unfolds, slow and forgiving.
 
