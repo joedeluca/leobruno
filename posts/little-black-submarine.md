@@ -180,6 +180,10 @@ By the fifth, he won't look at me.
 
 I walk outside and bum a Diana from an old woman stretching her legs. She's kind and seems pleased to offer it. I haven't smoked in over a year—just a handful in the last ten.
 
-I take a drag and all the tension leaves my body at once. I look back through the glass. The barista is gesticulating wildly to a coworker. Probably talking about me.
+I take a drag and all the tension leaves my body at once. I look back through the glass. The barista is gesticulating wildly to a coworker.
 
 _The horror._
+
+---
+
+<p style="font-size: 0.9rem; color: #52525b; font-style: italic; margin-top: 2rem;">"Little Black Submarine" is an excerpt from <em>Reliquary</em>, a forthcoming story collection by Leo Bruno.</p>
