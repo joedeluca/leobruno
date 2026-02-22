@@ -3,17 +3,16 @@
 import { useEffect } from "react"
 import { createClient } from "@supabase/supabase-js"
 
-// This page receives token_hash via the URL hash fragment (#).
-// Fragments are never sent to the server and never prefetched by email clients,
-// so the one-time token can't be consumed before the user clicks.
+// Supabase always redirects with the session in the URL fragment (#access_token=...).
+// This client-side page reads it and sets the session, then redirects to /account.
 export default function ConfirmPage() {
   useEffect(() => {
-    const hash = window.location.hash.slice(1) // remove leading #
+    const hash = window.location.hash.slice(1)
     const params = new URLSearchParams(hash)
-    const tokenHash = params.get("token_hash")
-    const type = params.get("type") ?? "magiclink"
+    const accessToken = params.get("access_token")
+    const refreshToken = params.get("refresh_token")
 
-    if (!tokenHash) {
+    if (!accessToken || !refreshToken) {
       window.location.href = "/?auth_error=Missing+token"
       return
     }
@@ -24,7 +23,7 @@ export default function ConfirmPage() {
     )
 
     supabase.auth
-      .verifyOtp({ token_hash: tokenHash, type: type as any })
+      .setSession({ access_token: accessToken, refresh_token: refreshToken })
       .then(({ error }) => {
         if (error) {
           window.location.href = `/?auth_error=${encodeURIComponent(error.message)}`

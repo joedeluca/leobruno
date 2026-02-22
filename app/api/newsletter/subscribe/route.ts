@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { supabaseAdmin } from "@/lib/supabase"
+import { supabaseAdmin, supabase } from "@/lib/supabase"
 
 const SITE_URL =
   process.env.SITE_URL ||
@@ -41,10 +41,10 @@ export async function POST(request: NextRequest) {
 
     if (existing) {
       // Already subscribed — send a login link so they can access /account
-      const { error: otpError } = await supabaseAdmin.auth.signInWithOtp({
+      const { error: otpError } = await supabase.auth.signInWithOtp({
         email: normalizedEmail,
         options: {
-          emailRedirectTo: `${SITE_URL}/auth/callback`,
+          emailRedirectTo: `${SITE_URL}/auth/confirm`,
           shouldCreateUser: false,
         },
       })
@@ -73,11 +73,11 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // signInWithOtp sends the magic link regardless of whether the user exists
-    const { error: otpError } = await supabaseAdmin.auth.signInWithOtp({
+    // Use anon client — service role client generates tokens that can't be verified by users
+    const { error: otpError } = await supabase.auth.signInWithOtp({
       email: normalizedEmail,
       options: {
-        emailRedirectTo: `${SITE_URL}/auth/callback`,
+        emailRedirectTo: `${SITE_URL}/auth/confirm`,
         data: { first_name: first_name?.trim() || null },
         shouldCreateUser: true,
       },
