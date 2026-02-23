@@ -5,6 +5,8 @@ import HeaderLogo from "@/components/HeaderLogo"
 import PoemLinkHandler from "@/components/PoemLinkHandler"
 import Footer from "@/components/Footer"
 import AudioPlayer from "@/components/AudioPlayer"
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "Leo Bruno",
@@ -42,6 +44,9 @@ export default function RootLayout({
 
         {/* Footer */}
         <Footer />
+
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

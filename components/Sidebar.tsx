@@ -60,6 +60,13 @@ function NewsletterSignup() {
       setStatus("success")
       setEmail("")
 
+      // Track signup event
+      if (typeof window !== "undefined" && (window as any).va) {
+        ;(window as any).va.track("newsletter_signup", {
+          source: document.referrer,
+        })
+      }
+
       // Redirect to /account — server already created the session token
       if (data.redirect) {
         window.location.href = data.redirect
