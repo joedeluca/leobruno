@@ -57,7 +57,7 @@
 
 @font-face {
   font-family: "Graphik";
-  src: url("/fonts/Graphik-LightItalic-Web.woff2") format("woff2");
+  src: url("/fonts/graphik-italic-400.woff") format("woff");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
