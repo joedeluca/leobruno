@@ -8,7 +8,8 @@ _Tone: Žižek meets Sedaris meets Kundera meets DFW (but warmer). Funny. Usuall
 ## FIELD NOTES / SARDINIA / ITALY
 
 FIELD NOTE: The Gulf of Angels, February 21
-A working summary for leobruno.it
+
+Another Sunday of cleaning the apartment, hanging laundry that won't fully dry because it's a constant 52 degrees most days it rains a little in the evening, or early in the morning. But it's February and the lemon trees and orange trees are bursting. Palm trees are green and the sky seems very blue when you can see it. Some flowers are in bloom. And today there is sun so I'm going to the sea. I haven't been since late summer. It's just 10 minutes away on the bus, Quartucciu through Quartu Sant'Elena to Poetto.
 
 A mile to the bus. The bus from Quartucciu through Quartu Sant'Elena — the chaos and beauty of it, the way it looks like Latin America, the improvised commerce, the noise, the color. Then off the bus and across the long straight road that runs parallel to Poetto. The beach appearing. Pristine. The Devil's Saddle above it.
 Umbrella in the sand. Headphones on the whole way — Madman Across the Water, Elton John, the whole album. Then sitting. Headphones off. The sound of actual life washing over instead.
