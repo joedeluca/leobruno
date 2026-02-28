@@ -118,7 +118,7 @@ export default function SweetieOrNotPageClient({ post }: { post: Post }) {
               style={{ fontSize: "clamp(1rem, 1.5vw, 1.25rem)" }}
             >
               <img
-                src="/sweetie-sticker.svg"
+                src={post.stickerImage || "/sweetie-sticker.svg"}
                 alt="Sweetie or Not"
                 className="lg:hidden not-prose float-right pointer-events-none select-none"
                 style={{
@@ -141,7 +141,7 @@ export default function SweetieOrNotPageClient({ post }: { post: Post }) {
           </div>
 
           {/* Col 2 — verdict, sticker, coming up */}
-          <aside className="lg:w-1/4 w-full px-8 pb-12 pt-4 lg:pt-12 lg:pl-8 mt-2 lg:mt-0">
+          <aside className="lg:w-1/4 w-full px-8 pb-12 pt-4 lg:pt-12 lg:pl-8 mt-2 lg:mt-0" style={{ background: "linear-gradient(160deg, #000000 0%, #c4607e 30%, #8a739e 65%, #000000 100%)" }}>
             <div className="lg:sticky lg:top-12 space-y-8">
               {/* Verdict */}
               <div>
@@ -167,7 +167,7 @@ export default function SweetieOrNotPageClient({ post }: { post: Post }) {
                   </p>
                 )}
                 <img
-                  src="/sweetie-sticker.svg"
+                  src={post.stickerImage || "/sweetie-sticker.svg"}
                   alt="Sweetie or Not"
                   className="hidden lg:block pointer-events-none select-none mt-6"
                   style={{

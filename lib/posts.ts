@@ -28,6 +28,7 @@ export interface Post {
   rawContent?: string
   verdict?: string
   person?: string
+  stickerImage?: string
 }
 
 const postsDirectory = path.join(process.cwd(), "posts")
@@ -127,6 +128,7 @@ export function getSortedPostsDataWithContent(): Post[] {
             matterResult.data.titleFontSize || "clamp(2rem, 5vw, 4rem)",
           verdict: matterResult.data.verdict || "",
           person: matterResult.data.person || "",
+          stickerImage: matterResult.data.stickerImage || "/sweetie-sticker.svg",
         }
       })
     allPosts.push(...blogPosts)
@@ -179,6 +181,7 @@ export async function getPostData(slug: string): Promise<Post> {
     readTime: `${readTime} min read`,
     verdict: matterResult.data.verdict || "",
     person: matterResult.data.person || "",
+    stickerImage: matterResult.data.stickerImage || "/sweetie-sticker.svg",
     teaser: matterResult.data.teaser || "",
     teaserShort: matterResult.data.teaserShort || matterResult.data.teaser || "",
     heroImage: matterResult.data.heroImage || "",
