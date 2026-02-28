@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import type { Post } from "@/lib/posts"
 
 interface PostListProps {
@@ -30,6 +31,7 @@ function highlightText(text: string, query: string) {
 }
 
 export default function PostList({ posts, searchQuery }: PostListProps) {
+  const router = useRouter()
   if (posts.length === 0) {
     return (
       <div className="text-center py-12">
@@ -70,13 +72,13 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
                   className="text-zinc-300 uppercase tracking-wide mb-0"
                   style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
                 >
-                  <a
-                    href="/"
-                    className="text-zinc-300 hover:text-tiepolo-pink-700 transition-colors"
-                    onClick={(e) => e.stopPropagation()}
+                  <button
+                    type="button"
+                    className="text-zinc-300 hover:text-tiepolo-pink-700 transition-colors cursor-pointer"
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); router.push("/") }}
                   >
                     {post.category}
-                  </a>
+                  </button>
                   {" | "}
                   {/* Show short teaser on mobile, full teaser on desktop */}
                   <span className="lg:hidden">
