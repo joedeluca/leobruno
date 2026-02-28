@@ -45,17 +45,21 @@ const VERDICTS = [
 
 export default function SweetieVote({ episodeSlug }) {
   const [tally, setTally] = useState({ sweetie: 0, penitent: 0, not_a_sweetie: 0 });
-  const [myVote, setMyVote] = useState(null); // verdict id or null
+  const [myVote, setMyVote] = useState(null);
   const [reasoning, setReasoning] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
+  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
     const fp = getFingerprint();
     fetchTally();
     checkExistingVote(fp);
+    supabase.auth.getUser().then(({ data }) => {
+      if (data?.user) setUserId(data.user.id);
+    });
   }, [episodeSlug]);
 
   async function fetchTally() {
@@ -73,6 +77,21 @@ export default function SweetieVote({ episodeSlug }) {
   }
 
   async function checkExistingVote(fp) {
+    // Check by user_id first if logged in
+    const { data: userData } = await supabase.auth.getUser();
+    const uid = userData?.user?.id;
+
+    if (uid) {
+      const { data } = await supabase
+        .from("sweetie_votes")
+        .select("verdict")
+        .eq("episode_slug", episodeSlug)
+        .eq("user_id", uid)
+        .maybeSingle();
+      if (data) { setMyVote(data.verdict); setSubmitted(true); return; }
+    }
+
+    // Fall back to fingerprint
     const { data } = await supabase
       .from("sweetie_votes")
       .select("verdict")
@@ -80,10 +99,7 @@ export default function SweetieVote({ episodeSlug }) {
       .eq("fingerprint", fp)
       .maybeSingle();
 
-    if (data) {
-      setMyVote(data.verdict);
-      setSubmitted(true);
-    }
+    if (data) { setMyVote(data.verdict); setSubmitted(true); }
   }
 
   async function handleVote(verdictId) {
@@ -102,6 +118,7 @@ export default function SweetieVote({ episodeSlug }) {
       episode_slug: episodeSlug,
       verdict: myVote,
       fingerprint: fp,
+      user_id: userId || null,
       reasoning: reasoning.trim() || null,
     });
 

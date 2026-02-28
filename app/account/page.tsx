@@ -36,6 +36,13 @@ export default async function AccountPage() {
     .order("read_at", { ascending: false })
     .limit(50)
 
+  // Pull Sweetie or Not vote history
+  const { data: votes } = await supabaseAdmin
+    .from("sweetie_votes")
+    .select("episode_slug, verdict, reasoning, created_at")
+    .eq("user_id", user.id)
+    .order("created_at", { ascending: false })
+
   return (
     <div className="flex flex-col lg:flex-row h-full">
       <div className="lg:w-3/4 w-full px-8 pb-12 pt-[.8rem] lg:pr-8 lg:border-r lg:border-zinc-800">
@@ -104,9 +111,49 @@ export default async function AccountPage() {
               </p>
             )}
           </div>
+
+          {/* Sweetie or Not Verdicts */}
+          {votes && votes.length > 0 && (
+            <div className="border-t border-zinc-800 pt-8 mt-8">
+              <h2
+                className="text-xs uppercase tracking-wider text-zinc-500 mb-6"
+                style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+              >
+                Sweetie or Not — Your Verdicts
+              </h2>
+              <ul className="space-y-4">
+                {(votes as any[]).map((vote, i) => {
+                  const labelMap: Record<string, string> = {
+                    sweetie: "Sweetie",
+                    penitent: "Penitent",
+                    not_a_sweetie: "Not a Sweetie",
+                  }
+                  return (
+                    <li key={i}>
+                      <Link
+                        href={`/${vote.episode_slug}`}
+                        className="text-zinc-300 hover:text-zinc-100 transition-colors text-base"
+                        style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+                      >
+                        {vote.episode_slug.replace("sweetie-or-not-", "").replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase())}
+                      </Link>
+                      <span
+                        className="block text-xs text-zinc-500 mt-0.5"
+                        style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+                      >
+                        {labelMap[vote.verdict] || vote.verdict}
+                        {vote.reasoning && (
+                          <span className="text-zinc-600"> — &ldquo;{vote.reasoning}&rdquo;</span>
+                        )}
+                      </span>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
-
       {/* Sidebar column */}
       <div className="lg:w-1/4 w-full px-8 pb-12 pt-[.8rem] lg:pl-8 mt-8 lg:mt-0">
         <div className="pt-12 space-y-6">
