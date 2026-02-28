@@ -61,7 +61,7 @@ export default function SweetieOrNotPageClient({ post }: { post: Post }) {
           <div className="lg:w-3/4 w-full px-8 pb-12 pt-12 lg:pr-8 lg:border-r lg:border-zinc-800">
             <header className="mb-12">
               <h5
-                className="text-zinc-300 uppercase tracking-wide"
+                className="text-zinc-300 uppercase tracking-wide flex"
                 style={{
                   fontFamily: '"Graphik", system-ui, sans-serif',
                   fontSize: post.teaserFontSize || "clamp(0.875rem, 2vw, 1.5rem)",
@@ -72,9 +72,9 @@ export default function SweetieOrNotPageClient({ post }: { post: Post }) {
                   className="text-zinc-300 hover:text-tiepolo-pink-700 transition-colors"
                 >
                   {post.category}
-                </a>
-                <span className="hidden max-sm:flex">{" | "}{post.teaserShort}</span>
-                <span className="max-sm:hidden">{" | "}{post.teaser}</span>
+                </a>&nbsp;{"|"}&nbsp;
+                <span className="hidden max-sm:flex">{post.teaserShort}</span>
+                <span className="max-sm:hidden">{post.teaser}</span>
               </h5>
               <h1
                 className="text-zinc-300 mb-4 leading-tight font-bold"

@@ -180,6 +180,7 @@ export async function getPostData(slug: string): Promise<Post> {
     verdict: matterResult.data.verdict || "",
     person: matterResult.data.person || "",
     teaser: matterResult.data.teaser || "",
+    teaserShort: matterResult.data.teaserShort || matterResult.data.teaser || "",
     heroImage: matterResult.data.heroImage || "",
     heroImageSize: matterResult.data.heroImageSize || "cover",
     heroImagePosition: matterResult.data.heroImagePosition || "center",

@@ -69,7 +69,7 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
               {/* Category | Teaser */}
               <div className="mb-0">
                 <h5
-                  className="text-zinc-300 uppercase tracking-wide mb-0"
+                  className="text-zinc-300 uppercase tracking-wide mb-0 flex"
                   style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
                 >
                   <button
@@ -78,11 +78,9 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
                     onClick={(e) => { e.preventDefault(); e.stopPropagation(); router.push("/") }}
                   >
                     {post.category}
-                  </button>
-                  {" | "}
-                  {/* Show short teaser on mobile, full teaser on desktop */}
-                      <span className="hidden max-sm:block">{post.teaserShort}</span>
-                      <span className="max-sm:hidden">{post.teaser}</span>
+                  </button>&nbsp;{"|"}
+                      <span className="hidden max-sm:block">&nbsp;{post.teaserShort}</span>
+                      <span className="max-sm:hidden">&nbsp;{post.teaser}</span>
                 </h5>
               </div>
 
