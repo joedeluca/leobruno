@@ -17,10 +17,8 @@ The sea is calm and blue and constant. I think of the summer and just floating a
 
 Somewhere in here my mother calls, as she does on Sunday. She tells me how far offshore my brother was today. She always has him a little farther out than last time — as if his mythos is proportional to his distance from shore. My brother is a fisherman in Maine. Big guy. Good fighter. Takes me out when I'm there and enjoys laughing at me when the smile freezes on my face, teeth chattering, and I huddle in the bow hiding from the blast of cold while he steers the thing like he's driving his cart onto the 18th hole with a five shot lead. My mom has him thirty miles out today. Does she want him lost at sea, I wonder?
 
-That sea and this sea are not the same sea. The Gulf of Angels is bathwater. He would say so himself.
+That sea and this sea are not the same sea. My brother would say the Gulf of Angels is bathwater.
 
 He'd had me send him a picture of a lobster from the Cagliari market.
 
 "That's a shrimp!" he said.
-
-"Yeah," I said. "Everything here in Sardegna is tiny."
