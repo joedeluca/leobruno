@@ -81,8 +81,8 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
                   </button>
                   {" | "}
                   {/* Show short teaser on mobile, full teaser on desktop */}
-                      <span className="hidden max-sm: block">{" | "}{post.teaserShort}</span>
-                <span className="max-sm:hidden">{" | "}{post.teaser}</span>
+                      <span className="hidden max-sm:block">{" | "}{post.teaserShort}</span>
+                      <span className="max-sm:hidden">{" | "}{post.teaser}</span>
                 </h5>
               </div>
 
