@@ -66,12 +66,12 @@ export default function NewsletterPage() {
           }}
         >
           <p>
-            Why subscribe to the Leo Bruno newsletter? Think of it as{" "}
+            Why subscribe to my newsletter? Think of it as {" "}
             <strong className="text-zinc-200 font-normal">
-              proximity to the most anonymous biological material on the internet.
-            </strong>{" "}
+              proximity to the most anonymous person on the internet
+            </strong>. The equivalent of reading the OED in a public library circa 1989.{" "}
             Sure, there's the Rolling Stone interview nobody read. And the thirty
-            Sardinians who ride the bus with me every day. That's my entire
+            Sardinians who ride the bus with me every day. And the literary journal stuff that nobody with a pulse has read. But, that's my <sup className="text-tiepolo-pink-600 ml-0.5 text-sm">*</sup>entire
             public footprint.
           </p>
         </div>
@@ -137,6 +137,32 @@ export default function NewsletterPage() {
 
         {/* Form */}
         <SubscribeForm />
+
+              {/* Footnote */}
+        <p
+          className="text-zinc-600 text-xs leading-relaxed mb-10 border-t border-zinc-800 pt-4"
+          style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+        >
+          <sup className="text-tiepolo-pink-600 mr-1">*</sup>
+          Yeah, this is all lies.{" "}
+          <a
+            href="https://www.instagram.com/theleobruno/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-500 hover:text-zinc-300 transition-colors underline underline-offset-2"
+          >
+            Instagram
+          </a>
+          {" · "}
+          <a
+            href="https://www.youtube.com/@TheLeoBruno"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-500 hover:text-zinc-300 transition-colors underline underline-offset-2"
+          >
+            YouTube
+          </a>
+        </p>
       </div>
 
       {/* Sidebar — 25% */}
