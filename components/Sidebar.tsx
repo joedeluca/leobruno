@@ -115,10 +115,13 @@ function NewsletterSignup() {
         /* Logged-out / unknown state — show form */
         <>
           <p
-            className="text-zinc-500 text-sm leading-relaxed mb-3"
+            className="text-zinc-500 text-sm leading-relaxed mb-3 flex items-baseline gap-3"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
           >
-            Free. No catch.
+            <span>Free. No catch.</span>
+            <Link href="/newsletter" className="text-zinc-500 hover:text-zinc-300 transition-colors underline underline-offset-2 text-xs">
+              Why subscribe?
+            </Link>
           </p>
           <div className="space-y-3">
             <input
