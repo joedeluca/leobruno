@@ -144,7 +144,7 @@ export function TraceButton({ onClick, isOpen }: { onClick: () => void; isOpen: 
         textTransform: "uppercase",
       }}
     >
-      {isOpen ? "Close" : "Trace"}
+      {isOpen ? "Close" : "Drafts"}
     </button>
   )
 }
