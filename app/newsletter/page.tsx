@@ -71,8 +71,8 @@ export default function NewsletterPage() {
               proximity to the most anonymous biological material on the internet.
             </strong>{" "}
             Sure, there's the Rolling Stone interview nobody read. And the thirty
-            Sardinians who ride the bus with him every day. That's the entire
-            Leo Bruno public footprint.
+            Sardinians who ride the bus with me every day. That's my entire
+            public footprint.
           </p>
         </div>
 
@@ -99,7 +99,8 @@ export default function NewsletterPage() {
           }}
         >
           <p>
-            But inside the black hole you'll find something strange, evocative - like a tomato that tastes like - oh. my. god. A tomato!:{" "}
+            But inside the black hole you'll find something strange, evocative - like a 
+            tomato that tastes like - oh. my. god. A tomato! Yes friends, we're talking about{" "}
             <strong className="text-zinc-200 font-normal">
               an actual human voice.
             </strong>{" "}
@@ -114,9 +115,9 @@ export default function NewsletterPage() {
             forgotten what that feels like.
           </p>
           <p>
-            Subscribing is essentially an anonymizer. No algorithm knows you're
+            Best of all subscribing is essentially an anonymizer. No algorithm knows you're
             here. No engagement metrics are being optimized. No one is trying to
-            sell you a mattress.
+            sell you a mattress. Just you, me and the void.
           </p>
         </div>
 
