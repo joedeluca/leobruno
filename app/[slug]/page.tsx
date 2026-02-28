@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import { getPostData, getAllPostSlugs } from "@/lib/posts"
 import PostPageClient from "./PostPageClient"
+import SweetieOrNotPageClient from "./SweetieOrNotPageClient"
 
 export async function generateStaticParams() {
   return getAllPostSlugs()
@@ -38,5 +39,9 @@ export default async function PostPage({
     notFound()
   }
 
-  return <PostPageClient post={post} />
+  return post.category === "Sweetie or Not" ? (
+    <SweetieOrNotPageClient post={post} />
+  ) : (
+    <PostPageClient post={post} />
+  )
 }
