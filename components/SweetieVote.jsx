@@ -269,6 +269,7 @@ export default function SweetieVote({ episodeSlug }) {
             padding: "0.85rem 2rem",
             cursor: myVote ? "pointer" : "default",
             transition: "all 0.2s",
+            width: "100%",
           }}
         >
           {submitting ? "Submitting..." : "Submit Verdict"}
