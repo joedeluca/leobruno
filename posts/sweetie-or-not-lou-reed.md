@@ -5,6 +5,7 @@ category: "Sweetie or Not"
 tags: ["Sweetie or Not", "Music", "Lou Reed"]
 excerpt: "I was listening to Dirty Boulevard by Lou Reed and I noticed, as I always do, Lou's tender invocation of children and their being savaged with clothes hangers. And I thought: that's sweet."
 teaser: "A Field Guide to Loving Difficult People"
+teaserShort: "A Field Guide"
 verdict: "Sweetie. But."
 person: "Lou Reed"
 ---

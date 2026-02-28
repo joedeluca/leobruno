@@ -104,8 +104,8 @@ export default function SweetieOrNotPageClient({ post }: { post: Post }) {
                 >
                   {post.category}
                 </a>
-                {" | "}
-                {post.teaser}
+                <span className="hidden sm:inline">{" | "}{post.teaser}</span>
+                <span className="sm:hidden">{" | "}{post.teaserShort || post.teaser}</span>
               </h5>
               <h1
                 className="text-zinc-300 mb-4 leading-tight font-bold"
