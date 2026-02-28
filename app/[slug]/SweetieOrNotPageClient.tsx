@@ -6,6 +6,7 @@ import GlobalSearch from "@/components/GlobalSearch"
 import { formatArticleDate, formatShortDate } from "@/lib/formatDate"
 import PostReadTracker from "./PostReadTracker"
 import ArticleTrace, { TraceButton } from "@/components/ArticleTrace"
+import SweetieVote from "@/components/SweetieVote"
 import type { Post } from "@/lib/posts"
 
 function renderContent(html: string) {
@@ -136,6 +137,8 @@ export default function SweetieOrNotPageClient({ post, allEpisodes = [] }: { pos
               isOpen={traceOpen}
               onToggle={() => setTraceOpen((v) => !v)}
             />
+
+            <SweetieVote episodeSlug={post.slug} />
           </div>
 
           {/* Col 2 — verdict, sticker, coming up */}
