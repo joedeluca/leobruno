@@ -100,7 +100,7 @@ export default function NewsletterPage() {
         >
           <p>
             But inside the black hole you'll find something strange, evocative - like a 
-            tomato that tastes like - oh. my. god. A tomato! Yes friends, we're talking about{" "}
+            tomato that tastes like - oh. my. god. A tomato! Yes dear reader, we're talking about{" "}
             <strong className="text-zinc-200 font-normal">
               an actual human voice.
             </strong>{" "}
