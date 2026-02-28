@@ -12,6 +12,20 @@ function renderContent(html: string) {
   return <span dangerouslySetInnerHTML={{ __html: html }} />
 }
 
+const VERDICT_GRADIENTS: Record<string, string> = {
+  "not a sweetie": "linear-gradient(160deg, #000000 0%, #333333 50%, #000000 100%)",
+  penitent: "linear-gradient(160deg, #000000 0%, #654543 35%, #756374 70%, #000000 100%)",
+  sweetie: "linear-gradient(160deg, #000000 0%, #c4607e 30%, #8a739e 65%, #000000 100%)",
+}
+
+function getVerdictGradient(verdict: string): string {
+  const key = verdict.toLowerCase()
+  for (const [k, v] of Object.entries(VERDICT_GRADIENTS)) {
+    if (key.includes(k)) return v
+  }
+  return VERDICT_GRADIENTS.sweetie
+}
+
 const UPCOMING = ["Woody Allen", "Arnold Schwarzenegger"]
 
 export default function SweetieOrNotPageClient({ post }: { post: Post }) {
@@ -141,7 +155,7 @@ export default function SweetieOrNotPageClient({ post }: { post: Post }) {
           </div>
 
           {/* Col 2 — verdict, sticker, coming up */}
-          <aside className="lg:w-1/4 w-full px-8 pb-12 pt-4 lg:pt-12 lg:pl-8 mt-2 lg:mt-0" style={{ background: "linear-gradient(160deg, #000000 0%, #c4607e 30%, #8a739e 65%, #000000 100%)" }}>
+          <aside className="lg:w-1/4 w-full px-8 pb-12 pt-4 lg:pt-12 lg:pl-8 mt-2 lg:mt-0" style={{ background: getVerdictGradient(post.verdict || "") }}>
             <div className="lg:sticky lg:top-12 space-y-8">
               {/* Verdict */}
               <div>
