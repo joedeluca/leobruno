@@ -7,10 +7,6 @@ excerpt: "I was listening to Dirty Boulevard by Lou Reed and I noticed, as I alw
 teaser: "A Field Guide to Loving Difficult People"
 ---
 
-<div class="spotify-embed">
-<iframe src="https://open.spotify.com/embed/track/4TDLfAmx45EpSiQYG6hCzT?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-</div>
-
 I was listening to Dirty Boulevard by Lou Reed and I noticed, as I always do, Lou's tender invocation of children and their being savaged with clothes hangers. And I thought: _that's sweet_. A guy like Lou Reed, all the money and the fame and the black denim, taking the time to call out ordinary domestic atrocities. The tenderness of it. The specificity.
 
 I said to Elliott: Lou Reed must have been a real sweetie.
