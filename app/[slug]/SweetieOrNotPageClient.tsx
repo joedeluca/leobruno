@@ -3,44 +3,13 @@
 import { useEffect, useState, useRef } from "react"
 import { gsap } from "gsap"
 import GlobalSearch from "@/components/GlobalSearch"
-import SpotifyEmbed from "@/components/SpotifyEmbed"
 import { formatArticleDate, formatShortDate } from "@/lib/formatDate"
 import PostReadTracker from "./PostReadTracker"
 import ArticleTrace, { TraceButton } from "@/components/ArticleTrace"
 import type { Post } from "@/lib/posts"
 
-const spotifyPattern =
-  /<div class="spotify-embed">[\s\S]*?<iframe[^>]+src="([^"]+)"[^>]*>[\s\S]*?<\/iframe>[\s\S]*?<\/div>/gi
-
 function renderContent(html: string) {
-  const parts: React.ReactNode[] = []
-  let lastIndex = 0
-  let match: RegExpExecArray | null
-  let i = 0
-  spotifyPattern.lastIndex = 0
-  while ((match = spotifyPattern.exec(html)) !== null) {
-    if (match.index > lastIndex) {
-      parts.push(
-        <span
-          key={i++}
-          dangerouslySetInnerHTML={{
-            __html: html.slice(lastIndex, match.index),
-          }}
-        />
-      )
-    }
-    parts.push(<SpotifyEmbed key={i++} src={match[1]} height={152} />)
-    lastIndex = match.index + match[0].length
-  }
-  if (lastIndex < html.length) {
-    parts.push(
-      <span
-        key={i++}
-        dangerouslySetInnerHTML={{ __html: html.slice(lastIndex) }}
-      />
-    )
-  }
-  return parts
+  return <span dangerouslySetInnerHTML={{ __html: html }} />
 }
 
 const UPCOMING = ["Woody Allen", "Arnold Schwarzenegger"]
@@ -104,7 +73,7 @@ export default function SweetieOrNotPageClient({ post }: { post: Post }) {
                 >
                   {post.category}
                 </a>
-                <span className="hidden max-sm:block">{" | "}{post.teaserShort}</span>
+                <span className="hidden max-sm:flex">{" | "}{post.teaserShort}</span>
                 <span className="max-sm:hidden">{" | "}{post.teaser}</span>
               </h5>
               <h1
