@@ -12,9 +12,7 @@ function renderContent(html: string) {
   return <span dangerouslySetInnerHTML={{ __html: html }} />
 }
 
-const UPCOMING = ["Woody Allen", "Arnold Schwarzenegger"]
-
-export default function SweetieOrNotPageClient({ post }: { post: Post }) {
+export default function SweetieOrNotPageClient({ post, allEpisodes = [] }: { post: Post; allEpisodes?: Post[] }) {
   const [isSearchActive, setIsSearchActive] = useState(false)
   const [traceOpen, setTraceOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -178,7 +176,7 @@ export default function SweetieOrNotPageClient({ post }: { post: Post }) {
                 />
               </div>
 
-              {/* Coming up */}
+              {/* Episode list */}
               <div>
                 <p
                   className="text-zinc-500 uppercase tracking-widest mb-3"
@@ -188,20 +186,25 @@ export default function SweetieOrNotPageClient({ post }: { post: Post }) {
                     letterSpacing: "0.15em",
                   }}
                 >
-                  Coming up
+                  Episodes
                 </p>
                 <div className="space-y-2">
-                  {UPCOMING.map((name) => (
-                    <p
-                      key={name}
-                      className="text-zinc-600"
+                  {allEpisodes.map((ep) => (
+                    <a
+                      key={ep.slug}
+                      href={`/${ep.slug}`}
+                      className={`block transition-colors ${
+                        ep.slug === post.slug
+                          ? "text-zinc-200"
+                          : "text-zinc-500 hover:text-zinc-300"
+                      }`}
                       style={{
                         fontFamily: '"Graphik", system-ui, sans-serif',
-                        fontSize: "clamp(0.9rem, 1.5vw, 1.1rem)",
+                        fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
                       }}
                     >
-                      {name}
-                    </p>
+                      {ep.title}
+                    </a>
                   ))}
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
-import { getPostData, getAllPostSlugs } from "@/lib/posts"
+import { getPostData, getAllPostSlugs, getSortedPostsData } from "@/lib/posts"
 import PostPageClient from "./PostPageClient"
 import SweetieOrNotPageClient from "./SweetieOrNotPageClient"
 
@@ -39,9 +39,12 @@ export default async function PostPage({
     notFound()
   }
 
-  return post.category === "Sweetie or Not" ? (
-    <SweetieOrNotPageClient post={post} />
-  ) : (
-    <PostPageClient post={post} />
-  )
+  if (post.category === "Sweetie or Not") {
+    const allEpisodes = getSortedPostsData().filter(
+      (p) => p.category === "Sweetie or Not"
+    )
+    return <SweetieOrNotPageClient post={post} allEpisodes={allEpisodes} />
+  }
+
+  return <PostPageClient post={post} />
 }
