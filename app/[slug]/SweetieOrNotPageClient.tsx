@@ -141,7 +141,7 @@ export default function SweetieOrNotPageClient({ post }: { post: Post }) {
           </div>
 
           {/* Col 2 — verdict, sticker, coming up */}
-          <aside className="lg:w-1/4 w-full px-8 pb-12 pt-4 lg:pt-12 lg:pl-8 mt-2 lg:mt-0" style={{ background: "linear-gradient(160deg, #000000 0%, #333333 50%, #000000 100%)" }}>
+          <aside className="lg:w-1/4 w-full px-8 pb-12 pt-4 lg:pt-12 lg:pl-8 mt-2 lg:mt-0 sm:[background:linear-gradient(160deg,#000000_0%,#333333_50%,#000000_100%)]">
             <div className="lg:sticky lg:top-12 space-y-8">
               {/* Verdict */}
               <div>
