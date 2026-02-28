@@ -24,3 +24,15 @@ export function formatArticleDate(dateString: string): string {
 
   return date.toLocaleDateString("en-US", options)
 }
+
+// Format date from YYYY-MM-DD to "Feb 28" for compact/mobile bylines
+export function formatShortDate(dateString: string): string {
+  const date = new Date(dateString + "T00:00:00")
+
+  const options: Intl.DateTimeFormatOptions = {
+    month: "short",
+    day: "numeric",
+  }
+
+  return date.toLocaleDateString("en-US", options)
+}

@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react"
 import { gsap } from "gsap"
 import GlobalSearch from "@/components/GlobalSearch"
 import SpotifyEmbed from "@/components/SpotifyEmbed"
-import { formatArticleDate } from "@/lib/formatDate"
+import { formatArticleDate, formatShortDate } from "@/lib/formatDate"
 import PostReadTracker from "./PostReadTracker"
 import ArticleTrace, { TraceButton } from "@/components/ArticleTrace"
 import type { Post } from "@/lib/posts"
@@ -124,10 +124,18 @@ export default function SweetieOrNotPageClient({ post }: { post: Post }) {
                 <span style={{ fontFamily: '"Schnyder S", Georgia, serif' }}>
                   by
                 </span>{" "}
-                <span style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}>
+                {/* Mobile: just Leo */}
+                <span className="lg:hidden" style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}>
+                  Leo
+                </span>
+                {/* Desktop: Leo Bruno */}
+                <span className="hidden lg:inline" style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}>
                   Leo Bruno
                 </span>{" "}
-                | {formatArticleDate(post.date)}
+                {/* Mobile: short date */}
+                <span className="lg:hidden">| {formatShortDate(post.date)}</span>
+                {/* Desktop: full date */}
+                <span className="hidden lg:inline">| {formatArticleDate(post.date)}</span>
                 <span className="text-zinc-800 select-none">·</span>
                 <TraceButton
                   onClick={() => setTraceOpen((v) => !v)}

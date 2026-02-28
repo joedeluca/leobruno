@@ -53,5 +53,3 @@ Well. Bowie was British.
 Elliott considers this.
 
 ---
-
-<p><em>Next: Woody Allen</em></p>
