@@ -27,6 +27,7 @@ export interface Post {
   titleFontSize?: string
   rawContent?: string
   verdict?: string
+  person?: string
 }
 
 const postsDirectory = path.join(process.cwd(), "posts")
@@ -125,6 +126,7 @@ export function getSortedPostsDataWithContent(): Post[] {
           titleFontSize:
             matterResult.data.titleFontSize || "clamp(2rem, 5vw, 4rem)",
           verdict: matterResult.data.verdict || "",
+          person: matterResult.data.person || "",
         }
       })
     allPosts.push(...blogPosts)
@@ -176,6 +178,7 @@ export async function getPostData(slug: string): Promise<Post> {
     rawContent: matterResult.content,
     readTime: `${readTime} min read`,
     verdict: matterResult.data.verdict || "",
+    person: matterResult.data.person || "",
     teaser: matterResult.data.teaser || "",
     heroImage: matterResult.data.heroImage || "",
     heroImageSize: matterResult.data.heroImageSize || "cover",

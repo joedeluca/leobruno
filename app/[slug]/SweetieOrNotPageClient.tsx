@@ -172,7 +172,7 @@ export default function SweetieOrNotPageClient({ post }: { post: Post }) {
           </div>
 
           {/* Col 2 — verdict, sticker, coming up */}
-          <aside className="lg:w-1/4 w-full px-8 pb-12 pt-12 lg:pl-8 mt-8 lg:mt-0">
+          <aside className="lg:w-1/4 w-full px-8 pb-12 pt-4 lg:pt-12 lg:pl-8 mt-2 lg:mt-0">
             <div className="lg:sticky lg:top-12 space-y-8">
               {/* Verdict */}
               <div>
@@ -184,7 +184,7 @@ export default function SweetieOrNotPageClient({ post }: { post: Post }) {
                     letterSpacing: "0.15em",
                   }}
                 >
-                  Verdict
+                  {post.person ? `${post.person} verdict` : "Verdict"}
                 </p>
                 {post.verdict && (
                   <p
