@@ -22,6 +22,28 @@ export function getAllNewsletterSlugs(): string[] {
     .map((f) => f.replace(/\.md$/, ""))
 }
 
+export function getAllNewsletterIssues(): Omit<NewsletterIssue, "contentHtml">[] {
+  if (!fs.existsSync(newsletterDirectory)) return []
+  return fs
+    .readdirSync(newsletterDirectory)
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => {
+      const slug = f.replace(/\.md$/, "")
+      const fileContents = fs.readFileSync(
+        path.join(newsletterDirectory, f),
+        "utf8"
+      )
+      const { data } = matter(fileContents)
+      return {
+        slug,
+        title: data.title || slug,
+        date: data.date || "",
+        excerpt: data.excerpt || "",
+      }
+    })
+    .sort((a, b) => (a.date > b.date ? -1 : 1))
+}
+
 export async function getNewsletterIssue(
   slug: string
 ): Promise<NewsletterIssue | null> {
