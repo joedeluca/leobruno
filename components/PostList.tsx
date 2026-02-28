@@ -74,7 +74,7 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
                 >
                   <button
                     type="button"
-                    className="text-zinc-300 hover:text-tiepolo-pink-700 transition-colors cursor-pointer"
+                    className="uppercase text-zinc-300 hover:text-tiepolo-pink-700 transition-colors cursor-pointer"
                     onClick={(e) => { e.preventDefault(); e.stopPropagation(); router.push("/") }}
                   >
                     {post.category}

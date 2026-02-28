@@ -1,17 +1,17 @@
 ---
-title: "A Field Guide to Loving Difficult People"
+title: "Episode 1: Lou Reed"
 date: "2026-02-25"
 category: "Sweetie or Not"
 tags: ["Sweetie or Not", "Music", "Lou Reed"]
 excerpt: "I was listening to Dirty Boulevard by Lou Reed and I noticed, as I always do, Lou's tender invocation of children and their being savaged with clothes hangers. And I thought: that's sweet."
-teaser: "Episode 1: Lou Reed"
+teaser: "A Field Guide to Loving Difficult People"
 ---
 
 <div class="spotify-embed">
 <iframe src="https://open.spotify.com/embed/track/4TDLfAmx45EpSiQYG6hCzT?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </div>
 
-I was listening to Dirty Boulevard by Lou Reed and I noticed, as I always do, Lou's tender invocation of children and their being savaged with clothes hangers. And I thought: that's sweet. A guy like Lou Reed, all the money and the fame and black denim, taking the time to call out ordinary domestic atrocities. The tenderness of it. The specificity. Clothes hangers. Not fists. Clothes hangers.
+I was listening to Dirty Boulevard by Lou Reed and I noticed, as I always do, Lou's tender invocation of children and their being savaged with clothes hangers. And I thought: _that's sweet_. A guy like Lou Reed, all the money and the fame and the black denim, taking the time to call out ordinary domestic atrocities. The tenderness of it. The specificity.
 
 I said to Elliott: Lou Reed must have been a real sweetie.
 
@@ -25,7 +25,7 @@ And that's how the game started.
 
 ---
 
-The rules, such as they are: you consider the work. You consider the person. You decide. The only disqualifying sin is one that is truly hurtful — not difficult, not annoying, not insufferable at press junkets. Truly damaging. Everything else is just being human, which artists are, catastrophically, always. And I will add that even in some cases where true damage is inflicted, a person can still be deemed a sweetie, if there are extenuating circumstances.
+The rules, such as they are: you consider the work. You consider the person. You decide. The only disqualifying sin is one that is truly hurtful — not difficult, not annoying, not insufferable at press junkets. Truly _damaging_. Everything else is just being human, which artists are, catastrophically, always. And I will add that even in some cases where true damage is inflicted, a person can still be deemed a sweetie, if there are extenuating circumstances.
 
 ---
 
@@ -47,12 +47,13 @@ So: not a sweetie. The damage he carried, he also discharged. Some of it landed 
 
 You bring an abused dog in off the street. You can't say she's not a sweetie just because she growls at men.
 
-I still listen to Lou.
+Lou was a Jew, I say. So the kike thing was—
 
-Elliott remains unconvinced.
+Elliott knows he was a Jew. Doesn't care.
 
-The game continues.
+Well. Bowie was British.
 
+Elliott considers this.
 ---
 
 <p><em>Next: Iggy Pop, in full.</em></p>
