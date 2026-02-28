@@ -4,7 +4,7 @@ date: "2026-02-22"
 category: "Field Notes"
 tags: ["Field Notes", "Sardinia", "Italy", "Family"]
 excerpt: "February at Poetto. Headphones on, headphones off. My mother calls from Maine to tell me how far offshore my brother is — a little farther every time she tells it."
-teaser: "The Gulf of Angels, February 22"
+teaser: "The Gulf of Angels"
 ---
 
 Another Sunday: cleaning the apartment, hanging laundry that won't fully dry because it's a constant 52 degrees and most days it rains a little, in the evening or early in the morning. But it's February and the lemon trees and orange trees are bursting. Palm trees green. The sky very blue when you can see it. Some flowers in bloom. And today there is sun, so I'm going to the sea. I haven't been since late summer. Ten minutes on the bus — Quartucciu through Quartu Sant'Elena to Poetto.

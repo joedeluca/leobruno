@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/generate-history.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
@@ -15,6 +16,7 @@
     "@vercel/analytics": "^1.6.1",
     "@vercel/speed-insights": "^1.3.1",
     "autoprefixer": "^10.4.23",
+    "diff": "^8.0.3",
     "fuse.js": "^7.1.0",
     "gray-matter": "^4.0.3",
     "gsap": "^3.14.2",
@@ -32,6 +34,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
+    "@types/diff": "^7.0.2",
     "@types/node": "^20",
     "@types/nodemailer": "^7.0.5",
     "@types/react": "^19",

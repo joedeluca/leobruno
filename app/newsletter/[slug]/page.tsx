@@ -2,8 +2,8 @@ import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import { getAllNewsletterSlugs, getNewsletterIssue } from "@/lib/newsletter"
 import { createSupabaseServerClient } from "@/lib/supabase"
-import { formatArticleDate } from "@/lib/formatDate"
 import ReadTracker from "./ReadTracker"
+import NewsletterPageClient from "./NewsletterPageClient"
 
 export async function generateStaticParams() {
   return getAllNewsletterSlugs().map((slug) => ({ slug }))
@@ -36,37 +36,14 @@ export default async function NewsletterIssuePage({
   } = await supabase.auth.getUser()
 
   return (
-    <div className="max-w-2xl mx-auto px-8 py-16">
-      <p
-        className="text-xs uppercase tracking-wider text-zinc-500 mb-8"
-        style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
-      >
-        Newsletter
-      </p>
-
-      <h1
-        className="text-3xl text-zinc-100 mb-3 leading-tight"
-        style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
-      >
-        {issue.title}
-      </h1>
-
-      {issue.date && (
-        <p
-          className="text-zinc-600 text-sm mb-12"
-          style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
-        >
-          {formatArticleDate(issue.date)}
-        </p>
-      )}
-
-      <div
-        className="prose prose-invert prose-zinc max-w-none"
-        style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
-        dangerouslySetInnerHTML={{ __html: issue.contentHtml! }}
+    <>
+      <NewsletterPageClient
+        slug={slug}
+        title={issue.title}
+        date={issue.date}
+        contentHtml={issue.contentHtml!}
+        rawContent={issue.rawContent ?? ""}
       />
-
-      {/* Record this as read for logged-in users */}
       {user && (
         <ReadTracker
           slug={slug}
@@ -75,6 +52,6 @@ export default async function NewsletterIssuePage({
           url={`/newsletter/${slug}`}
         />
       )}
-    </div>
+    </>
   )
 }

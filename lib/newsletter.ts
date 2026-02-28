@@ -12,6 +12,7 @@ export interface NewsletterIssue {
   date: string
   excerpt: string
   contentHtml?: string
+  rawContent?: string
 }
 
 export function getAllNewsletterSlugs(): string[] {
@@ -63,5 +64,6 @@ export async function getNewsletterIssue(
     date: data.date || "",
     excerpt: data.excerpt || "",
     contentHtml: processed.toString(),
+    rawContent: content,
   }
 }

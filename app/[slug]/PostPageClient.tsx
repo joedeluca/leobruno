@@ -6,6 +6,7 @@ import GlobalSearch from "@/components/GlobalSearch"
 import SpotifyEmbed from "@/components/SpotifyEmbed"
 import { formatArticleDate } from "@/lib/formatDate"
 import PostReadTracker from "./PostReadTracker"
+import ArticleTrace, { TraceButton } from "@/components/ArticleTrace"
 import type { Post } from "@/lib/posts"
 
 const spotifyPattern =
@@ -44,6 +45,7 @@ function renderContent(html: string) {
 
 export default function PostPageClient({ post }: { post: Post }) {
   const [isSearchActive, setIsSearchActive] = useState(false)
+  const [traceOpen, setTraceOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
   // Fade in on mount
@@ -151,7 +153,7 @@ export default function PostPageClient({ post }: { post: Post }) {
               {post.title}
             </h1>
             <div
-              className="text-zinc-400"
+              className="text-zinc-400 flex items-center gap-3"
               style={{ fontSize: "clamp(1rem, 1.5vw, 1.25rem)" }}
             >
               <span style={{ fontFamily: '"Schnyder S", Georgia, serif' }}>
@@ -161,6 +163,8 @@ export default function PostPageClient({ post }: { post: Post }) {
                 Leo Bruno
               </span>{" "}
               | {formatArticleDate(post.date)}
+              <span className="text-zinc-800 select-none">·</span>
+              <TraceButton onClick={() => setTraceOpen((v) => !v)} isOpen={traceOpen} />
             </div>
           </header>
 
@@ -178,6 +182,13 @@ export default function PostPageClient({ post }: { post: Post }) {
             )}
             {renderContent(post.content || "")}
           </article>
+
+          <ArticleTrace
+            filePath={`posts/${post.slug}`}
+            currentContent={post.rawContent || ""}
+            isOpen={traceOpen}
+            onToggle={() => setTraceOpen((v) => !v)}
+          />
         </div>
       )}
     </div>

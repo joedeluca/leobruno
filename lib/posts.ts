@@ -25,6 +25,7 @@ export interface Post {
   heroContentStart?: string
   teaserFontSize?: string
   titleFontSize?: string
+  rawContent?: string
 }
 
 const postsDirectory = path.join(process.cwd(), "posts")
@@ -170,6 +171,7 @@ export async function getPostData(slug: string): Promise<Post> {
     category: matterResult.data.category || "Essays",
     tags: matterResult.data.tags || [],
     content: contentHtml,
+    rawContent: matterResult.content,
     readTime: `${readTime} min read`,
     teaser: matterResult.data.teaser || "",
     heroImage: matterResult.data.heroImage || "",
