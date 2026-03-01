@@ -16,6 +16,7 @@ export default function MobileNav() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
   const panelRef = useRef<HTMLDivElement>(null)
+  const backdropRef = useRef<HTMLDivElement>(null)
 
   // Close on route change
   useEffect(() => {
@@ -31,8 +32,14 @@ export default function MobileNav() {
         { opacity: 0, y: 24 },
         { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }
       )
+      gsap.fromTo(
+        backdropRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.3, ease: "power2.out" }
+      )
     } else {
       gsap.to(panelRef.current, { opacity: 0, y: 16, duration: 0.2, ease: "power2.in" })
+      gsap.to(backdropRef.current, { opacity: 0, duration: 0.2, ease: "power2.in" })
     }
   }, [open])
 
@@ -68,6 +75,21 @@ export default function MobileNav() {
           }}
         />
       </button>
+
+      {/* Blur backdrop */}
+      <div
+        ref={backdropRef}
+        onClick={() => setOpen(false)}
+        className="fixed inset-0 z-[99]"
+        style={{
+          top: '7rem',
+          backdropFilter: 'blur(6px)',
+          WebkitBackdropFilter: 'blur(6px)',
+          background: 'rgba(12,10,8,0.4)',
+          pointerEvents: open ? 'auto' : 'none',
+          opacity: 0,
+        }}
+      />
 
       {/* Dropdown panel — below header, full width */}
       <div
