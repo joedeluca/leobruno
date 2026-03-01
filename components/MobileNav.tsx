@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import { createPortal } from "react-dom"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { gsap } from "gsap"
@@ -14,9 +15,12 @@ const links = [
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
   const panelRef = useRef<HTMLDivElement>(null)
   const backdropRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => { setMounted(true) }, [])
 
   // Close on route change
   useEffect(() => {
@@ -45,7 +49,7 @@ export default function MobileNav() {
 
   return (
     <>
-      {/* Hamburger button */}
+      {/* Hamburger button — stays inside header */}
       <button
         onClick={() => setOpen((v) => !v)}
         className="flex flex-col justify-center items-center gap-[5px] w-8 h-8 flex-shrink-0"
@@ -76,60 +80,70 @@ export default function MobileNav() {
         />
       </button>
 
-      {/* Blur backdrop */}
-      <div
-        ref={backdropRef}
-        onClick={() => setOpen(false)}
-        className="fixed inset-0 z-[99]"
-        style={{
-          top: '7rem',
-          backdropFilter: 'blur(6px)',
-          WebkitBackdropFilter: 'blur(6px)',
-          background: 'rgba(12,10,8,0.4)',
-          pointerEvents: open ? 'auto' : 'none',
-          opacity: 0,
-        }}
-      />
+      {/* Portal: backdrop + panel rendered on body to escape header's stacking context */}
+      {mounted && createPortal(
+        <>
+          {/* Blur backdrop */}
+          <div
+            ref={backdropRef}
+            onClick={() => setOpen(false)}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              top: '7rem',
+              zIndex: 99,
+              backdropFilter: 'blur(6px)',
+              WebkitBackdropFilter: 'blur(6px)',
+              background: 'rgba(12,10,8,0.5)',
+              pointerEvents: open ? 'auto' : 'none',
+              opacity: 0,
+            }}
+          />
 
-      {/* Dropdown panel — below header, full width */}
-      <div
-        ref={panelRef}
-        className="fixed left-0 right-0 z-[100]"
-        style={{
-          top: '7rem', // h-28
-          backgroundColor: '#0C0A08',
-          borderBottom: '1px solid #3A2E24',
-          pointerEvents: open ? 'auto' : 'none',
-          opacity: 0,
-        }}
-      >
-        <nav className="flex flex-col px-8 py-10 gap-8">
-          {links.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              style={{
-                fontFamily: '"Schnyder S", Georgia, serif',
-                fontSize: 'clamp(2rem, 9vw, 3rem)',
-                color: '#E8DCC8',
-                opacity: 0.85,
-                lineHeight: 1,
-              }}
+          {/* Dropdown panel */}
+          <div
+            ref={panelRef}
+            style={{
+              position: 'fixed',
+              left: 0,
+              right: 0,
+              top: '7rem',
+              zIndex: 100,
+              backgroundColor: '#0C0A08',
+              borderBottom: '1px solid #3A2E24',
+              pointerEvents: open ? 'auto' : 'none',
+              opacity: 0,
+            }}
+          >
+            <nav className="flex flex-col px-8 py-10 gap-8">
+              {links.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  style={{
+                    fontFamily: '"Schnyder S", Georgia, serif',
+                    fontSize: 'clamp(2rem, 9vw, 3rem)',
+                    color: '#E8DCC8',
+                    opacity: 0.85,
+                    lineHeight: 1,
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            <button
+              onClick={() => { setOpen(false); setTimeout(() => window.dispatchEvent(new CustomEvent("openSearch")), 50) }}
+              style={{ fontFamily: '"Graphik", system-ui, sans-serif', fontSize: '11px', color: '#5a4a3a', letterSpacing: '0.1em', background: 'none', border: 'none', cursor: 'pointer', padding: '0 2rem 2rem' }}
             >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        <button
-          onClick={() => { setOpen(false); setTimeout(() => window.dispatchEvent(new CustomEvent("openSearch")), 50) }}
-          className="px-8 pb-8 text-left"
-          style={{ fontFamily: '"Graphik", system-ui, sans-serif', fontSize: '11px', color: '#5a4a3a', letterSpacing: '0.1em', background: 'none', border: 'none', cursor: 'pointer', padding: '0 2rem 2rem' }}
-        >
-          ⌘K to search
-        </button>
-      </div>
+              ⌘K to search
+            </button>
+          </div>
+        </>,
+        document.body
+      )}
     </>
   )
 }
