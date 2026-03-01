@@ -167,7 +167,7 @@ export default function SearchOverlay() {
       onClick={(e) => { if (e.target === e.currentTarget) closeOverlay() }}
     >
       {/* Input card */}
-      <div className="w-full max-w-2xl mt-[15vh] px-6">
+      <div className="w-full max-w-2xl mt-[9rem] px-6">
         <input
           ref={inputRef}
           value={query}

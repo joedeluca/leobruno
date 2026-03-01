@@ -50,8 +50,8 @@ export default function RootLayout({
             {/* Mobile: hamburger — left side placeholder to balance logo */}
             <div className="sm:hidden w-8" />
 
-            {/* Center: logo */}
-            <div className="absolute left-1/2 -translate-x-1/2">
+            {/* Center: logo — invisible placeholder for layout balance */}
+            <div className="absolute left-1/2 -translate-x-1/2 pointer-events-none opacity-0">
               <HeaderLogo />
             </div>
 
@@ -82,6 +82,11 @@ export default function RootLayout({
             </div>
           </div>
         </header>
+
+        {/* Logo — fixed above overlay, outside header stacking context */}
+        <div className="fixed top-0 left-1/2 -translate-x-1/2 h-28 flex items-center z-[105] pointer-events-auto">
+          <HeaderLogo />
+        </div>
 
         {/* Global Search Overlay */}
         <SearchOverlay />
