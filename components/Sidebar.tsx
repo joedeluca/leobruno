@@ -248,7 +248,7 @@ export default function Sidebar() {
   return (
     <aside className="space-y-8">
       <div>
-        <div className="my-6">
+        <div className="my-6 -mx-4 w-[calc(100%+2rem)]">
           <Image
             src={currentPhoto}
             alt="Leo Bruno"

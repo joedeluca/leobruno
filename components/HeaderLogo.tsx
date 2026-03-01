@@ -4,16 +4,12 @@ export default function HeaderLogo() {
   return (
     <div className="flex flex-col justify-center h-full">
       <Link href="/">
-        <h1
-          className="text-tiepolo-pink-600 hover:text-tiepolo-pink-700 transition-colors cursor-pointer"
-          style={{
-            margin: 0,
-            lineHeight: 1,
-            fontSize: "30px",
-          }}
-        >
-          Leo Bruno
-        </h1>
+        <img
+          src="/leo-bruno-logo.png"
+          alt="Leo Bruno"
+          className="hover:opacity-80 transition-opacity cursor-pointer"
+          style={{ height: "60px", width: "auto" }}
+        />
       </Link>
     </div>
   )

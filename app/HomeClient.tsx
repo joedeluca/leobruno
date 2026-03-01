@@ -6,6 +6,7 @@ import { gsap } from "gsap"
 import PostList from "@/components/PostList"
 import Sidebar from "@/components/Sidebar"
 import GlobalSearch from "@/components/GlobalSearch"
+import HeaderSearchWrapper from "@/components/HeaderSearchWrapper"
 import type { Post } from "@/lib/posts"
 
 function extractMatchContext(text: string, query: string): string {
@@ -130,6 +131,11 @@ export default function HomeClient({ initialPosts }: { initialPosts: Post[] }) {
 
   return (
     <div ref={containerRef} className="w-full h-full opacity-0">
+      {/* Search bar — sits above articles, below the header */}
+      <div className="border-b border-zinc-800 h-14">
+        <HeaderSearchWrapper />
+      </div>
+
       {isSearchActive ? (
         <div className="px-8 pb-12 pt-[.8rem]">
           <GlobalSearch />
@@ -139,7 +145,7 @@ export default function HomeClient({ initialPosts }: { initialPosts: Post[] }) {
           <div className="lg:w-3/4 w-full px-8 pb-12 pt-[.8rem] lg:pr-8 lg:border-r lg:border-zinc-800">
             <PostList posts={filteredPosts} searchQuery={searchQuery} />
           </div>
-          <div className="lg:w-1/4 w-full px-8 pb-12 pt-[.8rem] lg:pl-8 mt-8 lg:mt-0">
+          <div className="lg:w-1/4 w-full px-10 pb-12 pt-[.8rem] lg:pl-10 mt-8 lg:mt-0">
             <Sidebar />
           </div>
         </div>

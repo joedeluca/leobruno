@@ -41,7 +41,7 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-36">
       {/* Pinned Message
       <div className="p-4 bg-zinc-900/30">
         <p
@@ -67,7 +67,7 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
               className="group block hover:bg-zinc-900/50 -mx-4 px-4 py-4 rounded-lg transition-colors"
             >
               {/* Category | Teaser */}
-              <div className="mb-0">
+              <div className="mb-3">
                 <h5
                   className="text-zinc-300 uppercase tracking-wide mb-0 flex"
                   style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
