@@ -41,7 +41,7 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
   }
 
   return (
-    <div className="space-y-36">
+    <div className="space-y-28">
       {/* Pinned Message
       <div className="p-4 bg-zinc-900/30">
         <p

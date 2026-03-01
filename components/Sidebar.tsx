@@ -86,7 +86,7 @@ function NewsletterSignup() {
   }
 
   return (
-    <div className="border-t pt-6 mt-6" style={{ borderColor: '#3A2E24' }}>
+    <div className="border-t pt-10 mt-10" style={{ borderColor: '#3A2E24' }}>
       <h3
         className="text-xs uppercase tracking-wider mb-3"
         style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#EDEAE4' }}
@@ -364,7 +364,7 @@ export default function Sidebar() {
           </div>
         </div>
 
-        <div className="border-t pt-6 mt-6" style={{ borderColor: '#3A2E24' }}>
+        <div className="border-t pt-10 mt-10" style={{ borderColor: '#3A2E24' }}>
           <h3
             className="text-xs uppercase tracking-wider mb-3"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#EDEAE4' }}
@@ -380,7 +380,7 @@ export default function Sidebar() {
           </Link>
         </div>
 
-        <div className="border-t pt-6 mt-6" style={{ borderColor: '#3A2E24' }}>
+        <div className="border-t pt-10 mt-10" style={{ borderColor: '#3A2E24' }}>
           <h3
             className="text-xs uppercase tracking-wider mb-3"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#EDEAE4' }}
@@ -409,7 +409,7 @@ export default function Sidebar() {
           </Link>
         </div>
 
-        <div className="border-t pt-6 mt-6" style={{ borderColor: '#3A2E24' }}>
+        <div className="border-t pt-10 mt-10" style={{ borderColor: '#3A2E24' }}>
           <h3
             className="text-xs uppercase tracking-wider mb-3"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#EDEAE4' }}
