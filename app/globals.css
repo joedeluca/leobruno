@@ -6,22 +6,16 @@
    Replace Tailwind's cold zinc scale with warm equivalents site-wide.
    zinc-100/200/300 → parchment cream family (body text)
    zinc-400/500/600 → warm taupe family (secondary / tertiary text)
-   Background / border zincss stay dark as-is.
+   Background / border zinc stay dark as-is.
 ──────────────────────────────────────────────────────────────────────────── */
-@layer base {
-  body {
-    color: #E8DCC8;
-  }
-}
-
 @layer utilities {
-  .text-zinc-50  { color: #F5F0E8 !important; }
-  .text-zinc-100 { color: #E8DCC8 !important; }
-  .text-zinc-200 { color: #D8CCBA !important; }
-  .text-zinc-300 { color: #C4B89A !important; }
-  .text-zinc-400 { color: #8A7A6A !important; }
-  .text-zinc-500 { color: #7A6A5A !important; }
-  .text-zinc-600 { color: #6A5A4A !important; }
+  .text-zinc-50  { color: #F5F4F2 !important; }
+  .text-zinc-100 { color: #EDEAE4 !important; }
+  .text-zinc-200 { color: #E2DED8 !important; }
+  .text-zinc-300 { color: #DEDAD4 !important; }
+  .text-zinc-400 { color: #A8A5A0 !important; }
+  .text-zinc-500 { color: #96938E !important; }
+  .text-zinc-600 { color: #7A7872 !important; }
 }
 
 /* Scrollbar — dark mode, site palette */
@@ -209,7 +203,8 @@ html::-webkit-scrollbar-thumb:hover {
   }
 
   body {
-    @apply bg-zinc-950 text-zinc-500;
+    @apply bg-zinc-950;
+    color: #DEDAD4; /* cream – warm but not golden */
     font-family: "Graphik", system-ui, sans-serif;
   }
 
@@ -217,7 +212,7 @@ html::-webkit-scrollbar-thumb:hover {
   p {
     font-size: 1.5rem;
     line-height: 1.6;
-    color: #a1a1aa; /* zinc-400 */
+    color: #A8A5A0; /* warm mid-grey – darker than headlines for contrast */
     margin-top: 1em;
     margin-bottom: 1em;
   }
@@ -228,7 +223,7 @@ html::-webkit-scrollbar-thumb:hover {
   article > p:first-of-type,
   div > p:first-of-type {
     margin-top: 0;
-    color: #a1a1aa; /* zinc-500 */
+    color: #A8A5A0;
   }
 
   /* Global heading styling */
@@ -240,7 +235,7 @@ html::-webkit-scrollbar-thumb:hover {
   h6 {
     font-family: "Schnyder S", Georgia, serif;
     font-weight: 700;
-    color: #a1a1aa; /* zinc-500 */
+    color: #C8C5BE; /* warm grey – secondary headings */
   }
 
   h1 {
@@ -249,7 +244,7 @@ html::-webkit-scrollbar-thumb:hover {
     margin-bottom: 0;
     padding: 0px;
     line-height: 1.1;
-    color: #d4d4d8; /* zinc-300 - same as h2 */
+    color: #EDEAE4; /* bright cream */
   }
 
   @media (min-width: 1024px) {
@@ -259,7 +254,7 @@ html::-webkit-scrollbar-thumb:hover {
   }
 
   h2 {
-    color: #d4d4d8; /* zinc-300 */
+    color: #EDEAE4; /* bright cream */
     font-size: 3.25rem; /* text-5xl */
     margin-top: 0;
     margin-bottom: 0;
@@ -269,7 +264,7 @@ html::-webkit-scrollbar-thumb:hover {
     font-size: 2.25rem; /* text-4xl pus */
     margin-top: 0rem;
     margin-bottom: 1rem;
-    color: #a1a1aa; /* zinc-500 */
+    color: #C8C5BE; /* warm grey */
   }
 
   h4 {

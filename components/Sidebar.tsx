@@ -86,10 +86,10 @@ function NewsletterSignup() {
   }
 
   return (
-    <div className="border-t border-zinc-800 pt-6 mt-6">
+    <div className="border-t pt-6 mt-6" style={{ borderColor: '#3A2E24' }}>
       <h3
-        className="text-xs uppercase tracking-wider text-zinc-500 mb-3"
-        style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+        className="text-xs uppercase tracking-wider mb-3"
+        style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#EDEAE4' }}
       >
         Newsletter
       </h3>
@@ -98,15 +98,15 @@ function NewsletterSignup() {
       {loggedInEmail ? (
         <div className="space-y-2">
           <p
-            className="text-zinc-400 text-sm"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            className="text-sm"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#A8A5A0' }}
           >
             {loggedInEmail}
           </p>
           <Link
             href="/account"
-            className="block text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            className="block text-sm transition-colors"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#A8A5A0' }}
           >
             Your account →
           </Link>
@@ -115,11 +115,11 @@ function NewsletterSignup() {
         /* Logged-out / unknown state — show form */
         <>
           <p
-            className="text-zinc-500 text-sm leading-relaxed mb-3 flex items-baseline gap-3"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            className="text-sm leading-relaxed mb-3 flex items-baseline gap-3"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#A8A5A0' }}
           >
             <span>Free. No catch.</span>
-            <Link href="/newsletter" className="text-zinc-500 hover:text-zinc-300 transition-colors underline underline-offset-2 text-xs">
+            <Link href="/newsletter" className="transition-colors underline underline-offset-2 text-xs" style={{ color: '#A8A5A0' }}>
               Why subscribe?
             </Link>
           </p>
@@ -259,28 +259,30 @@ export default function Sidebar() {
           />
         </div>
 
-        <p className="text-zinc-400 text-base leading-relaxed mb-4">
+        <div className="text-base leading-relaxed mb-4">
           <h3
-            className="text-xs uppercase tracking-wider text-zinc-500 mb-3"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            className="text-xs uppercase tracking-wider mb-3"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#EDEAE4' }}
           >
             Welcome
           </h3>
+          <p className="text-base leading-relaxed" style={{ color: '#A8A5A0' }}>
           Leo Bruno is a writer living in Sardegna. Former ad agency art slag —
           copywriter, art director — at places like TM, VMLY&R, and
           Bernstein-Rein. Published in Gradiva and I-70 Review. Currently
           working on a book about dirty Tiepolos and medieval relics.
-        </p>
+          </p>
+        </div>
 
-        <p className="text-zinc-400 text-base leading-relaxed mb-4">
+        <p className="text-base leading-relaxed mb-4" style={{ color: '#A8A5A0' }}>
           You can contact Leo below. If you want a response, be sure to include
           your name and email.
         </p>
 
         <div className="space-y-3">
           <span
-            className="text-xs text-zinc-600"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            className="text-xs"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#7A7872' }}
           >
             {wordCount} {wordCount === 1 ? "word" : "words"} · {charCount}/
             {MAX_CHARS} characters
@@ -340,62 +342,68 @@ export default function Sidebar() {
           </div>
         </div>
 
-        <div className="border-t border-zinc-800 pt-6 mt-6">
+        <div className="border-t pt-6 mt-6" style={{ borderColor: '#3A2E24' }}>
           <h3
-            className="text-xs uppercase tracking-wider text-zinc-500 mb-3"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            className="text-xs uppercase tracking-wider mb-3"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#EDEAE4' }}
           >
             Leo Reads Poems He Hates
           </h3>
           <Link
             href="/poems/the-red-wheelbarrow"
-            className="text-zinc-300 hover:text-zinc-100 transition-colors text-base"
+            className="transition-colors text-base"
+            style={{ color: '#A8A5A0' }}
           >
             The Red Wheelbarrow
           </Link>
         </div>
 
-        <div className="border-t border-zinc-800 pt-6 mt-6">
+        <div className="border-t pt-6 mt-6" style={{ borderColor: '#3A2E24' }}>
           <h3
-            className="text-xs uppercase tracking-wider text-zinc-500 mb-3"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            className="text-xs uppercase tracking-wider mb-3"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#EDEAE4' }}
           >
             <Link
               href="/work"
-              className="hover:text-zinc-300 transition-colors"
+              className="transition-colors"
+              style={{ color: '#EDEAE4' }}
             >
               Poems
             </Link>
           </h3>
           <Link
             href="/poems/ode-to-the-girl-on-the-bus"
-            className="block text-zinc-300 hover:text-zinc-100 transition-colors text-base"
+            className="block transition-colors text-base"
+            style={{ color: '#A8A5A0' }}
           >
             Ode to the Girl on the Bus
           </Link>
           <Link
             href="/poems/sokushinbutsu"
-            className="block text-zinc-300 hover:text-zinc-100 transition-colors text-base mt-2"
+            className="block transition-colors text-base mt-2"
+            style={{ color: '#A8A5A0' }}
           >
             Sokushinbutsu
           </Link>
         </div>
 
-        <div className="border-t border-zinc-800 pt-6 mt-6">
+        <div className="border-t pt-6 mt-6" style={{ borderColor: '#3A2E24' }}>
           <h3
-            className="text-xs uppercase tracking-wider text-zinc-500 mb-3"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            className="text-xs uppercase tracking-wider mb-3"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#EDEAE4' }}
           >
             <Link
               href="/work"
-              className="hover:text-zinc-300 transition-colors"
+              className="transition-colors"
+              style={{ color: '#EDEAE4' }}
             >
               Short Fiction
             </Link>
           </h3>
           <Link
             href="/little-black-submarine"
-            className="block text-zinc-300 hover:text-zinc-100 transition-colors text-base"
+            className="block transition-colors text-base"
+            style={{ color: '#A8A5A0' }}
           >
             Little Black Submarine
           </Link>
