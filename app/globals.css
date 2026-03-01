@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Warm palette overrides ──────────────────────────────────────────────
+   Replace Tailwind's cold zinc scale with warm equivalents site-wide.
+   zinc-100/200/300 → parchment cream family (body text)
+   zinc-400/500/600 → warm taupe family (secondary / tertiary text)
+   Background / border zincss stay dark as-is.
+──────────────────────────────────────────────────────────────────────────── */
+@layer base {
+  body {
+    color: #E8DCC8;
+  }
+}
+
+@layer utilities {
+  .text-zinc-50  { color: #F5F0E8 !important; }
+  .text-zinc-100 { color: #E8DCC8 !important; }
+  .text-zinc-200 { color: #D8CCBA !important; }
+  .text-zinc-300 { color: #C4B89A !important; }
+  .text-zinc-400 { color: #8A7A6A !important; }
+  .text-zinc-500 { color: #7A6A5A !important; }
+  .text-zinc-600 { color: #6A5A4A !important; }
+}
+
 /* Scrollbar — dark mode, site palette */
 html {
   scrollbar-width: thin;
