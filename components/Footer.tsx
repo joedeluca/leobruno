@@ -57,7 +57,7 @@ export default function Footer() {
         </p>
         <p
           className="text-xs mt-3"
-          style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#3A3028' }}
+          style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#5a4a3a' }}
         >
           ⌘K to search
         </p>

@@ -1,8 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { gsap } from "gsap"
 
 const links = [
   { href: "/", label: "Essays" },
@@ -14,16 +15,25 @@ const links = [
 export default function MobileNav() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
+  const panelRef = useRef<HTMLDivElement>(null)
 
   // Close on route change
   useEffect(() => {
     setOpen(false)
   }, [pathname])
 
-  // Prevent body scroll when open
+  // GSAP animate in/out
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : ""
-    return () => { document.body.style.overflow = "" }
+    if (!panelRef.current) return
+    if (open) {
+      gsap.fromTo(
+        panelRef.current,
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }
+      )
+    } else {
+      gsap.to(panelRef.current, { opacity: 0, y: 16, duration: 0.2, ease: "power2.in" })
+    }
   }, [open])
 
   return (
@@ -59,53 +69,44 @@ export default function MobileNav() {
         />
       </button>
 
-      {/* Fullscreen overlay */}
-      {open && (
-        <div
-          className="fixed inset-0 z-[200] flex flex-col bg-zinc-950"
-        >
-          {/* Close button top-right */}
-          <div className="flex justify-end px-8 pt-10">
-            <button
+      {/* Dropdown panel — below header, full width */}
+      <div
+        ref={panelRef}
+        className="fixed left-0 right-0 z-[100]"
+        style={{
+          top: '7rem', // h-28
+          backgroundColor: '#09090b',
+          borderBottom: '1px solid #3A2E24',
+          pointerEvents: open ? 'auto' : 'none',
+          opacity: 0,
+        }}
+      >
+        <nav className="flex flex-col px-8 py-10 gap-8">
+          {links.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
               onClick={() => setOpen(false)}
-              className="text-zinc-500 hover:text-zinc-300 transition-colors"
-              aria-label="Close menu"
-              style={{ fontFamily: '"Graphik", system-ui, sans-serif', fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase' }}
+              style={{
+                fontFamily: '"Schnyder S", Georgia, serif',
+                fontSize: 'clamp(2rem, 9vw, 3rem)',
+                color: '#E8DCC8',
+                opacity: 0.85,
+                lineHeight: 1,
+              }}
             >
-              Close
-            </button>
-          </div>
+              {link.label}
+            </Link>
+          ))}
+        </nav>
 
-          {/* Nav links */}
-          <nav className="flex flex-col items-center justify-center flex-1 gap-10">
-            {links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="transition-colors hover:text-white"
-                style={{
-                  fontFamily: '"Schnyder S", Georgia, serif',
-                  fontSize: 'clamp(2.5rem, 10vw, 4rem)',
-                  color: '#E8DCC8',
-                  opacity: 0.85,
-                  lineHeight: 1,
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Bottom hint */}
-          <p
-            className="text-center pb-10"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif', fontSize: '11px', color: '#3A3028', letterSpacing: '0.1em' }}
-          >
-            ⌘K to search
-          </p>
-        </div>
-      )}
+        <p
+          className="px-8 pb-8"
+          style={{ fontFamily: '"Graphik", system-ui, sans-serif', fontSize: '11px', color: '#5a4a3a', letterSpacing: '0.1em' }}
+        >
+          ⌘K to search
+        </p>
+      </div>
     </>
   )
 }
