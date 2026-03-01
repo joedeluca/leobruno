@@ -100,12 +100,13 @@ export default function MobileNav() {
           ))}
         </nav>
 
-        <p
-          className="px-8 pb-8"
-          style={{ fontFamily: '"Graphik", system-ui, sans-serif', fontSize: '11px', color: '#5a4a3a', letterSpacing: '0.1em' }}
+        <button
+          onClick={() => { setOpen(false); setTimeout(() => window.dispatchEvent(new CustomEvent("openSearch")), 50) }}
+          className="px-8 pb-8 text-left"
+          style={{ fontFamily: '"Graphik", system-ui, sans-serif', fontSize: '11px', color: '#5a4a3a', letterSpacing: '0.1em', background: 'none', border: 'none', cursor: 'pointer', padding: '0 2rem 2rem' }}
         >
           ⌘K to search
-        </p>
+        </button>
       </div>
     </>
   )

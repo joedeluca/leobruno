@@ -1,4 +1,5 @@
 import Link from "next/link"
+import SearchHint from "@/components/SearchHint"
 
 export default function Footer() {
   return (
@@ -55,12 +56,7 @@ export default function Footer() {
         >
           © {new Date().getFullYear()} Leo Bruno. All rights reserved.
         </p>
-        <p
-          className="text-xs mt-3"
-          style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#5a4a3a' }}
-        >
-          ⌘K to search
-        </p>
+        <SearchHint />
       </div>
     </footer>
   )
