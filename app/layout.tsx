@@ -13,7 +13,10 @@ export const metadata: Metadata = {
   title: "Leo Bruno",
   description: "Writing and art by Leo Bruno",
   icons: {
-    icon: "/favicon.png?v=2",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.png?v=2", type: "image/png" },
+    ],
   },
 }
 
