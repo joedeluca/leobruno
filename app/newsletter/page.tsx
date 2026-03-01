@@ -34,7 +34,7 @@ export default function NewsletterPage() {
   return (
     <div className="flex flex-col lg:flex-row h-full">
       {/* Main — 75% */}
-      <div className="lg:w-3/4 w-full px-8 pb-12 pt-[.8rem] lg:pr-8 lg:border-r lg:border-zinc-800">
+      <div className="lg:w-3/4 w-full px-8 pb-12 pt-[.8rem] lg:pr-8 lg:border-r lg:border-[#3A2E24]">
 
         {/* Eyebrow */}
         <p

@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Scrollbar — dark mode, site palette */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #3A2E24 #09090b;
+}
+html::-webkit-scrollbar {
+  width: 6px;
+}
+html::-webkit-scrollbar-track {
+  background: #09090b;
+}
+html::-webkit-scrollbar-thumb {
+  background: #3A2E24;
+  border-radius: 3px;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: #5a4a3a;
+}
+
 /* Schnyder Fonts for Headlines cio */
 @font-face {
   font-family: "Schnyder S";

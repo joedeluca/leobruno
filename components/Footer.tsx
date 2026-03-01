@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="py-8 bg-zinc-950 border-t border-zinc-800">
+    <footer className="py-8 bg-zinc-950 border-t border-[#3A2E24]">
       {/* Mobile: Centered stacked layout */}
       <div className="flex flex-col items-center gap-4 px-8 sm:hidden">
         <nav className="flex gap-6">
@@ -54,6 +54,12 @@ export default function Footer() {
           style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
         >
           © {new Date().getFullYear()} Leo Bruno. All rights reserved.
+        </p>
+        <p
+          className="text-xs mt-3"
+          style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#3A3028' }}
+        >
+          ⌘K to search
         </p>
       </div>
     </footer>

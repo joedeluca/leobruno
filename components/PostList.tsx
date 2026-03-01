@@ -78,9 +78,7 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
                     onClick={(e) => { e.preventDefault(); e.stopPropagation(); router.push("/") }}
                   >
                     {post.category}
-                  </button>&nbsp;{"|"}
-                      <span className="hidden max-sm:block">&nbsp;{post.teaserShort}</span>
-                      <span className="max-sm:hidden">&nbsp;{post.teaser}</span>
+                  </button>&nbsp;{"|"}&nbsp;{post.teaserShort || post.teaser}
                 </h5>
               </div>
 

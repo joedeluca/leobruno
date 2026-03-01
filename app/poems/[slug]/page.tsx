@@ -226,7 +226,7 @@ export default function PoemPage() {
 
           {/* Collection Sidebar */}
           {hasCollectionSidebar && (
-            <div className="lg:w-1/4 w-full lg:border-l lg:border-zinc-800 px-8 pb-12">
+            <div className="lg:w-1/4 w-full lg:border-l lg:border-[#3A2E24] px-8 pb-12">
               <div className="lg:sticky lg:top-[7rem]">
                 <h3
                   className="text-xs uppercase tracking-wider text-zinc-500 mb-4"

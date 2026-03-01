@@ -45,7 +45,7 @@ export default async function AccountPage() {
 
   return (
     <div className="flex flex-col lg:flex-row h-full">
-      <div className="lg:w-3/4 w-full px-8 pb-12 pt-[.8rem] lg:pr-8 lg:border-r lg:border-zinc-800">
+      <div className="lg:w-3/4 w-full px-8 pb-12 pt-[.8rem] lg:pr-8 lg:border-r lg:border-[#3A2E24]">
         <div className="max-w-xl pt-12">
           <p
             className="text-xs uppercase tracking-wider text-zinc-500 mb-8"
