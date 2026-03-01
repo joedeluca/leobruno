@@ -14,6 +14,11 @@ export default {
         condensed: ["Schnyder S Cond", "Georgia", "serif"],
       },
       colors: {
+        blush: {
+          700: '#5C8472',
+          800: '#4A6E5E',
+          900: '#1A2E26',
+        },
         tiepolo: {
           pink: {
             500: "#f9d8da",

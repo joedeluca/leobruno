@@ -130,8 +130,14 @@ function NewsletterSignup() {
               onChange={handleChange}
               placeholder="your@email.com"
               disabled={status === "loading" || status === "success"}
-              className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 text-zinc-300 placeholder-zinc-600 focus:outline-none focus:border-zinc-700 transition-colors text-sm"
-              style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+              className="w-full px-4 py-3 bg-zinc-900 border text-sm focus:outline-none transition-colors"
+              style={{
+                fontFamily: '"Graphik", system-ui, sans-serif',
+                borderColor: 'rgba(92,132,114,0.35)',
+                color: '#DEDAD4',
+              }}
+              onFocus={e => e.currentTarget.style.borderColor = '#5C8472'}
+              onBlur={e => e.currentTarget.style.borderColor = 'rgba(92,132,114,0.35)'}
               onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
             />
             {status === "error" && errorMessage && (
@@ -149,16 +155,21 @@ function NewsletterSignup() {
                 status === "loading" ||
                 status === "success"
               }
-              className={`px-4 py-3 w-full text-sm font-medium transition-all ${
-                status === "success"
-                  ? "bg-green-900 text-green-300 cursor-default"
-                  : status === "error"
-                  ? "bg-red-900 text-red-300"
-                  : !isValidEmail(email) || status === "loading"
-                  ? "bg-zinc-800 text-zinc-600 cursor-not-allowed"
-                  : "bg-tiepolo-pink-700 text-zinc-950 hover:bg-tiepolo-pink-600"
-              }`}
-              style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+              className="px-4 py-3 w-full text-sm font-medium transition-all"
+              style={{
+                fontFamily: '"Graphik", system-ui, sans-serif',
+                backgroundColor:
+                  status === "success" ? '#1a3a1e'
+                  : status === "error" ? '#3a1a1a'
+                  : !isValidEmail(email) || status === "loading" ? '#27272a'
+                  : '#5C8472',
+                color:
+                  status === "success" ? '#86efac'
+                  : status === "error" ? '#fca5a5'
+                  : !isValidEmail(email) || status === "loading" ? '#52525b'
+                  : '#09090b',
+                cursor: (!isValidEmail(email) || status === "loading" || status === "success") ? 'not-allowed' : 'pointer',
+              }}
             >
               {status === "loading"
                 ? "Signing in…"
@@ -292,15 +303,21 @@ export default function Sidebar() {
               value={message}
               onChange={handleMessageChange}
               placeholder="Message here.... If you have a lot to say, write elsewhere and paste."
-              className="w-full h-32 px-4 py-3 bg-zinc-900 border border-zinc-800 text-zinc-300 placeholder-zinc-600 resize-none focus:outline-none focus:border-zinc-700 transition-colors"
-              style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+              className="w-full h-32 px-4 py-3 bg-zinc-900 border resize-none focus:outline-none transition-colors"
+              style={{
+                fontFamily: '"Graphik", system-ui, sans-serif',
+                borderColor: 'rgba(92,132,114,0.35)',
+                color: '#DEDAD4',
+              }}
+              onFocus={e => e.currentTarget.style.borderColor = '#5C8472'}
+              onBlur={e => e.currentTarget.style.borderColor = 'rgba(92,132,114,0.35)'}
               maxLength={MAX_CHARS}
               spellCheck={false}
               disabled={isSending}
             />
             {isSending && (
               <div className="absolute inset-0 bg-zinc-900/80 flex items-center justify-center">
-                <div className="w-8 h-8 border-2 border-tiepolo-pink-700 border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-8 h-8 border-2 border-t-transparent rounded-full animate-spin" style={{ borderColor: '#5C8472', borderTopColor: 'transparent' }}></div>
               </div>
             )}
           </div>
@@ -318,16 +335,21 @@ export default function Sidebar() {
             <button
               onClick={handleSend}
               disabled={wordCount < 3 || isSending}
-              className={`px-4 py-3 w-full text-sm font-medium transition-all ${
-                wordCount < 3 || isSending
-                  ? "bg-zinc-800 text-zinc-600 cursor-not-allowed"
-                  : sendStatus === "success"
-                  ? "bg-green-900 text-green-300"
-                  : sendStatus === "error"
-                  ? "bg-red-900 text-red-300"
-                  : "bg-tiepolo-pink-700 text-zinc-950 hover:bg-tiepolo-pink-600"
-              }`}
-              style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+              className="px-4 py-3 w-full text-sm font-medium transition-all"
+              style={{
+                fontFamily: '"Graphik", system-ui, sans-serif',
+                backgroundColor:
+                  wordCount < 3 || isSending ? '#27272a'
+                  : sendStatus === "success" ? '#1a3a1e'
+                  : sendStatus === "error" ? '#3a1a1a'
+                  : '#5C8472',
+                color:
+                  wordCount < 3 || isSending ? '#52525b'
+                  : sendStatus === "success" ? '#86efac'
+                  : sendStatus === "error" ? '#fca5a5'
+                  : '#09090b',
+                cursor: (wordCount < 3 || isSending) ? 'not-allowed' : 'pointer',
+              }}
             >
               {isSending
                 ? "Sending..."
