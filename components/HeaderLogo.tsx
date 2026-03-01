@@ -8,7 +8,7 @@ export default function HeaderLogo() {
           src="/leo-bruno-logo.png"
           alt="Leo Bruno"
           className="hover:opacity-80 transition-opacity cursor-pointer"
-          style={{ height: "60px", width: "auto" }}
+          style={{ height: "100px", width: "auto" }}
         />
       </Link>
     </div>
