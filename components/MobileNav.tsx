@@ -62,8 +62,7 @@ export default function MobileNav() {
       {/* Fullscreen overlay */}
       {open && (
         <div
-          className="fixed inset-0 z-[200] flex flex-col"
-          style={{ backgroundColor: '#09090b', backdropFilter: 'blur(12px)' }}
+          className="fixed inset-0 z-[200] flex flex-col bg-zinc-950"
         >
           {/* Close button top-right */}
           <div className="flex justify-end px-8 pt-10">
