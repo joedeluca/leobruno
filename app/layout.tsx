@@ -13,6 +13,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 export const metadata: Metadata = {
   title: "Leo Bruno",
   description: "Writing and art by Leo Bruno",
+  icons: {
+    icon: "/favicon.png",
+  },
 }
 
 export default function RootLayout({
