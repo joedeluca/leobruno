@@ -24,8 +24,8 @@ export default function Footer() {
         </nav>
 
         <p
-          className="text-xs text-zinc-800"
-          style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+          className="text-xs"
+          style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#5a4a3a' }}
         >
           © {new Date().getFullYear()} Leo Bruno. All rights reserved.
         </p>
@@ -51,8 +51,8 @@ export default function Footer() {
         </nav>
 
         <p
-          className="text-xs text-zinc-800"
-          style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+          className="text-xs"
+          style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#5a4a3a' }}
         >
           © {new Date().getFullYear()} Leo Bruno. All rights reserved.
         </p>

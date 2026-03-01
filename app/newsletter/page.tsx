@@ -220,8 +220,8 @@ export default function NewsletterPage() {
               className="text-zinc-500 text-sm leading-relaxed"
               style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
             >
-              Leo Bruno is a writer living in Sardegna. Est.{" "}
-              Montelepre → Kansas City → Assisi → Sardinia.
+              Leo Bruno is a writer living in Italy. Est.{" "}
+              Montelepre → Kansas City → Assisi → The Q.
             </p>
           </div>
 

@@ -278,7 +278,7 @@ export default function Sidebar() {
             Welcome
           </h3>
           <p className="text-base leading-relaxed" style={{ color: '#A8A5A0' }}>
-          Leo Bruno is a writer living in Sardegna. Former ad agency art slag —
+          Leo Bruno is a writer living in Italy. Former ad agency art slag —
           copywriter, art director — at places like TM, VMLY&R, and
           Bernstein-Rein. Published in Gradiva and I-70 Review. Currently
           working on a book about dirty Tiepolos and medieval relics.
