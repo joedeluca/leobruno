@@ -259,17 +259,6 @@ export default function Sidebar() {
   return (
     <aside className="space-y-8">
       <div>
-        <div className="mt-6 mb-10 -mx-4 w-[calc(100%+2rem)]">
-          <Image
-            src={currentPhoto}
-            alt="Leo Bruno"
-            width={400}
-            height={400}
-            className="w-full h-auto aspect-square object-cover"
-            priority
-          />
-        </div>
-
         <div className="text-base leading-relaxed mb-4">
           <h3
             className="text-xs uppercase tracking-wider mb-3"
@@ -277,12 +266,23 @@ export default function Sidebar() {
           >
             Welcome
           </h3>
-          <p className="text-base leading-relaxed" style={{ color: '#A8A5A0' }}>
-          Leo Bruno is a writer living in Italy. Former ad agency art slag —
-          copywriter, art director — at places like TM, VMLY&R, and
-          Bernstein-Rein. Published in Gradiva and I-70 Review. Currently
-          working on a book about dirty Tiepolos and medieval relics.
-          </p>
+          <div>
+            <Image
+              src={currentPhoto}
+              alt="Leo Bruno"
+              width={160}
+              height={160}
+              className="float-right ml-4 mb-2 w-24 h-24 lg:w-36 lg:h-36 object-cover aspect-square"
+              priority
+            />
+            <p className="text-base leading-relaxed" style={{ color: '#A8A5A0' }}>
+            Leo Bruno is a writer living in Italy. Former ad agency art slag —
+            copywriter, art director — at places like TM, VMLY&R, and
+            Bernstein-Rein. Published in Gradiva and I-70 Review. Currently
+            working on a book about dirty Tiepolos and medieval relics.
+            </p>
+            <div className="clear-both" />
+          </div>
         </div>
 
         <p className="text-base leading-relaxed mb-4" style={{ color: '#A8A5A0' }}>
