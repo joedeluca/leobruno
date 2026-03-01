@@ -75,7 +75,7 @@ export default function MobileNav() {
         className="fixed left-0 right-0 z-[100]"
         style={{
           top: '7rem', // h-28
-          backgroundColor: '#09090b',
+          backgroundColor: '#0C0A08',
           borderBottom: '1px solid #3A2E24',
           pointerEvents: open ? 'auto' : 'none',
           opacity: 0,

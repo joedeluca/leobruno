@@ -9,6 +9,7 @@
    Background / border zinc stay dark as-is.
 ──────────────────────────────────────────────────────────────────────────── */
 @layer utilities {
+  /* ── Warm text scale ── */
   .text-zinc-50  { color: #F5F4F2 !important; }
   .text-zinc-100 { color: #EDEAE4 !important; }
   .text-zinc-200 { color: #E2DED8 !important; }
@@ -16,18 +17,22 @@
   .text-zinc-400 { color: #A8A5A0 !important; }
   .text-zinc-500 { color: #96938E !important; }
   .text-zinc-600 { color: #7A7872 !important; }
+  /* ── Warm background scale ── */
+  .bg-zinc-950 { background-color: #0C0A08 !important; }
+  .bg-zinc-900 { background-color: #1C1714 !important; }
+  .bg-zinc-800 { background-color: #2A2420 !important; }
 }
 
 /* Scrollbar — dark mode, site palette */
 html {
   scrollbar-width: thin;
-  scrollbar-color: #3A2E24 #09090b;
+  scrollbar-color: #3A2E24 #0C0A08;
 }
 html::-webkit-scrollbar {
   width: 6px;
 }
 html::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #0C0A08;
 }
 html::-webkit-scrollbar-thumb {
   background: #3A2E24;
@@ -203,7 +208,7 @@ html::-webkit-scrollbar-thumb:hover {
   }
 
   body {
-    @apply bg-zinc-950;
+    background-color: #0C0A08;
     color: #DEDAD4; /* cream – warm but not golden */
     font-family: "Graphik", system-ui, sans-serif;
   }
@@ -484,7 +489,7 @@ html::-webkit-scrollbar-thumb:hover {
   display: inline-block;
   position: relative;
   z-index: 1;
-  background-color: #09090b;
+  background-color: #0C0A08;
   padding: 0 0.2rem;
   color: #52525b;
   font-size: 1.1rem;

@@ -161,13 +161,13 @@ function NewsletterSignup() {
                 backgroundColor:
                   status === "success" ? '#1a3a1e'
                   : status === "error" ? '#3a1a1a'
-                  : !isValidEmail(email) || status === "loading" ? '#27272a'
+                  : !isValidEmail(email) || status === "loading" ? '#1A2E26'
                   : '#5C8472',
                 color:
                   status === "success" ? '#86efac'
                   : status === "error" ? '#fca5a5'
-                  : !isValidEmail(email) || status === "loading" ? '#52525b'
-                  : '#09090b',
+                  : !isValidEmail(email) || status === "loading" ? '#3D5A52'
+                  : '#0C0A08',
                 cursor: (!isValidEmail(email) || status === "loading" || status === "success") ? 'not-allowed' : 'pointer',
               }}
             >
@@ -339,15 +339,15 @@ export default function Sidebar() {
               style={{
                 fontFamily: '"Graphik", system-ui, sans-serif',
                 backgroundColor:
-                  wordCount < 3 || isSending ? '#27272a'
+                  wordCount < 3 || isSending ? '#1A2E26'
                   : sendStatus === "success" ? '#1a3a1e'
                   : sendStatus === "error" ? '#3a1a1a'
                   : '#5C8472',
                 color:
-                  wordCount < 3 || isSending ? '#52525b'
+                  wordCount < 3 || isSending ? '#3D5A52'
                   : sendStatus === "success" ? '#86efac'
                   : sendStatus === "error" ? '#fca5a5'
-                  : '#09090b',
+                  : '#0C0A08',
                 cursor: (wordCount < 3 || isSending) ? 'not-allowed' : 'pointer',
               }}
             >

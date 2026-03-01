@@ -42,7 +42,7 @@ export default function AudioPlayer() {
           x: targetX - buttonRect.left - buttonRect.width / 2,
           y: targetY - buttonRect.top - buttonRect.height / 2,
           scale: 0.5, // Shrink to 50% (32px from 64px)
-          backgroundColor: "#09090b", // zinc-950
+          backgroundColor: "#0C0A08",
           duration: 0.3,
           ease: "power2.in",
         },
