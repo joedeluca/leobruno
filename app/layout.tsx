@@ -5,6 +5,7 @@ import PoemLinkHandler from "@/components/PoemLinkHandler"
 import Footer from "@/components/Footer"
 import AudioPlayer from "@/components/AudioPlayer"
 import SearchOverlay from "@/components/SearchOverlay"
+import MobileNav from "@/components/MobileNav"
 import Link from "next/link"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -25,9 +26,9 @@ export default function RootLayout({
         {/* Fixed Header — three-column: nav | logo | links */}
         <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md h-28" style={{ borderBottom: '1px solid #3A2E24' }}>
           <div className="h-full flex items-center justify-between px-8">
-            {/* Left: category nav */}
+            {/* Left: category nav — desktop only */}
             <nav
-              className="flex items-center gap-6 flex-shrink-0"
+              className="hidden sm:flex items-center gap-6 flex-shrink-0"
               style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
             >
               <Link
@@ -46,14 +47,17 @@ export default function RootLayout({
               </Link>
             </nav>
 
+            {/* Mobile: hamburger — left side placeholder to balance logo */}
+            <div className="sm:hidden w-8" />
+
             {/* Center: logo */}
             <div className="absolute left-1/2 -translate-x-1/2">
               <HeaderLogo />
             </div>
 
-            {/* Right: site links */}
+            {/* Right: site links — desktop only */}
             <nav
-              className="flex items-center gap-6 flex-shrink-0"
+              className="hidden sm:flex items-center gap-6 flex-shrink-0"
               style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
             >
               <Link
@@ -71,6 +75,11 @@ export default function RootLayout({
                 Newsletter
               </Link>
             </nav>
+
+            {/* Mobile: hamburger — right side */}
+            <div className="sm:hidden">
+              <MobileNav />
+            </div>
           </div>
         </header>
 
