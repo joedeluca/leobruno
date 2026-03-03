@@ -11,7 +11,7 @@ teaserShort: "Reliquary, Ch. 6"
 
 ### Part I: Bar Trovelessi
 
-<img src="/tommy-lee.jpg" alt="Tommy Lee" style="float:right;width:240px;margin:0 0 1.5rem 2rem;display:block;" />
+<img src="/tommy-lee.jpg" alt="Tommy Lee" style="float:right;width:400px;margin:0 0 1.5rem 2rem;display:block;" />
 
 It's sunset and we're all at Bar Trovelessi in Piazza del Comune. Pigeons explode upward from the cobblestones in waves, circle, resettle, like some demented fractal pattern that never quite resolves. We have bright orange spritzes in nice crystal, the usual clown is unironically playing Stairway to Heaven on electric guitar behind us, and tourists are everywhere, photographing the Temple of Minerva next door—Roman columns from the first century BC, now with a Baroque church shoved inside like a hermit crab in someone else's shell. Goethe sketched it. Stendhal wrote about it. Byron probably fucked someone on its wide steps, worn smooth and round as river stones by two thousand years of pilgrims and pigeons and bare asses.
 
