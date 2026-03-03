@@ -143,6 +143,8 @@ And I'm trying hard to avoid the word, "but", but I can't.
 
 We're walking now in silence, forced to traverse the entire backside of the city toward La Rocca Minore. The fortress looms above us.
 
+<img src="/tommy-bats.jpg" alt="Bats over Assisi" style="float:left;width:400px;margin:0 2rem 1.5rem 0;display:block;" />
+
 And there they are. The bats. Scattershot in all directions. I've been obsessing over them for months but I've never once actually looked up what they are, what they eat, why they live here. I could walk into any library in Assisi and find out, but I won't. Because if I solve it, I'll just find something else to obsess over. Roxy. Yuki. The girl at the bookshop. Animals I know nothing about. It's not about understanding. It's about having something to want that I can never quite reach.
 
 We walk in silence. The olive groves silver in the distance. The cypresses cast long black shadows across the road in front of us.
