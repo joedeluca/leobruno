@@ -1,10 +1,12 @@
 ---
 title: "Easy. Tommy Lee."
 date: "2026-03-03"
-category: "Reliquary"
+category: "Fiction"
 tags: ["Reliquary", "Assisi", "Friendship"]
 excerpt: "At sunset in Piazza del Comune, when asked who I'd want to be from history, I say Tommy Lee. The silence that follows tells me everything about the difference between living and performing."
 chapter: 6
+teaser: "From Reliquary"
+teaserShort: "Reliquary, Ch. 6"
 ---
 
 ### Part I: Bar Trovelessi
