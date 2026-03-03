@@ -3,7 +3,7 @@ title: "Easy. Tommy Lee."
 date: "2026-03-03"
 category: "Fiction"
 tags: ["Reliquary", "Assisi", "Friendship"]
-excerpt: "At sunset in Piazza del Comune, when asked who I'd want to be from history, I say Tommy Lee. The silence that follows tells me everything about the difference between living and performing."
+excerpt: "It's sunset and we're all at Bar Trovelessi in Piazza del Comune. Pigeons explode upward from the cobblestones in waves, circle, resettle, like some demented fractal pattern that never quite resolves. We have bright orange spritzes in nice crystal, the usual clown is unironically playing Stairway to Heaven on electric guitar behind us...."
 chapter: 6
 teaser: "From Reliquary"
 teaserShort: "Reliquary, Ch. 6"
