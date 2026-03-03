@@ -207,6 +207,10 @@ html::-webkit-scrollbar-thumb:hover {
     --tiepolo-azure-800: #5896b2;
   }
 
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     background-color: #0C0A08;
     color: #DEDAD4; /* cream – warm but not golden */

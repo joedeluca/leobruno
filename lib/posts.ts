@@ -66,7 +66,7 @@ export function getSortedPostsData(): Post[] {
           heroImage: matterResult.data.heroImage || "",
           heroImageSize: matterResult.data.heroImageSize || "cover",
           heroImagePosition: matterResult.data.heroImagePosition || "center",
-          heroImageHeight: matterResult.data.heroImageHeight || "60vh",
+          heroImageHeight: matterResult.data.heroImageHeight || "96vh",
           heroContentStart: matterResult.data.heroContentStart || "",
           teaserFontSize:
             matterResult.data.teaserFontSize || "clamp(0.875rem, 2vw, 1.5rem)",
@@ -187,7 +187,7 @@ export async function getPostData(slug: string): Promise<Post> {
     heroImage: matterResult.data.heroImage || "",
     heroImageSize: matterResult.data.heroImageSize || "cover",
     heroImagePosition: matterResult.data.heroImagePosition || "center",
-    heroImageHeight: matterResult.data.heroImageHeight || "60vh",
+    heroImageHeight: matterResult.data.heroImageHeight || "96vh",
     heroContentStart: matterResult.data.heroContentStart || "",
     teaserFontSize:
       matterResult.data.teaserFontSize || "clamp(0.875rem, 2vw, 1.5rem)",

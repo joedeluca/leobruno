@@ -79,12 +79,15 @@ export default function PostPageClient({ post }: { post: Post }) {
   const getContentPaddingTop = () => {
     if (!showHeroImage) return undefined
     if (post.heroContentStart) return post.heroContentStart
-    const height = post.heroImageHeight || "60vh"
-    return `calc(${height} - 20vh)`
+    const height = post.heroImageHeight || "96vh"
+    return `calc(${height} - 35vh)`
   }
 
   return (
-    <div ref={containerRef} className="w-full min-h-screen relative">
+    <div
+      ref={containerRef}
+      className="w-full min-h-screen"
+    >
       <PostReadTracker
         slug={post.slug}
         title={post.title}
@@ -94,19 +97,23 @@ export default function PostPageClient({ post }: { post: Post }) {
         url={`/${post.slug}`}
       />
 
-      {/* Hero Image */}
+      {/* Hero Image — container negates main's pt-28 so it starts at y=0.
+           Hero uses absolute top:7rem (= h-28) so it always locks to header bottom,
+           independent of any parent padding. */}
       {showHeroImage && post.heroImage && (
         <div
-          className="absolute top-0 left-0 w-full"
-          style={{
-            height: post.heroImageHeight || "60vh",
-            backgroundImage: `url(${post.heroImage})`,
-            backgroundSize: post.heroImageSize || "cover",
-            backgroundPosition: post.heroImagePosition || "center",
-            backgroundRepeat: "no-repeat",
-          }}
+          className="w-full relative"
+          style={{ height: post.heroImageHeight || "96vh" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/50 to-zinc-950" />
+          <img
+            src={post.heroImage}
+            alt=""
+            className="absolute inset-0 w-full h-full"
+            style={{
+              objectFit: (post.heroImageSize as React.CSSProperties['objectFit']) || 'cover',
+              objectPosition: post.heroImagePosition || 'center',
+            }}
+          />
         </div>
       )}
 
@@ -119,7 +126,9 @@ export default function PostPageClient({ post }: { post: Post }) {
           className={`max-w-5xl mx-auto px-8 ${
             showHeroImage ? "pb-12" : "py-12"
           } relative z-10`}
-          style={{ paddingTop: getContentPaddingTop() }}
+          style={{
+            paddingTop: showHeroImage ? '3rem' : getContentPaddingTop(),
+          }}
         >
           <header className="mb-12">
             <h5
