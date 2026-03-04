@@ -102,8 +102,8 @@ export default function PostPageClient({ post }: { post: Post }) {
            independent of any parent padding. */}
       {showHeroImage && post.heroImage && (
         <div
-          className="w-full relative"
-          style={{ height: post.heroImageHeight || "96vh" }}
+          className="w-full relative overflow-hidden"
+          style={{ height: post.heroImageHeight || "60vh" }}
         >
           <img
             src={post.heroImage}
