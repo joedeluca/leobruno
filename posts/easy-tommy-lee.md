@@ -7,9 +7,9 @@ excerpt: "It's sunset and we're all at Bar Trovelessi in Piazza del Comune. Pige
 chapter: 6
 teaser: "From Reliquary"
 teaserShort: "Reliquary, Ch. 6"
-heroImage: /tommy-lee-hero.jpg
-heroImagePosition: 50% 0%
 ---
+
+<img src="/tommy-lee.jpg" alt="Tommy Lee" style="float:right;width:400px;margin:0 0 1.5rem 2rem;display:block;" />
 
 ### Part I: Bar Trovelessi
 
@@ -143,8 +143,6 @@ And I'm trying hard to avoid the word, "but", but I can't.
 
 We're walking now in silence, forced to traverse the entire backside of the city toward La Rocca Minore. The fortress looms above us.
 
-
-<img src="/tommy-lee.jpg" alt="Tommy Lee" style="float:right;width:400px;margin:0 0 1.5rem 2rem;display:block;" />
 
 And there they are. The bats. Scattershot in all directions. I've been obsessing over them for months but I've never once actually looked up what they are, what they eat, why they live here. I could walk into any library in Assisi and find out, but I won't. Because if I solve it, I'll just find something else to obsess over. Roxy. Yuki. The girl at the bookshop. Animals I know nothing about. It's not about understanding. It's about having something to want that I can never quite reach.
 
