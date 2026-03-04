@@ -11,7 +11,7 @@ person: "Lou Reed"
 stickerImage: "/sweetie-sticker.svg"
 ---
 
-I was listening to Dirty Boulevard by Lou Reed and I noticed, as I always do, Lou's tender invocation of children and their being savaged with clothes hangers. And I thought: _that's sweet_. A guy like Lou Reed, all the money and the fame and the black denim, taking the time to call out ordinary domestic atrocities. The tenderness of it. The specificity.
+I was listening to Dirty Boulevard by Lou Reed and I noticed, as I always do, Lou's tender invocation of children and their being savaged with clothes hangers. And I thought: _that's sweet_. A guy like Lou Reed, all the money and the fame and the black denim, taking the time to highlight ordinary domestic atrocities. The tenderness of it. The specificity.
 
 I said to Elliott: Lou Reed must have been a real sweetie.
 
@@ -25,7 +25,7 @@ And that's how the game started.
 
 ---
 
-The rules, such as they are: you consider the work. You consider the person. You decide. The only disqualifying sin is one that is truly hurtful — not difficult, not annoying, not insufferable at press junkets. Truly _damaging_. Everything else is just being human, which artists are, catastrophically, always. And I will add that even in some cases where true damage is inflicted, a person can still be deemed a sweetie, if there are extenuating circumstances.
+The rules, such as they are: you consider the work. You consider the person. You decide. The only disqualifying sin is one that is truly hurtful — not difficult, not annoying, not insufferable at press junkets. Truly _damaging_ . Everything else is just being human, which artists are, catastrophically, almost always. And I will add that even in some cases where true damage is inflicted, a person can still be deemed a sweetie, if there are extenuating circumstances.
 
 ---
 
@@ -56,3 +56,24 @@ Well. Bowie was British.
 Elliott considers this.
 
 ---
+
+Midday with Billy Bogg
+
+Typist in long island after VU broke up. 
+
+what you can do with 2 or 3 chords. 
+
+broadway stuff is old and stupid. cole porter. gossamer wings is fun, but when i wanna hear something i want rocknroll. not the real world. like a walt disney movie. pre-tron. 
+
+can you combine art with great commercial successs. he practices low art. not high art. 
+
+david bowie like the use of cacophony in VU. hithertoo unknown in RR.
+
+avante guard in lou reed. roots in rimbaud, baudelaire. took it further than dylan. 
+
+bohemian intellectual extravagance. grey south london of david bowie. mutual regard for their different backgrounds. we also have different interests in life. similar taste in literature. both burroughs nuts. i tend to be far more baroque than lou... i guess that's the british in me. laughs.
+
+luo was generous. he felt impertinent to make suggestions. and he really didn't want to let him down. 
+
+he let me choose the musicians.
+
