@@ -110,7 +110,7 @@ Elliott is watching an interview of his own now. His phone remains merciless.
 
 He shows me: Lou Reed, on Frank Sinatra.
 
-_Junk_, says Lou Reed about Frank Sinatra.
+_Junk_, says Lou Reed about Frank Sinatra. Tin pan alley - _junk_. Broadway, _junk_. There's so much junk I can't catalogue it all. Bottom line: Lou likes _real_ stories, like the one's he tells. Stuff that really happened to him, he says. And then he thinks for a second, and says "or that I heard second hand." And then he thinks some more, "or that I just made up from real life." 
 
 Elliott isn't laughing. He's from New York. I suspect he knows something I don't.
 
