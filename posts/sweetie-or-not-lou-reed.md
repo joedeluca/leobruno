@@ -112,13 +112,13 @@ He shows me: Lou Reed, on Frank Sinatra.
 
 _Junk_, says Lou Reed about Frank Sinatra.
 
-I want Elliott to find this as funny as I do. He does not find this as funny as I do. Elliott is from New York. He knows something I don't.
+Elliott isn't laughing. He's from New York. I suspect he knows something I don't.
 
 ---
 
 The case. I have to make the case.
 
-Lou Reed's damage was scattered. It was not a system. He wasn't running a program of cruelty — he was a man with a destroyed nervous system who sometimes exploded at people who were nearby. That's different from a pattern.
+Lou Reed's damage was scattered. It was not a system. He wasn't running a program of cruelty — he was a man with a destroyed nervous system who sometimes exploded at people who were nearby. That's different from a pattern of attack. It's more like shrapnel injuries.
 
 And the ECT is the reckoning's substitute — not contrition exactly, but explanation that rises to the level of absolution. You don't need Lou to apologize once you understand what was done to him first. His parents signed the consent forms. The people who were supposed to protect him handed him to doctors who ran current through his brain for the crime of who he was. He lost his memory. He lost his ability to read. He lost friends' names. Twice a week, eight weeks, seventeen years old.
 
@@ -136,7 +136,5 @@ They tried to close that. They failed. Lou stayed porous his whole life despite 
 
 _Sweetie._
 
-Elliott puts his phone away. Not because he agrees. Elliott is from New York. Elliott knows things.
-
-But he puts the phone away.
+Elliott puts his phone away. Not because he agrees. But he puts the phone away.
 
