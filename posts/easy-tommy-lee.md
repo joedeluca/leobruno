@@ -182,8 +182,6 @@ Eli stops and looks at me and I can see that he's going to cry. I pull him to me
 
 "I do."
 
-"So you also accept Jesus into your heart."
-
-"If I have to."
-
 "Let's just forget this," he says into my shoulder.
+
+"Forgotten."
