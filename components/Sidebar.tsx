@@ -429,6 +429,13 @@ export default function Sidebar() {
           >
             Little Black Submarine
           </Link>
+          <Link
+            href="/easy-tommy-lee"
+            className="block transition-colors text-base"
+            style={{ color: '#A8A5A0' }}
+          >
+            Easy Tommy Lee
+          </Link>
         </div>
 
         <NewsletterSignup />
