@@ -156,7 +156,7 @@ We walk in silence. The olive groves silver in the distance. The cypresses cast 
 
 "I mean you sit through church smiling about God knows what. And you told the priest you couldn't pray."
 
-"Sure. What's the point?"
+"True."
 
 "Well, Leo, that seems to indicate that maybe you don't actually have any faith."
 
