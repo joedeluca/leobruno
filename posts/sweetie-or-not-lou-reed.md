@@ -10,7 +10,7 @@ verdict: "Sweetie. But."
 person: "Lou Reed"
 stickerImage: "/sweetie-sticker.svg"
 ---
-<img src="/sweetie.jpg" alt="The Costello Test" style="float:right;width:400px;margin:0 0 1.5rem 2rem;display:block;" />
+<img src="/sweetie.jpg" alt="The Costello Test" style="float:left;width:400px;margin:1.5rem 2rem 0 0;display:block;" />
 
 I was listening to Dirty Boulevard by Lou Reed and I noticed, as I always do, Lou's tender invocation of children and their being savaged with clothes hangers. And I thought: _that's sweet_. A guy like Lou Reed, all the money and the fame and the black denim, taking the time to highlight ordinary domestic atrocities. The tenderness of it. The specificity.
 

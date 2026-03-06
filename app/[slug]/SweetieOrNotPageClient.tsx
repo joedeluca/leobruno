@@ -138,7 +138,10 @@ export default function SweetieOrNotPageClient({ post, allEpisodes = [] }: { pos
               onToggle={() => setTraceOpen((v) => !v)}
             />
 
-            <SweetieVote episodeSlug={post.slug} />
+            {/* Mobile-only vote widget */}
+            <div className="lg:hidden">
+              <SweetieVote episodeSlug={post.slug} />
+            </div>
           </div>
 
           {/* Col 2 — verdict, sticker, coming up */}
@@ -172,11 +175,16 @@ export default function SweetieOrNotPageClient({ post, allEpisodes = [] }: { pos
                   alt="Sweetie or Not"
                   className="hidden lg:block pointer-events-none select-none mt-6"
                   style={{
-                    width: "clamp(14rem, 22vw, 22rem)",
-                    height: "clamp(14rem, 22vw, 22rem)",
+                    width: "clamp(16rem, 26vw, 28rem)",
+                    height: "clamp(16rem, 26vw, 28rem)",
                     transform: "rotate(8deg)",
                   }}
                 />
+              </div>
+
+              {/* Vote */}
+              <div className="hidden lg:block">
+                <SweetieVote episodeSlug={post.slug} compact />
               </div>
 
               {/* Episode list */}

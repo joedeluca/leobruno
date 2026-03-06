@@ -43,7 +43,7 @@ const VERDICTS = [
   },
 ];
 
-export default function SweetieVote({ episodeSlug }) {
+export default function SweetieVote({ episodeSlug, compact = false }) {
   const [tally, setTally] = useState({ sweetie: 0, penitent: 0, not_a_sweetie: 0 });
   const [myVote, setMyVote] = useState(null);
   const [reasoning, setReasoning] = useState("");
@@ -145,8 +145,8 @@ export default function SweetieVote({ episodeSlug }) {
     <div style={{
       background: "rgba(255,255,255,0.025)",
       border: "1px solid rgba(242,234,216,0.1)",
-      padding: "2.5rem",
-      marginTop: "3rem",
+      padding: compact ? "1.25rem" : "2.5rem",
+      marginTop: compact ? 0 : "3rem",
       fontFamily: "'Crimson Pro', Georgia, serif",
     }}>
       {/* Header */}
@@ -175,7 +175,7 @@ export default function SweetieVote({ episodeSlug }) {
       <div style={{
         display: "grid",
         gridTemplateColumns: "repeat(3, 1fr)",
-        gap: "1rem",
+        gap: compact ? "0.5rem" : "1rem",
         marginBottom: "1.5rem",
       }}>
         {VERDICTS.map((v) => {
@@ -202,7 +202,7 @@ export default function SweetieVote({ episodeSlug }) {
               <img
                 src={v.img}
                 alt={v.label}
-                style={{ width: "70px", height: "70px", objectFit: "contain", filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.5))" }}
+                style={{ width: compact ? "90px" : "70px", height: compact ? "90px" : "70px", objectFit: "contain", filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.5))" }}
                 onError={(e) => { e.target.style.display = "none"; }}
               />
               <span style={{
