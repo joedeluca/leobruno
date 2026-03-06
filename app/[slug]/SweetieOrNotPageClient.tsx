@@ -170,16 +170,7 @@ export default function SweetieOrNotPageClient({ post, allEpisodes = [] }: { pos
                     {post.verdict}
                   </p>
                 )}
-                <img
-                  src={post.stickerImage || "/sweetie-sticker.svg"}
-                  alt="Sweetie or Not"
-                  className="hidden lg:block pointer-events-none select-none mt-6"
-                  style={{
-                    width: "clamp(16rem, 26vw, 28rem)",
-                    height: "clamp(16rem, 26vw, 28rem)",
-                    transform: "rotate(8deg)",
-                  }}
-                />
+
               </div>
 
               {/* Vote */}

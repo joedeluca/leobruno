@@ -174,7 +174,7 @@ export default function SweetieVote({ episodeSlug, compact = false }) {
       {/* Verdict buttons */}
       <div style={{
         display: "grid",
-        gridTemplateColumns: "repeat(3, 1fr)",
+        gridTemplateColumns: compact ? "1fr" : "repeat(3, 1fr)",
         gap: compact ? "0.5rem" : "1rem",
         marginBottom: "1.5rem",
       }}>
@@ -189,10 +189,10 @@ export default function SweetieVote({ episodeSlug, compact = false }) {
               style={{
                 background: isSelected ? v.hoverBg : "transparent",
                 border: `1px solid ${isSelected ? v.color : "rgba(242,234,216,0.12)"}`,
-                padding: "1.25rem 0.75rem",
+                padding: compact ? "0.75rem 1rem" : "1.25rem 0.75rem",
                 cursor: submitted ? "default" : "pointer",
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: compact ? "row" : "column",
                 alignItems: "center",
                 gap: "0.75rem",
                 transition: "all 0.2s",
@@ -202,7 +202,7 @@ export default function SweetieVote({ episodeSlug, compact = false }) {
               <img
                 src={v.img}
                 alt={v.label}
-                style={{ width: compact ? "90px" : "70px", height: compact ? "90px" : "70px", objectFit: "contain", filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.5))" }}
+                style={{ width: compact ? "110px" : "70px", height: compact ? "110px" : "70px", objectFit: "contain", filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.5))" }}
                 onError={(e) => { e.target.style.display = "none"; }}
               />
               <span style={{
