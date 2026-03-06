@@ -10,8 +10,18 @@ import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
-  title: "Leo Bruno",
-  description: "Writing and art by Leo Bruno",
+  metadataBase: new URL("https://leobruno.it"),
+  title: {
+    default: "Leo Bruno — Writer",
+    template: "%s — Leo Bruno",
+  },
+  description:
+    "Leo Bruno is an American writer living in Sardinia, Italy. Literary fiction, cultural criticism, and essays. Published in Gradiva and I-70 Review.",
+  openGraph: {
+    siteName: "Leo Bruno",
+    type: "website",
+    locale: "en_US",
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },

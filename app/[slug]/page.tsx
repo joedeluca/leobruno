@@ -16,9 +16,22 @@ export async function generateMetadata({
   const { slug } = await params
   try {
     const post = await getPostData(slug)
+    const description = post.teaser || post.excerpt
     return {
-      title: `${post.title} — Leo Bruno`,
-      description: post.teaser || post.excerpt,
+      title: post.title,
+      description,
+      authors: [{ name: "Leo Bruno", url: "https://leobruno.it" }],
+      alternates: {
+        canonical: `https://leobruno.it/${slug}`,
+      },
+      openGraph: {
+        title: `${post.title} — Leo Bruno`,
+        description,
+        url: `https://leobruno.it/${slug}`,
+        type: "article",
+        publishedTime: post.date,
+        authors: ["Leo Bruno"],
+      },
     }
   } catch {
     return {}
@@ -39,12 +52,47 @@ export default async function PostPage({
     notFound()
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    author: {
+      "@type": "Person",
+      name: "Leo Bruno",
+      url: "https://leobruno.it",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Leo Bruno",
+      url: "https://leobruno.it",
+    },
+    datePublished: post.date,
+    description: post.teaser || post.excerpt,
+    url: `https://leobruno.it/${slug}`,
+  }
+
   if (post.category === "Sweetie or Not") {
     const allEpisodes = getSortedPostsData().filter(
       (p) => p.category === "Sweetie or Not"
     )
-    return <SweetieOrNotPageClient post={post} allEpisodes={allEpisodes} />
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+        <SweetieOrNotPageClient post={post} allEpisodes={allEpisodes} />
+      </>
+    )
   }
 
-  return <PostPageClient post={post} />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <PostPageClient post={post} />
+    </>
+  )
 }
