@@ -286,6 +286,97 @@ export default function Sidebar() {
           </div>
         </div>
 
+        <button
+          onClick={() => setContactOpen(o => !o)}
+          className="flex items-center gap-2 text-sm mb-4 transition-colors"
+          style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#A8A5A0', background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+        >
+          Contact Leo
+          <span style={{ fontSize: '0.6rem', color: '#7A7872' }}>{contactOpen ? '▲' : '▼'}</span>
+        </button>
+
+        {contactOpen && (
+          <>
+            <p className="text-base leading-relaxed mb-4" style={{ color: '#A8A5A0' }}>
+              If you want a response, be sure to include your name and email.
+            </p>
+
+            <div className="space-y-3 mb-4">
+              <span
+                className="text-xs"
+                style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#7A7872' }}
+              >
+                {wordCount} {wordCount === 1 ? "word" : "words"} · {charCount}/
+                {MAX_CHARS} characters
+              </span>
+              <div className="relative">
+                <textarea
+                  value={message}
+                  onChange={handleMessageChange}
+                  placeholder="Message here.... If you have a lot to say, write elsewhere and paste."
+                  className="w-full h-32 px-4 py-3 bg-zinc-900 border resize-none focus:outline-none transition-colors"
+                  style={{
+                    fontFamily: '"Graphik", system-ui, sans-serif',
+                    borderColor: 'rgba(92,132,114,0.35)',
+                    color: '#DEDAD4',
+                  }}
+                  onFocus={e => e.currentTarget.style.borderColor = '#5C8472'}
+                  onBlur={e => e.currentTarget.style.borderColor = 'rgba(92,132,114,0.35)'}
+                  maxLength={MAX_CHARS}
+                  spellCheck={false}
+                  disabled={isSending}
+                />
+                {isSending && (
+                  <div className="absolute inset-0 bg-zinc-900/80 flex items-center justify-center">
+                    <div className="w-8 h-8 border-2 border-t-transparent rounded-full animate-spin" style={{ borderColor: '#5C8472', borderTopColor: 'transparent' }}></div>
+                  </div>
+                )}
+              </div>
+
+              {sendStatus === "error" && errorMessage && (
+                <p
+                  className="text-xs text-red-400"
+                  style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+                >
+                  {errorMessage}
+                </p>
+              )}
+
+              <div className="flex">
+                <button
+                  onClick={handleSend}
+                  disabled={wordCount < 3 || isSending}
+                  className="px-4 py-3 w-full text-sm font-medium transition-all"
+                  style={{
+                    fontFamily: '"Graphik", system-ui, sans-serif',
+                    backgroundColor:
+                      wordCount < 3 || isSending ? '#1A2E26'
+                      : sendStatus === "success" ? '#1a3a1e'
+                      : sendStatus === "error" ? '#3a1a1a'
+                      : '#5C8472',
+                    color:
+                      wordCount < 3 || isSending ? '#3D5A52'
+                      : sendStatus === "success" ? '#86efac'
+                      : sendStatus === "error" ? '#fca5a5'
+                      : '#0C0A08',
+                    cursor: (wordCount < 3 || isSending) ? 'not-allowed' : 'pointer',
+                  }}
+                >
+                  {isSending
+                    ? "Sending..."
+                    : sendStatus === "success"
+                    ? "Sent!"
+                    : sendStatus === "error"
+                    ? "Failed - Try again"
+                    : wordCount < 3
+                    ? "3 Word Minimum"
+                    : "Send"}
+                </button>
+              </div>
+            </div>
+          </>
+        )}
+
         <div className="border-t pt-10 mt-10" style={{ borderColor: '#3A2E24' }}>
           <h3
             className="text-xs uppercase tracking-wider mb-3"
@@ -361,99 +452,6 @@ export default function Sidebar() {
         </div>
 
         <NewsletterSignup />
-
-        <div className="border-t pt-10 mt-10" style={{ borderColor: '#3A2E24' }}>
-          <button
-            onClick={() => setContactOpen(o => !o)}
-            className="flex items-center gap-2 text-sm mb-4 transition-colors"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#A8A5A0', background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
-          >
-            Contact Leo
-            <span style={{ fontSize: '0.6rem', color: '#7A7872' }}>{contactOpen ? '▲' : '▼'}</span>
-          </button>
-
-          {contactOpen && (
-            <>
-              <p className="text-base leading-relaxed mb-4" style={{ color: '#A8A5A0' }}>
-                If you want a response, be sure to include your name and email.
-              </p>
-
-              <div className="space-y-3">
-                <span
-                  className="text-xs"
-                  style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#7A7872' }}
-                >
-                  {wordCount} {wordCount === 1 ? "word" : "words"} · {charCount}/
-                  {MAX_CHARS} characters
-                </span>
-                <div className="relative">
-                  <textarea
-                    value={message}
-                    onChange={handleMessageChange}
-                    placeholder="Message here.... If you have a lot to say, write elsewhere and paste."
-                    className="w-full h-32 px-4 py-3 bg-zinc-900 border resize-none focus:outline-none transition-colors"
-                    style={{
-                      fontFamily: '"Graphik", system-ui, sans-serif',
-                      borderColor: 'rgba(92,132,114,0.35)',
-                      color: '#DEDAD4',
-                    }}
-                    onFocus={e => e.currentTarget.style.borderColor = '#5C8472'}
-                    onBlur={e => e.currentTarget.style.borderColor = 'rgba(92,132,114,0.35)'}
-                    maxLength={MAX_CHARS}
-                    spellCheck={false}
-                    disabled={isSending}
-                  />
-                  {isSending && (
-                    <div className="absolute inset-0 bg-zinc-900/80 flex items-center justify-center">
-                      <div className="w-8 h-8 border-2 border-t-transparent rounded-full animate-spin" style={{ borderColor: '#5C8472', borderTopColor: 'transparent' }}></div>
-                    </div>
-                  )}
-                </div>
-
-                {sendStatus === "error" && errorMessage && (
-                  <p
-                    className="text-xs text-red-400"
-                    style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
-                  >
-                    {errorMessage}
-                  </p>
-                )}
-
-                <div className="flex">
-                  <button
-                    onClick={handleSend}
-                    disabled={wordCount < 3 || isSending}
-                    className="px-4 py-3 w-full text-sm font-medium transition-all"
-                    style={{
-                      fontFamily: '"Graphik", system-ui, sans-serif',
-                      backgroundColor:
-                        wordCount < 3 || isSending ? '#1A2E26'
-                        : sendStatus === "success" ? '#1a3a1e'
-                        : sendStatus === "error" ? '#3a1a1a'
-                        : '#5C8472',
-                      color:
-                        wordCount < 3 || isSending ? '#3D5A52'
-                        : sendStatus === "success" ? '#86efac'
-                        : sendStatus === "error" ? '#fca5a5'
-                        : '#0C0A08',
-                      cursor: (wordCount < 3 || isSending) ? 'not-allowed' : 'pointer',
-                    }}
-                  >
-                    {isSending
-                      ? "Sending..."
-                      : sendStatus === "success"
-                      ? "Sent!"
-                      : sendStatus === "error"
-                      ? "Failed - Try again"
-                      : wordCount < 3
-                      ? "3 Word Minimum"
-                      : "Send"}
-                  </button>
-                </div>
-              </div>
-            </>
-          )}
-        </div>
       </div>
     </aside>
   )
