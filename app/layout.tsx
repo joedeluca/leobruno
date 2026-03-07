@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Script from "next/script"
 import "./globals.css"
 import HeaderLogo from "@/components/HeaderLogo"
 import PoemLinkHandler from "@/components/PoemLinkHandler"
@@ -37,6 +38,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-FJNC25MFK9"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-FJNC25MFK9');
+          `}
+        </Script>
+      </head>
       <body className="min-h-screen flex flex-col">
         {/* Fixed Header — three-column: nav | logo | links */}
         <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md h-28" style={{ borderBottom: '1px solid #3A2E24' }}>
