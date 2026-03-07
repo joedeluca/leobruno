@@ -2,7 +2,7 @@
 title: "Ode to the Girl on the Bus"
 author: "Leo Bruno"
 date: "2026"
-collection: "Notes from the number 30, Quartucciu to Cagliari"
+collection: "Quartucciu to Cagliari"
 ---
 
 I saw her board at Selargius

@@ -2,7 +2,7 @@
 title: "Sokushinbutsu"
 author: "Leo Bruno"
 date: "2026"
-collection: "Notes from the 30, Quartucciu to Cagliari"
+collection: "Quartucciu to Cagliari"
 ---
 
 This morning on the 30,
