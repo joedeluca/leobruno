@@ -518,3 +518,14 @@ html::-webkit-scrollbar-thumb:hover {
     @apply text-2xl leading-relaxed text-zinc-500;
   }
 }
+
+/* Drop cap — first letter of first article paragraph, Deseo font */
+article.prose p:first-of-type::first-letter {
+  font-family: "deseo-medium", sans-serif;
+  font-size: 4.2em;
+  line-height: 0.85;
+  float: left;
+  margin-right: 0.28em;
+  margin-top: 0.06em;
+  color: #EDEAE4;
+}

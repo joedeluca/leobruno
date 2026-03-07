@@ -40,6 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="stylesheet" href="https://use.typekit.net/dnx2cfm.css" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-FJNC25MFK9"
           strategy="afterInteractive"
