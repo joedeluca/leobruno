@@ -382,22 +382,6 @@ export default function Sidebar() {
             className="text-xs uppercase tracking-wider mb-3"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#EDEAE4' }}
           >
-            Leo Reads Poems He Hates
-          </h3>
-          <Link
-            href="/poems/the-red-wheelbarrow"
-            className="transition-colors text-base"
-            style={{ color: '#A8A5A0' }}
-          >
-            The Red Wheelbarrow
-          </Link>
-        </div>
-
-        <div className="border-t pt-10 mt-10" style={{ borderColor: '#3A2E24' }}>
-          <h3
-            className="text-xs uppercase tracking-wider mb-3"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#EDEAE4' }}
-          >
             <Link
               href="/work"
               className="transition-colors"

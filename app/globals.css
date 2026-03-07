@@ -336,8 +336,9 @@ html::-webkit-scrollbar-thumb:hover {
   }
 
   a:hover {
-    color: #a1a1aa; /* zinc-400 for hover */
+    color: #FFC200; /* radiant gold */
   }
+
 
   hr {
     display: none;
@@ -517,6 +518,11 @@ html::-webkit-scrollbar-thumb:hover {
   .normal-text {
     @apply text-2xl leading-relaxed text-zinc-500;
   }
+}
+
+/* Gold hover — beats Tailwind utilities and inline styles */
+a:hover {
+  color: #F59E0B !important;
 }
 
 /* Drop cap — first letter of first article paragraph, Deseo font */

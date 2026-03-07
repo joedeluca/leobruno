@@ -8,7 +8,7 @@ import { gsap } from "gsap"
 
 const links = [
   { href: "/", label: "Essays" },
-  { href: "/", label: "Field Guide" },
+  { href: "/fiction", label: "Fiction" },
   { href: "/poems", label: "Poems" },
   { href: "/newsletter", label: "Newsletter" },
 ]
@@ -121,6 +121,7 @@ export default function MobileNav() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setOpen(false)}
+                  className="nav-link"
                   style={{
                     fontFamily: '"Schnyder S", Georgia, serif',
                     fontSize: 'clamp(2rem, 9vw, 3rem)',

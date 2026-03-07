@@ -2,21 +2,21 @@
 
 import Link from "next/link"
 
-export default function PoemsIndex() {
+export default function FictionIndex() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-8 pb-48 pt-16 text-center">
       <p style={{
         fontFamily: '"Graphik", system-ui, sans-serif',
-        fontSize: '15px',
+        fontSize: '11px',
         letterSpacing: '0.15em',
         color: '#5a4a3a',
         textTransform: 'uppercase',
         marginBottom: '2.5rem',
       }}>
-        Quartucciu to Cagliari, 2026
+        Reliquary, 2026
       </p>
       <Link
-        href="/poems/ode-to-the-girl-on-the-bus"
+        href="/little-black-submarine"
         style={{
           fontFamily: '"Schnyder S", Georgia, serif',
           fontSize: 'clamp(2.5rem, 7vw, 5rem)',
@@ -26,10 +26,10 @@ export default function PoemsIndex() {
           marginBottom: '2.5rem',
         }}
       >
-        Ode to the Girl on the Bus
+        Little Black Submarine
       </Link>
       <Link
-        href="/poems/sokushinbutsu"
+        href="/easy-tommy-lee"
         style={{
           fontFamily: '"Schnyder S", Georgia, serif',
           fontSize: 'clamp(2.5rem, 7vw, 5rem)',
@@ -38,7 +38,7 @@ export default function PoemsIndex() {
           display: 'block',
         }}
       >
-        Sokushinbutsu
+        Easy. Tommy Lee.
       </Link>
     </div>
   )

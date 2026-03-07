@@ -12,7 +12,14 @@ export default function Footer() {
             className="text-sm text-zinc-50 hover:text-zinc-300 transition-colors"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
           >
-            Articles
+            Essays
+          </Link>
+          <Link
+            href="/fiction"
+            className="text-sm text-zinc-50 hover:text-zinc-300 transition-colors"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+          >
+            Fiction
           </Link>
           <Link
             href="/poems"
@@ -39,7 +46,14 @@ export default function Footer() {
             className="text-sm text-zinc-50 hover:text-zinc-300 transition-colors"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
           >
-            Articles
+            Essays
+          </Link>
+          <Link
+            href="/fiction"
+            className="text-sm text-zinc-50 hover:text-zinc-300 transition-colors"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+          >
+            Fiction
           </Link>
           <Link
             href="/poems"
