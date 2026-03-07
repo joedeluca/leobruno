@@ -197,8 +197,6 @@ export default function PostPageClient({ post }: { post: Post }) {
               </span>{" "}
               <span className="lg:hidden">| {formatShortDate(post.date)}</span>
               <span className="hidden lg:inline">| {formatArticleDate(post.date)}</span>
-              <span className="text-zinc-800 select-none">·</span>
-              <TraceButton onClick={() => setTraceOpen((v) => !v)} isOpen={traceOpen} />
             </div>
           </header>
 
@@ -217,6 +215,9 @@ export default function PostPageClient({ post }: { post: Post }) {
             {renderContent(post.content || "")}
           </article>
 
+          <div className="mt-16 mb-2">
+            <TraceButton onClick={() => setTraceOpen((v) => !v)} isOpen={traceOpen} />
+          </div>
           <ArticleTrace
             filePath={`posts/${post.slug}`}
             currentContent={post.rawContent || ""}

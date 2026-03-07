@@ -144,7 +144,7 @@ export function TraceButton({ onClick, isOpen }: { onClick: () => void; isOpen: 
         textTransform: "uppercase",
       }}
     >
-      {isOpen ? "Close" : "Drafts"}
+      {isOpen ? "Close" : "Draft history"}
     </button>
   )
 }
@@ -226,15 +226,6 @@ export default function ArticleTrace({
                 style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
               >
                 {commits.length} revision{commits.length !== 1 ? "s" : ""}
-                {activeCommit && (
-                  <button
-                    type="button"
-                    onClick={() => setActiveHash(null)}
-                    className="ml-4 text-tiepolo-pink-700 hover:text-tiepolo-pink-500 transition-colors"
-                  >
-                    ← read
-                  </button>
-                )}
               </p>
 
               {/* Timeline */}

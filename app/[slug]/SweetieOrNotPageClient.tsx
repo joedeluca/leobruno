@@ -152,6 +152,9 @@ export default function SweetieOrNotPageClient({ post, allEpisodes = [] }: { pos
               {renderContent(post.content || "")}
             </article>
 
+            <div className="mt-16 mb-2">
+              <TraceButton onClick={() => setTraceOpen((v) => !v)} isOpen={traceOpen} />
+            </div>
             <ArticleTrace
               filePath={`posts/${post.slug}`}
               currentContent={post.rawContent || ""}
