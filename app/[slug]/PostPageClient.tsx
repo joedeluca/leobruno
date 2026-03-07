@@ -64,6 +64,27 @@ export default function PostPageClient({ post }: { post: Post }) {
     return () => clearTimeout(timer)
   }, [])
 
+  // Wire up lightbox on all article images
+  useEffect(() => {
+    const article = containerRef.current?.querySelector("article")
+    if (!article) return
+    const images = Array.from(article.querySelectorAll("img"))
+    const handlers: Array<[HTMLImageElement, () => void]> = []
+    images.forEach((img) => {
+      const handler = () => {
+        window.dispatchEvent(new CustomEvent("openLightbox", {
+          detail: { src: img.src, alt: img.alt || "" },
+        }))
+      }
+      img.style.cursor = "zoom-in"
+      img.addEventListener("click", handler)
+      handlers.push([img, handler])
+    })
+    return () => {
+      handlers.forEach(([img, handler]) => img.removeEventListener("click", handler))
+    }
+  }, [post.content])
+
   // Listen for search queries
   useEffect(() => {
     const handleSearchQuery = (event: Event) => {

@@ -9,6 +9,7 @@ import SearchOverlay from "@/components/SearchOverlay"
 import MobileNav from "@/components/MobileNav"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import ImageLightbox from "@/components/ImageLightbox"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://leobruno.it"),
@@ -76,6 +77,9 @@ export default function RootLayout({
 
         {/* Global Search Overlay */}
         <SearchOverlay />
+
+        {/* Image Lightbox */}
+        <ImageLightbox />
 
         {/* Main Content */}
         <main className="flex-1 pt-28">{children}</main>
