@@ -46,6 +46,11 @@ export default function SweetieOrNotPageClient({ post, allEpisodes = [] }: { pos
       }
       img.style.cursor = "zoom-in"
       img.addEventListener("click", handler)
+      // Skeleton
+      if (!img.complete) {
+        img.classList.add("img-skeleton")
+        img.addEventListener("load", () => img.classList.remove("img-skeleton"), { once: true })
+      }
       handlers.push([img, handler])
     })
     return () => {
