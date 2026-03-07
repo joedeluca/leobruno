@@ -22,7 +22,7 @@ Somewhere in here my mother calls, as she does on Sunday. She tells me how far o
 
 That sea and this sea are not the same sea. My brother would say the Gulf of Angels is bathwater.
 
-He'd had me send him a picture of a lobster from the Cagliari market.
+Last week he had me send him a picture of a lobster from the Cagliari market.
 
 "That's a shrimp!" he said.
 
