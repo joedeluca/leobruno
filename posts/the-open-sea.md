@@ -10,7 +10,7 @@ teaser: "The Gulf of Angels"
 <img src="/fisherman.png" alt="Holy Sea. Holy Fisherman" style="display:block;width:100%;" />
 <figcaption style="text-align:center;font-size:0.8rem;color:#A8A5A0;margin-top:0.4rem;">Holy Sea. Holy fisherman.</figcaption>
 </figure>
-Another Sunday: cleaning the apartment, hanging laundry that won't fully dry because it's a constant 52 degrees and most days it rains a little, in the evening or early in the morning. But it's February and the lemon trees and orange trees are bursting. Palm trees green. The sky very blue when you can see it. Some flowers in bloom. And today there is sun, so I'm going to the sea. I haven't been since late summer. Ten minutes on the bus — Quartucciu through Quartu Sant'Elena to Poetto.
+Another Sunday of cleaning the apartment, hanging laundry that won't fully dry because it's a constant 52 degrees and most days it rains. The rainiest winter anyone can remember. But it's Sardegna and the lemon trees and orange trees are bursting. Palm trees green against the bluest sky I have ever seen and the flowers never seem to stop blooming. Today there is sun and I decide without realizing I had even been thinking about it: I'm going to the sea. I haven't been since late summer. Ten minutes on the bus — Quartucciu through Quartu Sant'Elena to Poetto.
 
 A mile to the bus stop. The ride through Quartu Sant'Elena: the chaos and beauty of it, the way it looks like Latin America, the improvised commerce, the noise, the broken asphalt and sidewalks choked with cars and color. Then off the bus and across the long straight road that runs parallel to the beach. The beach appearing. Pristine. The Devil's Saddle above it.
 
