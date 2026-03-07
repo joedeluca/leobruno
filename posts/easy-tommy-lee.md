@@ -17,7 +17,7 @@ It's sunset and we're all at Bar Trovelessi in Piazza del Comune. Pigeons explod
 
 Eli and I are with the expats this evening. It's an eclectic group.
 
-The British guy is as generic as they come, which is to say he is probably a serial killer. Pale. Thin. Wire-rimmed glasses. The kind of invisible middle-aged Englishman who dresses up as Richard von Krafft-Ebing at Halloween and nobody notices. His book is about the early Franciscans, the ones who set about whitewashing Francis and setting him on the trajectory that has made him the product he is today. He says he spends his time looking at old church documents, trying to _understand the mindset_.
+The British guy is as generic as they come. Pale. Thin. Wire-rimmed glasses. The kind of invisible middle-aged Englishman who dresses up as Richard von Krafft-Ebing at Halloween and nobody notices. His book is about the early Franciscans, the ones who set about retrofitting the actual man to fit the marketing plan. He says he spends his time looking at old church documents, trying to _understand the mindset_.
 
 This causes the Italian American doofus—guitar on his back, plays Volare at open mics—to say he'd like to go back in time and be some ridiculous personage. I couldn't hear exactly. Galileo, maybe. Maybe Leonardo.
 
