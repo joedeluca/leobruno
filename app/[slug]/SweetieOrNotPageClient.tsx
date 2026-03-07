@@ -142,18 +142,6 @@ export default function SweetieOrNotPageClient({ post, allEpisodes = [] }: { pos
               className="prose prose-zinc prose-lg max-w-none"
               style={{ fontSize: "clamp(1rem, 1.5vw, 1.25rem)" }}
             >
-              <img
-                src={post.stickerImage || "/sweetie-sticker.svg"}
-                alt="Sweetie or Not"
-                className="lg:hidden not-prose float-right pointer-events-none select-none"
-                style={{
-                  width: "clamp(10rem, 40vw, 14rem)",
-                  height: "clamp(10rem, 40vw, 14rem)",
-                  marginLeft: "1rem",
-                  marginBottom: "0.5rem",
-                  transform: "rotate(8deg)",
-                }}
-              />
               {renderContent(post.content || "")}
             </article>
 

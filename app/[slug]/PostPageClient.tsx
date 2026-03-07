@@ -209,14 +209,6 @@ export default function PostPageClient({ post }: { post: Post }) {
             className="prose prose-zinc prose-lg max-w-none"
             style={{ fontSize: "clamp(1rem, 1.5vw, 1.25rem)" }}
           >
-            {post.category === "Sweetie or Not" && (
-              <img
-                src="/sweetie-sticker.svg"
-                alt="Sweetie or Not"
-                className="float-right w-48 h-48 lg:w-72 lg:h-72 pointer-events-none select-none ml-6 mb-4"
-                style={{ transform: "rotate(8deg)" }}
-              />
-            )}
             {renderContent(post.content || "")}
           </article>
 

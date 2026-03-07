@@ -8,7 +8,6 @@ teaser: "A Field Guide to Loving Difficult People"
 teaserShort: "A Field Guide"
 verdict: "Sweetie. But."
 person: "Lou Reed"
-stickerImage: "/sweetie-sticker.svg"
 ---
 <img src="/sweetie.jpg" alt="The Costello Test" style="float:left;width:400px;margin:1.5rem 2rem 0 0;display:block;" class="sm-no-float" />
 

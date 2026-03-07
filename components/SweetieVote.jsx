@@ -192,7 +192,7 @@ export default function SweetieVote({ episodeSlug, compact = false }) {
                 padding: compact ? "0.75rem 1rem" : "1.25rem 0.75rem",
                 cursor: submitted ? "default" : "pointer",
                 display: "flex",
-                flexDirection: compact ? "row" : "column",
+                flexDirection: "column",
                 alignItems: "center",
                 gap: "0.75rem",
                 transition: "all 0.2s",
