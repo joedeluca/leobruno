@@ -6,7 +6,7 @@ tags: ["Field Notes", "Sardinia", "Italy", "Family"]
 excerpt: "February at Poetto. Headphones on, headphones off. My mother calls from Maine to tell me how far offshore my brother is — a little farther every time she tells it."
 teaser: "The Gulf of Angels"
 ---
-<figure style="float:right;width:450px;margin:0 0 1.5rem 2rem;">
+<figure style="float:right;width:min(450px, 100%);margin:0 0 1.5rem 2rem;">
 <img src="/fisherman.png" alt="Holy Sea. Holy Fisherman" style="display:block;width:100%;" />
 <figcaption style="text-align:center;font-size:0.8rem;color:#A8A5A0;margin-top:0.4rem;">Holy Sea. Holy fisherman.</figcaption>
 </figure>
