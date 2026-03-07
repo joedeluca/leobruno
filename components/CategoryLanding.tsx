@@ -14,9 +14,19 @@ export default function CategoryLanding({ label, items }: CategoryLandingProps) 
 
   useEffect(() => {
     if (!containerRef.current) return
-    const children = containerRef.current.querySelectorAll(".fade-item")
+    const label = containerRef.current.querySelector(".fade-label")
+    const titles = containerRef.current.querySelectorAll(".fade-title")
+
+    // Label: simple fade
     gsap.fromTo(
-      children,
+      label,
+      { opacity: 0 },
+      { opacity: 1, duration: 0.6, ease: "power3.out" }
+    )
+
+    // Titles: slide up from below, staggered, after label
+    gsap.fromTo(
+      titles,
       { opacity: 0, y: 20 },
       {
         opacity: 1,
@@ -24,6 +34,7 @@ export default function CategoryLanding({ label, items }: CategoryLandingProps) 
         duration: 0.7,
         ease: "power3.out",
         stagger: 0.12,
+        delay: 0.2,
       }
     )
   }, [])
@@ -34,7 +45,7 @@ export default function CategoryLanding({ label, items }: CategoryLandingProps) 
       className="min-h-screen flex flex-col items-center justify-center px-8 pb-48 pt-16 text-center"
     >
       <p
-        className="fade-item"
+        className="fade-label"
         style={{
           fontFamily: '"Graphik", system-ui, sans-serif',
           fontSize: '17px',
@@ -51,7 +62,7 @@ export default function CategoryLanding({ label, items }: CategoryLandingProps) 
         <Link
           key={item.href}
           href={item.href}
-          className="fade-item"
+          className="fade-title"
           style={{
             fontFamily: '"Schnyder S", Georgia, serif',
             fontSize: 'clamp(2.5rem, 7vw, 5rem)',
