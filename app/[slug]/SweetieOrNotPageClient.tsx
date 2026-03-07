@@ -88,7 +88,7 @@ export default function SweetieOrNotPageClient({ post, allEpisodes = [] }: { pos
                 }}
               >
                 <a
-                  href="/"
+                  href={`/${post.category.toLowerCase().replace(/\s+/g, '-')}`}
                   className="text-zinc-300 hover:text-tiepolo-pink-700 transition-colors"
                 >
                   {post.category}

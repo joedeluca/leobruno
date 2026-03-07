@@ -94,7 +94,8 @@ function CommitDot({
     <button
       type="button"
       onClick={onClick}
-      className="group relative flex flex-col items-center gap-1"
+      className="group relative flex flex-col items-center gap-1 flex-shrink-0"
+      style={{ minWidth: '2rem' }}
       title={`${commit.date} — ${commit.message}`}
     >
       {/* Tooltip */}
@@ -113,7 +114,7 @@ function CommitDot({
       <div
         className={`w-2 h-2 rounded-full transition-colors ${
           isActive
-            ? "bg-tiepolo-pink-600"
+            ? "bg-amber-500"
             : isLatest
             ? "bg-zinc-400"
             : "bg-zinc-700 group-hover:bg-zinc-500"
@@ -122,7 +123,7 @@ function CommitDot({
 
       {/* Date label */}
       <span
-        className="text-[9px] text-zinc-700 group-hover:text-zinc-500 transition-colors"
+        className="text-[9px] text-zinc-700 group-hover:text-zinc-500 transition-colors whitespace-nowrap"
         style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
       >
         {commit.date.slice(5)} {/* MM-DD */}
@@ -229,9 +230,9 @@ export default function ArticleTrace({
               </p>
 
               {/* Timeline */}
-              <div className="flex items-end gap-4 overflow-x-auto pb-4">
+              <div className="flex items-end gap-4 overflow-x-auto pb-4" style={{ WebkitOverflowScrolling: 'touch' }}>
                 {/* Line connecting dots */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 flex-nowrap">
                   {commits.map((commit, i) => (
                     <div key={commit.hash} className="flex items-center">
                       <CommitDot
