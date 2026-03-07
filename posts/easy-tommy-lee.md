@@ -93,7 +93,7 @@ Eli has been scrolling on his phone. By his bemused and slightly horrified expre
 
 When I said "Tommy Lee," what these people heard was: "I'm not serious. I don't appreciate history. I'm being ironic or provocative."
 
-What I meant was: "I'm the only one attempting the truth. The rest of you are performing. You're picking people who make you sound good at dinner parties. I'm picking someone who actually lived."
+What I meant was: "Let's stop performing these silly games and try to be honest. You're picking people who make you sound good at dinner parties. I've picked a man that walked through life as Dionysius."
 
 The British guy goes back to talking about church documents. Guitar boy threatens to play his instrument, but he can't because the busker in the background is now hammering out the Ballad of John and Yoko for everyone's enjoyment. The monk excuses himself and offers everyone a handshake, including me, and his grip is limp and damp. Eli looks disappointed in me.
 
