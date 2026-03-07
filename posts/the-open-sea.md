@@ -1,5 +1,5 @@
 ---
-title: "The Open Sea"
+title: "Holy Sea. Holy Fisherman."
 date: "2026-02-22"
 category: "Field Notes"
 tags: ["Field Notes", "Sardinia", "Italy", "Family"]
