@@ -120,12 +120,6 @@ Add to each essay/story page:
 - [ ] Add "More by Leo Bruno" sections
 - [ ] Ensure every page is max 3 clicks from homepage
 
-### 10. URL Structure
-- [ ] Verify all URLs are clean and semantic
-- [ ] No dynamic parameters in URLs
-- [ ] Use hyphens, not underscores
-- [ ] Keep URLs short and descriptive
-
 Example:
 ✅ `leobruno.it/essays/sweetie-or-not-lou-reed`
 ❌ `leobruno.it/post?id=123&category=essay`
