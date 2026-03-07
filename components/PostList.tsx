@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 import type { Post } from "@/lib/posts"
 
 interface PostListProps {
@@ -31,7 +30,6 @@ function highlightText(text: string, query: string) {
 }
 
 export default function PostList({ posts, searchQuery }: PostListProps) {
-  const router = useRouter()
   if (posts.length === 0) {
     return (
       <div className="text-center py-12">
@@ -67,18 +65,19 @@ export default function PostList({ posts, searchQuery }: PostListProps) {
               className="group block hover:bg-zinc-900/50 -mx-4 px-4 py-4 rounded-lg transition-colors"
             >
               {/* Category | Teaser */}
-              <div className="mb-3">
+              <div className="mb-0">
                 <h5
                   className="text-zinc-300 uppercase tracking-wide mb-0 flex"
                   style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
                 >
-                  <button
-                    type="button"
-                    className="uppercase text-zinc-300 hover:text-tiepolo-pink-700 transition-colors cursor-pointer"
-                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); router.push("/") }}
+                  <Link
+                    href={`/${post.category.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="uppercase transition-colors"
+                    style={{ color: 'inherit' }}
+                    onClick={(e) => e.stopPropagation()}
                   >
                     {post.category}
-                  </button>&nbsp;{"|"}&nbsp;{post.teaserShort || post.teaser}
+                  </Link>&nbsp;{"|"}&nbsp;{post.teaserShort || post.teaser}
                 </h5>
               </div>
 

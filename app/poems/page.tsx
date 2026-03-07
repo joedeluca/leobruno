@@ -7,11 +7,11 @@ export default function PoemsIndex() {
     <div className="min-h-screen flex flex-col items-center justify-center px-8 pb-48 pt-16 text-center">
       <p style={{
         fontFamily: '"Graphik", system-ui, sans-serif',
-        fontSize: '15px',
+        fontSize: '17px',
         letterSpacing: '0.15em',
         color: '#5a4a3a',
         textTransform: 'uppercase',
-        marginBottom: '2.5rem',
+        marginBottom: '3rem',
       }}>
         Quartucciu to Cagliari, 2026
       </p>
