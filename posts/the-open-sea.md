@@ -24,6 +24,6 @@ That sea and this sea are not the same sea. My brother would say the Gulf of Ang
 
 He'd had me send him a picture of a lobster from the Cagliari market.
 
-"That's a shrimp!" — he said.
+"That's a shrimp!" he said.
 
-I had to take a second look-was it a shrimp? I wasn't sure anymore.
+I had to take a second look—was it a shrimp? I wasn't sure anymore.
