@@ -7,7 +7,7 @@ export default function FictionIndex() {
     <div className="min-h-screen flex flex-col items-center justify-center px-8 pb-48 pt-16 text-center">
       <p style={{
         fontFamily: '"Graphik", system-ui, sans-serif',
-        fontSize: '11px',
+        fontSize: '15px',
         letterSpacing: '0.15em',
         color: '#5a4a3a',
         textTransform: 'uppercase',
