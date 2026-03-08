@@ -145,7 +145,7 @@ We're walking now in silence, forced to traverse the entire backside of the city
 
 And there they are. The bats. Scattershot in all directions. I've been obsessing over them for months and I've never looked them up. The bats aren't the point. Roxy isn't the point. Yuki, the girl at the bookshop, the animals cycling through my obsessions like stations on a broken radio — they're just the current form of the thing. The thing is the hunger. Solve it and you kill it. Kill enough of them and you've killed the man. So I won't look them up. I'll take the bats unsolved, dark and scattershot, wrong-angled, ridiculous.
 
-We walk in silence. The olive groves silver in the distance. The cypresses cast long black shadows across the road in front of us.
+We walk in silence. The olive groves silver in their own shadow and the cypresses lining the road are black and their shadows stripe the road into the valley.
 
 ---
 
