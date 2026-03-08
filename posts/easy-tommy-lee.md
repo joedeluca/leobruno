@@ -167,9 +167,9 @@ We walk in silence. The olive groves silver in the distance. The cypresses cast 
 
 "Exactly. You don't believe anything."
 
-"I believe the ship's going down and I'm for throwing all the life preservers to all the drowning people. Whatever it takes to get us through the night. I'm for all the Gods that will take any fraction of any child's pain away. And I believe Francis and Jesus were right. Not about theology, but about how to live. How to resist empire. How to build a planet that doesn't destroy people."
+"I'm for all the Gods that will take any fraction of any child's pain away. And I think Francis and Jesus were right. Not about theology. About how to live bravely and honestly."
 
-"So no, I have no faith. But I love to stand in church beside people who do. The book of John says it—'No one has ever seen God; if we love one another, God lives in us.' That's what I mean when I say I love your God. I just mean that I love you."
+"So no, I have no faith. But I love to stand in church beside people who do. No one has ever seen God. If we love one another, God lives in us. That's what I hear in the apostles and what I mean when I say I love your God. I just mean that I love you."
 
 Eli stops and looks at me and I can see that he's going to cry. I pull him to me.
 
