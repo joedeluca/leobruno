@@ -176,7 +176,7 @@ He doesn't move. Which is what you'd expect when a man's world order is collapsi
 
 He takes the mug. Looking at me like he thinks I don't understand. I walk to the window and look out at the interstate in the distance. Where is Roxy? I miss her already, but I think I missed her from the start. I feel nothing new. I call my best friend Elliott and send him my GPS position. He calls Yuki because she has a car. Rescue party on the way. Yuki drives the opposite of Roxy. She drives with her nose over the top the wheel, squinting, always like she's driving in an ice storm.
 
-I return to the bar to find a steaming mug. I pay for it. Suspiciously low price. I take a drink. The motherfucker made me an Americano. Which is not American coffee. It's espresso with hot water—a dilution, a compromise. Real American coffee is something else entirely. A vast country in a cup. The burnt Folgers in a metal pot at a Nevada diner. Bottomless cups. Homemade pie. Or dark roast from one of those airpots in an Oakland cafe—four dollars, but you can sit there for an hour and nobody tries to rush you out. For an American, coffee is meant to be lingered over. A companion to the morning as it unfolds, slow and forgiving.
+I return to the bar to find a steaming mug. I pay for it. Suspiciously low price. I take a drink. The motherfucker made me an Americano. Which is not American coffee. It's espresso with hot water—a dilution, a compromise, an insult wearing a flag.
 
 Unfortunately for him, I have an hour to wait. I return to the counter and order a caffe normale. Pay for it. Pour it into the mug. I do this four more times, each time measuring his increasing recalcitrance, the deepening lines around his mouth. It didn't have to go this way.
 
