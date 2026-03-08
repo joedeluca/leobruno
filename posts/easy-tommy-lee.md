@@ -129,7 +129,7 @@ And now here we are. On this path behind Assisi. And Eli has made it real. Made 
 
 ---
 
-In that moment it's easy to feel cornered. Aggressed upon, really. The relationship you'd agreed to isn't being agreed to anymore. But had I given him reasons? He knows about Roxy. He even knows about Yuki. I've never hidden what I am.
+In that moment it's easy to feel cornered. The relationship you'd agreed to isn't being agreed to anymore. But had I given him reasons? He knows about Roxy. He even knows about Yuki. I've never hidden what I am.
 
 "I'm flattered," I say. And I am. Eli is beautiful. Brilliant. Kind in a way that makes most people look like monsters. "I care for you. You know I do."
 
@@ -139,12 +139,11 @@ And I'm trying hard to avoid the word, "but", but I can't.
 
 "But you're so angry," he said. Confidently, as if to him that had been the sign.
 
-"It's not that, bello."
+"It's not that."
 
 We're walking now in silence, forced to traverse the entire backside of the city toward La Rocca Minore. The fortress looms above us.
 
-
-And there they are. The bats. Scattershot in all directions. I've been obsessing over them for months but I've never once actually looked up what they are, what they eat, why they live here. I could walk into any library in Assisi and find out, but I won't. Because if I solve it, I'll just find something else to obsess over. Roxy. Yuki. The girl at the bookshop. Animals I know nothing about. It's not about understanding. It's about having something to want that I can never quite reach.
+And there they are. The bats. Scattershot in all directions. I've been obsessing over them for months and I've never looked them up. The bats aren't the point. Roxy isn't the point. Yuki, the girl at the bookshop, the animals cycling through my obsessions like stations on a broken radio — they're just the current form of the thing. The thing is the hunger. Solve it and you kill it. Kill enough of them and you've killed the man. So I won't look them up. I'll take the bats unsolved, dark and scattershot, wrong-angled, ridiculous.
 
 We walk in silence. The olive groves silver in the distance. The cypresses cast long black shadows across the road in front of us.
 
