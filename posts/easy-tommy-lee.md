@@ -9,7 +9,7 @@ teaser: "From Reliquary"
 teaserShort: "Reliquary, Ch. 6"
 ---
 
-<img src="/tommy-lee.jpg" alt="Tommy Lee" style="float:right;width:400px;margin:0 0 1.5rem 2rem;display:block;" />
+<img src="/tommy-lee-bat.jpg" alt="Chiroptera" style="float:right;width:400px;margin:0 0 1.5rem 2rem;display:block;" />
 
 ### Part I: Bar Trovelessi
 
