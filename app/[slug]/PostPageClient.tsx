@@ -78,10 +78,21 @@ export default function PostPageClient({ post }: { post: Post }) {
       }
       img.style.cursor = "zoom-in"
       img.addEventListener("click", handler)
-      // Skeleton
+      // Placeholder while loading
       if (!img.complete) {
-        img.classList.add("img-skeleton")
-        img.addEventListener("load", () => img.classList.remove("img-skeleton"), { once: true })
+        const placeholder = document.createElement("div")
+        placeholder.className = "img-placeholder"
+        const height = img.dataset.placeholderHeight || "400px"
+        placeholder.style.minHeight = height
+        const spinner = document.createElement("div")
+        spinner.className = "img-placeholder-spinner"
+        placeholder.appendChild(spinner)
+        img.parentNode?.insertBefore(placeholder, img)
+        img.style.display = "none"
+        img.addEventListener("load", () => {
+          placeholder.remove()
+          img.style.display = ""
+        }, { once: true })
       }
       handlers.push([img, handler])
     })

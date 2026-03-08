@@ -538,23 +538,27 @@ article.prose p:first-of-type::first-letter {
   padding: 0.05em 0.1em 0 0.05em;
 }
 
-/* Image skeleton loading */
-@keyframes img-shimmer {
-  0%   { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+/* Image loading placeholder */
+.img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #3A2E24;
+  width: 100%;
+  min-height: 400px;
 }
 
-img.img-skeleton {
-  background: linear-gradient(
-    90deg,
-    #3A2E24 25%,
-    #4a3c2e 50%,
-    #3A2E24 75%
-  );
-  background-size: 200% 100%;
-  animation: img-shimmer 1.6s ease-in-out infinite;
-  min-height: 120px;
-  color: transparent;
+.img-placeholder-spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #3A2E24;
+  border-top-color: #F59E0B;
+  border-radius: 9999px;
+  animation: img-spin 0.8s linear infinite;
+}
+
+@keyframes img-spin {
+  to { transform: rotate(360deg); }
 }
 
 /* Mobile: remove float from images with sm-no-float */
