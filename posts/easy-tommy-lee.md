@@ -153,23 +153,13 @@ We walk in silence. The olive groves silver in the distance. The cypresses cast 
 
 "Of course, what kind of question is that?"
 
-"I mean you sit through church smiling about God knows what. And you told the priest you couldn't pray."
-
-"True."
-
-"Well, Leo, that seems to indicate that maybe you don't actually have any faith."
-
-"I believe in God, Eli."
-
-"Which God, exactly? I'm skeptical. Wait—let me guess—all of them!"
+"You sit through church smiling about God knows what. You told the priest you couldn't pray."
 
 "Yours. I really love your God."
 
 "Exactly. You don't believe anything."
 
-"I'm for all the Gods that will take any fraction of any child's pain away. And I think Francis and Jesus were right. Not about theology. About how to live bravely and honestly."
-
-"So no, I have no faith. But I love to stand in church beside people who do. No one has ever seen God. If we love one another, God lives in us. That's what I hear in the apostles and what I mean when I say I love your God. I just mean that I love you."
+"I'm for all the Gods that will take any fraction of any child's pain away. If we love one another, God lives in us. That's what I mean when I say I love your God. I just mean that I love you."
 
 Eli stops and looks at me and I can see that he's going to cry. I pull him to me.
 
