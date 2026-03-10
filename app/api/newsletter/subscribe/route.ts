@@ -126,8 +126,16 @@ export async function POST(request: NextRequest) {
         )
       }
 
-      // Notify — await so Vercel doesn't kill the connection before it sends
-      await notifyNewSubscriber(normalizedEmail, first_name)
+      // Notify with a hard timeout — iCloud SMTP can hang and we must not let
+      // a slow SMTP connection cause the Vercel function to timeout before we
+      // return success to the user. The notification is best-effort.
+      const notifyTimeout = new Promise<void>((resolve) =>
+        setTimeout(resolve, 3000)
+      )
+      await Promise.race([
+        notifyNewSubscriber(normalizedEmail, first_name),
+        notifyTimeout,
+      ])
     }
 
     // Use anon client — service role client generates tokens that can't be verified by users
