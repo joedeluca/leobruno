@@ -71,8 +71,10 @@ function NewsletterSignup() {
       if (data.redirect) {
         window.location.href = data.redirect
       }
-    } catch {
-      setErrorMessage("Network error — please try again.")
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : String(err)
+      console.error("Subscribe catch:", msg)
+      setErrorMessage(msg || "Network error — please try again.")
       setStatus("error")
     }
   }
