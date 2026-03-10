@@ -60,9 +60,9 @@ function NewsletterSignup() {
       setStatus("success")
       setEmail("")
 
-      // Track signup event
-      if (typeof window !== "undefined" && (window as any).va) {
-        ;(window as any).va.track("newsletter_signup", {
+      // Track signup event (Vercel Analytics)
+      if (typeof window !== "undefined" && typeof (window as any).va === "function") {
+        ;(window as any).va("track", "newsletter_signup", {
           source: document.referrer,
         })
       }
