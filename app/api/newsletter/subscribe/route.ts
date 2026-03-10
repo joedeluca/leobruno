@@ -90,15 +90,19 @@ export async function POST(request: NextRequest) {
 
     if (existing) {
       // Already subscribed — send a login link so they can access /account
-      const { error: otpError } = await supabase.auth.signInWithOtp({
-        email: normalizedEmail,
-        options: {
-          emailRedirectTo: `${SITE_URL}/auth/confirm`,
-          shouldCreateUser: false,
-        },
-      })
-      if (otpError)
-        console.error("signInWithOtp (existing) error:", otpError.message)
+      try {
+        const { error: otpError } = await supabase.auth.signInWithOtp({
+          email: normalizedEmail,
+          options: {
+            emailRedirectTo: `${SITE_URL}/auth/confirm`,
+            shouldCreateUser: false,
+          },
+        })
+        if (otpError)
+          console.error("signInWithOtp (existing) error:", otpError.message)
+      } catch (otpErr) {
+        console.error("signInWithOtp (existing) threw:", otpErr)
+      }
       return NextResponse.json({
         success: true,
         message: "Check your email for a sign-in link.",
@@ -127,17 +131,22 @@ export async function POST(request: NextRequest) {
     }
 
     // Use anon client — service role client generates tokens that can't be verified by users
-    const { error: otpError } = await supabase.auth.signInWithOtp({
-      email: normalizedEmail,
-      options: {
-        emailRedirectTo: `${SITE_URL}/auth/confirm`,
-        data: { first_name: first_name?.trim() || null },
-        shouldCreateUser: true,
-      },
-    })
-
-    if (otpError) {
-      console.error("signInWithOtp error:", otpError.message)
+    // Wrapped in its own try/catch: a throw here must not clobber the success response,
+    // since the subscriber row and notification email already succeeded above.
+    try {
+      const { error: otpError } = await supabase.auth.signInWithOtp({
+        email: normalizedEmail,
+        options: {
+          emailRedirectTo: `${SITE_URL}/auth/confirm`,
+          data: { first_name: first_name?.trim() || null },
+          shouldCreateUser: true,
+        },
+      })
+      if (otpError) {
+        console.error("signInWithOtp error:", otpError.message)
+      }
+    } catch (otpErr) {
+      console.error("signInWithOtp threw:", otpErr)
     }
 
     return NextResponse.json({
