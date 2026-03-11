@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { getSortedPostsDataWithContent } from "@/lib/posts"
+import { getSortedPostsData } from "@/lib/posts"
 import HomeClient from "./HomeClient"
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ const personSchema = {
 }
 
 export default function Home() {
-  const posts = getSortedPostsDataWithContent()
+  const posts = getSortedPostsData()
   return (
     <>
       <script
