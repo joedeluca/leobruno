@@ -46,23 +46,46 @@ function renderContent(html: string) {
 export default function PostPageClient({ post }: { post: Post }) {
   const [isSearchActive, setIsSearchActive] = useState(false)
   const [traceOpen, setTraceOpen] = useState(false)
+  const [pageReady, setPageReady] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+  const spinnerRef = useRef<HTMLDivElement>(null)
 
-  // Fade in on mount
+  // Wait for hero image if present, then mark ready
   useEffect(() => {
+    if (!post.heroImage) {
+      setPageReady(true)
+      return
+    }
+    const img = new window.Image()
+    img.onload = () => setPageReady(true)
+    img.onerror = () => setPageReady(true)
+    img.src = post.heroImage
+  }, [post.heroImage])
+
+  // Fade page in + dismiss spinner when ready
+  useEffect(() => {
+    if (!pageReady) return
+    if (spinnerRef.current) {
+      gsap.to(spinnerRef.current, {
+        opacity: 0,
+        duration: 0.2,
+        onComplete: () => {
+          if (spinnerRef.current) spinnerRef.current.style.display = 'none'
+        },
+      })
+    }
     if (containerRef.current) {
       gsap.fromTo(
         containerRef.current,
         { opacity: 0 },
-        { opacity: 1, duration: 0.4, ease: "power2.out" }
+        { opacity: 1, duration: 0.4, ease: 'power2.out' }
       )
     }
-    // Clear any active search state when the article mounts
     const timer = setTimeout(() => {
-      window.dispatchEvent(new CustomEvent("clearSearch"))
+      window.dispatchEvent(new CustomEvent('clearSearch'))
     }, 50)
     return () => clearTimeout(timer)
-  }, [])
+  }, [pageReady])
 
   // Wire up lightbox on all article images
   useEffect(() => {
@@ -78,22 +101,6 @@ export default function PostPageClient({ post }: { post: Post }) {
       }
       img.style.cursor = "zoom-in"
       img.addEventListener("click", handler)
-      // Placeholder while loading
-      if (!img.complete) {
-        const placeholder = document.createElement("div")
-        placeholder.className = "img-placeholder"
-        const height = img.dataset.placeholderHeight || "400px"
-        placeholder.style.minHeight = height
-        const spinner = document.createElement("div")
-        spinner.className = "img-placeholder-spinner"
-        placeholder.appendChild(spinner)
-        img.parentNode?.insertBefore(placeholder, img)
-        img.style.display = "none"
-        img.addEventListener("load", () => {
-          placeholder.remove()
-          img.style.display = ""
-        }, { once: true })
-      }
       handlers.push([img, handler])
     })
     return () => {
@@ -121,10 +128,15 @@ export default function PostPageClient({ post }: { post: Post }) {
   }
 
   return (
-    <div
-      ref={containerRef}
-      className="w-full min-h-screen"
-    >
+    <>
+      <div ref={spinnerRef} className="page-loader">
+        <div className="page-loader-spinner" />
+      </div>
+      <div
+        ref={containerRef}
+        className="w-full min-h-screen"
+        style={{ opacity: 0 }}
+      >
       <PostReadTracker
         slug={post.slug}
         title={post.title}
@@ -234,6 +246,7 @@ export default function PostPageClient({ post }: { post: Post }) {
           />
         </div>
       )}
-    </div>
+      </div>
+    </>
   )
 }
