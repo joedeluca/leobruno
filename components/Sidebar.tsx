@@ -280,7 +280,7 @@ export default function Sidebar() {
             />
             <p className="text-base leading-relaxed" style={{ color: '#A8A5A0' }}>
             Leo Bruno is a writer living on a remote, sheep infested island. Former ad agency art slag —
-            copywriter, art director — at places like VML & Y&R. Published in Newsletters & Gradiva. Currently
+            copywriter, art director — at places like VML & Y&R. Once upon a time a student of the poet David Ray, published in his journal Newletters and elsewhere. Currently
             working on a book about dirty Tiepolos and medieval relics.
             </p>
             <div className="clear-both" />
