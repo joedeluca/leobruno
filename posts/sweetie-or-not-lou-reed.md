@@ -1,5 +1,5 @@
 ---
-title: "Episode 1: Lou Reed"
+title: "Sweetie or Not: Lou Reed"
 date: "2026-02-25"
 category: "Sweetie or Not"
 tags: ["Sweetie or Not", "Music", "Lou Reed"]

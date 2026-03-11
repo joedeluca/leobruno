@@ -13,13 +13,11 @@ export default function HomeClient({ initialPosts }: { initialPosts: Post[] }) {
     const titles = containerRef.current.querySelectorAll(".fade-title")
     gsap.fromTo(
       titles,
-      { opacity: 0, y: 20 },
+      { opacity: 0 },
       {
         opacity: 1,
-        y: 0,
-        duration: 0.7,
-        ease: "power3.out",
-        stagger: 0.12,
+        duration: 0.9,
+        ease: "power2.out",
         delay: 0.1,
       }
     )
@@ -38,7 +36,7 @@ export default function HomeClient({ initialPosts }: { initialPosts: Post[] }) {
           style={{
             fontFamily: '"Schnyder S", Georgia, serif',
             fontSize: 'clamp(2.5rem, 7vw, 5rem)',
-            color: '#E8DCC8',
+            color: '#EDD9B8',
             lineHeight: 1.1,
             display: 'block',
             marginBottom: i < initialPosts.length - 1 ? '2.5rem' : 0,
