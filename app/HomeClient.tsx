@@ -30,6 +30,7 @@ function matchesFilter(item: HomeItem, filter: Filter): boolean {
 export default function HomeClient({ initialItems }: { initialItems: HomeItem[] }) {
   const listRef = useRef<HTMLDivElement>(null)
   const [activeFilters, setActiveFilters] = useState<Set<Filter>>(new Set())
+  const [hoveredFilter, setHoveredFilter] = useState<string | null>(null)
   const [visibleItems, setVisibleItems] = useState<HomeItem[]>(initialItems)
   const animating = useRef(false)
 
@@ -86,13 +87,14 @@ export default function HomeClient({ initialItems }: { initialItems: HomeItem[] 
           <button
             key={f}
             onClick={() => handleFilter(f)}
+            onMouseEnter={() => setHoveredFilter(f)}
+            onMouseLeave={() => setHoveredFilter(null)}
             className="home-filter-btn"
             style={{
               fontFamily: '"Graphik", system-ui, sans-serif',
-              fontSize: '17px',
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
-              color: activeFilters.has(f) ? '#EDD9B8' : '#5a4a3a',
+              color: activeFilters.has(f) ? '#EDD9B8' : hoveredFilter === f ? '#8C7F72' : '#5a4a3a',
               background: 'none',
               border: 'none',
               cursor: 'pointer',
@@ -105,13 +107,14 @@ export default function HomeClient({ initialItems }: { initialItems: HomeItem[] 
         ))}
         <button
           onClick={openSearch}
-          className="home-filter-btn"
+          onMouseEnter={() => setHoveredFilter('search')}
+          onMouseLeave={() => setHoveredFilter(null)}
+          className="home-filter-btn hidden md:inline"
           style={{
             fontFamily: '"Graphik", system-ui, sans-serif',
-            fontSize: '17px',
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
-            color: '#5a4a3a',
+            color: hoveredFilter === 'search' ? '#8C7F72' : '#5a4a3a',
             background: 'none',
             border: 'none',
             cursor: 'pointer',
@@ -132,7 +135,7 @@ export default function HomeClient({ initialItems }: { initialItems: HomeItem[] 
             className="fade-title"
             style={{
               fontFamily: '"Schnyder S", Georgia, serif',
-              fontSize: 'clamp(2.5rem, 7vw, 5rem)',
+              fontSize: 'clamp(1.9rem, 7vw, 5rem)',
               color: '#EDD9B8',
               lineHeight: 1.1,
               display: 'block',

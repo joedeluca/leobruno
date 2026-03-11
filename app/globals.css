@@ -539,10 +539,6 @@ article.prose p:first-of-type::first-letter {
 }
 
 /* Image loading placeholder */
-.home-filter-btn:hover {
-  color: #3A2E24 !important;
-}
-
 .img-placeholder {
   display: flex;
   align-items: center;
@@ -563,6 +559,16 @@ article.prose p:first-of-type::first-letter {
 
 @keyframes img-spin {
   to { transform: rotate(360deg); }
+}
+
+/* Home filter buttons: responsive font size */
+.home-filter-btn {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  .home-filter-btn {
+    font-size: 17px;
+  }
 }
 
 /* Mobile: remove float from images with sm-no-float */
