@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { getSortedPostsData } from "@/lib/posts"
+import { getAllPoems } from "@/lib/poems"
 import HomeClient from "./HomeClient"
+import type { HomeItem } from "./HomeClient"
 
 export const metadata: Metadata = {
   title: "Leo Bruno — Writer",
@@ -36,13 +38,36 @@ const personSchema = {
 
 export default function Home() {
   const posts = getSortedPostsData()
+  const poems = getAllPoems().filter(p => p.author === "Leo Bruno")
+
+  const postItems: HomeItem[] = posts.map(p => ({
+    slug: p.slug,
+    title: p.title,
+    date: p.date,
+    category: p.category,
+    href: `/${p.slug}`,
+  }))
+
+  const poemItems: HomeItem[] = poems.map(p => ({
+    slug: p.slug,
+    title: p.title,
+    date: p.date || "2026",
+    category: "Poetry",
+    href: `/poems/${p.slug}`,
+  }))
+
+  // Merge and sort by date descending
+  const allItems: HomeItem[] = [...postItems, ...poemItems].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  )
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
-      <HomeClient initialPosts={posts} />
+      <HomeClient initialItems={allItems} />
     </>
   )
 }
