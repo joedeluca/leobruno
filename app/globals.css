@@ -539,6 +539,10 @@ article.prose p:first-of-type::first-letter {
 }
 
 /* Image loading placeholder */
+.home-filter-btn:hover {
+  color: #3A2E24 !important;
+}
+
 .img-placeholder {
   display: flex;
   align-items: center;

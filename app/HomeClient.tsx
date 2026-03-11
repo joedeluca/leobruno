@@ -15,6 +15,10 @@ export interface HomeItem {
 const FILTERS = ["Essays", "Fiction", "Poetry"] as const
 type Filter = typeof FILTERS[number]
 
+function openSearch() {
+  window.dispatchEvent(new CustomEvent("openSearch"))
+}
+
 function matchesFilter(item: HomeItem, filter: Filter): boolean {
   switch (filter) {
     case "Fiction":  return item.category === "Fiction"
@@ -82,6 +86,7 @@ export default function HomeClient({ initialItems }: { initialItems: HomeItem[] 
           <button
             key={f}
             onClick={() => handleFilter(f)}
+            className="home-filter-btn"
             style={{
               fontFamily: '"Graphik", system-ui, sans-serif',
               fontSize: '17px',
@@ -98,6 +103,24 @@ export default function HomeClient({ initialItems }: { initialItems: HomeItem[] 
             {f}
           </button>
         ))}
+        <button
+          onClick={openSearch}
+          className="home-filter-btn"
+          style={{
+            fontFamily: '"Graphik", system-ui, sans-serif',
+            fontSize: '17px',
+            letterSpacing: '0.15em',
+            textTransform: 'uppercase',
+            color: '#5a4a3a',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: 0,
+            transition: 'color 0.25s ease',
+          }}
+        >
+          Search
+        </button>
       </div>
 
       {/* Titles */}

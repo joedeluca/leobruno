@@ -67,12 +67,16 @@ export default function HeaderSearchWrapper() {
       setQuery("")
     }
 
+    const handleOpenSearch = () => handleOpen()
+
     window.addEventListener("updatePostCount", handlePostCountUpdate)
     window.addEventListener("clearSearch", handleClearSearch)
+    window.addEventListener("openSearch", handleOpenSearch)
 
     return () => {
       window.removeEventListener("updatePostCount", handlePostCountUpdate)
       window.removeEventListener("clearSearch", handleClearSearch)
+      window.removeEventListener("openSearch", handleOpenSearch)
       if (animationRef.current) {
         animationRef.current.kill()
       }
