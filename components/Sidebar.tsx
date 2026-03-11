@@ -279,9 +279,8 @@ export default function Sidebar() {
               priority
             />
             <p className="text-base leading-relaxed" style={{ color: '#A8A5A0' }}>
-            Leo Bruno is a writer living in Italy. Former ad agency art slag —
-            copywriter, art director — at places like TM, VMLY&R, and
-            Bernstein-Rein. Published in Gradiva and I-70 Review. Currently
+            Leo Bruno is a writer living on a remote, sheep infested island. Former ad agency art slag —
+            copywriter, art director — at places like VML & Y&R. Published in Newsletters & Gradiva. Currently
             working on a book about dirty Tiepolos and medieval relics.
             </p>
             <div className="clear-both" />
