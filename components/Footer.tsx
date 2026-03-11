@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="flex flex-col items-center gap-4 px-8 sm:hidden">
         <nav className="flex gap-6">
           <Link
-            href="/"
+            href="/essays"
             className="text-sm text-zinc-50 hover:text-zinc-300 transition-colors"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
           >
@@ -42,7 +42,7 @@ export default function Footer() {
       <div className="hidden sm:flex justify-between items-center px-8">
         <nav className="flex gap-6">
           <Link
-            href="/"
+            href="/essays"
             className="text-sm text-zinc-50 hover:text-zinc-300 transition-colors"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
           >

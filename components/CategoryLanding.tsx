@@ -42,7 +42,7 @@ export default function CategoryLanding({ label, items }: CategoryLandingProps) 
   return (
     <div
       ref={containerRef}
-      className="min-h-screen flex flex-col items-center justify-center px-8 pb-48 pt-16 text-center"
+      className="min-h-screen flex flex-col items-center px-8 pb-48 pt-24 text-center"
     >
       <p
         className="fade-label"
@@ -65,7 +65,7 @@ export default function CategoryLanding({ label, items }: CategoryLandingProps) 
           className="fade-title"
           style={{
             fontFamily: '"Schnyder S", Georgia, serif',
-            fontSize: 'clamp(2.5rem, 7vw, 5rem)',
+            fontSize: 'clamp(1.9rem, 7vw, 5rem)',
             color: '#E8DCC8',
             lineHeight: 1.1,
             display: 'block',

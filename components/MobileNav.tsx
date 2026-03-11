@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation"
 import { gsap } from "gsap"
 
 const links = [
-  { href: "/", label: "Essays" },
+  { href: "/essays", label: "Essays" },
   { href: "/fiction", label: "Fiction" },
   { href: "/poems", label: "Poems" },
   { href: "/newsletter", label: "Newsletter" },
