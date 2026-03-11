@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useEffect, useRef, useState, useCallback } from "react"
+import { useEffect, useRef, useState } from "react"
 import { gsap } from "gsap"
 
 export interface HomeItem {
@@ -24,55 +24,42 @@ function matchesFilter(item: HomeItem, filter: Filter): boolean {
 }
 
 export default function HomeClient({ initialItems }: { initialItems: HomeItem[] }) {
-  const listRef = useRef<HTMLDivElement>(null)
   const [activeFilters, setActiveFilters] = useState<Set<Filter>>(new Set())
-  const [visibleItems, setVisibleItems] = useState<HomeItem[]>(initialItems)
-  const animating = useRef(false)
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([])
 
   // Initial fade in
   useEffect(() => {
-    if (!listRef.current) return
-    const els = listRef.current.querySelectorAll(".fade-title")
+    const els = itemRefs.current.filter(Boolean)
     gsap.fromTo(els, { opacity: 0 }, { opacity: 1, duration: 0.9, ease: "power2.out", delay: 0.1 })
   }, [])
 
-  const applyFilter = useCallback((filters: Set<Filter>) => {
-    if (animating.current || !listRef.current) return
-    animating.current = true
-    const els = listRef.current.querySelectorAll(".fade-title")
-    gsap.to(els, {
-      opacity: 0,
-      duration: 0.25,
-      ease: "power2.in",
-      onComplete: () => {
-        const next = filters.size === 0
-          ? initialItems
-          : initialItems.filter(i => [...filters].some(f => matchesFilter(i, f)))
-        setVisibleItems(next)
-      }
-    })
-  }, [initialItems])
-
-  // Fade in after visibleItems updates
-  useEffect(() => {
-    if (!listRef.current) return
-    const els = listRef.current.querySelectorAll(".fade-title")
-    if (!animating.current) return
-    gsap.fromTo(els, { opacity: 0, y: 12 }, {
-      opacity: 1,
-      y: 0,
-      duration: 0.5,
-      ease: "power3.out",
-      onComplete: () => { animating.current = false }
-    })
-  }, [visibleItems])
-
   const handleFilter = (f: Filter) => {
     const next = new Set(activeFilters)
-    if (next.has(f)) next.delete(f)
-    else next.add(f)
+    if (next.has(f)) next.delete(f) else next.add(f)
     setActiveFilters(next)
-    applyFilter(next)
+
+    initialItems.forEach((item, i) => {
+      const el = itemRefs.current[i]
+      if (!el) return
+      const visible = next.size === 0 || [...next].some(filter => matchesFilter(item, filter))
+
+      if (visible) {
+        gsap.to(el, {
+          maxHeight: 300,
+          marginBottom: '2.5rem',
+          duration: 0.3,
+          ease: "power2.out",
+          onComplete: () => gsap.to(el, { opacity: 1, duration: 0.35, ease: "power2.out" })
+        })
+      } else {
+        gsap.to(el, {
+          opacity: 0,
+          duration: 0.2,
+          ease: "power2.in",
+          onComplete: () => gsap.to(el, { maxHeight: 0, marginBottom: 0, duration: 0.3, ease: "power2.inOut" })
+        })
+      }
+    })
   }
 
   return (
@@ -101,25 +88,27 @@ export default function HomeClient({ initialItems }: { initialItems: HomeItem[] 
         ))}
       </div>
 
-      {/* Titles */}
-      <div ref={listRef}>
-        {visibleItems.map((item, i) => (
-          <Link
+      {/* All items always in DOM — gaps close physically as items collapse */}
+      <div>
+        {initialItems.map((item, i) => (
+          <div
             key={item.slug}
-            href={item.href}
-            className="fade-title"
-            style={{
-              fontFamily: '"Schnyder S", Georgia, serif',
-              fontSize: 'clamp(2.5rem, 7vw, 5rem)',
-              color: '#EDD9B8',
-              lineHeight: 1.1,
-              display: 'block',
-              marginBottom: i < visibleItems.length - 1 ? '2.5rem' : 0,
-              opacity: 0,
-            }}
+            ref={el => { itemRefs.current[i] = el }}
+            style={{ maxHeight: '300px', overflow: 'hidden', marginBottom: '2.5rem' }}
           >
-            {item.title}
-          </Link>
+            <Link
+              href={item.href}
+              style={{
+                fontFamily: '"Schnyder S", Georgia, serif',
+                fontSize: 'clamp(2.5rem, 7vw, 5rem)',
+                color: '#EDD9B8',
+                lineHeight: 1.1,
+                display: 'block',
+              }}
+            >
+              {item.title}
+            </Link>
+          </div>
         ))}
       </div>
     </div>
