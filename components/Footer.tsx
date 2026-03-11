@@ -9,22 +9,22 @@ export default function Footer() {
         <nav className="flex gap-6">
           <Link
             href="/essays"
-            className="text-sm text-zinc-50 hover:text-zinc-300 transition-colors"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            className="text-sm transition-colors"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#5a4a3a' }}
           >
             Essays
           </Link>
           <Link
             href="/fiction"
-            className="text-sm text-zinc-50 hover:text-zinc-300 transition-colors"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            className="text-sm transition-colors"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#5a4a3a' }}
           >
             Fiction
           </Link>
           <Link
             href="/poems"
-            className="text-sm text-zinc-50 hover:text-zinc-300 transition-colors"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            className="text-sm transition-colors"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#5a4a3a' }}
           >
             Poems
           </Link>
@@ -43,22 +43,22 @@ export default function Footer() {
         <nav className="flex gap-6">
           <Link
             href="/essays"
-            className="text-sm text-zinc-50 hover:text-zinc-300 transition-colors"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            className="text-sm transition-colors"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#5a4a3a' }}
           >
             Essays
           </Link>
           <Link
             href="/fiction"
-            className="text-sm text-zinc-50 hover:text-zinc-300 transition-colors"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            className="text-sm transition-colors"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#5a4a3a' }}
           >
             Fiction
           </Link>
           <Link
             href="/poems"
-            className="text-sm text-zinc-50 hover:text-zinc-300 transition-colors"
-            style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+            className="text-sm transition-colors"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#5a4a3a' }}
           >
             Poems
           </Link>
