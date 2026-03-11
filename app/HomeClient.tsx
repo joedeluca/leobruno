@@ -76,6 +76,7 @@ export default function HomeClient({ initialItems }: { initialItems: HomeItem[] 
     if (next.has(f)) next.delete(f)
     else next.add(f)
     setActiveFilters(next)
+    setHoveredFilter(null)
     applyFilter(next)
   }
 
