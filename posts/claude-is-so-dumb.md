@@ -20,7 +20,7 @@ Somewhere in here we got the idea to listen to all of Dylan — in order — so 
 
 But then Dylan opened the door to Lennon and I made the Subterranean Homesick Blues argument — hearing the albums in context, like Lennon would have heard it, the permission slip, the door blown off the hinges, and then Dylan just kept rolling. And Claude said the Beatles went "oh, we can do anything now" — which is where he blew it, as will be established — and I connected it straight to Reliquary (one of my novels in progress), and to the St. Francis story no one else would write, to "I don't think anyone can write what I need written, so I'm doing it."
 
-And then came Rimbaud versus Shakespeare. The Beatles are Shakespeare — four guys, George Martin, group consensus, built to be loved. Dylan is Rimbaud — solo, visionary, didn't give a fuck if anyone understood Drunken Boat, wrote it in a white heat and left to run guns in Africa. And I said I was going to read Une Saison en Enfer in French to pigeons this weekend.
+And then came Rimbaud versus Shakespeare. The Beatles are Shakespeare — four guys, George Martin, group consensus, built to be loved. Dylan is Rimbaud — solo, visionary, didn't give a fuck if anyone understood Drunken Boat, wrote it in a white heat and left to run guns in Africa. And I said "I'm going to read Une Saison en Enfer in French to pigeons this weekend."
 
 That was the peak. That was a perfect Friday. 
 
