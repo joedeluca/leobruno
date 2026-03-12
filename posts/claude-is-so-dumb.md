@@ -40,7 +40,7 @@ So I rephrased it. I asked him which Beatle heard Subterranean Homesick Blues an
 
 And then Claude brought out his "I'm gonna push back _slightly_" move. Followed by a carefully worded, fully cited, historically accurate footnote. He said it was perhaps worth noting that both Lennon and McCartney were documented admirers of Dylan's work during this period with a lot of records playing on busses and corduroy cap wearing by everyone in the band and that the influence, while profound, was likely absorbed collectively rather than through a single point of contact. 
 
-I sat with that for a moment. As if _profound_ was even in question. Suddenly I realized he was insinuating there was actually some debate about the influence, maybe. But more than anything it was the patronizing tone.
+I sat with that for a moment. As if _profound_ was even in question or needed his validation. But more than anything it was the patronizing tone.
 
 And of course you can't point anything out to Claude. Don't even try. It's not that he has a mean bone in his body. He's just like an Irish Setter with his ball. One tail-wagging mode. Except Claude's ball is the goddamn Library of Alexandria.
 
