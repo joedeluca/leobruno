@@ -8,6 +8,8 @@ teaser: "from a Buick 6"
 
 ---
 
+<img src="/claude.jpg" alt="Claude is so dumb" style="float:right;width:340px;margin:0 0 1.5rem 2rem;display:block;" />
+
 I had a dream that I was in some kind of Interstellar pod and I was crawling through the service hatch, frantic, clutching a typewritten story I'd written. And suddenly there was the voice of Claude, but his voice was Hal's from 2001 Space Odyssey, and he's saying in that voice that is both soothing and menacing, "I'm sorry Leo. I can't let you publish that."
 
 When I woke I wasn't sure where I was but I still had my brand new Airpod Pros on with noise cancelling, so I couldn't hear anything and my phone was dead, so I didn't know what time it was or even what day. It was total sensory clusterfuckery. I wasn't sure if I was late for work, or if I even still lived on a planet with jobs. And that's what made me think of Claude again. The jobs and not knowing what time it is. I plugged my phone in and stared at it, waiting. The mystery was unbearable. As I sat there, I thought--_think_--you can do it. And after staring into the abyss of my hollowed out personality for what seemed like an eternity, I noticed a pigeon feather atop my balled up sock by the bed, and it all started coming back. And it all started with Claude Sonnet 4.6.
