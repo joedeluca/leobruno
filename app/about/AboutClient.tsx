@@ -10,13 +10,13 @@ export default function AboutClient() {
 
   return (
     <div className="min-h-[calc(100vh-7rem)] flex items-center justify-center px-8 py-16">
-      <div className="max-w-lg w-full text-center">
+      <div className="max-w-lg w-full">
         <Image
           src={photo}
           alt="Leo Bruno"
           width={256}
           height={256}
-          className="w-48 h-48 lg:w-64 lg:h-64 object-cover aspect-square mx-auto mb-10"
+          className="w-48 h-48 lg:w-64 lg:h-64 object-cover aspect-square mb-10"
           priority
         />
         <h1
@@ -24,8 +24,8 @@ export default function AboutClient() {
           style={{
             fontFamily: '"Schnyder S", serif',
             fontWeight: 700,
-            fontSize: 'clamp(3rem, 8vw, 5.5rem)',
-            color: '#EDEAE4',
+            fontSize: 'clamp(2.5rem, 7vw, 4.5rem)',
+            color: '#E8DCC8',
           }}
         >
           Leo Bruno
