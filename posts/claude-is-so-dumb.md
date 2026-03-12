@@ -4,7 +4,7 @@ date: "2026-03-11"
 category: "Field Notes"
 tags: ["Field Notes", "Claude", "Dylan", "Culture"]
 excerpt: "I had a dream that I was in some kind of interstellar pod and I was crawling through the service hatch, frantic, clutching a typewritten story I wrote. And suddenly there was the voice of Claude, but his voice was Hal's from 2001 Space Odyssey, and he's saying in that voice that is both soothing and menacing, 'I'm sorry Leo. I can't let you publish that.'"
-teaser: "Blowin' The LID OFF"
+teaser: "Lucid Dream from a Buick 6"
 
 ---
 
