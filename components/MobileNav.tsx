@@ -13,6 +13,10 @@ const links = [
   { href: "/newsletter", label: "Newsletter" },
 ]
 
+const bottomLinks = [
+  { href: "/about", label: "About Leo" },
+]
+
 export default function MobileNav() {
   const [open, setOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -135,12 +139,24 @@ export default function MobileNav() {
               ))}
             </nav>
 
-            <button
-              onClick={() => { setOpen(false); setTimeout(() => window.dispatchEvent(new CustomEvent("openSearch")), 50) }}
-              style={{ fontFamily: '"Graphik", system-ui, sans-serif', fontSize: '11px', color: '#5a4a3a', letterSpacing: '0.1em', background: 'none', border: 'none', cursor: 'pointer', padding: '0 2rem 2rem' }}
-            >
-              ⌘K to search
-            </button>
+            <div className="flex items-center gap-6 px-8 pb-8">
+              {bottomLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  style={{ fontFamily: '"Graphik", system-ui, sans-serif', fontSize: '11px', color: '#5a4a3a', letterSpacing: '0.1em', textDecoration: 'none' }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <button
+                onClick={() => { setOpen(false); setTimeout(() => window.dispatchEvent(new CustomEvent("openSearch")), 50) }}
+                style={{ fontFamily: '"Graphik", system-ui, sans-serif', fontSize: '11px', color: '#5a4a3a', letterSpacing: '0.1em', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+              >
+                ⌘K to search
+              </button>
+            </div>
           </div>
         </>,
         document.body
