@@ -39,7 +39,7 @@ Words of a saint? Hardly. Simple dignity. Exemplified and extended.
 
 ---
 
-Lou Reed. At first blush, definitely not a sweetie. Elliott's phone is merciless. The work: occasionally transcendent. The man: by most accounts, a genuine piece of work. He's cruel to collaborators, brutal to Warhol's memory, called Dylan a pretentious kike (also complicated), and generally _complicated_ with everyone.
+Lou Reed. At first blush, definitely not a sweetie. Elliott's phone is merciless. The work: occasionally transcendent. The man: by most accounts, a genuine piece of work. He's cruel to collaborators, brutal to Warhol's memory, called Dylan a pretentious kike, and generally _complicated_ with everyone.
 
 And then there's the slap. Lou Reed slapped David Bowie. David Bowie — the man who gave us Ziggy Stardust and then had the grace to kill him before he got embarrassing. Beloved by literally everyone, across every demographic. Lou didn't just believe the British shouldn't play rock and roll. He _acted_ on the belief.
 
@@ -55,7 +55,7 @@ He did not grow up on the dirty boulevard. He grew up in Freeport, Long Island i
 
 Elliott is not narrating in what I think is 1970s elementary school documentary voice.
 
-"He was a sensitive boy who suffered with dreams and night emissions involving both boys and _gurrrrls_ (he says gurrrrls like he's narrating a Creature Feature.). Mood swings, depression, and self medication with eyeliner and black denim followed. The only cure was ECT, electroconvulsive therapy. Or so his parents decided."
+"He was a sensitive boy who suffered with dreams and night emissions involving both boys and _gurrrrls_ (he says girls like he's narrating a Creature Feature.) Mood swings, depression, and self medication with eyeliner and black denim followed. The only cure was ECT, electroconvulsive therapy. Or so his parents decided."
 
 "In the summer of 1959, Lou was administered 24 ECT sessions at two-day intervals at Creedmoor State Psychiatric Hospital in Queens. Twenty-four sessions. Every two days."
 
@@ -73,7 +73,7 @@ The interviewer asks what he thinks of British rock and roll.
 
 Lou looks around the room. "I didn't know what was going on in London," he says. "I never liked the Beatles." He pauses. "I don't think the British should play rock and roll."
 
-The interviewer looks dazed. A boxer hit with a jab he didn't see coming.
+The interviewer looks dazed. A boxer hit with a phantom jab.
 
 Lou extends the position. "The British should not play music at all. They should learn to cook."
 
@@ -83,11 +83,11 @@ _Stop the rock and roll. Learn to make a meal._
 
 Then, almost immediately, his actual taste ambushes him. He backtracks slightly. He likes some Ray Davies.
 
-Ray Davies. The man who wrote _Waterloo Sunset_. The most quintessentially British rock and roll human alive. Lou Reed's exception to "the British should not play music" is Ray Davies. But it makes sense, right? Lou's problem with the British wasn't really about geography — it was about authenticity and theft. The Stones taking the blues and repackaging it. British kids performing unearned American pain. Ray was writing about Waterloo, about English village greens, about teatime and class and the specific melancholy of being British.
+The interviewer rights himself; reality re-asserts itself with Ray Davies. The man who wrote _Waterloo Sunset_. The most quintessentially British rock and roll human alive. Lou Reed's exception to "the British should not play music" is Ray Davies. But it makes sense, right? Lou's problem with the British wasn't really about geography — it was about authenticity and theft. The Stones taking the blues and repackaging it. British kids performing unearned American pain. Ray was writing about village greens and teatime and the specific melancholy of being British.
 
 Elliott is not finding any of this exculpatory.
 
-The interviewer asks Lou about the music of the sixties. All the sunshine and possibility and naive hope — the flower child era. What does he think of it? A question that in retrospect is sort of like watching a zoo handler drop a mouse into a Python cage. Lou looks around the room. He's genuinely searching. Not performing. And he lands on a word.
+The interviewer asks Lou about the music of the sixties. All the sunshine and possibility and hope — the flower child era. What does he think of it? A question that in retrospect is sort of like watching a zoo handler drop a mouse into a Python cage. Lou looks around the room. He's genuinely searching. Not performing. And he lands on a word.
 
 _Junk._
 
