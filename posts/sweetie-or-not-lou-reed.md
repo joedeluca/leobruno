@@ -29,11 +29,13 @@ The rules, such as they are: you consider the work. You consider the person. You
 
 The only disqualifying sin is a pattern of real damage — not difficult, not annoying, not insufferable at press junkets. Truly _damaging_. And damage alone isn't enough. The question is whether they've reckoned with it. One catastrophic incident, genuinely owned over time, is survivable. A pattern of smaller damage — defended, minimized, or simply never thought about — is not. We call this the Costello Test.
 
-The Costello Test. In 1984 Elvis Costello was at a bar in Ohio after a gig when he and his mates ran into members of the Stephen Stills band — yes, such a thing once existed — at the same hotel bar. They argued. Elvis, at the height of his drunken rowdy stage, cut loose on what he perceived as the banalities in American music and singled out Ray Charles, describing him as a "blind, ignorant, n****r.
+The Costello Test. In 1979 Elvis Costello was at a bar in Ohio after a gig when he and his mates ran into members of the Stephen Stills band — yes, such a thing once existed — at the same hotel bar. They argued. Elvis, at the height of his drunken rowdy stage, cut loose on what he perceived as the banalities in American music and singled out Ray Charles, describing him as a "blind, ignorant, n****r. A drunk's hat trick. Levied against a man who taught himself to arrange orchestras by ear. Who played piano with a sophistication that made classically trained musicians stop and pay attention.
 
-The question everyone wants to ask is _why_. And the answer turns out to be the whole point. He was trying to be the most offensive person in the room, to make certain people leave. It was a weapon deployed in the wrong direction. That's not a racist's racism. That's an idiot's racism — which is almost worse, and also somehow forgivable in a way the other kind isn't. A real racist doesn't spend the next forty-five years mortified. Costello did the damage. Costello reckoned with it.
+Elvis has never stopped apologizing. And here's the thing. If a confirmed sweetie forgives you, you're forgiven. Here's Ray Charles response to being called a "blind, ignorant, n-word":
 
-Sweetie.
+"Drunken talk isn't meant to be printed in the paper."
+
+Words of a saint? Hardly. Simple dignity. Exemplified and extended.
 
 ---
 
