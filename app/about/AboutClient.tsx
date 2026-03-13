@@ -9,7 +9,7 @@ export default function AboutClient() {
   const [photo] = useState(() => photos[Math.floor(Math.random() * photos.length)])
 
   return (
-    <div className="min-h-[calc(100vh-7rem)] flex items-center justify-center px-8 py-16">
+    <div className="px-8 py-16">
       <div className="max-w-lg w-full">
         <Image
           src={photo}
