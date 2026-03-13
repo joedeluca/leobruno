@@ -55,7 +55,7 @@ He did not grow up on the dirty boulevard. He grew up in Freeport, Long Island i
 
 Elliott is not narrating in what I think is 1970s elementary school documentary voice.
 
-"He was a sensitive boy who suffered with dreams and night emissions involving both boys and girls. Mood swings, depression, and self medication with eyeliner and black denim followed. The only cure was ECT, electroconvulsive therapy."
+"He was a sensitive boy who suffered with dreams and night emissions involving both boys and _gurrrrls_ (he says gurrrrls like he's narrating a Creature Feature.). Mood swings, depression, and self medication with eyeliner and black denim followed. The only cure was ECT, electroconvulsive therapy. Or so his parents decided."
 
 "In the summer of 1959, Lou was administered 24 ECT sessions at two-day intervals at Creedmoor State Psychiatric Hospital in Queens. Twenty-four sessions. Every two days."
 
@@ -83,11 +83,11 @@ _Stop the rock and roll. Learn to make a meal._
 
 Then, almost immediately, his actual taste ambushes him. He backtracks slightly. He likes some Ray Davies.
 
-Ray Davies. The man who wrote _Waterloo Sunset_. The most quintessentially British rock and roll human alive. Lou Reed's exception to "the British should not play music" is Ray Davies.
+Ray Davies. The man who wrote _Waterloo Sunset_. The most quintessentially British rock and roll human alive. Lou Reed's exception to "the British should not play music" is Ray Davies. But it makes sense, right? Lou's problem with the British wasn't really about geography — it was about authenticity and theft. The Stones taking the blues and repackaging it. British kids performing unearned American pain. Ray was writing about Waterloo, about English village greens, about teatime and class and the specific melancholy of being British.
 
 Elliott is not finding any of this exculpatory.
 
-The interviewer asks Lou about the music of the sixties. All the sunshine and possibility and naive hope — the flower child era. What does the VU represent against all that? Lou looks around the room. He's genuinely searching. Not performing. And he lands on a word.
+The interviewer asks Lou about the music of the sixties. All the sunshine and possibility and naive hope — the flower child era. What does he think of it? A question that in retrospect is sort of like watching a zoo handler drop a mouse into a Python cage. Lou looks around the room. He's genuinely searching. Not performing. And he lands on a word.
 
 _Junk._
 
@@ -113,13 +113,11 @@ Ok, maybe he took a stage name.
 
 "And they weren't playing electric guitars in the delta."
 
-And then it clicked for me. What Dylan understood, and what Lou couldn't see because he was too inside Manhattan, is that America is a costume party. The whole project — the national identity, the mythology — is built on reinvention, on people shedding one self and putting on another. Huck Finn. Gatsby. The immigrant who anglicizes his name. The Dust Bowl Okie who becomes a Californian. Becoming Bob Dylan is the most American thing imaginable. It's not fraudulent. It's the form itself.
-
-"And Lou was stuck inside this cool, ironic, self-aware New York thing where you don't pretend to be anything you're not. Which I think is more European than American."
+And then it clicked for me. What Dylan understood, and what Lou couldn't see because he was too inside Manhattan, is that America is a costume party. The whole project — the national identity, the mythology — is built on reinvention, on people shedding one self and putting on another. Huck Finn. Gatsby. The immigrant who anglicizes his name. The Dust Bowl Okie who becomes a Californian. Becoming Bob Dylan is the most American thing imaginable. It's not fraudulent. It's the form itself. And Lou was stuck inside this cool, ironic, self-aware New York thing where you don't pretend to be anything you're not. Which I think is more European than American.
 
 So why didn't Lou get what Elliott gets? Because he was humiliated, and quite literally tortured as a kid. He was always the sort to feel life's heaviness. And he always reached for the one thing he could use to save himself — art. And his art was about finding that Lou Reed inside himself that was tortured almost into oblivion. And when he climbed out he claimed poetry just like Dylan. That boldness. That willingness to say, fuck you. To be a poet has always been a bold moral statement. And a personally brave position because a bad poet is nothing. And being nothing, erased, was Lou's fear. So yeah. He was prickly. He didn't compromise. He made brave, at times unlistenable music to the bitter end. He was an artist always, and always Lou Reed.
 
-Elliott is watching an interview of his own now. His phone remains merciless.
+Elliott is watching another interview.
 
 He shows me: Lou Reed, on Frank Sinatra.
 
@@ -131,7 +129,7 @@ Elliott isn't laughing. He's from New York. I suspect he knows something I don't
 
 There's a moment in Dirty Boulevard I keep coming back to. The landlord — pathetic, incontinent, small — pissing his pants. And then, in the very next beat, pissing on Pedro. The landlord didn't invent his cruelty. He inherited it from wherever his own degradation came from, and Pedro inherits it from him, and the kid with the clothes hanger inherits it from parents who are themselves ground down by the boulevard. Humiliation isn't static. It travels downward through power structures looking for somewhere to land.
 
-Lou Reed had been a Pedro. Not economically. But in the specific way of being someone that a more powerful person decided to correct and diminish. He saw it everywhere because he already knew what it felt like.
+Lou Reed had been a Pedro. Not economically, we established. But in the specific way of being someone that a more powerful person decided to correct and diminish. He saw it everywhere because he already knew what it felt like.
 
 You look at the begrudging hello. You look at the _if it's true, I'm very flattered_ in the same five minutes. You look at him looking around for the right word and finding _junk_. You look at the poetry question — the defensiveness, the need for it to be true, the quiet _I've had some things published_.
 
