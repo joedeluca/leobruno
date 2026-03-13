@@ -105,15 +105,17 @@ Elliott seems put off by the interview. He doesn't like the gruffness. The kike 
 
 I tell Elliott that one Jew calling another Jew a kike is like mud wrestling. And also: Dylan _is_ pretentious. Dylan has been performing Dylan for sixty years. Lou saw through it because Lou was doing the same thing and at least he knew it. That's not anti-Semitism. That's peer review.
 
-Elliott is unmoved. He tells me that Dylan is pretentious like Muddy Waters is pretentious, which makes no sense to me. I mean, Muddy is the real deal. Delta blues incarnate. Bob is skinny Jew from Minnesota singing like Woody Guthrie first, then like a bluesman.
+Elliott is unmoved. He tells me that Dylan is pretentious like Muddy Waters is pretentious.
+
+This makes no sense to me. I mean, "Muddy is the real deal. Delta blues incarnate. Bob is skinny Jew from Minnesota singing like Woody Guthrie first, then like a bluesman," I say.
 
 "First of all what man is born with the name Muddy Waters?"
 
 Ok, maybe he took a stage name.
 
-"And they weren't playing electric guitars in the delta."
+"And they were playing electric guitars in the delta?"
 
-And then it clicked for me. What Dylan understood, and what Lou couldn't see because he was too inside Manhattan, is that America is a costume party. The whole project — the national identity, the mythology — is built on reinvention, on people shedding one self and putting on another. Huck Finn. Gatsby. The immigrant who anglicizes his name. The Dust Bowl Okie who becomes a Californian. Becoming Bob Dylan is the most American thing imaginable. It's not fraudulent. It's the form itself. And Lou was stuck inside this cool, ironic, self-aware New York thing where you don't pretend to be anything you're not. Which I think is more European than American.
+And then it clicked. What Dylan understood, and what Lou couldn't see because he was too inside Manhattan, is that America is a costume party. The whole project — the national identity, the mythology — is built on reinvention, on people shedding one self and putting on another. Huck Finn. Gatsby. The immigrant who anglicizes his name. The Dust Bowl Okie who becomes a Californian. Becoming Bob Dylan is the most American thing imaginable. It's not fraudulent. It's the form itself. And Lou was stuck inside this cool, ironic, self-aware European thing.
 
 So why didn't Lou get what Elliott gets? Because he was humiliated, and quite literally tortured as a kid. He was always the sort to feel life's heaviness. And he always reached for the one thing he could use to save himself — art. And his art was about finding that Lou Reed inside himself that was tortured almost into oblivion. And when he climbed out he claimed poetry just like Dylan. That boldness. That willingness to say, fuck you. To be a poet has always been a bold moral statement. And a personally brave position because a bad poet is nothing. And being nothing, erased, was Lou's fear. So yeah. He was prickly. He didn't compromise. He made brave, at times unlistenable music to the bitter end. He was an artist always, and always Lou Reed.
 
