@@ -29,6 +29,7 @@ export interface Post {
   verdict?: string
   person?: string
   stickerImage?: string
+  ogImage?: string
 }
 
 const postsDirectory = path.join(process.cwd(), "posts")
@@ -192,6 +193,7 @@ export async function getPostData(slug: string): Promise<Post> {
     teaserFontSize:
       matterResult.data.teaserFontSize || "clamp(0.875rem, 2vw, 1.5rem)",
     titleFontSize: matterResult.data.titleFontSize || "clamp(2rem, 5vw, 4rem)",
+    ogImage: matterResult.data.ogImage || "",
   }
 }
 
