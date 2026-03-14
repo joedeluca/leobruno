@@ -137,7 +137,7 @@ You look at the begrudging hello. You look at the _if it's true, I'm very flatte
 
 He's a man walking around completely open. The finished work and all the notes visible simultaneously. Nothing hidden. Editing as he goes.
 
-They tried to close that. They failed. Lou stayed porous his whole life despite everything. Yeah, some people took some shrapnel. But I'll tell you this, if I'm in the foxhole with Lou I'd trust him to jump on the live grenade before any other musician mention in this article. Except maybe Ray Charles. But you know, Ray was blind.
+They tried to close that. They failed. Lou stayed porous his whole life despite everything. Yeah, some people took some shrapnel. But I'll tell you this, if I'm in the foxhole with Lou I'd trust him to jump on the live grenade before any other musician mentioned in this article. Except maybe Ray Charles. But you know, Ray navigated by sound.
 
 Elliott puts his phone away. Not because he agrees. But he puts the phone away.
 
