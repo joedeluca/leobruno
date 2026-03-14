@@ -4,8 +4,8 @@ date: "2026-03-14"
 category: "Fiction"
 tags: ["Fiction", "The Wolf and Other Stories", "Arezzo", "Medieval"]
 excerpt: "Mulberries and smoke. That's what Neri Bostoli tastes now. He can't stop remembering: ice from Venezia in a wooden box. Cristina's juice-stained chin. Her scarlet fingers finding cold beneath moss, already weeping vapor."
-teaser: "From The Wolf and Other Stories"
-teaserShort: "The Wolf and Other Stories"
+teaser: "From The Wolf & Other Stories"
+teaserShort: "The Wolf & Other Stories"
 ---
 
 Mulberries and smoke. That's what Neri Bostoli tastes now. He can't stop remembering: ice from Venezia in a wooden box. Cristina's juice-stained chin. Her scarlet fingers finding cold beneath moss, already weeping vapor. Her tongue creeping toward the ice—pink, apprehensive. Her gasp. Her laugh. Then her laughter quit like a door slammed shut. Her pulling him to bed, placing his hand on her stomach. Her winter-cold mouth when they kissed, mulberry tongue against his.
