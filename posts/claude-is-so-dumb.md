@@ -27,7 +27,7 @@ Claude then went deep into Dylan and described how he did exactly that—62 to 6
 
 He acknowledged that Bob Dylan and Leo Bruno are basically the same person. 
 
-And he agreed that Italians don't burn anything down and don't build anything new, and can't relax for one goddamn second even though they can't stop babbling _piano piano_—they inherit, they continue, and then Claude said, "Right, they can never just skip the second course and say, _let's fuck_." 
+And he agreed that Italians don't burn anything down and don't build anything new, and can't relax for one goddamn second even though they can't stop babbling _piano piano_—they inherit, they continue in constant etherizing conversation with the past and then Claude said, "Right, they can never just skip the second course and say, _let's fuck_." 
 
 Somewhere in here we got the idea to listen to all of Dylan—in order—so I could really feel how it all went down before Subterranean Homesick Blues absolutely detonated, and that guy on Highway 61 absolutely murdered the rythm guitar on _From a Buick 6_. 
 
