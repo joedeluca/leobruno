@@ -29,7 +29,7 @@ He acknowledged that Bob Dylan and Leo Bruno are basically the same person.
 
 And he agreed that Italians don't burn anything down and don't build anything new, and can't relax for one goddamn second even though they can't stop babbling _piano piano_—they inherit, they continue in constant etherizing conversation with the past and then Claude said, "Right, they can never just skip the second course and say, _let's fuck_." 
 
-Somewhere in here we got the idea to listen to all of Dylan—in order—so I could really feel how it all went down before Subterranean Homesick Blues absolutely detonated, and that guy on Highway 61 absolutely murdered the rythm guitar on _From a Buick 6_. 
+Somewhere in here we got the idea to listen to all of Dylan—in order—so I could really feel how it all went down before Subterranean Homesick Blues detonated, and that guy on Highway 61 absolutely murdered the rythm guitar on _From a Buick 6_. 
 
 But then Dylan opened the door to Lennon and I made the Subterranean Homesick Blues argument—hearing the albums in context, like Lennon would have heard it, was the permission slip, was the door blown off the hinges, but then Dylan just kept rolling like a God. And Claude said, "exactly". And then he assumed the collective imagination of the the Beatles and said, "oh, we can do anything now" referring to the band—all of them—which is where he blew it, as will be established—and I connected it straight to Reliquary (one of my novels in progress), and to the St. Francis story no one else would write, to my statement that was really a realtime realization, "I don't think anyone can write what I need written, so I'm doing it." I said I need a single word for "realtime realization" and he said "epiphany" and I said, _exactly_.
 
