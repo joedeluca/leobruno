@@ -18,11 +18,7 @@ Her voice moves like her head—quick turns, soft phrases, sudden bright calls t
 
 They insist there's something inside her not human. A spirit in suspended gestation. Neri doesn't know which would be worse. That she carries the proof of his family's destruction or that she carries something else entirely.
 
-\begin{center}
-
 ---
-
-\end{center}
 
 Yesterday in drizzle and darkness and cold, the cannibal was tied to the stake in the piazza next to Santa Maria and the charge was read:
 
@@ -32,11 +28,7 @@ _This same Robert, having completed his wandering, did willfully violate the mer
 
 Demons conspired to quell the initial flame. It smoked, filling the piazza and choking the crowd. The cannibal seemed to fall limp and sleep. The crowd watched in silence as the men lighting the pyre struggled amongst themselves to set the blaze. He didn't move again until the flames reached his legs and made them pop and dance. His scream was small and the rain fell harder as the demons left his body and moved into the clouds. The fire turned to dense smoke and the men were forced to the tavern where they drank too much and forgot their duty.
 
-\begin{center}
-
 ---
-
-\end{center}
 
 Tonight the rain has become fog. Both weather and also something older. A formless deep, darkness on the face of waters. It moves without wind, dense and aware, making the city disappear then revealing it without context—stairs descending into abyss, a fellow citizen suddenly manifest. Neri pulls his cloak across his face but the smell of wet ash and rendered fat finds him anyway and he knows he's in the piazza, moving up through the center as cannibal glow undulates in the distance through the breaks.
 
@@ -62,11 +54,7 @@ San Piero's bells ring and the men startle and grunt to one another like a rippl
 
 Neri's hand falls from the knife. He exhales as the fog parts to reveal San Piero ablaze with hundreds of lamps.
 
-\begin{center}
-
 ---
-
-\end{center}
 
 Inside, Frankincense clouds the air, mixing with beeswax and lamp oil. The weight of the sacred in every breath. A rebirth to the men, and to Neri. Still, they took defensive positions around the nave. The monks' voices rise from the chancel in plainsong: _Dominus dixit ad me: Filius meus es tu, ego hodie genui te._ The Lord said to me: You are my son, this day have I begotten you.
 
@@ -87,19 +75,11 @@ Neri can't hear her, but he sees her and knows her shape. He can see those at he
 
 It is Cristina.
 
-\begin{center}
-
 ---
-
-\end{center}
 
 It is only six months since his son Bartalameo was born. The baby they called Meo who laughed more than he cried. Neri cannot shake the final moment. Meo under Cristina's skirt with the copper pot on his head—a too large helmet, wobbling—laughing when called to say goodbye, a tiny copper echo between her legs. Cristina lifted her skirt and the sudden light made the child pause. His head steadied—unsteady before like a peony too heavy on its stem. He centered himself for just a breath. Became aware of something. Some thought forming. The pot tilted enough and Neri could see his son's dark round eyes looking at him.
 
-\begin{center}
-
 ---
-
-\end{center}
 
 Outside in the fog the Tartoli assemble.
 
@@ -121,11 +101,7 @@ Oh, she said. As if commenting on sudden rain or the smell of fresh bread coming
 
 Philosophy says seed carries form from man to woman. There flesh quickens, organs take place, rational soul enters—becomes complete human animal. But what quickens in her belly is neither complete nor human nor properly ensouled. What quickens in the mist above the deep is neither complete nor human nor properly ensouled.
 
-\begin{center}
-
 ---
-
-\end{center}
 
 The Mass ends. _Ite, missa est._ Go, it is finished.
 
