@@ -2,7 +2,7 @@
 title: "The Demons of Arezzo"
 date: "2026-03-14"
 category: "Fiction"
-tags: ["Fiction", "The Wolf and Other Stories", "Arezzo", "Medieval"]
+tags: ["Fiction", "The Wolf and Other Stories", "Arezzo", "Medieval", "St. Francis"]
 excerpt: "Mulberries and smoke. That's what Neri Bostoli tastes now. He can't stop remembering: ice from Venezia in a wooden box. Cristina's juice-stained chin. Her scarlet fingers finding cold beneath moss, already weeping vapor."
 teaser: "From The Wolf & Other Stories"
 teaserShort: "The Wolf & Other Stories"
