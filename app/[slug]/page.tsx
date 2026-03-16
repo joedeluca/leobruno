@@ -17,20 +17,30 @@ export async function generateMetadata({
   try {
     const post = await getPostData(slug)
     const description = post.teaser || post.excerpt
+    const imageUrl = post.ogImage
+      ? `https://www.leobruno.it${post.ogImage}`
+      : `https://www.leobruno.it/og-default.jpg`
     return {
       title: post.title,
       description,
-      authors: [{ name: "Leo Bruno", url: "https://leobruno.it" }],
+      authors: [{ name: "Leo Bruno", url: "https://www.leobruno.it" }],
       alternates: {
-        canonical: `https://leobruno.it/${slug}`,
+        canonical: `https://www.leobruno.it/${slug}`,
       },
       openGraph: {
         title: `${post.title} — Leo Bruno`,
         description,
-        url: `https://leobruno.it/${slug}`,
+        url: `https://www.leobruno.it/${slug}`,
         type: "article",
         publishedTime: post.date,
         authors: ["Leo Bruno"],
+        images: [{ url: imageUrl, width: 1200, height: 630, alt: post.title }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${post.title} — Leo Bruno`,
+        description,
+        images: [imageUrl],
       },
     }
   } catch {

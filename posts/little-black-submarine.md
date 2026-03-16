@@ -8,7 +8,10 @@ teaser: "From Reliquary"
 teaserShort: "Reliquary, Ch. 10"
 ---
 
-<img src="/aphrodite-observing-pigeons.png" alt="Aphrodite observing pigeons" style="float:right;width:340px;margin:0 0 1.5rem 2rem;display:block;" />
+<figure style="float:right;width:340px;margin:0 0 1.5rem 2rem;">
+<img src="/aphrodite-observing-pigeons.png" alt="Aphrodite observing pigeons" style="display:block;width:100%;" />
+<figcaption style="text-align:center;font-size:0.8rem;color:#A8A5A0;margin-top:0.4rem;">Aphrodite Regarding Pigeons</figcaption>
+</figure>
 
 Roxy is compartmentalized like a submarine. Everything sealed in its own chamber. Vapor-locked. And everything she does seems to me both erotic and remote. Her ordinary demeanor is of Aphrodite regarding pigeons.
 

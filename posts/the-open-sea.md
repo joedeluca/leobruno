@@ -7,7 +7,7 @@ excerpt: "February at Poetto. Headphones on, headphones off. My mother calls fro
 teaser: "The Gulf of Angels"
 ---
 <figure style="width:100%;margin:0 0 2rem 0;">
-<img src="/fisherman.png" alt="Holy Sea. Holy Fisherman" style="display:block;width:100%;" />
+<img src="/fisherman.jpg" alt="Holy Sea. Holy Fisherman" style="display:block;width:100%;" />
 <figcaption style="text-align:center;font-size:0.8rem;color:#A8A5A0;margin-top:0.4rem;">Holy Sea. Holy fisherman.</figcaption>
 </figure>
 
