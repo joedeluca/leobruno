@@ -4,6 +4,6 @@ I heard her park her aqua Panda like a backslash in a tiny spot on the street. S
 
 The doors always have to open for Honey.
 
-She's in before I can register her. She drops her purse in the chair beside the couch and stands in front of me. She wants me to kiss her. She has red stain around her mouth.
+She breezes through and walks around the room, assessing it I guess and drops her purse in the chair beside the couch and stands in front of me. She wants me to kiss her. She has red stain around her mouth.
 
-"Melograno," she says. Rubbing the corners of her mouth with her red-stained fingers. 
+"Melograno," she says. Rubbing the corners of her mouth with the tip of her finger, also red stained. 
