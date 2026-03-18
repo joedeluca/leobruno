@@ -4,6 +4,28 @@ I heard her park her aqua Panda like a backslash in a tiny spot on the street. S
 
 The doors always have to open for Honey.
 
-She breezes through and walks around the room, assessing it I guess and drops her purse in the chair beside the couch and stands in front of me. She wants me to kiss her. She has red stain around her mouth.
+She's in before I can register her. She drops her purse in the chair beside the couch and stands in front of me. She wants me to kiss her. She has red stain around her mouth.
 
-"Melograno," she says. Rubbing the corners of her mouth with the tip of her finger, also red stained. 
+"Melograno," she says. Rubbing the corners of her mouth with her red-stained fingers. She's put on lip appl scented lip gloss over the melagrano and both scents are there as lean down and kiss her.
+
+she is speaking italian and i don't know why. this leads to bennetto the ferrari pure fear, regrets and a wall closing in fast?
+
+it was a week of knowing her before i realized she isn't italian, she's spanish. a fact she reminds me of daily. 
+
+"what am I Leo," she asks in Spanish. 
+
+"A Taco," I said.
+
+"Exactly," she says. "Comfort food for the sad boy."
+
+Honey is getting a divorce, but she still lives in the same house with her soon to be exhusband. She has him building a barrier between them on the lower floor. he's sealing himself off from her while he supports her financially. 
+
+her ex-husband is my friend benny. 
+
+And then it's war.
+
+she is preternaturally intelligent. she speaks spanish, italian, german, and french perfectly. 
+
+"I want to bathe in glitter."
+
+I was running the bathe before she finished the sentence.
