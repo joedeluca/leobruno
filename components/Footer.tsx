@@ -70,7 +70,15 @@ export default function Footer() {
         >
           © {new Date().getFullYear()} Leo Bruno. All rights reserved.
         </p>
-        <SearchHint />
+        <div className="flex items-center gap-4">
+          <Link
+            href="/marginalia"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', fontSize: '11px', color: '#5a4a3a', letterSpacing: '0.1em' }}
+          >
+            Marginalia
+          </Link>
+          <SearchHint />
+        </div>
       </div>
     </footer>
   )

@@ -22,7 +22,7 @@ export default function EssaysPage() {
   const posts = getSortedPostsData()
 
   const items: EssayItem[] = posts
-    .filter(p => p.category !== "Fiction" && p.category !== "Poetry" && p.category !== "Poem")
+    .filter(p => p.category !== "Fiction" && p.category !== "Poetry" && p.category !== "Poem" && p.category !== "Marginalia")
     .map(p => ({
       slug: p.slug,
       title: p.title,

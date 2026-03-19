@@ -15,6 +15,7 @@ const links = [
 
 const bottomLinks = [
   { href: "/about", label: "About Leo" },
+  { href: "/marginalia", label: "Marginalia" },
 ]
 
 export default function MobileNav() {

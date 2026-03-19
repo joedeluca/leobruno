@@ -40,13 +40,15 @@ export default function Home() {
   const posts = getSortedPostsData()
   const poems = getAllPoems().filter(p => p.author === "Leo Bruno")
 
-  const postItems: HomeItem[] = posts.map(p => ({
-    slug: p.slug,
-    title: p.title,
-    date: p.date,
-    category: p.category,
-    href: `/${p.slug}`,
-  }))
+  const postItems: HomeItem[] = posts
+    .filter(p => p.category !== "Marginalia")
+    .map(p => ({
+      slug: p.slug,
+      title: p.title,
+      date: p.date,
+      category: p.category,
+      href: `/${p.slug}`,
+    }))
 
   const poemItems: HomeItem[] = poems.map(p => ({
     slug: p.slug,
