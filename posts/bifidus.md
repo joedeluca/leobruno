@@ -9,7 +9,7 @@ teaser: "Porn"
 
 I was in the cookie aisle and there were these spongy marshmallowy things with a dark chocolate coat. And this is where it got obscene: They had a layer of orange marmalade with a biscotti bottom and a swirl, and possibly other stuff. Too much to take in all in at once. The box alone looked like it was designed by the Gucci porn department.
 
-I could not meet its gaze. It was staring at me like—let's do this—and I was like a dog with my ears pinned back looking at the wall. 
+I could not meet its gaze. It was staring at me like—let's do this—and I was like a dog with my ears pinned back and eyes glued to the wall. 
 
 I surveyed the adjacent confections with the deliberate air of a man engaged in rational deliberation. I was not. I knew what I wanted. The whole aisle knew. It’s 90% women in Italian grocery stores — men don’t really food shop here — and I could feel them watching. An American man of uncertain years, alone, dilating in the cookie aisle. A nature documentary. How desperate is he? Is he just looking for a dry accompaniment to his Melatonin tea, or is he buried in dolci and Virgin River marathons crying himself to sleep at night. 
 
