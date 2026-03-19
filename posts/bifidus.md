@@ -13,7 +13,7 @@ I could not meet its gaze. It was staring at me like—let's do this—and I was
 
 I surveyed the adjacent confections with the deliberate air of a man engaged in rational deliberation. I was not. I knew what I wanted. The whole aisle knew. It’s 90% women in Italian grocery stores — men don’t really food shop here — and I could feel them watching. An American man of uncertain years, alone, dilating in the cookie aisle. A nature documentary. How desperate is he? Is he just looking for a dry accompaniment to his Melatonin tea, or is he buried in dolci and Virgin River marathons crying himself to sleep at night. 
 
-So I walked away. And ended up at back corner of the store where they keep the butter and yogurt.
+So I walked away. And ended up at the back corner of the store where they keep the butter and yogurt.
 
 I bought prune yogurt with bifidus. An act of undiluted self hatred that happened almost subconsciously. I didn’t even know what bifidus was and I'm lactose intolerant. 
 
