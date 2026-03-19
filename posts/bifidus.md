@@ -11,7 +11,7 @@ I was in the cookie aisle and there were these spongy marshmallowy things with a
 
 I could not meet its gaze. It was staring at me like—let's do this—and I was like a dog with my ears pinned back and eyes glued to the wall. 
 
-I surveyed the adjacent confections with the deliberate air of a man engaged in rational deliberation. I was not. I knew what I wanted. The whole aisle knew. It’s 90% women in Italian grocery stores — men don’t really food shop here — and I could feel them watching. An American man of uncertain years, alone, dilating in the cookie aisle. A nature documentary. How desperate is he? Is he just looking for a dry accompaniment to his Melatonin tea, or is he buried in dolci and Virgin River marathons crying himself to sleep at night. 
+I surveyed the adjacent confections with the air of a man engaged in rational deliberation. I was not. I knew what I wanted. The whole aisle knew. It’s 90% women in Italian grocery stores — men don’t really food shop here — and I could feel them watching. An American man of uncertain years, alone, dilating in the cookie aisle. A nature documentary. How desperate is he? Is he just looking for a dry accompaniment to his Melatonin tea, or is he buried in dolci and Virgin River marathons crying himself to sleep at night. 
 
 So I walked away. And ended up at the back corner of the store where they keep the butter and yogurt.
 
