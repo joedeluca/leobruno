@@ -9,9 +9,9 @@ teaser: "Porn"
 
 I was in the cookie aisle and there were these spongy marshmallow on the inside dark chocolate coating on top things. And this is where it got obscene: It had a layer of orange marmalade and a biscotti bottom. There were other secrets being whispered but I couldn't take it all in at once. The box alone looked like it was designed by the Gucci porn department. There was a cherry version too.
 
-I couldn’t look them in the eye. It was staring at me like—let's do this—and I was like a dog with my ears pinned back looking at the wall. 
+I could not meet its gaze. It was staring at me like—let's do this—and I was like a dog with my ears pinned back looking at the wall. 
 
-I scanned the other cookies like there was actually some decision-making going on. There wasn’t. I knew what I wanted. The whole aisle knew. It’s 90% women in Italian grocery stores — men don’t really food shop here — and I could feel them watching. An American man, alone, dilating in the cookie aisle. A nature documentary. How desperate is he? Is he just looking for a dry accompaniment to his Melatonin tea, or is he buried in dolci and Virgin River marathons crying himself to sleep at night. 
+I surveyed the adjacent confections with the deliberate air of a man engaged in rational deliberation. I was not. I knew what I wanted. The whole aisle knew. It’s 90% women in Italian grocery stores — men don’t really food shop here — and I could feel them watching. An American man of uncertain years, alone, dilating in the cookie aisle. A nature documentary. How desperate is he? Is he just looking for a dry accompaniment to his Melatonin tea, or is he buried in dolci and Virgin River marathons crying himself to sleep at night. 
 
 So I walked away. And ended up at back corner of the store where they keep the butter and yogurt.
 
