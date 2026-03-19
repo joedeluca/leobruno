@@ -7,7 +7,7 @@ excerpt: "I went to Lidl after work, as I usually do. Spent about five minutes l
 teaser: "Porn"
 ---
 
-I was in the cookie aisle and there were these spongy marshmallow on the inside dark chocolate coating on top things. And this is where it got obscene: It had a layer of orange marmalade and a biscotti bottom. There were other secrets being whispered but I couldn't take it all in at once. The box alone looked like it was designed by the Gucci porn department. There was a cherry version too.
+I was in the cookie aisle and there were these spongy marshmallowy things with a dark chocolate coat. And this is where it got obscene: It had a layer of orange marmalade and a biscotti bottom. There were other secrets being whispered but I couldn't take it all in at once. The box alone looked like it was designed by the Gucci porn department. There was a cherry version too.
 
 I could not meet its gaze. It was staring at me like—let's do this—and I was like a dog with my ears pinned back looking at the wall. 
 
@@ -19,4 +19,4 @@ I bought prune yogurt with bifidus. An act of undiluted self hatred that happene
 
 Too ashamed to walk back down the cookie aisle on my way to checkout I slunk down the water and toilet paper aisle. Couldn’t risk one of them catching a glimpse of my loneliness, my nearly unchecked desire. I paid, I left, I came home with something old people eat when they can’t go to the bathroom.
 
-As I drifted off to sleep listening to a lecture series on Aristotle the guy was talking about the philosopher's idea of the perfect life. Balance. Yadayadayada. And then he mentioned his student, Alexander of Macedon. Conquered the known world. Dead at 32. That guy would have bought both boxes and eaten them right there in the aisle. It really put my lack of resolve into focus. And then the bifidus hit. 
+As I drifted off to sleep listening to a lecture series on Aristotle the guy was talking about the philosopher's idea of the perfect life. Balance. Yadayadayada. And then he mentioned his student, Alexander of Macedon. Conquered the known world. Dead at 32. That guy would have bought both boxes and eaten them standing in the aisle. It really put my lack of resolve into focus. And then the bifidus hit. 
