@@ -13,7 +13,7 @@ There were these spongy marshmallow on the inside dark chocolate coating on top 
 
 I couldn’t look them in the eye. It was staring at me like--let's do this--and I was like a dog with my ears pinned back looking at the wall. 
 
-I scanned the other cookies like there was actually some decision-making going on. There wasn’t. I knew what I wanted. The whole aisle knew. But it’s 90% women in Italian grocery stores — men don’t really food shop here — and I could feel them watching. An American man, alone, dilating in the cookie aisle. A nature documentary. How desperate is he? Is he just looking for a dry accompaniment to his Melatonin tea, or is he crying himself to sleep at night. 
+I scanned the other cookies like there was actually some decision-making going on. There wasn’t. I knew what I wanted. The whole aisle knew. But it’s 90% women in Italian grocery stores — men don’t really food shop here — and I could feel them watching. An American man, alone, dilating in the cookie aisle. A nature documentary. How desperate is he? Is he just looking for a dry accompaniment to his Melatonin tea, or is he buried in dolci and Virgin River marathons crying himself to sleep at night. 
 
 So I walked away. And ended up at back corner of the store where they keep the butter and yogurt.
 
