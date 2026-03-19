@@ -4,7 +4,7 @@ date: "2026-03-18"
 category: "Marginalia"
 tags: ["Marginalia", "Italy", "Field Notes"]
 excerpt: "I went to Lidl after work, as I usually do. Spent about five minutes lurking in the cookie aisle."
-teaser: "Marginalia"
+teaser: "Porn"
 ---
 
 I went to Lidl after work, as I usually do. Spent about five minutes lurking in the cookie aisle.
