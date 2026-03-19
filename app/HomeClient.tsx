@@ -12,7 +12,7 @@ export interface HomeItem {
   href: string
 }
 
-const FILTERS = ["Essays", "Fiction", "Poetry"] as const
+const FILTERS = ["Essays", "Fiction", "Poetry", "Marginalia"] as const
 type Filter = typeof FILTERS[number]
 
 function openSearch() {
@@ -21,9 +21,10 @@ function openSearch() {
 
 function matchesFilter(item: HomeItem, filter: Filter): boolean {
   switch (filter) {
-    case "Fiction":  return item.category === "Fiction"
-    case "Poetry":   return item.category === "Poetry" || item.category === "Poem"
-    case "Essays":   return item.category !== "Fiction" && item.category !== "Poetry" && item.category !== "Poem"
+    case "Fiction":    return item.category === "Fiction"
+    case "Poetry":     return item.category === "Poetry" || item.category === "Poem"
+    case "Marginalia": return item.category === "Marginalia"
+    case "Essays":     return item.category !== "Fiction" && item.category !== "Poetry" && item.category !== "Poem" && item.category !== "Marginalia"
   }
 }
 

@@ -41,7 +41,6 @@ export default function Home() {
   const poems = getAllPoems().filter(p => p.author === "Leo Bruno")
 
   const postItems: HomeItem[] = posts
-    .filter(p => p.category !== "Marginalia")
     .map(p => ({
       slug: p.slug,
       title: p.title,
