@@ -7,7 +7,7 @@ excerpt: "I went to Lidl after work, as I usually do. Spent about five minutes l
 teaser: "Porn"
 ---
 
-I was in the cookie aisle and there were these spongy marshmallowy things with a dark chocolate coat. And this is where it got obscene: It had a layer of orange marmalade and a biscotti bottom. There were other secrets being whispered but I couldn't take it all in at once. The box alone looked like it was designed by the Gucci porn department. There was a cherry version too.
+I was in the cookie aisle and there were these spongy marshmallowy things with a dark chocolate coat. And this is where it got obscene: They had a layer of orange marmalade with a biscotti bottom and a swirl, and possibly other stuff but I couldn't take it all in at once. The box alone looked like it was designed by the Gucci porn department. I blocked out the cherry version.
 
 I could not meet its gaze. It was staring at me like—let's do this—and I was like a dog with my ears pinned back looking at the wall. 
 
