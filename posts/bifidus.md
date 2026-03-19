@@ -19,4 +19,4 @@ I bought prune yogurt with bifidus. An act of undiluted self hatred that happene
 
 Too ashamed to walk back down the cookie aisle on my way to checkout I slunk down the water and toilet paper aisle. Couldn’t risk one of them catching a glimpse of my loneliness, my nearly unchecked desire. I paid, I left, I came home with something old people eat when they can’t go to the bathroom.
 
-As I drifted off to sleep listening to a lecture series on Aristotle the guy was talking about the philosopher's idea of the perfect life. Balance. Yadayadayada. And then he mentioned his student, Alexander of Macedon. Conquered the known world. Dead at 32. That guy would have bought both boxes and eaten them standing in the aisle. It really put my lack of resolve into focus. And then the bifidus hit. 
+As I drifted off to sleep listening to a lecture series on Aristotle the guy was talking about the philosopher's idea of the perfect life. Balance. Yadayadayada. And then he mentioned his student, Alexander of Macedon. Conquered the known world. Dead at 32. That guy would have eaten them standing in the aisle. It really put my lack of resolve into focus. And then the bifidus hit. 
