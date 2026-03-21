@@ -87,7 +87,7 @@ The interviewer rights himself; reality re-asserts itself with Ray Davies. The m
 
 Elliott is not finding any of this exculpatory.
 
-The interviewer asks Lou about the music of the sixties. All the sunshine and possibility and hope—the flower child era. What does he think of it? A question that in retrospect is sort of like watching a zoo handler drop a mouse into a Python cage. Lou looks around the room. He's genuinely searching. Not performing. And he lands on a word.
+The interviewer asks Lou about the music of the sixties. All the sunshine and possibility and hope—the flower child era. What does he think of it? A question that in retrospect is sort of like watching a zoo handler drop a mouse into a Python cage. Lou looks around the room. He's genuinely searching. And he lands on a word.
 
 _Junk._
 
@@ -95,7 +95,7 @@ Not frivolous. Not utopian. Not sexism dressed up as progress. _Junk_. Which is 
 
 He's asked if he considers his work poetry. He smiles a little, in spite of himself. He hedges—he says his songs stand up to being read without the music, but they're made for music—and then, almost defensively: he's had some things published. He writes poetry.
 
-Not performing it. Almost apologizing for it. The way you mention something precious in a room full of people who might not understand.
+No pretention. Almost apologizing for it. The way you mention something precious in a room full of people who might not understand.
 
 Lou studied under Delmore Schwartz at Syracuse—the great poet, telling him Yeats and Eliot are what matter. Delmore Schwartz died alone in a Times Square hotel room. Unidentified for two days. His body lying there while the city moved around him. Lou watched what happened to his teacher and it confirmed everything he already believed about what the world does to people who feel too much. And then he walked out and spent forty years being a knob in interviews to make sure nobody got close enough to do it to him.
 
@@ -103,7 +103,7 @@ The begrudging hello is that biography in one word.
 
 Elliott seems put off by the interview. He doesn't like the gruffness. The kike thing. The violence.
 
-I tell Elliott that one Jew calling another Jew a kike is like mud wrestling. And also: Dylan _is_ pretentious. Dylan has been performing Dylan for sixty years. Lou saw through it because Lou was doing the same thing and at least he knew it. That's not anti-Semitism. That's peer review.
+I tell Elliott that one Jew calling another Jew a kike is like mud wrestling. And also: Dylan _is_ pretentious. Dylan has been playing the Dylan role for sixty years. Lou saw through it because Lou was doing the same thing and at least he knew it. That's not anti-Semitism. That's peer review.
 
 Elliott is unmoved. He tells me that Dylan is pretentious like Muddy Waters is pretentious.
 
