@@ -55,7 +55,7 @@ He did not grow up on the dirty boulevard. He grew up in Freeport, Long Island i
 
 Elliott is now narrating in what I think is 1970s elementary school documentary voice with Creature Feature interludes.
 
-"He was a sensitive boy who suffered with dreams and night emissions involving both boys and _gurrrrls_. Mood swings, depression, and self medication with eyeliner and black denim followed. The only cure was ECT, electroconvulsive therapy. Or so his parents decided."
+"He was a sensitive boy who suffered with dreams and night emissions involving both boys and _gurrrrls_. Mood swings, depression, and self medication with eyeliner and black denim followed. The only cure was ECT, **electroconvulsive therapy**. Or so his parents decided."
 
 "In the summer of 1959, Lou was administered 24 ECT sessions at two-day intervals at Creedmoor State Psychiatric Hospital in Queens. Twenty-four sessions. Every two days."
 
@@ -79,7 +79,7 @@ Lou extends the position. "The British should not play music at all. They should
 
 _Stop the rock and roll. Learn to make a meal._
 
-"Solid advice, particularly in 1982," I said.
+Solid advice, we concur.
 
 Then, almost immediately, his actual taste ambushes him. He backtracks slightly. He likes some Ray Davies.
 
