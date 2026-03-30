@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HyperPedal — Copy Sample / Joe DeLuca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1714;
+    --cream: #f5f0e8;
+    --warm-mid: #c9b99a;
+    --rule: #d4c9b4;
+    --accent: #8b3a1e;
+    --mono: 'DM Mono', monospace;
+    --serif: 'Cormorant Garant', serif;
+  }
+
+  html { font-size: 17px; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-weight: 300;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .masthead-name {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .masthead-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    text-align: right;
+  }
+
+  .hero {
+    padding: 5rem 4rem 4rem;
+    max-width: 900px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .project-tag {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    margin-bottom: 1.5rem;
+  }
+  .project-title {
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.6rem;
+  }
+  .project-title em { font-style: italic; color: var(--accent); }
+  .project-intro {
+    font-size: 1.05rem;
+    color: #3d3630;
+    max-width: 640px;
+    line-height: 1.78;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 3rem;
+    padding: 2.5rem 4rem;
+    border-bottom: 1px solid var(--rule);
+    flex-wrap: wrap;
+  }
+  .meta-item dt {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    margin-bottom: 0.3rem;
+  }
+  .meta-item dd { font-size: 0.95rem; font-weight: 400; }
+
+  .body-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 4rem 6rem;
+  }
+
+  .copy-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .copy-section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    line-height: 1.7;
+    padding-top: 0.3rem;
+  }
+  .section-label strong {
+    display: block;
+    font-family: var(--mono);
+    font-weight: 400;
+    color: var(--ink);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    margin-top: 0.5rem;
+  }
+
+  .copy-headline {
+    font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 0.9rem;
+  }
+  .copy-headline em { font-style: italic; color: var(--accent); }
+
+  .copy-body {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.82;
+    color: #3d3630;
+    max-width: 560px;
+  }
+  .copy-body + .copy-body { margin-top: 0.85rem; }
+
+  .pull-quote {
+    border-left: 2px solid var(--accent);
+    padding: 0.9rem 1.8rem;
+    margin: 1.5rem 0;
+    font-size: 1.45rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--ink);
+    background: rgba(139,58,30,0.04);
+    max-width: 560px;
+  }
+
+  .context-note {
+    border: 1px solid rgba(139,58,30,0.2);
+    background: rgba(139,58,30,0.05);
+    padding: 0.8rem 1.1rem;
+    margin-top: 1.1rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+    color: #5a4535;
+    max-width: 560px;
+  }
+  .context-note strong {
+    display: block;
+    font-weight: 400;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.58rem;
+  }
+
+  .scope-note {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    line-height: 1.85;
+    color: #5a4535;
+    max-width: 560px;
+    padding-top: 1rem;
+  }
+
+  .page-footer {
+    border-top: 1px solid var(--rule);
+    padding: 2.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .page-footer p {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+  }
+
+  @media (max-width: 720px) {
+    .masthead, .hero, .meta-row, .body-wrap, .page-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .copy-section { grid-template-columns: 1fr; gap: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-name">Joe DeLuca &nbsp;/&nbsp; Writing Samples</div>
+  <div class="masthead-label">Product Naming &amp; Copy<br>Magic Motorsport</div>
+</header>
+
+<section class="hero">
+  <p class="project-tag">Sample 004 &nbsp;/&nbsp; Product Naming · Copy · Ongoing Content</p>
+  <h1 class="project-title"><em>HyperPedal</em><br>Throttle Response Controller</h1>
+  <p class="project-intro">
+    Named the product. Wrote everything on the box, in the instructions, and on the product page. Then stayed on for six months of daily social media posts and newsletter updates for Magic Motorsport, the Italian automotive diagnostics company behind it.
+  </p>
+</section>
+
+<dl class="meta-row">
+  <div class="meta-item"><dt>Client</dt><dd>Magic Motorsport</dd></div>
+  <div class="meta-item"><dt>Role</dt><dd>Copywriter</dd></div>
+  <div class="meta-item"><dt>Type</dt><dd>Naming · Product · Social · Newsletter</dd></div>
+  <div class="meta-item"><dt>Duration</dt><dd>6 months ongoing + launch</dd></div>
+  <div class="meta-item"><dt>Market</dt><dd>Automotive / Consumer</dd></div>
+</dl>
+
+<main class="body-wrap">
+
+  <!-- NAMING -->
+  <article class="copy-section">
+    <div class="section-label">
+      The Name<br>
+      <strong>Product naming</strong>
+    </div>
+    <div>
+      <h2 class="copy-headline">10 names pitched.<br><em>HyperPedal chosen.</em></h2>
+      <p class="copy-body">
+        The brief was a throttle response controller — a small Bluetooth device that clips into a car's accelerator pedal circuit and sharpens response across four drive modes. The name had to work in English across European markets, feel at home in an automotive accessories shop, and be instantly searchable.
+      </p>
+      <div class="pull-quote">HyperPedal.</div>
+      <div class="context-note">
+        <strong>Craft note</strong>
+        Compound product names in this category either go too technical (ThrottleMax Pro, AccelControl) or too vague (SpeedBoost, DriveSmart). HyperPedal threads it: "Hyper" carries the performance register the category expects; "Pedal" grounds it in the physical thing you actually touch. It's immediately clear what the product is and what it does to it.
+      </div>
+    </div>
+  </article>
+
+  <!-- PRODUCT COPY -->
+  <article class="copy-section">
+    <div class="section-label">
+      Product Copy<br>
+      <strong>Page, box &amp; instructions</strong>
+    </div>
+    <div>
+      <h2 class="copy-headline">All copy, <em>from box to browser</em></h2>
+      <p class="copy-body">
+        HyperPedal is an additional control unit that connects the electronic accelerator pedal via original connector and improves car acceleration. Easy installation. Four drive modes. Bluetooth control from your smartphone.
+      </p>
+      <p class="copy-body">
+        The product copy had to function in two registers simultaneously: clear enough for a Saturday afternoon self-installer, credible enough for the workshop professional. Box copy, in-box instruction sheet, and e-commerce product page — all written to the same voice.
+      </p>
+      <div class="context-note">
+        <strong>Craft note</strong>
+        "Via original connector" is the line that does the most work for the professional buyer — it signals plug-and-play compatibility without voiding anything. For the consumer it just means easy. The same phrase earns trust on both sides of the counter.
+      </div>
+    </div>
+  </article>
+
+  <!-- FEATURES -->
+  <article class="copy-section">
+    <div class="section-label">
+      Feature Copy<br>
+      <strong>Core selling points</strong>
+    </div>
+    <div>
+      <h2 class="copy-headline">Four modes.<br><em>One install.</em></h2>
+      <p class="copy-body">
+        The four drive modes — from comfort to sport — needed copy that made a technical distinction feel like a lifestyle choice. The Bluetooth app angle was the consumer hook; the "original connector" and "additional control unit" language kept the product credible in a professional context.
+      </p>
+      <p class="scope-note">
+        Main features as written:<br>
+        · Accelerator gas pedal control unit<br>
+        · Easy installation<br>
+        · Acceleration control on smartphones<br>
+        · Four drive modes<br>
+        · Bluetooth connection
+      </p>
+    </div>
+  </article>
+
+  <!-- ONGOING CONTENT -->
+  <article class="copy-section">
+    <div class="section-label">
+      Ongoing Content<br>
+      <strong>Social &amp; newsletter · 6 months</strong>
+    </div>
+    <div>
+      <h2 class="copy-headline">Daily, for <em>six months</em></h2>
+      <p class="copy-body">
+        After launch, daily social media posts and newsletter updates for Magic Motorsport across the full product catalogue — not just HyperPedal. Automotive diagnostics, chiptuning tools, key programmers, dyno equipment. A technical audience that knows exactly when you're faking it.
+      </p>
+      <p class="copy-body">
+        Six months of consistent brand voice across channels: product updates, feature spotlights, promotional copy, and newsletter content written to convert without sounding like a press release.
+      </p>
+      <div class="context-note">
+        <strong>Note</strong>
+        Daily content for a specialized automotive B2B audience is a different discipline than campaign copywriting. The register has to stay credible across repetition — which means finding angles, not just formats.
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<footer class="page-footer">
+  <p>Joe DeLuca &nbsp;·&nbsp; leobruno.it</p>
+  <p>Writing Samples &nbsp;·&nbsp; 2026</p>
+</footer>
+
+</body>
+</html>

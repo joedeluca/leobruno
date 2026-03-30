@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bernstein-Rein — Copy Sample / Joe DeLuca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1714;
+    --cream: #f5f0e8;
+    --warm-mid: #c9b99a;
+    --rule: #d4c9b4;
+    --accent: #8b3a1e;
+    --mono: 'DM Mono', monospace;
+    --serif: 'Cormorant Garant', serif;
+  }
+
+  html { font-size: 17px; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-weight: 300;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── MASTHEAD ─────────────────────────────────────── */
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+  }
+
+  .masthead-name {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+
+  .masthead-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    text-align: right;
+  }
+
+  /* ── HERO BLOCK ───────────────────────────────────── */
+  .hero {
+    padding: 5rem 4rem 4rem;
+    max-width: 900px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .project-tag {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    margin-bottom: 1.5rem;
+  }
+
+  .project-title {
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.6rem;
+    color: var(--ink);
+  }
+
+  .project-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .project-intro {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #3d3630;
+    max-width: 640px;
+    line-height: 1.75;
+  }
+
+  /* ── META ROW ─────────────────────────────────────── */
+  .meta-row {
+    display: flex;
+    gap: 3rem;
+    padding: 2.5rem 4rem;
+    border-bottom: 1px solid var(--rule);
+    flex-wrap: wrap;
+  }
+
+  .meta-item {}
+  .meta-item dt {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    margin-bottom: 0.3rem;
+  }
+  .meta-item dd {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  /* ── BODY ─────────────────────────────────────────── */
+  .body-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 4rem 6rem;
+  }
+
+  /* ── SECTION ─────────────────────────────────────── */
+  .copy-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .copy-section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    padding-top: 0.35rem;
+    line-height: 1.7;
+  }
+
+  .section-label strong {
+    display: block;
+    font-family: var(--mono);
+    font-weight: 400;
+    color: var(--ink);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    margin-top: 0.6rem;
+  }
+
+  .copy-block {}
+
+  .copy-headline {
+    font-size: clamp(1.5rem, 3vw, 2.3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.1rem;
+    color: var(--ink);
+  }
+
+  .copy-headline em { font-style: italic; color: var(--accent); }
+
+  .copy-body {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #3d3630;
+    max-width: 580px;
+  }
+
+  .copy-body + .copy-body { margin-top: 1rem; }
+
+  /* ── PULL QUOTE ──────────────────────────────────── */
+  .pull-quote {
+    grid-column: 1 / -1;
+    border-left: 2px solid var(--accent);
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    font-size: 1.45rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--ink);
+    background: rgba(139,58,30,0.04);
+  }
+
+  /* ── CONTEXT NOTE ───────────────────────────────── */
+  .context-note {
+    background: rgba(139,58,30,0.06);
+    border: 1px solid rgba(139,58,30,0.18);
+    padding: 1.4rem 1.8rem;
+    margin: 2rem 0 0;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+    color: #5a4535;
+  }
+
+  .context-note strong {
+    font-weight: 400;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+  }
+
+  /* ── FULL-WIDTH HERO COPY SECTION ─────────────────── */
+  .hero-copy-section {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-copy-section .section-label {
+    margin-bottom: 2rem;
+  }
+
+  .hero-copy-display {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    max-width: 820px;
+  }
+
+  .hero-copy-display em { color: var(--accent); font-style: italic; }
+
+  .hero-subtext {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #3d3630;
+    max-width: 620px;
+    margin-top: 1.5rem;
+  }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  .page-footer {
+    border-top: 1px solid var(--rule);
+    padding: 2.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .page-footer p {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+  }
+
+  @media (max-width: 720px) {
+    .masthead, .hero, .meta-row, .body-wrap, .page-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .copy-section { grid-template-columns: 1fr; gap: 1.2rem; }
+    .meta-row { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-name">Joe DeLuca &nbsp;/&nbsp; Writing Samples</div>
+  <div class="masthead-label">Advertising &amp; Brand Copy<br>Bernstein-Rein Advertising</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="project-tag">Sample 001 &nbsp;/&nbsp; Agency Website Copy</p>
+  <h1 class="project-title">Bernstein-Rein:<br><em>Retailigent®</em></h1>
+  <p class="project-intro">
+    Complete website copy for Bernstein-Rein Advertising's brand relaunch — homepage hero, proprietary framework positioning, four core capability sections, and closing CTA. The strategic concept and initial brief originated with agency leadership. The copy on the page — every headline, section intro, and persuasive body paragraph — was redrafted by me during site development.
+  </p>
+</section>
+
+<!-- META -->
+<dl class="meta-row">
+  <div class="meta-item"><dt>Client</dt><dd>Bernstein-Rein Advertising</dd></div>
+  <div class="meta-item"><dt>Role</dt><dd>Copywriter / Front-End Developer</dd></div>
+  <div class="meta-item"><dt>Type</dt><dd>Agency Brand Website</dd></div>
+  <div class="meta-item"><dt>Scope</dt><dd>Full-site copy redraft</dd></div>
+  <div class="meta-item"><dt>Note</dt><dd>Concept &amp; first draft not mine</dd></div>
+</dl>
+
+<!-- BODY -->
+<main class="body-wrap">
+
+  <!-- HERO COPY -->
+  <div class="hero-copy-section">
+    <p class="section-label">Homepage Hero &nbsp;/&nbsp; Primary Headline</p>
+    <p class="hero-copy-display">Our ideas accelerate growth<br>where you need it most.</p>
+    <p class="hero-subtext">
+      At Bernstein-Rein, we believe retail intelligence comes from consumer insights, a true brand purpose, and half a century of unrivaled experience. We put these beliefs together to accelerate growth. This approach is called <strong>Retail</strong>igent® — it's what drives our work every day.
+    </p>
+  </div>
+
+  <!-- SECTION 1 -->
+  <article class="copy-section">
+    <div class="section-label">
+      Section 01<br>Mindset Modeling
+      <strong>Consumer intelligence framework</strong>
+    </div>
+    <div class="copy-block">
+      <h2 class="copy-headline">A Consumer-Centric<br><em>Intelligence Approach</em></h2>
+      <p class="copy-body">
+        We use data science to go far beyond traditional market segmentation approaches. This helps us uncover the attitudes and behaviors that define your best customers. We can then launch the right message, at the right time, in the right place.
+      </p>
+      <div class="context-note">
+        <strong>Craft note</strong>
+        The original draft leaned on segmentation jargon. The redraft reframes the entire section around outcome — what the client <em>gets</em> — rather than methodology. "Right message, right time, right place" closes the loop in a single sentence.
+      </div>
+    </div>
+  </article>
+
+  <!-- SECTION 2 -->
+  <article class="copy-section">
+    <div class="section-label">
+      Section 02<br>Metatasker
+      <strong>Consumer behavior positioning</strong>
+    </div>
+    <div class="copy-block">
+      <h2 class="copy-headline">Consumers Continue to Change<br><em>the Price: Value Equation</em></h2>
+      <p class="copy-body">
+        Whether consumers are seeking price, convenience, quality, or personalized connections, value has never been more valuable. We believe firmly that this value mindset leads to unique consumer behaviors and connections.
+      </p>
+      <div class="context-note">
+        <strong>Craft note</strong>
+        The colon in "Price: Value Equation" is doing real work — it signals tension and trade-off, not just a category name. The final clause ("value has never been more valuable") is a compression that earns its slight paradox.
+      </div>
+    </div>
+  </article>
+
+  <!-- SECTION 3 -->
+  <article class="copy-section">
+    <div class="section-label">
+      Section 03<br>InsideOut Retailing™
+      <strong>Agency differentiation</strong>
+    </div>
+    <div class="copy-block">
+      <h2 class="copy-headline">We Bleed, Dream<br><em>and Live Retail Every Day</em></h2>
+      <p class="copy-body">
+        No other agency in America launched, owns, and runs their own retail brand. We know how to build loyalty, increase average tickets, optimize footfall, convert clicks, and grow brands because we do it with our own money and name on the line every day.
+      </p>
+      <p class="copy-body">
+        We don't just know retail. We live it.
+      </p>
+      <div class="pull-quote">
+        "We don't just know retail. We live it."
+      </div>
+      <div class="context-note">
+        <strong>Craft note</strong>
+        Separating the kicker into its own sentence is the whole move here. Everything before it is proof; the kicker is the verdict. The original draft buried both in the same paragraph.
+      </div>
+    </div>
+  </article>
+
+  <!-- SECTION 4 -->
+  <article class="copy-section">
+    <div class="section-label">
+      Section 04<br>Heart of the Hustle™
+      <strong>Brand purpose framework</strong>
+    </div>
+    <div class="copy-block">
+      <h2 class="copy-headline">Declare Your Purpose and<br><em>Win Hearts and Minds</em></h2>
+      <p class="copy-body">
+        Like a heartbeat pulsating through the body, a brand's purpose flows through the entire brand experience. We uncover your customer's motivations, industry opportunities, and what makes you terrific — to define and leverage the heart of every hustle.
+      </p>
+      <div class="context-note">
+        <strong>Craft note</strong>
+        The biological metaphor earns its place because it connects <em>physically</em> to the section name. "What makes you terrific" is deliberately plain against the more figurative language around it — a small tonal surprise that grounds the section before the CTA.
+      </div>
+    </div>
+  </article>
+
+  <!-- SECTION 5 — CLOSING CTA -->
+  <article class="copy-section">
+    <div class="section-label">
+      Section 05<br>Closing
+      <strong>Brand promise / CTA</strong>
+    </div>
+    <div class="copy-block">
+      <h2 class="copy-headline">Click to Brick.</h2>
+      <p class="copy-body">
+        We deliver customers from click to brick across every capability and channel. From regional upstarts to global brands, we leverage the same passion and profound experience for every client.
+      </p>
+      <p class="copy-body">
+        Your customer's journey is our journey.
+      </p>
+      <div class="context-note">
+        <strong>Craft note</strong>
+        "Click to brick" earns a headline of its own — it's the agency's whole value proposition in three words. The final line ("Your customer's journey is our journey") closes the site with an alignment statement, not a sell. That restraint is intentional.
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<footer class="page-footer">
+  <p>Joe DeLuca &nbsp;·&nbsp; leobruno.it</p>
+  <p>Writing Samples &nbsp;·&nbsp; 2026</p>
+</footer>
+
+</body>
+</html>

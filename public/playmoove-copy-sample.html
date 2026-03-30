@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playmoove Website Copy — Joe DeLuca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1714;
+    --cream: #f5f0e8;
+    --warm-mid: #c9b99a;
+    --rule: #d4c9b4;
+    --accent: #8b3a1e;
+    --mono: 'DM Mono', monospace;
+    --serif: 'Cormorant Garant', serif;
+  }
+
+  html { font-size: 17px; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-weight: 300;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .masthead-name {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .masthead-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    text-align: right;
+  }
+
+  .hero {
+    padding: 5rem 4rem 4rem;
+    max-width: 900px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .project-tag {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    margin-bottom: 1.5rem;
+  }
+  .project-title {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.6rem;
+  }
+  .project-title em { font-style: italic; color: var(--accent); }
+  .project-intro {
+    font-size: 1.05rem;
+    color: #3d3630;
+    max-width: 620px;
+    line-height: 1.78;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 3rem;
+    padding: 2.5rem 4rem;
+    border-bottom: 1px solid var(--rule);
+    flex-wrap: wrap;
+  }
+  .meta-item dt {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    margin-bottom: 0.3rem;
+  }
+  .meta-item dd { font-size: 0.95rem; font-weight: 400; }
+
+  .body-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 4rem 6rem;
+  }
+
+  /* two-col section */
+  .copy-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .copy-section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    line-height: 1.7;
+    padding-top: 0.3rem;
+  }
+  .section-label strong {
+    display: block;
+    font-family: var(--mono);
+    font-weight: 400;
+    color: var(--ink);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    margin-top: 0.5rem;
+  }
+
+  .copy-headline {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 0.9rem;
+  }
+  .copy-headline em { font-style: italic; color: var(--accent); }
+
+  .copy-body {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.82;
+    color: #3d3630;
+    max-width: 560px;
+  }
+  .copy-body + .copy-body { margin-top: 0.85rem; }
+
+  .context-note {
+    border: 1px solid rgba(139,58,30,0.2);
+    background: rgba(139,58,30,0.05);
+    padding: 0.8rem 1.1rem;
+    margin-top: 1.1rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+    color: #5a4535;
+    max-width: 560px;
+  }
+  .context-note strong {
+    display: block;
+    font-weight: 400;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.58rem;
+  }
+
+  .scope-note {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    line-height: 1.75;
+    color: #5a4535;
+    max-width: 560px;
+    padding: 1rem 0 0;
+  }
+
+  .page-footer {
+    border-top: 1px solid var(--rule);
+    padding: 2.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .page-footer p {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+  }
+
+  @media (max-width: 720px) {
+    .masthead, .hero, .meta-row, .body-wrap, .page-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .copy-section { grid-template-columns: 1fr; gap: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-name">Joe DeLuca &nbsp;/&nbsp; Writing Samples</div>
+  <div class="masthead-label">Enterprise B2B Copy<br>Playmoove</div>
+</header>
+
+<section class="hero">
+  <p class="project-tag">Sample 003 &nbsp;/&nbsp; Website Copy</p>
+  <h1 class="project-title">Playmoove:<br><em>56 Pieces</em></h1>
+  <p class="project-intro">
+    Complete website copy for Playmoove's enterprise platform relaunch — 56 numbered pieces across eight solution pages, four industry pages, platform documentation, company narrative, and all supporting microcopy. Functional enterprise writing throughout. The interesting writing is the company origin story, excerpted below.
+  </p>
+</section>
+
+<dl class="meta-row">
+  <div class="meta-item"><dt>Client</dt><dd>Playmoove</dd></div>
+  <div class="meta-item"><dt>Role</dt><dd>Copywriter / Creative Developer</dd></div>
+  <div class="meta-item"><dt>Type</dt><dd>Full Website Copy</dd></div>
+  <div class="meta-item"><dt>Scope</dt><dd>56 pieces, original</dd></div>
+  <div class="meta-item"><dt>Positioning</dt><dd>Enterprise / Institutional</dd></div>
+</dl>
+
+<main class="body-wrap">
+
+  <!-- SCOPE OVERVIEW -->
+  <article class="copy-section">
+    <div class="section-label">
+      Scope<br>Overview
+      <strong>What the project covered</strong>
+    </div>
+    <div>
+      <h2 class="copy-headline">Enterprise copy at scale</h2>
+      <p class="copy-body">
+        The project required positioning a mature B2B platform for institutional buyers: cities, universities, corporations, and mobility operators. The copy had to distinguish Playmoove from consumer-grade car-sharing competitors and speak to procurement officers, IT directors, and operations managers simultaneously — without sounding like a startup pitch.
+      </p>
+      <p class="scope-note">
+        Pages covered: Home · Solutions Hub · 8 Solution Landing Pages · Platform · Industries (4) · Our Approach · Proof / Case Studies · Insights Hub · Company · Contact · Navigation · Footer · CTAs · Meta descriptions
+      </p>
+    </div>
+  </article>
+
+  <!-- HERO COPY -->
+  <article class="copy-section">
+    <div class="section-label">
+      Sample<br>Homepage Hero
+      <strong>Primary positioning</strong>
+    </div>
+    <div>
+      <h2 class="copy-headline"><em>Not a turnkey app.</em><br>An operating system.</h2>
+      <p class="copy-body">
+        Enterprise mobility infrastructure. Your vision.<br>
+        One platform for all your operations. Built for you.
+      </p>
+      <p class="copy-body" style="margin-top: 1.2rem; font-style: italic; font-size: 0.95rem;">Platform page positioning statement:</p>
+      <p class="copy-body">
+        Playmoove is not a turnkey app. It's a configurable operating system managing the complete lifecycle of shared mobility operations: vehicle control, driver verification, zone enforcement, billing automation, and regulatory compliance. Built for institutions that need governance infrastructure, not growth-stage experiments.
+      </p>
+      <div class="context-note">
+        <strong>Note</strong>
+        "Not a turnkey app" and "not growth-stage experiments" are both explicit competitive rejections — written to disqualify consumer-grade platforms without naming them. The institutional buyer reads this and recognizes it immediately.
+      </div>
+    </div>
+  </article>
+
+  <!-- COMPANY ORIGIN -->
+  <article class="copy-section">
+    <div class="section-label">
+      Sample<br>Company Page
+      <strong>Origin narrative — the real writing</strong>
+    </div>
+    <div>
+      <h2 class="copy-headline">Built from <em>real operations</em></h2>
+      <p class="copy-body">
+        In 2016, Playcar was operating car-sharing in Cagliari when our software vendor went under. We faced a choice: cobble together multiple systems that didn't talk to each other, or force our business into software built for someone else's operational model.
+      </p>
+      <p class="copy-body">We chose neither.</p>
+      <p class="copy-body">
+        Three developers. One year. One requirement: build a platform that works the way operators actually work — not the way software vendors think they should work. Playmoove 1.0 went live in May 2017, the same month our old vendor turned out the lights.
+      </p>
+      <p class="copy-body">
+        We know code, and we know the road. When we say "zone enforcement" we mean the version that actually works in a city with 47 restricted parking areas and a compliance officer who audits every violation. When we say "multi-wallet billing" we mean the version that survives corporate procurement review and integrates with SAP.
+      </p>
+      <div class="context-note">
+        <strong>Note</strong>
+        "We chose neither" is doing the same work as "We don't just know retail. We live it." — a short kicker that earns its isolation. The 47 restricted parking areas and the compliance officer are invented specifics; their function is to make the abstract ("zone enforcement") feel earned by someone who has actually been in the room.
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<footer class="page-footer">
+  <p>Joe DeLuca &nbsp;·&nbsp; leobruno.it</p>
+  <p>Writing Samples &nbsp;·&nbsp; 2026</p>
+</footer>
+
+</body>
+</html>
