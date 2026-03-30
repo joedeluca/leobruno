@@ -53,9 +53,9 @@ Elliott is deep into Lou's history now.
 
 He did not grow up on the dirty boulevard. He grew up in Freeport, Long Island in a solidly middle-class Jewish family.
 
-Elliott is not narrating in what I think is 1970s elementary school documentary voice.
+Elliott is now narrating in what I think is 1970s elementary school documentary voice with Creature Feature interludes.
 
-"He was a sensitive boy who suffered with dreams and night emissions involving both boys and _gurrrrls_ (he says girls like he's narrating a Creature Feature.) Mood swings, depression, and self medication with eyeliner and black denim followed. The only cure was ECT, electroconvulsive therapy. Or so his parents decided."
+"He was a sensitive boy who suffered with dreams and night emissions involving both boys and _gurrrrls_. Mood swings, depression, and self medication with eyeliner and black denim followed. The only cure was ECT, **electroconvulsive therapy**. Or so his parents decided."
 
 "In the summer of 1959, Lou was administered 24 ECT sessions at two-day intervals at Creedmoor State Psychiatric Hospital in Queens. Twenty-four sessions. Every two days."
 
@@ -79,7 +79,7 @@ Lou extends the position. "The British should not play music at all. They should
 
 _Stop the rock and roll. Learn to make a meal._
 
-"Solid advice, particularly in 1982," I said.
+Solid advice, we concur.
 
 Then, almost immediately, his actual taste ambushes him. He backtracks slightly. He likes some Ray Davies.
 
@@ -87,7 +87,7 @@ The interviewer rights himself; reality re-asserts itself with Ray Davies. The m
 
 Elliott is not finding any of this exculpatory.
 
-The interviewer asks Lou about the music of the sixties. All the sunshine and possibility and hope—the flower child era. What does he think of it? A question that in retrospect is sort of like watching a zoo handler drop a mouse into a Python cage. Lou looks around the room. He's genuinely searching. Not performing. And he lands on a word.
+The interviewer asks Lou about the music of the sixties. All the sunshine and possibility and hope—the flower child era. What does he think of it? A question that in retrospect is sort of like watching a zoo handler drop a mouse into a Python cage. Lou looks around the room. He's genuinely searching. And he lands on a word.
 
 _Junk._
 
@@ -95,7 +95,7 @@ Not frivolous. Not utopian. Not sexism dressed up as progress. _Junk_. Which is 
 
 He's asked if he considers his work poetry. He smiles a little, in spite of himself. He hedges—he says his songs stand up to being read without the music, but they're made for music—and then, almost defensively: he's had some things published. He writes poetry.
 
-Not performing it. Almost apologizing for it. The way you mention something precious in a room full of people who might not understand.
+No pretention. Almost apologizing for it. The way you mention something precious in a room full of people who might not understand.
 
 Lou studied under Delmore Schwartz at Syracuse—the great poet, telling him Yeats and Eliot are what matter. Delmore Schwartz died alone in a Times Square hotel room. Unidentified for two days. His body lying there while the city moved around him. Lou watched what happened to his teacher and it confirmed everything he already believed about what the world does to people who feel too much. And then he walked out and spent forty years being a knob in interviews to make sure nobody got close enough to do it to him.
 
@@ -103,7 +103,7 @@ The begrudging hello is that biography in one word.
 
 Elliott seems put off by the interview. He doesn't like the gruffness. The kike thing. The violence.
 
-I tell Elliott that one Jew calling another Jew a kike is like mud wrestling. And also: Dylan _is_ pretentious. Dylan has been performing Dylan for sixty years. Lou saw through it because Lou was doing the same thing and at least he knew it. That's not anti-Semitism. That's peer review.
+I tell Elliott that one Jew calling another Jew a kike is like mud wrestling. And also: Dylan _is_ pretentious. Dylan has been playing the Dylan role for sixty years. Lou saw through it because Lou was doing the same thing and at least he knew it. That's not anti-Semitism. That's peer review.
 
 Elliott is unmoved. He tells me that Dylan is pretentious like Muddy Waters is pretentious.
 
