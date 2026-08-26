@@ -392,15 +392,8 @@ export default function Sidebar() {
             </Link>
           </h3>
           <Link
-            href="/poems/ode-to-the-girl-on-the-bus"
-            className="block transition-colors text-base"
-            style={{ color: '#A8A5A0' }}
-          >
-            Ode to the Girl on the Bus
-          </Link>
-          <Link
             href="/poems/sokushinbutsu"
-            className="block transition-colors text-base mt-2"
+            className="block transition-colors text-base"
             style={{ color: '#A8A5A0' }}
           >
             Sokushinbutsu

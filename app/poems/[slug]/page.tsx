@@ -35,6 +35,7 @@ function generateAudioUrl(title: string, author: string): string {
 export default function PoemPage() {
   const params = useParams()
   const [poem, setPoem] = useState<Poem | null>(null)
+  const [notFound, setNotFound] = useState(false)
   const [collectionPoems, setCollectionPoems] = useState<Poem[]>([])
   const [showLineNumbers, setShowLineNumbers] = useState(false)
   const [showAudioPlayer, setShowAudioPlayer] = useState(false)
@@ -70,6 +71,10 @@ export default function PoemPage() {
       fetch(`/api/poem/${params.slug}`)
         .then((res) => res.json())
         .then((data) => {
+          if (!data.poem) {
+            setNotFound(true)
+            return
+          }
           setPoem(data.poem)
           currentSlugRef.current = data.poem.slug
 
@@ -136,6 +141,22 @@ export default function PoemPage() {
     window.addEventListener("searchQuery", handleSearchQuery)
     return () => window.removeEventListener("searchQuery", handleSearchQuery)
   }, [])
+
+  if (notFound) {
+    return (
+      <div className="min-h-screen bg-zinc-950 flex flex-col items-center justify-center gap-4 px-8 text-center">
+        <p
+          className="text-zinc-400"
+          style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
+        >
+          This poem isn&apos;t here.
+        </p>
+        <Link href="/poems" className="text-sm underline underline-offset-2" style={{ color: '#A8A5A0' }}>
+          Back to poems
+        </Link>
+      </div>
+    )
+  }
 
   if (!poem) {
     return (

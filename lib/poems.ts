@@ -4,6 +4,9 @@ import matter from "gray-matter"
 
 const poemsDirectory = path.join(process.cwd(), "poems")
 
+// Poems whose markdown stays in poems/ but is not published to the site.
+const UNPUBLISHED_SLUGS = new Set(["ode-to-the-girl-on-the-bus"])
+
 export interface Poem {
   slug: string
   title: string
@@ -18,6 +21,7 @@ export function getAllPoems(): Poem[] {
   const fileNames = fs.readdirSync(poemsDirectory)
   const poems = fileNames
     .filter((fileName) => fileName.endsWith(".md"))
+    .filter((fileName) => !UNPUBLISHED_SLUGS.has(fileName.replace(/\.md$/, "")))
     .map((fileName) => {
       const slug = fileName.replace(/\.md$/, "")
       const fullPath = path.join(poemsDirectory, fileName)
@@ -44,6 +48,8 @@ export function getAllPoems(): Poem[] {
 }
 
 export function getPoemBySlug(slug: string): Poem | null {
+  if (UNPUBLISHED_SLUGS.has(slug)) return null
+
   try {
     const fullPath = path.join(poemsDirectory, `${slug}.md`)
     const fileContents = fs.readFileSync(fullPath, "utf8")

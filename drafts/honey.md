@@ -29,3 +29,8 @@ she is preternaturally intelligent. she speaks spanish, italian, german, and fre
 "I want to bathe in glitter."
 
 I was running the bathe before she finished the sentence.
+
+
+her voice was filled with promises. sounds. 
+she has no interest in the things other people do. 
+it is only when you see a person fully realized, fullyu alive that you understand the absurdity of social media.
