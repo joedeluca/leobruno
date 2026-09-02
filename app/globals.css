@@ -525,10 +525,10 @@ a:hover {
   color: #F59E0B !important;
 }
 
-/* Drop cap — first letter of first article paragraph, Deseo font */
+/* Drop cap — first letter of first article paragraph, self-hosted Schnyder */
 article.prose p:first-of-type::first-letter {
-  font-family: "deseo-medium", sans-serif;
-  font-weight: 200;
+  font-family: "Schnyder S", Georgia, serif;
+  font-weight: 700;
   font-size: 4.2em;
   line-height: 0.85;
   float: left;

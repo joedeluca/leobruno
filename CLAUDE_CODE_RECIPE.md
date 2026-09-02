@@ -478,12 +478,12 @@ Key accent color for borders: `#3A2E24` (dark warm brown).
 
 ## 9. Typography
 
-Two typefaces, loaded via Adobe Fonts (`use.typekit.net`) + local `.woff2` files in `/public/fonts/`:
+Two typefaces, self-hosted as local `.woff2` files in `/public/fonts/`:
 
 | Use | Font |
 |-----|------|
 | Headlines, titles, search input | `Schnyder S` (serif, weights 600 & 700) |
-| Body, UI labels, metadata | `Graphik` (sans-serif, via Typekit) |
+| Body, UI labels, metadata | `Graphik` (sans-serif, weights 300–900) |
 
 In Tailwind:
 ```js

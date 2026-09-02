@@ -18,19 +18,19 @@ export async function generateMetadata({
     const post = await getPostData(slug)
     const description = post.teaser || post.excerpt
     const imageUrl = post.ogImage
-      ? `https://www.leobruno.it${post.ogImage}`
-      : `https://www.leobruno.it/og-default.jpg`
+      ? `https://leobruno.it${post.ogImage}`
+      : `https://leobruno.it/og-default.jpg`
     return {
       title: post.title,
       description,
-      authors: [{ name: "Leo Bruno", url: "https://www.leobruno.it" }],
+      authors: [{ name: "Leo Bruno", url: "https://leobruno.it" }],
       alternates: {
-        canonical: `https://www.leobruno.it/${slug}`,
+        canonical: `https://leobruno.it/${slug}`,
       },
       openGraph: {
         title: `${post.title} — Leo Bruno`,
         description,
-        url: `https://www.leobruno.it/${slug}`,
+        url: `https://leobruno.it/${slug}`,
         type: "article",
         publishedTime: post.date,
         authors: ["Leo Bruno"],

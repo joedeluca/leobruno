@@ -60,13 +60,6 @@ function NewsletterSignup() {
       setStatus("success")
       setEmail("")
 
-      // Track signup event (Vercel Analytics)
-      if (typeof window !== "undefined" && typeof (window as any).va === "function") {
-        ;(window as any).va("track", "newsletter_signup", {
-          source: document.referrer,
-        })
-      }
-
       // Redirect to /account — server already created the session token
       if (data.redirect) {
         window.location.href = data.redirect

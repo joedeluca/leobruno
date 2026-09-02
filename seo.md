@@ -236,12 +236,6 @@ Ensure bio includes "writer" and link:
 
 ## ANALYTICS & MONITORING (Week 1, then ongoing)
 
-### 24. Google Analytics 4
-- [ ] Install GA4
-- [ ] Set up conversion tracking (newsletter signups, etc.)
-- [ ] Monitor traffic sources
-- [ ] Track "leo bruno writer" as custom search term
-
 ### 25. Search Console Monitoring
 Weekly check:
 - [ ] Search query performance

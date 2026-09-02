@@ -5,7 +5,7 @@ import { getSortedPostsData } from "@/lib/posts"
 export const metadata: Metadata = {
   title: "Marginalia",
   description: "Short notes and observations by Leo Bruno.",
-  alternates: { canonical: "https://www.leobruno.it/marginalia" },
+  alternates: { canonical: "https://leobruno.it/marginalia" },
 }
 
 export default function MarginaliaPage() {
