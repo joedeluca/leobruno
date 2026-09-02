@@ -10,7 +10,7 @@ She's in before I can register her. She drops her purse in the chair beside the 
 
 she is speaking italian and i don't know why. this leads to bennetto the ferrari pure fear, regrets and a wall closing in fast?
 
-it was a week of knowing her before i realized she isn't italian, she's spanish. a fact she reminds me of daily. 
+t was a week of knowing her before i realized she is Italian royalty. a fact she reminds me of daily.
 
 "what am I Leo," she asks in Spanish. 
 
@@ -18,9 +18,11 @@ it was a week of knowing her before i realized she isn't italian, she's spanish.
 
 "Exactly," she says. "Comfort food for the sad boy."
 
+Technically she is a Contessa. Her family Sanjust di Teulada is descended from the 14th century Arogonese rulers of the island.
+
 Honey is getting a divorce, but she still lives in the same house with her soon to be exhusband. She has him building a barrier between them on the lower floor. he's sealing himself off from her while he supports her financially. 
 
-her ex-husband is my friend benny. 
+her ex-husband is my friend Franco. 
 
 And then it's war.
 
@@ -30,7 +32,5 @@ she is preternaturally intelligent. she speaks spanish, italian, german, and fre
 
 I was running the bathe before she finished the sentence.
 
-
 her voice was filled with promises. sounds. 
-she has no interest in the things other people do. 
-it is only when you see a person fully realized, fullyu alive that you understand the absurdity of social media.
+she has no earnest interest in ordinary concerns, though i can tell she sometimes feels that as a lack, as if she, a magestic bird of prey, has been deprived of a squirrel's industrious instinct. 

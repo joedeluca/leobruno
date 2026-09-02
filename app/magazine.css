@@ -1,0 +1,377 @@
+/* ==========================================================================
+   THE MAGAZINE — paged layout system
+   Imported ONLY by app/magazine/layout.tsx. Never reaches the rest of the site.
+
+   TWO CONTRACTS
+   1. CASCADE. Every rule here is UNLAYERED. globals.css puts nearly everything
+      in @layer base / @layer utilities, and an unlayered author rule beats any
+      layered rule regardless of specificity. !important appears only where it
+      must beat the two unlayered !important sources in globals.css
+      (a:hover colour, and the .text-zinc-* / .bg-zinc-* utilities).
+   2. UNITS. Inside .mag-page: `in` and `pt` only. Never px, rem, vw/vh, and
+      never a Tailwind responsive variant. The page is a physical object. Only
+      the zoom applied to the whole sheet may change between devices.
+
+   Numbers here mirror lib/magazine/geometry.ts and are asserted against the
+   rendered PDF by scripts/verify-print.mjs.
+   ========================================================================== */
+
+/* ── 1. BODY SERIF ────────────────────────────────────────────────────────
+   Newsreader (SIL OFL 1.1) — a Scotch-Roman news face, the 9pt optical cut,
+   which is the one drawn for text at this size. Self-hosted: no network font
+   participates in fixed-canvas layout, because a stalled font that falls back
+   re-wraps a page that cannot reflow. font-display:block, not swap — on a
+   locked page a fallback flash is worse than a blank frame for 100ms.
+   OFL also permits PDF embedding, which the Schnyder/Graphik WEB licences
+   almost certainly do not; page.pdf() embeds a subset of every face used. */
+@font-face{font-family:"Newsreader";src:url("/fonts/Newsreader-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:block}
+@font-face{font-family:"Newsreader";src:url("/fonts/Newsreader-Italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:block}
+@font-face{font-family:"Newsreader";src:url("/fonts/Newsreader-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:block}
+@font-face{font-family:"Newsreader";src:url("/fonts/Newsreader-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:block}
+
+/* ── 2. TOKENS ───────────────────────────────────────────────────────────── */
+.mag-root{
+  --trim-w:8.5in; --trim-h:11in;
+  --margin:0.5in;
+  --live-w:7.5in; --live-h:10in;
+  --col:2.3125in; --gutter:0.3125in;
+  --baseline:12pt;
+
+  /* ink on stock — a page is light on screen and on paper, always the same
+     artifact. Dark grounds are opt-in per page via [data-ground="dark"]. */
+  --stock:#F2ECE0;
+  --ink:#17120D;
+  --ink-2:#4C4238;
+  --ink-3:#8B7F6E;
+  --rule:#B7A992;
+  /* oxide red — inside CMYK gamut. The site's #F59E0B is not; it prints brown. */
+  --accent:#8C2B12;
+
+  --t-body:9.5pt;
+  --t-caption:7.5pt;
+  --t-credit:6pt;
+  --t-folio:8pt;
+  --t-kicker:8pt;
+  --t-byline:9pt;
+  --t-subhead:10pt;
+  --t-deck:16pt;   --l-deck:21pt;
+  --t-pull:21pt;   --l-pull:24pt;
+
+  --zoom:1;
+}
+
+/* ── 3. THE PAGE ──────────────────────────────────────────────────────────
+   Exactly 8.5 x 11in. The PDF page is the same size, so art running to the
+   page edge is a true bleed — nothing to trim, no crop marks. */
+.mag-page{
+  position:relative;
+  box-sizing:border-box;
+  width:var(--trim-w);
+  height:var(--trim-h);
+  overflow:hidden;              /* fixed canvas: clip, never reflow, never spill */
+  background:var(--stock);
+  color:var(--ink);
+  font-family:"Newsreader",Georgia,"Times New Roman",serif;
+  font-size:var(--t-body);
+  line-height:var(--baseline);
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures;
+  text-rendering:geometricPrecision;
+  -webkit-print-color-adjust:exact;
+          print-color-adjust:exact;
+}
+.mag-page *{
+  box-sizing:border-box;
+  -webkit-print-color-adjust:exact;
+          print-color-adjust:exact;
+}
+.mag-page[data-ground="dark"]{
+  --stock:#100D0A; --ink:#EFE8DC; --ink-2:#BCB2A4; --ink-3:#8B7F6E; --rule:#4A3E30;
+  --accent:#C08A3A;   /* oxide red vanishes on a dark ground; gold reads */
+}
+
+/* ── 4. RESET — disarm globals.css inside a page ──────────────────────────
+   VERIFIED, and not what you would expect: Tailwind v3's `@layer` is a
+   Tailwind directive, NOT a native CSS cascade layer. It is stripped at build
+   time — the compiled stylesheet contains zero @layer at-rules. So the usual
+   "an unlayered author rule beats a layered one" reasoning does NOT apply in
+   this codebase; this is a plain specificity fight.
+
+   globals.css fields selectors as strong as `div > p:first-of-type` (0,1,2)
+   and `article.prose p:first-of-type` (0,2,2). `.mag-page p` is only (0,1,1)
+   and loses — which is exactly how the first paragraph of every frame was
+   coming out in globals.css's #A8A5A0 grey instead of the page's ink.
+
+   The class is therefore repeated to lift the whole reset to (0,3,1), which
+   outranks anything globals.css can field without !important. Repeating a
+   class is the only specificity knob CSS gives you that doesn't reorder the
+   cascade the way !important does. Keep the repetition when editing.
+
+   The reset must NOT swallow the magazine's own primitives — `.mag-head` is
+   (0,2,0) and would lose to a (0,3,1) reset, which collapses a 100pt display
+   headline to body size. So it applies only to elements that carry no mag-*
+   class: raw markup coming out of markdown. */
+.mag-page.mag-page.mag-page :is(p,ul,ol,li,blockquote,h1,h2,h3,h4,h5,h6,
+figure,figcaption,small,strong,em,dl,dt,dd,table,th,td):not([class*="mag-"]){
+  font-size:inherit; line-height:inherit; font-weight:inherit; font-style:inherit;
+  font-family:inherit; color:inherit; margin:0; padding:0; border:0;
+  letter-spacing:inherit; text-align:inherit; text-transform:none;
+}
+.mag-page.mag-page.mag-page strong{font-weight:600}
+.mag-page.mag-page.mag-page em{font-style:italic}
+.mag-page.mag-page.mag-page hr:not([class*="mag-"]){display:block;border:0;border-top:0.5pt solid var(--rule);margin:0}
+.mag-page.mag-page.mag-page img{display:block;max-width:none}
+/* beats globals.css `a:hover{color:#F59E0B !important}` (unlayered) */
+.mag-page.mag-page.mag-page a,.mag-page.mag-page.mag-page a:hover{color:inherit !important;text-decoration:none}
+/* safety net against the !important .text-zinc-* / .bg-zinc-* utilities */
+.mag-page [class*="text-zinc-"],.mag-page [class*="bg-zinc-"]{
+  color:inherit !important;background:none !important;
+}
+/* globals.css sets a drop cap on every article's first paragraph. Any
+   substitution changes the float box and silently re-wraps a page that cannot
+   reflow. Neutralised, then offered back as an explicit opt-in in Schnyder. */
+.mag-page.mag-page.mag-page ::first-letter{font:inherit;float:none;margin:0;padding:0;line-height:inherit;color:inherit}
+.mag-page [data-dropcap] > p:first-child::first-letter,
+.mag-page p[data-dropcap]::first-letter{
+  font-family:"Schnyder S",Georgia,serif; font-weight:700;
+  font-size:44pt; line-height:34pt;
+  float:left; margin:2pt 5pt 0 0; color:var(--ink);
+}
+
+/* ── 5. FRAMES & PRIMITIVES ─────────────────────────────────────────────── */
+.mag-frame{position:absolute;overflow:hidden}
+.mag-frame[data-bleed="true"]{inset:0;left:0;top:0;width:100%;height:100%}
+
+.mag-cols{height:100%;column-gap:var(--gutter);column-fill:balance}
+.mag-cols[data-fill="auto"]{column-fill:auto}
+.mag-cols[data-cols="2"]{column-count:2}
+.mag-cols[data-cols="3"]{column-count:3}
+.mag-cols[data-cols="4"]{column-count:4}
+
+.mag-copy{hyphens:auto;-webkit-hyphens:auto;text-align:justify;text-justify:inter-word}
+.mag-copy p{text-indent:1em}
+.mag-copy p:first-child{text-indent:0}
+.mag-copy > :where(p) + :where(p){margin-top:0}
+.mag-copy blockquote{font-style:italic;margin:12pt 18pt}
+.mag-copy[data-align="left"]{text-align:left;hyphens:none}
+/* a blockquote lifted out of the copy and set as display type is no longer a
+   quotation inside prose — drop the prose treatment */
+.mag-pull .mag-copy,.mag-deck .mag-copy{text-align:inherit;hyphens:none}
+.mag-pull .mag-copy blockquote,.mag-deck .mag-copy blockquote{margin:0;font-style:inherit}
+.mag-pull .mag-copy p,.mag-deck .mag-copy p{text-indent:0}
+
+.mag-kicker{font-family:"Graphik",system-ui,sans-serif;font-weight:500;font-size:var(--t-kicker);
+  text-transform:uppercase;letter-spacing:.18em;line-height:var(--baseline);color:var(--accent)}
+.mag-head{font-family:"Schnyder S",Georgia,serif;font-weight:600;letter-spacing:-.015em;color:var(--ink)}
+.mag-head[data-size="s"]{font-size:30pt;line-height:33pt}
+.mag-head[data-size="m"]{font-size:48pt;line-height:48pt}
+.mag-head[data-size="l"]{font-size:72pt;line-height:70pt}
+.mag-head[data-size="xl"]{font-size:100pt;line-height:92pt}
+.mag-head[data-cond="true"]{font-family:"Schnyder S Cond",Georgia,serif;font-weight:300}
+.mag-deck{font-family:"Schnyder S Cond",Georgia,serif;font-weight:300;
+  font-size:var(--t-deck);line-height:var(--l-deck);color:var(--ink-2)}
+.mag-byline{font-family:"Graphik",system-ui,sans-serif;font-weight:500;font-size:var(--t-byline);
+  text-transform:uppercase;letter-spacing:.14em;line-height:var(--baseline);color:var(--ink-2)}
+.mag-subhead{font-family:"Graphik",system-ui,sans-serif;font-weight:600;font-size:var(--t-subhead);
+  text-transform:uppercase;letter-spacing:.08em;line-height:var(--baseline);color:var(--ink)}
+.mag-pull{font-family:"Schnyder S",Georgia,serif;font-weight:600;
+  font-size:var(--t-pull);line-height:var(--l-pull);color:var(--ink)}
+.mag-pull-attr{font-family:"Graphik",system-ui,sans-serif;font-weight:500;font-size:var(--t-credit);
+  text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3);margin-top:6pt;display:block}
+.mag-caption{font-family:"Graphik",system-ui,sans-serif;font-weight:400;
+  font-size:var(--t-caption);line-height:10.5pt;color:var(--ink-2)}
+.mag-credit{font-family:"Graphik",system-ui,sans-serif;font-size:var(--t-credit);
+  text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3)}
+.mag-page.mag-page.mag-page .mag-rule{display:block;border:0;border-top:0.5pt solid var(--rule);width:100%;margin:0}
+
+.mag-art{width:100%;height:100%;object-fit:cover;display:block}
+.mag-art[data-fit="contain"]{object-fit:contain}
+
+/* ── 6. FOLIO ─────────────────────────────────────────────────────────────
+   Real sequential page numbers, set as DOM elements inside the page. @page
+   margin boxes and counter(page) are not used: they need a non-zero @page
+   margin (which re-enables the browser's own URL/date header) and they count
+   browser pages, not magazine pages. Baseline 0.25in above the trim foot,
+   aligned to the outer edge. */
+.mag-folio{
+  position:absolute;
+  bottom:0.28in;
+  font-family:"Graphik",system-ui,sans-serif;font-weight:400;
+  font-size:var(--t-folio);line-height:1;letter-spacing:.1em;
+  color:var(--ink-3);
+  display:flex;gap:.7em;align-items:baseline;
+}
+.mag-page[data-side="verso"] .mag-folio{left:var(--margin)}
+.mag-page[data-side="recto"] .mag-folio{right:var(--margin);flex-direction:row-reverse}
+.mag-page[data-folio="silent"] .mag-folio{display:none}
+.mag-folio-rule{color:var(--rule)}
+
+/* ── 7. AD SLOTS ──────────────────────────────────────────────────────────
+   The slot is geometry + identity only. No booking, no creative pipeline, no
+   metrics — but every slot already carries the stable id those will key on,
+   so adding them later never means re-laying-out a page.
+   Attribute names deliberately avoid the ad-blocker filter-list namespace
+   (`data-ad-slot` is AdSense's own attribute and is widely blocked). */
+.mag-slot{position:absolute;overflow:hidden}
+.mag-slot-empty{
+  width:100%;height:100%;
+  border:0.5pt dashed var(--rule);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3pt;text-align:center;padding:6pt;
+  font-family:"Graphik",system-ui,sans-serif;color:var(--ink-3);
+}
+.mag-slot-empty b{font-size:8pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.mag-slot-empty span{font-size:6.5pt;letter-spacing:.06em}
+
+/* ── 8. SCREEN ────────────────────────────────────────────────────────────
+   The reader is a fixed overlay so the site's chrome (fixed header z-50,
+   fixed logo z-105, footer, overlays) is out of the way without editing
+   app/layout.tsx at all. */
+@media screen{
+  .mag-root{
+    position:fixed;inset:0;z-index:200;
+    background:#0A0806;
+    display:flex;flex-direction:column;
+    max-width:100vw;overflow:hidden;
+    overscroll-behavior:contain;
+  }
+  .mag-bar{
+    flex:0 0 auto;display:flex;align-items:center;gap:14px;
+    padding:10px 16px;border-bottom:1px solid #2A2118;
+    font-family:"Graphik",system-ui,sans-serif;font-size:12px;letter-spacing:.1em;
+    text-transform:uppercase;color:#8B7F6E;background:#0A0806;
+    flex-wrap:nowrap;overflow:hidden;white-space:nowrap;
+  }
+  .mag-bar a,.mag-bar button{
+    color:#8B7F6E;background:none;border:0;cursor:pointer;
+    font:inherit;letter-spacing:inherit;text-transform:inherit;padding:4px 6px;
+    white-space:nowrap;flex:0 0 auto;
+  }
+  .mag-bar a:hover,.mag-bar button:hover{color:#E8D4A0}
+  .mag-bar button[disabled]{opacity:.3;cursor:default}
+  .mag-bar .mag-bar-title{
+    color:#C9BCA6;letter-spacing:.16em;
+    min-width:0;flex:1 1 auto;overflow:hidden;text-overflow:ellipsis;
+  }
+  .mag-bar .mag-bar-spacer{flex:0 0 auto;margin-left:auto}
+
+  .mag-stage{
+    flex:1 1 auto;position:relative;
+    display:flex;align-items:flex-start;justify-content:center;
+    overflow:auto;overscroll-behavior:contain;
+    padding:16px;
+    -webkit-overflow-scrolling:touch;
+  }
+  /* margin:auto centres the sheet without clipping its top when the page is
+     taller than the stage — flex centring would cut the head off. */
+  .mag-spreadwrap{position:relative;flex:0 0 auto;margin:auto}
+  /* transform: scale() — never CSS `zoom`. zoom changes text metric rounding,
+     so line breaks on screen would differ from the line breaks in the PDF.
+     scale() is a pure geometric operation and preserves layout exactly. */
+  .mag-spread{
+    display:flex;gap:0;align-items:flex-start;
+    transform:scale(var(--zoom));
+    transform-origin:top left;
+    box-shadow:0 18px 60px rgba(0,0,0,.66);
+  }
+
+  /* Phone: the page is the same fixed artifact, shown one leaf at a time and
+     fitted to the WIDTH so the type stays readable — fitting a whole 11in
+     page onto a 390px screen renders 9.5pt body copy at about 4pt. You scroll
+     down the leaf and swipe across to the next, the way a magazine reads on a
+     phone. */
+  @media (max-width:700px){
+    .mag-bar{gap:6px;padding:8px 10px;font-size:10px;letter-spacing:.06em}
+    .mag-bar a,.mag-bar button{padding:4px}
+    .mag-bar [data-bar="wide-only"]{display:none}
+    .mag-stage{padding:8px}
+  }
+
+  /* dev guides */
+  .mag-page[data-guides="true"]::after{
+    content:"";position:absolute;pointer-events:none;z-index:50;
+    left:var(--margin);top:var(--margin);width:var(--live-w);height:var(--live-h);
+    outline:0.5pt solid rgba(140,43,18,.45);
+    background:
+      repeating-linear-gradient(to right,rgba(140,43,18,.16) 0 0.5pt,transparent 0.5pt var(--col),
+        transparent var(--col), rgba(0,0,0,.05) var(--col), rgba(0,0,0,.05) calc(var(--col) + var(--gutter)),
+        transparent calc(var(--col) + var(--gutter))),
+      repeating-linear-gradient(to bottom,rgba(140,43,18,.14) 0 0.25pt,transparent 0.25pt var(--baseline));
+  }
+  /* overset marker — InDesign's red plus. The failure mode a fixed page is
+     uniquely prone to: overflow:hidden means screen and paper agree perfectly
+     and are BOTH wrong, because the last line of a column simply isn't there. */
+  .mag-frame[data-overset="true"]{outline:1.5pt solid #E11D48;outline-offset:1pt}
+  .mag-frame[data-overset="true"]::after{
+    content:"OVERSET " attr(data-overset-by) "px";
+    position:absolute;right:0;bottom:0;z-index:60;
+    font:700 7pt/1.4 "Graphik",system-ui,sans-serif;letter-spacing:.08em;
+    background:#E11D48;color:#fff;padding:1pt 3pt;
+  }
+}
+
+/* ── 9. PRINT ─────────────────────────────────────────────────────────────
+   The PDF is the artifact of record. */
+@media print{
+  /* Page box = the trim. margin:0 also starves Chromium's URL/date/page-count
+     header and footer of the room to draw in. */
+  @page{size:8.5in 11in;margin:0}
+
+  /* Everything on the page except the magazine goes. app/layout.tsx renders a
+     fixed header (h-28, z-50), a separately fixed logo (z-105), SearchOverlay,
+     ImageLightbox, MobileNav and Footer; globals.css .page-loader is
+     position:fixed;inset:0;z-index:9999;background:#0C0A08 — which would print
+     page 1 as a solid black rectangle. Chromium paints fixed elements on page
+     1; Gecko repeats them on every page. */
+  body:has(.mag-root) > *{display:none !important}
+  body:has(.mag-root) > main{display:block !important;padding:0 !important;margin:0 !important;flex:none !important}
+
+  html,body{
+    margin:0 !important;padding:0 !important;
+    width:auto !important;height:auto !important;
+    min-height:0 !important;              /* body is min-h-screen: 100vh = one page */
+    display:block !important;             /* body is flex flex-col */
+    background:#fff !important;
+    overflow:visible !important;
+  }
+
+  /* THE most important block here. A transform, filter or zoom on an ANCESTOR
+     of paginated content stops Chromium breaking pages inside it — the whole
+     document renders as one clipped page. Never remove these resets. */
+  .mag-root,.mag-stage,.mag-spreadwrap,.mag-spread{
+    position:static !important;display:block !important;
+    transform:none !important;filter:none !important;zoom:1 !important;
+    inset:auto !important;
+    width:auto !important;height:auto !important;min-height:0 !important;
+    padding:0 !important;margin:0 !important;gap:0 !important;
+    overflow:visible !important;background:none !important;box-shadow:none !important;
+  }
+  .mag-bar,[data-noprint]{display:none !important}
+
+  /* break-BEFORE, never break-after: break-after on the final page emits a
+     trailing blank sheet in Chromium. */
+  .mag-page{
+    break-inside:avoid;page-break-inside:avoid;
+    margin:0 !important;box-shadow:none !important;border-radius:0 !important;
+  }
+  .mag-page + .mag-page,
+  .mag-spread + .mag-spread .mag-page:first-child{
+    break-before:page;page-break-before:always;
+  }
+
+  /* Chromium cannot express these as PDF vector ops, so it flattens the whole
+     subtree to a bitmap at roughly screen dpi and the text stops being
+     selectable. Bake duotone and grain into 300dpi assets instead. */
+  .mag-page *{
+    backdrop-filter:none !important;-webkit-backdrop-filter:none !important;
+    filter:none !important;mix-blend-mode:normal !important;
+    box-shadow:none !important;text-shadow:none !important;
+  }
+  /* Chromium prints fixed/sticky once, Gecko on every page. */
+  .mag-page .fixed,.mag-page .sticky{position:absolute !important}
+
+  .mag-page[data-guides="true"]::after{display:none !important}
+  .mag-frame[data-overset="true"]{outline:none !important}
+  .mag-frame[data-overset="true"]::after{display:none !important}
+  .mag-page img{break-inside:avoid}
+}

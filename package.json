@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "mag:proof": "node scripts/proof.mjs",
+    "mag:proof:png": "node scripts/proof.mjs http://localhost:3111 --png"
   },
   "dependencies": {
     "@supabase/ssr": "^0.8.0",

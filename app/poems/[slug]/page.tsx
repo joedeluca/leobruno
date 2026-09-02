@@ -1,241 +1,107 @@
-"use client"
+import { notFound } from "next/navigation"
+import type { Metadata } from "next"
+import { getAllPoems, getPoemBySlug } from "@/lib/poems"
+import PoemPageClient from "./PoemPageClient"
 
-import { useEffect, useState, useRef } from "react"
-import { useParams } from "next/navigation"
-import Link from "next/link"
-import { gsap } from "gsap"
-import PoemDisplay from "@/components/PoemDisplay"
-import PoemAudioPlayer from "@/components/PoemAudioPlayer"
-import GlobalSearch from "@/components/GlobalSearch"
-import Breadcrumb from "@/components/Breadcrumb"
-import ToolsDropdown from "@/components/ToolsDropdown"
-
-interface Poem {
-  slug: string
-  title: string
-  author: string
-  date: string
-  collection?: string
-  epigraph?: string
-  content: string
+export async function generateStaticParams() {
+  return getAllPoems().map((poem) => ({ slug: poem.slug }))
 }
 
-function generateAudioUrl(title: string, author: string): string {
-  const titleSlug = title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")
-  const authorSlug = author
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")
-  return `/audio/poems/${titleSlug}-by-${authorSlug}.m4a`
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const poem = getPoemBySlug(slug)
+  if (!poem) return {}
+
+  const description = poem.collection
+    ? `${poem.title} by ${poem.author}, from ${poem.collection}.`
+    : `${poem.title} by ${poem.author}.`
+
+  return {
+    title: poem.title,
+    description,
+    authors: [{ name: poem.author }],
+    alternates: {
+      canonical: `https://leobruno.it/poems/${slug}`,
+    },
+    openGraph: {
+      title: `${poem.title} — Leo Bruno`,
+      description,
+      url: `https://leobruno.it/poems/${slug}`,
+      type: "article",
+      authors: [poem.author],
+      images: [
+        {
+          url: "https://leobruno.it/og-default.jpg",
+          width: 1200,
+          height: 630,
+          alt: poem.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${poem.title} — Leo Bruno`,
+      description,
+      images: ["https://leobruno.it/og-default.jpg"],
+    },
+  }
 }
 
-export default function PoemPage() {
-  const params = useParams()
-  const [poem, setPoem] = useState<Poem | null>(null)
-  const [notFound, setNotFound] = useState(false)
-  const [collectionPoems, setCollectionPoems] = useState<Poem[]>([])
-  const [showLineNumbers, setShowLineNumbers] = useState(false)
-  const [showAudioPlayer, setShowAudioPlayer] = useState(false)
-  const [isSearchActive, setIsSearchActive] = useState(false)
-  const currentSlugRef = useRef<string | null>(null)
-  const isInitialLoadRef = useRef(true)
+export default async function PoemPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
 
-  useEffect(() => {
-    if (params.slug) {
-      // Only animate if this is a route change, not the initial load
-      const shouldAnimate =
-        currentSlugRef.current !== null &&
-        currentSlugRef.current !== params.slug
+  // Read on the server, from the markdown, the way every other document route
+  // on this site already does. It used to be "use client" with a useEffect
+  // fetch of /api/poem/<slug>, which meant the poem existed only after
+  // JavaScript ran: the HTML that went out carried the header, the footer and
+  // 28 words of chrome. Anything that reads pages rather than running them —
+  // a crawler, a search index, a preview card — saw a site with no poems on it.
+  const poem = getPoemBySlug(slug)
+  if (!poem) notFound()
 
-      if (shouldAnimate) {
-        // Fade out before fetching new poem
-        gsap.to(".poem-content", {
-          opacity: 0,
-          duration: 0.3,
-          ease: "power2.in",
-          onComplete: () => {
-            // Fetch after fade out completes
-            fetchPoem()
-          },
-        })
-      } else {
-        // Initial load or same poem - fetch immediately without animation
-        fetchPoem()
-      }
-    }
-
-    function fetchPoem() {
-      fetch(`/api/poem/${params.slug}`)
-        .then((res) => res.json())
-        .then((data) => {
-          if (!data.poem) {
-            setNotFound(true)
-            return
-          }
-          setPoem(data.poem)
-          currentSlugRef.current = data.poem.slug
-
-          // If poem has a collection, fetch all poems to find collection siblings
-          if (data.poem.collection) {
-            fetch("/api/poems")
-              .then((res) => res.json())
-              .then((allData) => {
-                // Include current poem in the collection list
-                const siblings = allData.poems.filter(
-                  (p: Poem) => p.collection === data.poem.collection
-                )
-                setCollectionPoems(siblings)
-              })
-          } else {
-            setCollectionPoems([])
-          }
-
-          // Fade in the new content (or initial content)
-          if (isInitialLoadRef.current) {
-            isInitialLoadRef.current = false
-            // Gentle fade in on initial load - wait for DOM to be ready
-            requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                gsap.fromTo(
-                  ".poem-content",
-                  { opacity: 0 },
-                  { opacity: 1, duration: 0.6, ease: "power2.out" }
-                )
-              })
-            })
-          } else {
-            // Animate fade in on route changes
-            gsap.fromTo(
-              ".poem-content",
-              { opacity: 0 },
-              { opacity: 1, duration: 0.6, ease: "power2.out" }
-            )
-          }
-        })
-    }
-
-    // Clear search when individual poem page mounts
-    const timer = setTimeout(() => {
-      window.dispatchEvent(new CustomEvent("clearSearch"))
-    }, 50)
-
-    return () => clearTimeout(timer)
-  }, [params.slug])
-
-  // Listen for search queries from header
-  useEffect(() => {
-    const handleSearchQuery = (event: Event) => {
-      const customEvent = event as CustomEvent<{ query: string }>
-      const searchQuery = customEvent.detail.query
-
-      if (searchQuery.trim()) {
-        setIsSearchActive(true)
-      } else {
-        setIsSearchActive(false)
-      }
-    }
-
-    window.addEventListener("searchQuery", handleSearchQuery)
-    return () => window.removeEventListener("searchQuery", handleSearchQuery)
-  }, [])
-
-  if (notFound) {
-    return (
-      <div className="min-h-screen bg-zinc-950 flex flex-col items-center justify-center gap-4 px-8 text-center">
-        <p
-          className="text-zinc-400"
-          style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
-        >
-          This poem isn&apos;t here.
-        </p>
-        <Link href="/poems" className="text-sm underline underline-offset-2" style={{ color: '#A8A5A0' }}>
-          Back to poems
-        </Link>
-      </div>
-    )
+  const poemSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": `https://leobruno.it/poems/${slug}`,
+    name: poem.title,
+    headline: poem.title,
+    genre: "Poetry",
+    author: {
+      "@type": "Person",
+      name: poem.author,
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Leo Bruno",
+      url: "https://leobruno.it",
+    },
+    ...(poem.date ? { datePublished: poem.date } : {}),
+    ...(poem.collection ? { isPartOf: poem.collection } : {}),
+    url: `https://leobruno.it/poems/${slug}`,
   }
-
-  if (!poem) {
-    return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2" style={{ borderColor: '#F59E0B' }}></div>
-      </div>
-    )
-  }
-
-  const audioUrl = generateAudioUrl(poem.title, poem.author)
-  const contentWithEpigraph = poem.epigraph
-    ? `[EPIGRAPH]\n${poem.epigraph}\n[/EPIGRAPH]\n\n${poem.content}`
-    : poem.content
 
   return (
-    <div className="w-full h-full">
-      {isSearchActive ? (
-        <div className="px-8 pb-12 pt-16">
-          <GlobalSearch />
-        </div>
-      ) : (
-        <div className="flex flex-col h-full">
-          {/* Main Content */}
-          <div className="w-full px-8 pb-12 pt-[.8rem]">
-            <div className="poem-content" style={{ opacity: 0 }}>
-              <div className="flex items-start justify-between mb-6">
-                <Breadcrumb
-                  items={[
-                    { label: "Home", href: "/" },
-                    { label: "Poems", href: "/poems" },
-                    { label: poem.title, href: "" },
-                  ]}
-                />
-                <ToolsDropdown
-                  showLineNumbers={showLineNumbers}
-                  showAudioPlayer={showAudioPlayer}
-                  onToggleLineNumbers={() =>
-                    setShowLineNumbers(!showLineNumbers)
-                  }
-                  onToggleAudioPlayer={() =>
-                    setShowAudioPlayer(!showAudioPlayer)
-                  }
-                  align="right"
-                />
-              </div>
-
-              <h1
-                className="text-4xl font-bold text-zinc-50 mb-2"
-                style={{ fontFamily: '"Schnyder S", Georgia, serif' }}
-              >
-                {poem.title}
-              </h1>
-
-              <div className="flex items-center gap-3 mb-2">
-                <div
-                  className="text-sm text-zinc-300 uppercase tracking-wide"
-                  style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
-                >
-                  BY {poem.author.toUpperCase()}
-                </div>
-              </div>
-
-              {poem.collection && (
-                <div className="text-sm text-zinc-400 italic mb-8">
-                  from {poem.collection} ({poem.date})
-                </div>
-              )}
-
-              <div className="mt-8">
-                {showAudioPlayer && <PoemAudioPlayer audioUrl={audioUrl} />}
-                <PoemDisplay
-                  content={contentWithEpigraph}
-                  showLineNumbers={showLineNumbers}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(poemSchema) }}
+      />
+      {/* The fade-in starts the poem at opacity 0 and gsap brings it up. With
+          JavaScript off nothing would ever bring it up, so the text would be in
+          the HTML and still invisible — which is the same bug wearing a
+          different hat. */}
+      <noscript>
+        <style>{`.poem-content { opacity: 1 !important; }`}</style>
+      </noscript>
+      <PoemPageClient poem={poem} />
+    </>
   )
 }
