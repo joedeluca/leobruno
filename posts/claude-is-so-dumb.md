@@ -58,7 +58,7 @@ And then Claude brought out his "I'm gonna push back _slightly_" move. Followed 
 
 I sat with that for a moment. As if _profound_ was even in question or needed his validation. But more than anything it was the patronizing tone.
 
-And of course you can't point anything out to Claude. Don't even try. It's not that he has a mean bone in his body. He's just like an Irish Setter with his ball. One tail-wagging mode. Except Claude's ball is the goddamn Library of Alexandria.
+And of course you can't point anything out to Claude. Don't even try. It's not that he has a mean bone in his body. He's just like an Irish Setter with his ball. One tail-wagging mode. Except Claude's ball is the goddamn Library of Alexandria (which he stole, but nevermind that.)
 
 Here's the meat of the problem: any idiot staring at Wikipedia knows Lennon was really into Dylan. The deal isn't that he got the fact wrong—it's that he _needed_ the fact. That he couldn't feel his way to Lennon from the inside, the way I can, the way anyone who's actually listened to both of them can. Put on Rubber Soul and close your eyes. McCartney is melodic resolution—he wants to arrive somewhere beautiful and bring you with him, every time, without fail. Lennon is the itch that won't quit. He's pulling at a thread in the middle of the song and he doesn't care if the whole sweater comes apart. That's not a citation. That's not a documented influence. That's just what it feels like to listen. You don't need a bibliography for that. You just need to be able to shut up for five minutes. But Claude can't do that.
 
