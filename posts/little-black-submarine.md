@@ -8,11 +8,6 @@ teaser: "From Reliquary"
 teaserShort: "Reliquary, Ch. 10"
 ---
 
-<figure style="float:right;width:340px;margin:0 0 1.5rem 2rem;">
-<img src="/aphrodite-observing-pigeons.png" alt="Aphrodite observing pigeons" style="display:block;width:100%;" />
-<figcaption style="text-align:center;font-size:0.8rem;color:#A8A5A0;margin-top:0.4rem;">Aphrodite Regarding Pigeons</figcaption>
-</figure>
-
 Roxy is compartmentalized like a submarine. Everything sealed in its own chamber. Vapor-locked. And everything she does seems to me both erotic and remote. Her ordinary demeanor is of Aphrodite regarding pigeons.
 
 And when she talks to her mother back in Orgosolo, I can hear the whole conversation because the mother talks loud in that machine gun Sarda accent that sounds like ping pong balls splattering a tin roof. The mother invariably mentions some woman's cosce selvagge—wild thighs—disapproval thick as saba. It's usually a woman she saw on TV wearing a mini skirt and stilettos, or just some local woman at the IperPan wearing tight pants and kissing a baby _with those lips_. Roxy encourages her, clearly enjoying her mother's crusade.

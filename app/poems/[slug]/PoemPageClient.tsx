@@ -111,7 +111,9 @@ export default function PoemPageClient({ poem }: { poem: Poem }) {
               )}
 
               <div className="mt-8">
+                {/* Audio player off for now.
                 {showAudioPlayer && <PoemAudioPlayer audioUrl={audioUrl} />}
+                */}
                 <PoemDisplay
                   content={contentWithEpigraph}
                   showLineNumbers={showLineNumbers}

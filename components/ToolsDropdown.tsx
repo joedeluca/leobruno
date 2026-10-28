@@ -87,7 +87,8 @@ export default function ToolsDropdown({
         className="text-xs text-zinc-400 hover:text-tiepolo-pink-500 transition-colors uppercase tracking-wide flex items-center gap-1"
         style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}
       >
-        Audio / Line Numbers
+        {/* Audio / Line Numbers — audio player off for now */}
+        Line Numbers
         <svg
           className={`w-3 h-3 transition-transform ${
             isOpen ? "rotate-180" : ""
@@ -116,6 +117,7 @@ export default function ToolsDropdown({
           className="py-2 px-3 space-y-2"
           style={{ opacity: 0, transform: "translateY(-10px)" }}
         >
+          {/* Audio player off for now.
           <button
             onClick={onToggleAudioPlayer}
             className="w-full text-left text-xs text-zinc-400 hover:text-zinc-100 transition-colors py-2 px-3 rounded hover:bg-zinc-800"
@@ -138,6 +140,7 @@ export default function ToolsDropdown({
               )}
             </div>
           </button>
+          */}
           <button
             onClick={onToggleLineNumbers}
             className="w-full text-left text-xs text-zinc-400 hover:text-zinc-100 transition-colors py-2 px-3 rounded hover:bg-zinc-800"

@@ -252,6 +252,7 @@ export default function WorkPage() {
                       >
                         {poem.title}
                       </Link>
+                      {/* Audio player off for now.
                       <div className="pt-0.5">
                         <InlineAudioPlayer
                           audioUrl={audioUrl}
@@ -259,6 +260,7 @@ export default function WorkPage() {
                           author={poem.author}
                         />
                       </div>
+                      */}
                     </div>
                   </li>
                 )
