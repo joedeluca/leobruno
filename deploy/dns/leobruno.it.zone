@@ -1,0 +1,14 @@
+; leobruno.it, for Mythic Beasts' Manage DNS (add it there as a 3rd party domain, then
+; enter these rows by hand). Mail rows are copied exactly from the public DNS on 2026-10-11:
+; iCloud Mail depends on them, so they must be entered BEFORE the nameservers move.
+; Check afterwards with: dig +short leobruno.it MX  (and TXT, against both Mythic nameservers)
+
+leobruno.it.  3600 IN A      176.126.244.73
+leobruno.it.  3600 IN AAAA   2a00:1098:66f::1
+www           3600 IN CNAME  leobruno.it.
+
+leobruno.it.  3600 IN MX     10 mx01.mail.icloud.com.
+leobruno.it.  3600 IN MX     10 mx02.mail.icloud.com.
+leobruno.it.  3600 IN TXT    "google-site-verification=1T271jusjJz5lQ7GYV0WwokrdwwY2J2bhckrHG8CQW0"
+leobruno.it.  3600 IN TXT    "apple-domain=OV8WBypFJtulEDsy"
+leobruno.it.  3600 IN TXT    "v=spf1 include:icloud.com include:_spf-eu.ionos.com ~all"

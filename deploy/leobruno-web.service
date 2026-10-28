@@ -1,0 +1,25 @@
+# /etc/systemd/system/leobruno-web.service on the Bixinu box (deploy/setup.sh installs it).
+[Unit]
+Description=leobruno.it (Next.js)
+After=network.target
+
+[Service]
+User=leobruno
+Group=leobruno
+WorkingDirectory=/srv/leobruno/current
+EnvironmentFile=/srv/leobruno/env
+# HOSTNAME=localhost, not 127.0.0.1: see sabotypist's service. Next listens on [::1]:3003, where Caddy looks.
+Environment=NODE_ENV=production PORT=3003 HOSTNAME=localhost
+# Node exits 143 on the SIGTERM a restart sends: a clean stop, not a failure.
+SuccessExitStatus=143
+ExecStart=/usr/bin/node node_modules/next/dist/bin/next start -p 3003 -H localhost
+Restart=always
+RestartSec=3
+MemoryMax=400M
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/srv/leobruno
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

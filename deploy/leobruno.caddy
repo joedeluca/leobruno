@@ -1,0 +1,9 @@
+# /etc/caddy/sites/leobruno.caddy on the Bixinu box, imported by the Caddyfile.
+leobruno.it {
+	encode zstd gzip
+	reverse_proxy [::1]:3003
+}
+
+www.leobruno.it {
+	redir https://leobruno.it{uri} permanent
+}
