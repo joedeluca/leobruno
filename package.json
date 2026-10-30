@@ -7,6 +7,7 @@
     "prebuild": "node scripts/generate-history.mjs",
     "build": "next build",
     "start": "next start",
+    "deploy": "node scripts/deploy.mjs",
     "lint": "biome check",
     "format": "biome format --write",
     "mag:proof": "node scripts/proof.mjs",

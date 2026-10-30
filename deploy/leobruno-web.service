@@ -1,4 +1,6 @@
-# /etc/systemd/system/leobruno-web.service on the Bixinu box (deploy/setup.sh installs it).
+# /etc/systemd/system/leobruno-web.service on the Bixinu box (deploy/setup.sh installs it): the
+# site, as `npm run deploy` left it in /srv/leobruno/current (a symlink to the release; a restart
+# picks up a new one).
 [Unit]
 Description=leobruno.it (Next.js)
 After=network.target
@@ -12,7 +14,8 @@ EnvironmentFile=/srv/leobruno/env
 Environment=NODE_ENV=production PORT=3003 HOSTNAME=localhost
 # Node exits 143 on the SIGTERM a restart sends: a clean stop, not a failure.
 SuccessExitStatus=143
-ExecStart=/usr/bin/node node_modules/next/dist/bin/next start -p 3003 -H localhost
+# The standalone server (next.config.ts): the release holds only what the site needs.
+ExecStart=/usr/bin/node server.js
 Restart=always
 RestartSec=3
 MemoryMax=400M

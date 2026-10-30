@@ -25,4 +25,4 @@ systemctl enable leobruno-web >/dev/null
 caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
 systemctl reload caddy
 
-echo "Ready. From the laptop: sh deploy/deploy.sh"
+echo "Ready. From the laptop: npm run deploy"
