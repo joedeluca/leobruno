@@ -85,6 +85,7 @@ export default function HomeClient({ initialItems }: { initialItems: HomeItem[] 
     <div className="min-h-screen flex flex-col items-center px-8 pb-48 pt-24 text-center">
       {/* Filter row */}
       <div className="flex gap-8 mb-16">
+        {/* Category filter off for now.
         {FILTERS.map((f) => (
           <button
             key={f}
@@ -107,6 +108,7 @@ export default function HomeClient({ initialItems }: { initialItems: HomeItem[] 
             {f}
           </button>
         ))}
+        */}
         <button
           onClick={openSearch}
           onMouseEnter={() => setHoveredFilter('search')}
