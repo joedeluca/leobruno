@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
-import { getPostData, getAllPostSlugs, getSortedPostsData } from "@/lib/posts"
+import { getPostData, getAllPostSlugs } from "@/lib/posts"
 import PostPageClient from "./PostPageClient"
-import SweetieOrNotPageClient from "./SweetieOrNotPageClient"
 
 export async function generateStaticParams() {
   return getAllPostSlugs()
@@ -79,21 +78,6 @@ export default async function PostPage({
     datePublished: post.date,
     description: post.teaser || post.excerpt,
     url: `https://leobruno.it/${slug}`,
-  }
-
-  if (post.category === "Sweetie or Not") {
-    const allEpisodes = getSortedPostsData().filter(
-      (p) => p.category === "Sweetie or Not"
-    )
-    return (
-      <>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-        />
-        <SweetieOrNotPageClient post={post} allEpisodes={allEpisodes} />
-      </>
-    )
   }
 
   return (
