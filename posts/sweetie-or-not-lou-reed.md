@@ -89,7 +89,7 @@ The interviewer asks Lou about the music of the sixties. All the sunshine and po
 
 _Junk._
 
-A pronouncement that is simultaneously the subject matter, the aesthetic, the texture, the smell, and the moral position. 
+A pronouncement that is simultaneously the subject matter, the aesthetic, the texture, the smell, and the moral position.
 
 He's asked if he considers his work poetry. He smiles a little, in spite of himself. He hedges—he says his songs stand up to being read without the music, but they're made for music—and then, almost defensively: he's had some things published. He writes poetry.
 
