@@ -6,7 +6,6 @@ import GlobalSearch from "@/components/GlobalSearch"
 import { formatArticleDate, formatShortDate } from "@/lib/formatDate"
 import PostReadTracker from "./PostReadTracker"
 import ArticleTrace, { TraceButton } from "@/components/ArticleTrace"
-import SweetieVote from "@/components/SweetieVote"
 import type { Post } from "@/lib/posts"
 
 function renderContent(html: string) {
@@ -165,14 +164,9 @@ export default function SweetieOrNotPageClient({ post, allEpisodes = [] }: { pos
               isOpen={traceOpen}
               onToggle={() => setTraceOpen((v) => !v)}
             />
-
-            {/* Mobile-only vote widget */}
-            <div className="lg:hidden">
-              <SweetieVote episodeSlug={post.slug} />
-            </div>
           </div>
 
-          {/* Col 2 — verdict, sticker, coming up */}
+          {/* Col 2 — verdict, coming up */}
           <aside className="lg:w-1/4 w-full px-8 pb-12 pt-4 lg:pt-12 lg:pl-8 mt-2 lg:mt-0 sm:[background:linear-gradient(160deg,#0C0A08_0%,#3A2E24_50%,#0C0A08_100%)]">
             <div className="lg:sticky lg:top-12 space-y-8">
               {/* Verdict */}
@@ -199,11 +193,6 @@ export default function SweetieOrNotPageClient({ post, allEpisodes = [] }: { pos
                   </p>
                 )}
 
-              </div>
-
-              {/* Vote */}
-              <div className="hidden lg:block">
-                <SweetieVote episodeSlug={post.slug} compact />
               </div>
 
               {/* Episode list */}
