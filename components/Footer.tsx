@@ -38,6 +38,13 @@ export default function Footer() {
         >
           About Leo
         </Link>
+        <a
+          href="https://sabotypist.com"
+          className="text-sm transition-colors"
+          style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#5a4a3a' }}
+        >
+          I write with Sabo Typist
+        </a>
 
         <p
           className="text-xs"
@@ -49,7 +56,7 @@ export default function Footer() {
 
       {/* Desktop: Side by side layout */}
       <div className="hidden sm:flex justify-between items-center px-8">
-        {/* Section nav off for now. The empty box keeps the copyright line centred.
+        {/* Section nav off for now.
         <nav className="flex gap-6">
           <Link
             href="/essays"
@@ -74,7 +81,14 @@ export default function Footer() {
           </Link>
         </nav>
         */}
-        <div className="flex-1" />
+        <div className="flex-1">
+          <a
+            href="https://sabotypist.com"
+            style={{ fontFamily: '"Graphik", system-ui, sans-serif', fontSize: '11px', color: '#5a4a3a', letterSpacing: '0.1em' }}
+          >
+            I write with Sabo Typist
+          </a>
+        </div>
 
         <p
           className="text-xs"
