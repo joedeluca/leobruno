@@ -7,7 +7,6 @@ export default function FictionIndex() {
       items={[
         { href: "/little-black-submarine", title: "Little Black Submarine" },
         { href: "/easy-tommy-lee", title: "Easy. Tommy Lee." },
-        { href: "/sophie-bella-venetian", title: "Sophie, Bella, Venetian" },
       ]}
     />
   )

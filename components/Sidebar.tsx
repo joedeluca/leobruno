@@ -420,13 +420,6 @@ export default function Sidebar() {
           >
             Easy Tommy Lee
           </Link>
-          <Link
-            href="/sophie-bella-venetian"
-            className="block transition-colors text-base"
-            style={{ color: '#A8A5A0' }}
-          >
-            Sophie, Bella, Venetian
-          </Link>
         </div>
 
         <NewsletterSignup />

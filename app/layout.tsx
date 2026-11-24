@@ -5,7 +5,7 @@ import PoemLinkHandler from "@/components/PoemLinkHandler"
 import Footer from "@/components/Footer"
 import AudioPlayer from "@/components/AudioPlayer"
 import SearchOverlay from "@/components/SearchOverlay"
-import MobileNav from "@/components/MobileNav"
+// import MobileNav from "@/components/MobileNav"
 import HeaderSearchButton from "@/components/HeaderSearchButton"
 import HeaderRule from "@/components/HeaderRule"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -56,7 +56,9 @@ export default function RootLayout({
                 top-7 puts them the same 38px from the top. */}
             <div className="absolute top-7 right-8 flex items-center gap-4">
               <HeaderSearchButton />
+              {/* Menu button off for now.
               <MobileNav />
+              */}
             </div>
           </div>
 

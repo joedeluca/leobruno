@@ -10,7 +10,7 @@
  */
 
 import { execSync, spawnSync } from "child_process"
-import { readdirSync, mkdirSync, writeFileSync, existsSync } from "fs"
+import { readdirSync, mkdirSync, writeFileSync, existsSync, readFileSync } from "fs"
 import { join, dirname, relative } from "path"
 import { fileURLToPath } from "url"
 
@@ -56,8 +56,14 @@ function collectMdFiles(dir) {
     .map((f) => join(dir, f).replace(/\\/g, "/"))
 }
 
+// Posts kept in posts/ but off the site get no public history either. The list is lib/posts.ts's.
+const unpublished = new Set(
+  [...(readFileSync(join(root, "lib/posts.ts"), "utf8").match(/UNPUBLISHED_SLUGS = new Set\(\[([^\]]*)\]/)?.[1] ?? "")
+    .matchAll(/"([^"]+)"/g)].map((m) => m[1])
+)
+
 const targets = [
-  ...collectMdFiles("posts"),
+  ...collectMdFiles("posts").filter((f) => !unpublished.has(f.replace(/^posts\//, "").replace(/\.md$/, ""))),
   ...collectMdFiles("content/newsletter"),
 ]
 

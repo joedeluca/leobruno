@@ -1,6 +1,7 @@
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
+import { isPublished, UNPUBLISHED_SLUGS } from "./posts"
 
 const postsDirectory = path.join(process.cwd(), "posts")
 
@@ -33,7 +34,7 @@ export function getAllMarkdownFiles(dir: string = postsDirectory): string[] {
 
     if (stat.isDirectory()) {
       files.push(...getAllMarkdownFiles(fullPath))
-    } else if (item.endsWith(".md")) {
+    } else if (isPublished(item)) {
       files.push(fullPath)
     }
   }
@@ -76,6 +77,7 @@ export function getContentByCategory(category: string): MarkdownContent[] {
 }
 
 export function getContentBySlug(slug: string): MarkdownContent | null {
+  if (UNPUBLISHED_SLUGS.has(slug)) return null
   try {
     const filePath = path.join(postsDirectory, `${slug}.md`)
     return getMarkdownContent(filePath)

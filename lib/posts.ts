@@ -34,6 +34,13 @@ export interface Post {
 
 const postsDirectory = path.join(process.cwd(), "posts")
 
+// Posts whose markdown stays in posts/ but is not published to the site.
+export const UNPUBLISHED_SLUGS = new Set(["sophie-bella-venetian"])
+
+export function isPublished(fileName: string): boolean {
+  return fileName.endsWith(".md") && !UNPUBLISHED_SLUGS.has(fileName.replace(/\.md$/, ""))
+}
+
 export function getSortedPostsData(): Post[] {
   const allPosts: Post[] = []
 
@@ -41,7 +48,7 @@ export function getSortedPostsData(): Post[] {
   if (fs.existsSync(postsDirectory)) {
     const fileNames = fs.readdirSync(postsDirectory)
     const blogPosts = fileNames
-      .filter((fileName) => fileName.endsWith(".md"))
+      .filter(isPublished)
       .map((fileName) => {
         const slug = fileName.replace(/\.md$/, "")
         const fullPath = path.join(postsDirectory, fileName)
@@ -94,7 +101,7 @@ export function getSortedPostsDataWithContent(): Post[] {
   if (fs.existsSync(postsDirectory)) {
     const fileNames = fs.readdirSync(postsDirectory)
     const blogPosts = fileNames
-      .filter((fileName) => fileName.endsWith(".md"))
+      .filter(isPublished)
       .map((fileName) => {
         const slug = fileName.replace(/\.md$/, "")
         const fullPath = path.join(postsDirectory, fileName)
@@ -151,6 +158,7 @@ export function getAllCategories(): string[] {
 }
 
 export async function getPostData(slug: string): Promise<Post> {
+  if (UNPUBLISHED_SLUGS.has(slug)) throw new Error(`${slug} is not published`)
   const fullPath = path.join(postsDirectory, `${slug}.md`)
   const fileContents = fs.readFileSync(fullPath, "utf8")
   const matterResult = matter(fileContents)
@@ -204,7 +212,7 @@ export function getAllPostSlugs() {
   if (fs.existsSync(postsDirectory)) {
     const fileNames = fs.readdirSync(postsDirectory)
     const blogSlugs = fileNames
-      .filter((fileName) => fileName.endsWith(".md"))
+      .filter(isPublished)
       .map((fileName) => {
         return {
           slug: fileName.replace(/\.md$/, ""),

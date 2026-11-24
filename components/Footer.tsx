@@ -6,6 +6,7 @@ export default function Footer() {
     <footer className="py-8 bg-zinc-950 border-t border-[#3A2E24]">
       {/* Mobile: Centered stacked layout */}
       <div className="flex flex-col items-center gap-4 px-8 sm:hidden">
+        {/* Section nav off for now.
         <nav className="flex gap-6">
           <Link
             href="/essays"
@@ -29,6 +30,14 @@ export default function Footer() {
             Poems
           </Link>
         </nav>
+        */}
+        <Link
+          href="/about"
+          className="text-sm transition-colors"
+          style={{ fontFamily: '"Graphik", system-ui, sans-serif', color: '#5a4a3a' }}
+        >
+          About Leo
+        </Link>
 
         <p
           className="text-xs"
@@ -40,6 +49,7 @@ export default function Footer() {
 
       {/* Desktop: Side by side layout */}
       <div className="hidden sm:flex justify-between items-center px-8">
+        {/* Section nav off for now. The empty box keeps the copyright line centred.
         <nav className="flex gap-6">
           <Link
             href="/essays"
@@ -63,6 +73,8 @@ export default function Footer() {
             Poems
           </Link>
         </nav>
+        */}
+        <div className="flex-1" />
 
         <p
           className="text-xs"
@@ -70,12 +82,12 @@ export default function Footer() {
         >
           © {new Date().getFullYear()} Leo Bruno. All rights reserved.
         </p>
-        <div className="flex items-center gap-4">
+        <div className="flex-1 flex items-center justify-end gap-4">
           <Link
-            href="/marginalia"
+            href="/about"
             style={{ fontFamily: '"Graphik", system-ui, sans-serif', fontSize: '11px', color: '#5a4a3a', letterSpacing: '0.1em' }}
           >
-            Marginalia
+            About Leo
           </Link>
           <SearchHint />
         </div>
