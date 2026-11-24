@@ -41,7 +41,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen flex flex-col">
         {/* Fixed Header — three-column: nav | logo | links */}
-        <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md h-28">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md h-[var(--header-h)] pt-[var(--header-drop)]">
           <div className="h-full flex items-center justify-between px-8">
             {/* Left: spacer to balance hamburger */}
             <div className="w-20" />
@@ -63,7 +63,7 @@ export default function RootLayout({
         </header>
 
         {/* Logo — fixed above overlay, outside header stacking context */}
-        <div className="fixed top-0 left-1/2 -translate-x-1/2 h-28 flex items-center z-[105] pointer-events-auto">
+        <div className="fixed top-[var(--header-drop)] left-1/2 -translate-x-1/2 h-28 flex items-center z-[105] pointer-events-auto">
           <HeaderLogo />
         </div>
 
@@ -74,7 +74,7 @@ export default function RootLayout({
         <ImageLightbox />
 
         {/* Main Content */}
-        <main className="flex-1 pt-28">{children}</main>
+        <main className="flex-1 pt-[var(--header-h)]">{children}</main>
 
         {/* Poem Slide-out Handler */}
         <PoemLinkHandler />

@@ -95,7 +95,7 @@ export default function MobileNav() {
             style={{
               position: 'fixed',
               inset: 0,
-              top: '7rem',
+              top: 'var(--header-h)',
               zIndex: 99,
               backdropFilter: 'blur(6px)',
               WebkitBackdropFilter: 'blur(6px)',
@@ -112,7 +112,7 @@ export default function MobileNav() {
               position: 'fixed',
               left: 0,
               right: 0,
-              top: '7rem',
+              top: 'var(--header-h)',
               zIndex: 100,
               backgroundColor: '#0C0A08',
               borderBottom: '1px solid #3A2E24',

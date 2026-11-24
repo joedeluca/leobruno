@@ -233,7 +233,7 @@ export default function WorkPage() {
 
         {/* Sidebar */}
         <div className="lg:w-1/4 w-full lg:border-l lg:border-[#3A2E24] px-8 pb-12">
-          <div className="lg:sticky lg:top-[7rem]">
+          <div className="lg:sticky lg:top-[var(--header-h)]">
             <h3
               className="text-xs uppercase tracking-wider text-zinc-500 mb-4"
               style={{ fontFamily: '"Graphik", system-ui, sans-serif' }}

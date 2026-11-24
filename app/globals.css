@@ -170,6 +170,10 @@ html::-webkit-scrollbar-thumb:hover {
 @layer base {
   /* Tiepolo / Rococo color variables with 4 shades each */
   :root {
+    /* Header: 30px of air above the logo, then the 7rem band it sits in. */
+    --header-drop: 30px;
+    --header-h: calc(7rem + var(--header-drop));
+
     /* Pink - Fleshy pink */
     --tiepolo-pink-500: #f9d8da;
     --tiepolo-pink-600: #f5c7c9;
