@@ -235,9 +235,11 @@ export default function PostPageClient({ post }: { post: Post }) {
             {renderContent(post.content || "")}
           </article>
 
+          {/* Draft history button off for now.
           <div className="mt-16 mb-2">
             <TraceButton onClick={() => setTraceOpen((v) => !v)} isOpen={traceOpen} />
           </div>
+          */}
           <ArticleTrace
             filePath={`posts/${post.slug}`}
             currentContent={post.rawContent || ""}

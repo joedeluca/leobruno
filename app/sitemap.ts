@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next"
 import { getSortedPostsData } from "@/lib/posts"
 import { getAllPoems } from "@/lib/poems"
 import { getAllNewsletterIssues } from "@/lib/newsletter"
+import { NEWSLETTER_ON } from "@/lib/features"
 import { getAllCopywriterProjects } from "@/lib/copywriter"
 
 const BASE_URL = "https://leobruno.it"
@@ -37,7 +38,7 @@ const STATIC_ROUTES: {
   { path: "/poetics", changeFrequency: "monthly", priority: 0.6 },
   { path: "/field-notes", changeFrequency: "weekly", priority: 0.6 },
   { path: "/marginalia", changeFrequency: "weekly", priority: 0.6 },
-  { path: "/newsletter", changeFrequency: "weekly", priority: 0.6 },
+  ...(NEWSLETTER_ON ? [{ path: "/newsletter", changeFrequency: "weekly" as const, priority: 0.6 }] : []),
   { path: "/copywriter", changeFrequency: "monthly", priority: 0.6 },
   { path: "/sweetie-or-not", changeFrequency: "monthly", priority: 0.4 },
 ]
@@ -67,7 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  const newsletter: MetadataRoute.Sitemap = getAllNewsletterIssues().map(
+  const newsletter: MetadataRoute.Sitemap = (NEWSLETTER_ON ? getAllNewsletterIssues() : []).map(
     (issue) => ({
       url: `${BASE_URL}/newsletter/${issue.slug}`,
       lastModified: lastModified(issue.date),
