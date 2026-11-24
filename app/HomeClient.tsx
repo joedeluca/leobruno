@@ -78,7 +78,7 @@ export default function HomeClient({ initialItems }: { initialItems: HomeItem[] 
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center px-8 pb-48 pt-24 text-center">
+    <div className="min-h-screen flex flex-col items-center px-8 pb-48 pt-[4.75rem] text-center">
       {/* Category filter off for now.
         {FILTERS.map((f) => (
           <button

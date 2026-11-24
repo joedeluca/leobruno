@@ -51,8 +51,10 @@ export default function RootLayout({
               <HeaderLogo />
             </div>
 
-            {/* Right: search, then hamburger — all screen sizes */}
-            <div className="flex items-center gap-4">
+            {/* Right: search, then hamburger — all screen sizes. Tucked into the corner: the
+                menu's lines sit 38px from the right edge (px-8 plus the button's own inset), and
+                top-7 puts them the same 38px from the top. */}
+            <div className="absolute top-7 right-8 flex items-center gap-4">
               <HeaderSearchButton />
               <MobileNav />
             </div>
