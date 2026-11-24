@@ -6,6 +6,8 @@ import Footer from "@/components/Footer"
 import AudioPlayer from "@/components/AudioPlayer"
 import SearchOverlay from "@/components/SearchOverlay"
 import MobileNav from "@/components/MobileNav"
+import HeaderSearchButton from "@/components/HeaderSearchButton"
+import HeaderRule from "@/components/HeaderRule"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import ImageLightbox from "@/components/ImageLightbox"
 
@@ -39,19 +41,25 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen flex flex-col">
         {/* Fixed Header — three-column: nav | logo | links */}
-        <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md h-28" style={{ borderBottom: '1px solid #3A2E24' }}>
+        <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md h-28">
           <div className="h-full flex items-center justify-between px-8">
             {/* Left: spacer to balance hamburger */}
-            <div className="w-8" />
+            <div className="w-20" />
 
             {/* Center: logo — invisible placeholder for layout balance */}
             <div className="absolute left-1/2 -translate-x-1/2 pointer-events-none opacity-0">
               <HeaderLogo />
             </div>
 
-            {/* Right: hamburger — all screen sizes */}
-            <MobileNav />
+            {/* Right: search, then hamburger — all screen sizes */}
+            <div className="flex items-center gap-4">
+              <HeaderSearchButton />
+              <MobileNav />
+            </div>
           </div>
+
+          {/* Bottom rule — drawn across once the page scrolls */}
+          <HeaderRule />
         </header>
 
         {/* Logo — fixed above overlay, outside header stacking context */}

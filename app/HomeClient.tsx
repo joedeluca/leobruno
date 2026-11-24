@@ -15,10 +15,6 @@ export interface HomeItem {
 const FILTERS = ["Essays", "Fiction", "Poetry", "Marginalia"] as const
 type Filter = typeof FILTERS[number]
 
-function openSearch() {
-  window.dispatchEvent(new CustomEvent("openSearch"))
-}
-
 function matchesFilter(item: HomeItem, filter: Filter): boolean {
   switch (filter) {
     case "Fiction":    return item.category === "Fiction"
@@ -83,9 +79,7 @@ export default function HomeClient({ initialItems }: { initialItems: HomeItem[] 
 
   return (
     <div className="min-h-screen flex flex-col items-center px-8 pb-48 pt-24 text-center">
-      {/* Filter row */}
-      <div className="flex gap-8 mb-16">
-        {/* Category filter off for now.
+      {/* Category filter off for now.
         {FILTERS.map((f) => (
           <button
             key={f}
@@ -109,26 +103,6 @@ export default function HomeClient({ initialItems }: { initialItems: HomeItem[] 
           </button>
         ))}
         */}
-        <button
-          onClick={openSearch}
-          onMouseEnter={() => setHoveredFilter('search')}
-          onMouseLeave={() => setHoveredFilter(null)}
-          className="home-filter-btn hidden md:inline"
-          style={{
-            fontFamily: '"Graphik", system-ui, sans-serif',
-            letterSpacing: '0.15em',
-            textTransform: 'uppercase',
-            color: hoveredFilter === 'search' ? '#8C7F72' : '#5a4a3a',
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            padding: 0,
-            transition: 'color 0.25s ease',
-          }}
-        >
-          Search
-        </button>
-      </div>
 
       {/* Titles */}
       <div ref={listRef}>
